@@ -1,17 +1,16 @@
 <template>
   <div class="Phases">
     <h1>Payment Phases Sheet</h1>
-    <HelloWorld/>
+    <HelloWorld />
   </div>
 </template>
 
-
 <script>
-import HelloWorld from "../components/HelloWorld.vue"
+import HelloWorld from "../components/HelloWorld.vue";
 export default {
-  name: 'Phases',
+  name: "Phases",
   components: {
-    HelloWorld
-  }
-}
+    HelloWorld,
+  },
+};
 </script>
