@@ -97,7 +97,7 @@ export default {
 .styled-table thead tr {
     background-color: #009879;
     color: #ffffff;
-    text-align: left;
+    text-align: center;
 }
 
 .styled-table th,
