@@ -6,22 +6,22 @@
       <table class="styled-table">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Description</th>
             <th>Item</th>
             <th>Price</th>
-            <th>Date</th>
+            <th>Date completed</th>
             <th>Paid</th>
+            <th>Check From bank</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="tabledata in tabledatas" :key="tabledata.id">
-            <th>{{ tabledata.id }}</th>
-            <th>{{ tabledata.desc }}</th>
+          <tr v-for="tabledata in tabledatas" :key="tabledata.Description">
+            <th>{{ tabledata.Description }}</th>
             <th>{{ tabledata.Item }}</th>
             <th>{{ tabledata.Price }}</th>
-            <th>{{ tabledata.Date }}</th>
+            <th>{{ tabledata.Date_Complete }}</th>
             <th>{{ tabledata.Paid }}</th>
+            <th>{{ tabledata.Check_From_Bank }}</th>
           </tr>
         </tbody>
       </table>
@@ -30,58 +30,22 @@
 </template>
 
 <script>
+import data from '../../db.json'
 export default {
   name: "HelloWorld",
   props: {
-    msg: String,
+    msg: String
   },
   data() {
     return {
-      tabledatas: [
-        {
-          id: 1,
-          desc: "Lumber Purchase",
-          Item: 125,
-          Price: 66000,
-          Date: "11/15/2021",
-          Paid: "Yes",
-        },
-        {
-          id: 2,
-          desc: "General GC Fees",
-          Item: 49,
-          Price: 22000,
-          Date: "11/23/2021",
-          Paid: "Yes",
-        },
-        {
-          id: 3,
-          desc: "Electrical Rough In",
-          Item: 18,
-          Price: 6000,
-          Date: "",
-          Paid: "No",
-        },
-        {
-          id: 4,
-          desc: "Counter Tops",
-          Item: 20,
-          Price: 7000,
-          Date: "",
-          Paid: "No",
-        },
-        {
-          id: 5,
-          desc: "Framing Labor/Rafters",
-          Item: 10,
-          Price: 20000,
-          Date: "12/18/2021",
-          Paid: "Yes",
-        },
-      ],
-    };
-  },
-};
+      tabledatas: []
+    }
+},
+mounted() {
+  this.tabledatas = data
+  console.log(this.tabledatas)
+}
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

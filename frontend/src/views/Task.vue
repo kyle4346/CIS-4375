@@ -1,5 +1,5 @@
 <template>
-  <div class="Step">
+  <div class="Task">
     <HelloWorld msg="Balance Sheet" />
   </div>
 </template>
@@ -9,7 +9,7 @@
 import HelloWorld from "@/components/HelloWorld.vue";
 
 export default {
-  name: "Step",
+  name: "Task",
   components: {
     HelloWorld,
   },

@@ -1,17 +1,29 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import Project from '../views/Project.vue'
 import Phases from '../views/Phases.vue'
+import Step from '../views/Step.vue'
+import Task from '../views/Task.vue'
 
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    name: 'Project',
+    component: Project
   },
   {
     path: '/Phases',
     name: 'Phases',
     component: Phases
+  },
+  {
+    path: '/Step',
+    name: 'Step',
+    component: Step
+  },
+  {
+    path: '/Task',
+    name: 'Task',
+    component: Task
   }
 ]
 
