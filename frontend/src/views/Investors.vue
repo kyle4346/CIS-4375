@@ -1,5 +1,5 @@
 <template>
-  <div class="Phases">
+  <div class="Investors">
     <h1>Payment Phases Sheet</h1>
     <HelloWorld />
   </div>
@@ -8,7 +8,7 @@
 <script>
 import HelloWorld from "../components/HelloWorld.vue";
 export default {
-  name: "Phases",
+  name: "Investors",
   components: {
     HelloWorld,
   },

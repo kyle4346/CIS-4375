@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Project from '../views/Project.vue'
-import Phases from '../views/Phases.vue'
-import Step from '../views/Step.vue'
+import Investors from '../views/Investors.vue'
+import Subcontractors from '../views/Subcontractors.vue'
 import Task from '../views/Task.vue'
 
 const routes = [
@@ -11,14 +11,14 @@ const routes = [
     component: Project
   },
   {
-    path: '/Phases',
-    name: 'Phases',
-    component: Phases
+    path: '/Investors',
+    name: 'Investors',
+    component: Investors
   },
   {
-    path: '/Step',
-    name: 'Step',
-    component: Step
+    path: '/Subcontractors',
+    name: 'Subcontractors',
+    component: Subcontractors
   },
   {
     path: '/Task',
