@@ -1,29 +1,35 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
+  <div class="WBS">
+    <h1>Project Breakdown Structure</h1>
+
+    <label>Search by category</label>
+    <input id="search" v-model="term" @keypress.enter="search(term)" />
+
+    <label>Filter by Phase</label>
+    <button
+      v-for="filter in filters"
+      :key="filter"
+      @click="() => filterPosts(filter)"
+    >
+      {{ filter }}
+    </button>
 
     <body>
       <table class="styled-table">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Description</th>
-            <th>Item</th>
-            <th>Price</th>
-            <th>Date completed</th>
-            <th>Paid</th>
-            <th>Check From bank</th>
+            <th>Category</th>
+            <th>Contractor</th>
+            <th>Phase</th>
           </tr>
         </thead>
         <tbody>
-          <tr v-for="tabledata in tabledatas" :key="tabledata.ID">
-            <th>{{ tabledata.ID }}</th>
-            <th>{{ tabledata.Description }}</th>
-            <th>{{ tabledata.Item }}</th>
-            <th>{{ tabledata.Price }}</th>
-            <th>{{ tabledata.Date_Complete }}</th>
-            <th>{{ tabledata.Paid }}</th>
-            <th>{{ tabledata.Check_From_Bank }}</th>
+          <tr v-for="post in posts" :key="post.id">
+            <th>{{ post.id }}</th>
+            <th>{{ post.Category }}</th>
+            <th>{{ post.Contractor }}</th>
+            <th>{{ post.Phase }}</th>
           </tr>
         </tbody>
       </table>
@@ -32,18 +38,18 @@
 </template>
 
 <script>
-import data from '../../Data.json'
+const filters = ["All", "Phase 1", "Phase 2", "Phase 3", "Phase 4", "Phase 5"];
+
 export default {
-  name: "HelloWorld",
-  props: {
-    msg: String
-  },
+  name: "WBS",
+  props: ["filterPosts", "search", "posts"],
   data() {
     return {
-      tabledatas: data 
-    }
-}
-}
+      filters,
+      term: "",
+    };
+  },
+};
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

@@ -1,594 +1,117 @@
 [
- {
-  "Description": "Cashier Check from JRE Universal to Piping International",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "07\/30\/2021",
-  "Paid": null,
-  "Check_From_Bank": 43300
- },
- {
-  "Description": "Personal check to Terry to complete the 1st draw $52K",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "07\/30\/2021",
-  "Paid": null,
-  "Check_From_Bank": 8700
- },
- {
-  "Description": "Concrete purchase\/labor pour drill piers\/purchase ci",
-  "Item": "Item 08",
-  "Price": 44000,
-  "Date_Complete": "11\/10\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Lumber purchase",
-  "Item": "Item 09",
-  "Price": 66000,
-  "Date_Complete": "11\/15\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Prosperity Bank Draw Request #1",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "11\/17\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": 16780
- },
- {
-  "Description": "General GC Fees #1",
-  "Item": "Item 49",
-  "Price": 22000,
-  "Date_Complete": "11\/23\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Prosperity Bank Draw Request #2",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "11\/23\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": 49830
- },
- {
-  "Description": "Soil Sample test",
-  "Item": "Item 03",
-  "Price": 1200,
-  "Date_Complete": "11\/30\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Site Prep\/clear\/Dirt wk\/house Pad,culvert",
-  "Item": "Item 04",
-  "Price": 5000,
-  "Date_Complete": "11\/30\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "House Form\/Form survey",
-  "Item": "Item 05",
-  "Price": 3000,
-  "Date_Complete": "11\/30\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Underground Plumbing",
-  "Item": "Item 06",
-  "Price": 8000,
-  "Date_Complete": "11\/30\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Post construction final clean",
-  "Item": "Item 47",
-  "Price": 1200,
-  "Date_Complete": "12\/01\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Misc fees\/40 foot trash container\/Portable bathroom",
-  "Item": "Item 48",
-  "Price": 1500,
-  "Date_Complete": "12\/01\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Prosperity Bank Draw Request #3",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "12\/06\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": 25450
- },
- {
-  "Description": "Framing Labor\/Rafters",
-  "Item": "Item 10",
-  "Price": 20000,
-  "Date_Complete": "12\/18\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Prosperity Bank Draw Request #4",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "12\/21\/2021",
-  "Paid": "Yes",
-  "Check_From_Bank": 18900
- },
- {
-  "Description": "Windows",
-  "Item": "Item 11",
-  "Price": 8000,
-  "Date_Complete": "01\/01\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Exterior Doors",
-  "Item": "Item 12",
-  "Price": 4000,
-  "Date_Complete": "01\/04\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Prosperity Bank Draw Request #5",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "01\/04\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": 20800
- },
- {
-  "Description": "Prosperity Bank Draw Request #6",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "01\/05\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": 27175
- },
- {
-  "Description": "Cornice\/ Labor",
-  "Item": "Item 14",
-  "Price": 4000,
-  "Date_Complete": "01\/08\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Roof Labor\/Material",
-  "Item": "Item 15",
-  "Price": 12000,
-  "Date_Complete": "01\/08\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Material\/stucco\/hardi\/ labor",
-  "Item": "Item 13",
-  "Price": 24000,
-  "Date_Complete": "01\/12\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Plumbing rough in",
-  "Item": "Item 17",
-  "Price": 8000,
-  "Date_Complete": "01\/12\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Prosperity Bank Draw Request #7",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "01\/13\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": 24875
- },
- {
-  "Description": "HVAC rough in",
-  "Item": "Item 16",
-  "Price": 6500,
-  "Date_Complete": "01\/14\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Garage Door\/Install",
-  "Item": "Item 19",
-  "Price": 3000,
-  "Date_Complete": "01\/22\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": null
- },
- {
-  "Description": "Prosperity Bank Draw Request #7",
-  "Item": null,
-  "Price": null,
-  "Date_Complete": "01\/24\/2022",
-  "Paid": "Yes",
-  "Check_From_Bank": 12000
- },
- {
-  "Description": "Electrical rough in",
-  "Item": "Item 18",
-  "Price": 6000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Counter Tops",
-  "Item": "Item 20",
-  "Price": 7000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Driveway",
-  "Item": "Item 21",
-  "Price": 8000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Fencing, labor, materials",
-  "Item": "Item 22",
-  "Price": 8000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Insulation",
-  "Item": "Item 23",
-  "Price": 10000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Sheetrock\/drywall,labor",
-  "Item": "Item 24",
-  "Price": 12000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Plumbing Fixtures",
-  "Item": "Item 25",
-  "Price": 2400,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Interior,Trim purchase\/Labor",
-  "Item": "Item 26",
-  "Price": 4000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Interior Doors\/Labor",
-  "Item": "Item 27",
-  "Price": 6000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Interior Painting",
-  "Item": "Item 28",
-  "Price": 8000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Carpet\/Interior,laminate floors\/labor\/materials",
-  "Item": "Item 29",
-  "Price": 12000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Stairs\/Railing",
-  "Item": "Item 30",
-  "Price": 4000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Kitchen Cabinets\/Install",
-  "Item": "Item 31",
-  "Price": 10000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Kitchen\/bathroom (3)tile\/labor",
-  "Item": "Item 32",
-  "Price": 10000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Order light fixtures",
-  "Item": "Item 33",
-  "Price": 2000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Mirrors\/Vanities\/door handles",
-  "Item": "Item 35",
-  "Price": 6000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Hvac trim out",
-  "Item": "Item 36",
-  "Price": 8000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Electrical trim out",
-  "Item": "Item 37",
-  "Price": 6000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Blower door test",
-  "Item": "Item 38",
-  "Price": 1100,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Shower doors",
-  "Item": "Item 39",
-  "Price": 2400,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Garge Door opener\/Install",
-  "Item": "Item 40",
-  "Price": 1000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Landscape-Grass(6pallet)",
-  "Item": "Item 43",
-  "Price": 2600,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Electrical final breker box",
-  "Item": "Item 44",
-  "Price": 4000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Plumbing final gas\/watertap\/sewer tap",
-  "Item": "Item 45",
-  "Price": 12000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Hvac Final",
-  "Item": "Item 46",
-  "Price": 1000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "General GC Fees #2",
-  "Item": "Item 49",
-  "Price": 8000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Storm Drain - After the City Rejected Plans",
-  "Item": "Item 64",
-  "Price": 11000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Appliances\/Install",
-  "Item": "Missed 34",
-  "Price": 880,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Interior\/Exterior window clean",
-  "Item": "Missed 41",
-  "Price": 660,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Patch work\/Punch out",
-  "Item": "Missed 42",
-  "Price": 1500,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "General Contractor's Miscellaneous",
-  "Item": "Missed 50",
-  "Price": 8000,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Water Heater",
-  "Item": "Missed 51",
-  "Price": 1100,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Garbage Disposal",
-  "Item": "Missed 52",
-  "Price": 220,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Attic Acces Door",
-  "Item": "Missed 53",
-  "Price": 880,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Bath Tubs",
-  "Item": "Missed 54",
-  "Price": 1900,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Toilets",
-  "Item": "Missed 55",
-  "Price": 770,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Crawl Space Doors",
-  "Item": "Missed 56",
-  "Price": 660,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Kitchen Exhaust Vent Hood",
-  "Item": "Missed 57",
-  "Price": 550,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Black Metal Roof",
-  "Item": "Missed 58",
-  "Price": 2200,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Permits",
-  "Item": "Missed 59",
-  "Price": 1900,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Door Bell and Smoke Detectors",
-  "Item": "Missed 60",
-  "Price": 300,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Outdoor Stain",
-  "Item": "Missed 61",
-  "Price": 660,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Bath Tubs",
-  "Item": "Missed 62",
-  "Price": 1900,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Exterior Paint",
-  "Item": "Missed 63",
-  "Price": 4400,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Garage Stair Railing",
-  "Item": "Missed 65",
-  "Price": 880,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- },
- {
-  "Description": "Concrete Stair Pad",
-  "Item": "Missed 66",
-  "Price": 880,
-  "Date_Complete": null,
-  "Paid": null,
-  "Check_From_Bank": null
- }
+  {
+    "id": 1,
+    "Category": "Roofing (Asphalt)",
+    "Contractor": "Equipment Operator",
+    "Phase": "Phase 1"
+  },
+  {
+    "id": 2,
+    "Category": "RF Shielding",
+    "Contractor": "Electrician",
+    "Phase": "Phase 5"
+  },
+  {
+    "id": 3,
+    "Category": "Asphalt Paving",
+    "Contractor": "Stucco Mason",
+    "Phase": "Phase 2"
+  },
+  {
+    "id": 4,
+    "Category": "Termite Control",
+    "Contractor": "Linemen",
+    "Phase": "Phase 1"
+  },
+  {
+    "id": 5,
+    "Category": "Drywall & Acoustical (MOB)",
+    "Contractor": "Linemen",
+    "Phase": "Phase 1"
+  },
+  {
+    "id": 6,
+    "Category": "Granite Surfaces",
+    "Contractor": "Tile Setter",
+    "Phase": "Phase 4"
+  },
+  {
+    "id": 7,
+    "Category": "Exterior Signage",
+    "Contractor": "Equipment Operator",
+    "Phase": "Phase 1"
+  },
+  {
+    "id": 8,
+    "Category": "Landscaping & Irrigation",
+    "Contractor": "Brickmason",
+    "Phase": "Phase 3"
+  },
+  {
+    "id": 9,
+    "Category": "Structural & Misc Steel Erection",
+    "Contractor": "Equipment Operator",
+    "Phase": "Phase 4"
+  },
+  {
+    "id": 10,
+    "Category": "Waterproofing & Caulking",
+    "Contractor": "Cement Mason",
+    "Phase": "Phase 3"
+  },
+  {
+    "id": 11,
+    "Category": "Casework",
+    "Contractor": "Concrete Finisher",
+    "Phase": "Phase 5"
+  },
+  {
+    "id": 12,
+    "Category": "EIFS",
+    "Contractor": "Brickmason",
+    "Phase": "Phase 4"
+  },
+  {
+    "id": 13,
+    "Category": "Doors, Frames & Hardware",
+    "Contractor": "Concrete Finisher",
+    "Phase": "Phase 5"
+  },
+  {
+    "id": 14,
+    "Category": "Epoxy Flooring",
+    "Contractor": "Safety Officer",
+    "Phase": "Phase 2"
+  },
+  {
+    "id": 15,
+    "Category": "Drywall & Acoustical (MOB)",
+    "Contractor": "Pipefitter",
+    "Phase": "Phase 4"
+  },
+  {
+    "id": 16,
+    "Category": "Structural & Misc Steel Erection",
+    "Contractor": "Tile Setter",
+    "Phase": "Phase 4"
+  },
+  { "id": 17, "Category": "EIFS", "Contractor": "Painter", "Phase": "Phase 5" },
+  {
+    "id": 18,
+    "Category": "Waterproofing & Caulking",
+    "Contractor": "Linemen",
+    "Phase": "Phase 4"
+  },
+  {
+    "id": 19,
+    "Category": "Prefabricated Aluminum Metal Canopies",
+    "Contractor": "Boilermaker",
+    "Phase": "Phase 2"
+  },
+  {
+    "id": 20,
+    "Category": "RF Shielding",
+    "Contractor": "Tile Setter",
+    "Phase": "Phase 2"
+  }
 ]
