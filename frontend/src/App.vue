@@ -1,8 +1,8 @@
 <template>
   <div id="nav">
     <router-link :to="{ name: 'Project' }">Project</router-link> |
-    <router-link :to="{ name: 'Phases' }">Phases</router-link> |
-    <router-link :to="{ name: 'Step' }">Steps</router-link> |
+    <router-link :to="{ name: 'Investors' }">Investors</router-link> |
+    <router-link :to="{ name: 'Subcontractors' }">Subcontractors</router-link> |
     <router-link :to="{ name: 'Task' }">Tasks</router-link> 
   </div>
   <router-view />
