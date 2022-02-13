@@ -1,6 +1,5 @@
 <template>
   <div class="Investors">
-    <h1>Payment Phases Sheet</h1>
     <HelloWorld />
   </div>
 </template>

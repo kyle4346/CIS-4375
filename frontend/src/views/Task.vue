@@ -1,6 +1,6 @@
 <template>
   <div class="Task">
-    <HelloWorld msg="Balance Sheet" />
+    <HelloWorld />
   </div>
 </template>
 

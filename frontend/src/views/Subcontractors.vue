@@ -1,6 +1,6 @@
 <template>
   <div class="Subcontractors">
-    <HelloWorld msg="Balance Sheet" />
+    <HelloWorld />
   </div>
 </template>
 
