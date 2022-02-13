@@ -2,10 +2,13 @@
   <div id="nav">
     <router-link :to="{ name: 'Project' }">Project</router-link> |
     <router-link :to="{ name: 'Investors' }">Investors</router-link> |
+    <router-link :to="{ name: 'createInvestor' }">Investor Form</router-link> |
+    <router-link :to="{ name: 'viewInvestor' }">View Investors</router-link> |
     <router-link :to="{ name: 'Subcontractors' }">Subcontractors</router-link> |
     <router-link :to="{ name: 'Task' }">Tasks</router-link> 
+    <router-view> </router-view> 
   </div>
-  <router-view />
+ 
 </template>
 
 <style>

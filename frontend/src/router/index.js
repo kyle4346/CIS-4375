@@ -16,6 +16,22 @@ const routes = [
     component: Investors
   },
   {
+    path: '/createInvestor',
+    name: 'createInvestor',
+    component: () => import('../components/CreateInvestor')
+  },
+  {
+    path: '/viewInvestor',
+    name: 'viewInvestor',
+    component: () => import('../components/ViewInvestor')
+  },
+  {
+    path: '/editInvestor',
+    name: 'editInvestor',
+    component: () => import('../components/EditInvestor')
+  },
+
+  {
     path: '/Subcontractors',
     name: 'Subcontractors',
     component: Subcontractors
