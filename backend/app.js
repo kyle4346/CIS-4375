@@ -63,7 +63,7 @@ app.get('/investors', (req, res, next) => {
 // endpoint for retrieving client form information by clientID - Read Operation 2
 app.get('/investor/:id', (req, res, next) => {
     //find data based on the client id for the collection client form information
-    InvestorModel.findOne({ Investor_ID: req.params.id}, (error, data) => {
+    InvestorModel.findOne({ investor_iD: req.params.id}, (error, data) => {
         if (error) {
             return next(error)
         } else if (data === null) {
@@ -79,7 +79,7 @@ app.get('/investor/:id', (req, res, next) => {
 // Updating - editing client form information - using PUT by clientID  - Update Operation
 app.put('/investor/:id', (req, res, next) => {
   //Update data in the client form information table based on client id 
-  InvestorModel.findOneAndUpdate({ Investor_ID: req.params.id }, {
+  InvestorModel.findOneAndUpdate({ investor_iD: req.params.id }, {
         $set: req.body
       }, (error, data) => {
         if (error) {
@@ -95,7 +95,7 @@ app.put('/investor/:id', (req, res, next) => {
 app.delete('/investor/:id', (req, res, next) => {
     
     //mongoose will use clientID of document to delete 
-    InvestorModel.findOneAndRemove({ Investor_ID: req.params.id}, (error, data) => {
+    InvestorModel.findOneAndRemove({ investor_iD: req.params.id}, (error, data) => {
         if (error) {
           return next(error);
         } else {
