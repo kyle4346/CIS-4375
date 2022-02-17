@@ -72,6 +72,12 @@ let SubcontractorSchema = new Schema({
         required: true,
         not: null
       },
+      subcontractor_state: {
+        type: String,
+        maxLength: 2,
+        required: true,
+        not: null
+      },
       
       subcontractor_zipcode: {
         type: String,
