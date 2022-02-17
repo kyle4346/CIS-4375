@@ -1,15 +1,3 @@
-/*Subcontractor_ID
-Subcontractor_Name
-Subcontractor_Trades
-Subcontractor_Rate
-Subcontractor_Phone
-Subcontractor_Email
-Subcontractor_Street
-Subcontractor_City
-Subcontractor_Zipcode
-Subcontractor_Status_ID
-Subcontractor_Type_ID--> */
-
 const uuid = require('uuid');
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
@@ -22,8 +10,8 @@ let SubcontractorSchema = new Schema({
     
     subcontractor_fname: {
         type: String,
-        minLength: 5,
-        maxLength: 15,
+        minLength: 1,
+        maxLength: 20,
         not: null,
         required: true
     },
@@ -62,8 +50,7 @@ let SubcontractorSchema = new Schema({
     
     subcontractor_email: {
         type: String,
-        minLength: 5,
-        maxLength: 50,
+        maxLength: 55,
         required: true,
         not: null
         
@@ -72,7 +59,7 @@ let SubcontractorSchema = new Schema({
       subcontractor_address: {
           type: String,
           minLength: 5, 
-          maxLength: 35,
+          maxLength: 50,
           required: true,
           not: null
         
@@ -80,6 +67,7 @@ let SubcontractorSchema = new Schema({
       
      subcontractor_city: {
         type: String,
+        minLength: 3 ,
         maxLength: 35,
         required: true,
         not: null
@@ -87,7 +75,6 @@ let SubcontractorSchema = new Schema({
       
       subcontractor_zipcode: {
         type: String,
-        maxLength: 5,
         required: true,
         not: null
   
