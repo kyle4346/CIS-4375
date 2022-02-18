@@ -66,6 +66,11 @@ const routes = [
   //Activities Summary chart based on the component VueChartJS
   
 },
+{
+  path: '/activity',
+    name: 'activity',
+    component: () => import('../components/ClientActivity/ActivitiesTable.vue')
+}
 
 
   

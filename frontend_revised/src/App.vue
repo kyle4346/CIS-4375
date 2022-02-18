@@ -22,6 +22,9 @@
           <li class="nav-item">
             <router-link class="nav-link" style="font-size:20px; color: Blue; font-weight:bold;" to="/chartjs">Summary Graph</router-link>
           </li>  
+          <li class="nav-item">
+            <router-link class="nav-link" style="font-size:20px; color: Blue; font-weight:bold;" to="/activity">Client Activities Table</router-link>
+          </li>  
         </ul>
       </div>
 
