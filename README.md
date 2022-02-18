@@ -30,6 +30,6 @@ eleectric
 
 
 navigation menu
-1. home
-2. intake forms: investor, materials, subcontractors, and client activity (by project, phase, step, tasks)
-3. tables from intake forms 
+1. home(Everyone can discuss this since it's Important)
+2. intake forms: investor(Jose), materials(Kyle), subcontractors(Jose), and client activity (by project, phase, step, tasks)(Kyle)
+3. tables from intake forms (Kyle and Jose)
