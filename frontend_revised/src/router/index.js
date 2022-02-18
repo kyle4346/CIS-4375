@@ -12,6 +12,8 @@ const routes = [
     name: 'Home',
     component: Home
   },
+
+  //************Investor************* */
   {
     //This route takes us to the Create Client Form using the Create Component 
     path: '/createInvestor',
@@ -32,19 +34,27 @@ const routes = [
     component: () => import('../components/EditInvestor')
  },
  
+ 
+ //*************Subcontractor*************** */
   {
-    //route Create Client activity using the createclient activity 
-    //component allow us to create client activity  
+    //This route takes us to the Create Client Form using the Create Component 
+    path: '/createSubcontractor',
+    name: 'createSubcontractor',
+    component: () => import('../components/CreateSubcontractor') 
    
   },
   {
     //route to allow to viewClient Activity based on componet ViewClientActivity 
-    
+    path: '/viewSubcontractor',
+    name: 'viewSubcontractor',
+    component: () => import('../components/ViewSubcontractor')
   },
  
   {
     //route to be used to edit client activity based on the component EditClientActivity
-    
+    path: '/editSubcontractor',
+    name: 'editSubcontractor',
+    component: () => import('../components/EditSubcontractor')
  },
 
 {

@@ -13,6 +13,11 @@ const app = express();  //Create new instance
 //import the general_information model schema from another file
 let InvestorModel = require('./models/investor');
 
+//import the subcontractor model schema from another file
+let SubcontractorModel = require('./models/subcontractor');
+
+
+
 ////import the cfcworker_client_activity model schema from another file
 //let cfcworker_client_activityModel = require('./models/cfcworker_client_activity');
 
@@ -106,7 +111,96 @@ app.delete('/investor/:id', (req, res, next) => {
         }
       });
 });
-//*****************End of Client Form************
+//*****************End of Investor Form************
+//************************************************ */
+
+
+
+
+//***************Start of Subcontractor Form  Jose Zelaya*/
+
+// endpoint that will create a general information document - Create Operation
+app.post('/subcontractor', (req, res, next) => {
+
+  SubcontractorModel.create(req.body, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        // res.json(data)
+        res.send('Subcontractor Form Information is added to the database');
+      }
+  });
+});
+
+//create an endpoint to get all general information from the API  -Read Operation
+app.get('/subcontractors', (req, res, next) => {
+  //very plain way to get all the data from the collection through the mongoose schema
+  SubcontractorModel.find((error, data) => {
+      if (error) {
+        //here we are using a call to next() to send an error message back
+        return next(error)
+      } else {
+        res.json(data)
+      }
+    })
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/subcontractor/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  SubcontractorModel.findOne({ subcontractor_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Subcontractor Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
+app.put('/subcontractor/:id', (req, res, next) => {
+//Update data in the client form information table based on client id 
+SubcontractorModel.findOneAndUpdate({ subcontractor_id: req.params.id }, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.send('Subcontractor Form Information is edited via PUT');
+        console.log('Subcontractor Form Information successfully updated!', data)
+      }
+    })
+});
+
+//delete a client form information by clientID  -Delete Operation 
+app.delete('/subcontractor/:id', (req, res, next) => {
+  
+  //mongoose will use clientID of document to delete 
+  SubcontractorModel.findOneAndRemove({ subcontractor_id: req.params.id}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+         res.status(200).json({
+           msg: data
+         });
+      //  res.send('Student is deleted');
+      }
+    });
+});
+
+//***************End of Subcontractor Form Jose Zelaya */
+//***************************************************** */
+
+
+
+
+
+
+
 
 
 
