@@ -3,9 +3,9 @@
         <div class="col-md-8"> 
             <h3 class="text-center" style="font-size:200%; font-weight:bold">Subcontractor Intake Form</h3>
             <br>
-            <form @submit.prevent="handleSubmitForm">
+            <form @submit.prevent="handleUpdateForm">
                 
-                <div class="form-group row">
+               <div class="form-group row">
                 <strong style ="font-size:150%">General Information</strong>
                 <br>
                 <br>
@@ -141,7 +141,7 @@
 
                 </div>
 
-            
+               
 
                     <br>
                     <p v-if="errors.length">
@@ -153,7 +153,7 @@
 
 
                 <br>
-                <button class="btn btn-danger mt-3">Create</button>
+                <button class="btn btn-danger mt-3">Update</button>
                 <br>
                 <br>
                 <br>
@@ -166,41 +166,38 @@
     </div> 
 </template>
 
+
 <script>
-    import axios from "axios";
+import axios from "axios";
 
-    export default {
-        data() {
-            return {
-                //retrieving data from the client_form schema getting the data 
-                errors: [],
-                subcontractor: {
-                   subcontractor_fname: '',
-                   subcontractor_lname: '',
-                   subcontractor_trade: '',
-                   subcontractor_rate: '',
-                   subcontractor_phone: '',
-                   subcontractor_email: '',
-                   subcontractor_address: '',
-                   subcontractor_city: '',
-                   subcontractor_state: '',
-                   subcontractor_zipcode: '',
-                   subcontractor_status:'',
-                   subcontractor_type: '',
-                   
-                   
+export default {
+    data() {
+        return {
+            errors: [],
+            subcontractor: { 
 
-                },
-                //static data for dropdown lists
+
+
+            },//drop down lists found from createcomponent, unchanged of course
+            //static data for dropdown lists
                 states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 subcontractor_status: ['Available', 'Unavailable', 'Working','Unknown'],
                 subcontractor_type:['Electrical','Roofing','Remodeling','Mechanical','Air Conditioning','Construction'],
-            }
-        },
-        methods: {
-            handleSubmitForm() {
-                //first validation 
+                
+        }
+
+    },
+    created() {//Edits based on the client ID already entered
+        let apiURL = `http://localhost:27017/subcontractor/${this.$route.params.id}`;
+
+        axios.get(apiURL).then((res) => {
+            this.subcontractor = res.data;
+        })//if everything is successful, then everything should show for this view
+    },
+    methods: {
+        handleUpdateForm() {
+             //first validation 
                 this.errors = [];
 
                 if(!this.subcontractor.subcontractor_fname){
@@ -208,32 +205,15 @@
                     this.errors.push("Pass letters only.");
 
             }
-                //posing data that has been created to route passing the client_form schema data
-                let apiURL = 'http://localhost:27017/subcontractor';
-                
-                axios.post(apiURL, this.investor).then(() => {
-                    //chnaging the view to the list
-                  this.$router.push('/viewSubcontractor')
-                  this.investor = {
-                   subcontractor_fname: '',
-                   subcontractor_lname: '',
-                   subcontractor_trade: '',
-                   subcontractor_rate: '',
-                   subcontractor_phone: '',
-                   subcontractor_email: '',
-                   subcontractor_address: '',
-                   subcontractor_city: '',
-                   subcontractor_state: '',
-                   subcontractor_zipcode: '',
-                   subcontractor_status:'',
-                   subcontractor_type: '',
-                  }
-                }).catch(error => {
-                    this.errors.push("Error in the form submission" + error.response.data);
-                });
-            }
+            let apiURL = `http://localhost:27017/subcontractor/${this.$route.params.id}`;
+            //pulls from back end of client ID to get all data pertaining to client
+            axios.put(apiURL, this.subcontractor).then((res) => {
+                console.log(res)
+                this.$router.push('/viewSubcontractor')
+            }).catch(error => {
+                this.errors.push("Error in the form submission" + error.response.data);
+            });//If an error is still detected, the edit will not work, and the form to jump to the field with error
         }
-           
     }
-
+}
 </script>
