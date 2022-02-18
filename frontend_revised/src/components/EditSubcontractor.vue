@@ -1,7 +1,7 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-md-8"> 
-            <h3 class="text-center" style="font-size:200%; font-weight:bold">Subcontractor Intake Form</h3>
+            <h3 class="text-center" style="font-size:200%; font-weight:bold">Subcontractor Update Form</h3>
             <br>
             <form @submit.prevent="handleUpdateForm">
                 
@@ -32,15 +32,13 @@
 
 
 
-
-                    <br>
                  </div>
 
 
 
 
                 <br>
-                <br>
+               
 
                 <div class="form-group row">
                  
@@ -48,11 +46,11 @@
                  <!--Work on this below -->
                 <div class="form-group col-md-4">
                     <label style ="font-size:14pt; text-align:left;" for="inputSRate">Subcontractor Rate</label>
-                    <input  type="text" class="form-control" id="inputSRate" pattern="[A-Za-z\s]{5,25}" v-model="subcontractor.subcontractor_rate" required>
+                    <input  type="text" class="form-control" id="inputSRate" placeholder="$100/hr" pattern="[a-zA-Z\d\s\-\,\#\.\$\+]+{5,25}" v-model="subcontractor.subcontractor_rate" required>
                     <p style="color:red; font-weight:bold">Required letters only</p>
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-4">
                     <label style ="font-size:14pt">Subcontractor Cell Phone</label>
                     <input type="tel" class="form-control"  placeholder="123-455-6786" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="subcontractor.subcontractor_phone" required>
                     <p style="color:red; font-weight:bold">Required</p>
@@ -71,6 +69,9 @@
 
                 </div>
 
+                <br>
+                
+
                 <div class="form-group row">
 
                 <div class="form-group col-md-4">
@@ -79,7 +80,7 @@
                     <p style="color:red; font-weight:bold">Required</p>
                 </div>
                 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-4">
                     <label style ="font-size:14pt" >City</label>
                     <input type="text" class="form-control" pattern="[A-Za-z]{5,35}" v-model="subcontractor.subcontractor_city" required>
                     <p style="color:red; font-weight:bold">Required</p>
@@ -98,21 +99,22 @@
 
                 </div>
 
+        
 
                 <div class="form-group row">
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                     <br>
                     <label style ="font-size:14pt">Zip</label>
                     <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="subcontractor.subcontractor_zipcode" required>
                       <p style="color:red; font-weight:bold">Required</p>
                 </div>
 
-                <div class="form-group col-sm-1">
+                <div class="form-group col-md-2">
 
                 </div>
 
-                 <div class="form-group col-md-2">
+                 <div class="form-group col-md-4">
                     
                     <br>
                     <label style ="font-size:14pt">Subcontractor Status</label>
@@ -123,7 +125,7 @@
                     
                 </div>
 
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-4">
                     
                     <br>
                     <label style ="font-size:14pt">Subcontractor Type</label>
@@ -134,9 +136,7 @@
                     
                 </div>
 
-                <div class="form-group col-sm-2">
-
-                </div>
+                
 
 
                 </div>

@@ -23,7 +23,7 @@ let SubcontractorSchema = new Schema({
       required: true
   },
      
-    subcontractor_trade: {
+    subcontractor_business_name: {
         type: String,
         minLength: 5,
         maxLength: 25,
@@ -94,7 +94,12 @@ let SubcontractorSchema = new Schema({
         
 
     },
-      
+      subcontractor_type: {
+        type: String,
+        minLength: 3,
+        maxLength: 20,
+
+      }
     
 
   }, {
