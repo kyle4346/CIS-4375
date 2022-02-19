@@ -65,7 +65,7 @@ let InvestorSchema = new Schema({
         not: null
       },
       
-      state: {
+      investor_state: {
         type: String,
         maxLength: 2,
         required: true,
@@ -74,16 +74,24 @@ let InvestorSchema = new Schema({
   
       },
       
+      investor_country:{
+        type: String,
+        maxLength: 13,
+        required: true,
+        not: null
+
+      },
+      
     investor_status: {
         type: String,
-        minLength: 5,
+        minLength: 0,
         maxLength: 20,
         
 
     },
       investor_type: {
         type: String,
-        minLength: 3,
+        minLength: 0,
         maxLength: 20,
 
       },

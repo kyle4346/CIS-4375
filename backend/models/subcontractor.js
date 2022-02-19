@@ -87,10 +87,20 @@ let SubcontractorSchema = new Schema({
   
       },
       
+      subcontractor_country: {
+        type: String,
+        maxLength: 13,
+        required: true,
+        not: null
+
+      },
+      
     subcontractor_status: {
         type: String,
         minLength: 5,
         maxLength: 20,
+        required: true,
+        not: null
         
 
     },
@@ -98,6 +108,8 @@ let SubcontractorSchema = new Schema({
         type: String,
         minLength: 3,
         maxLength: 20,
+        required: true,
+        not: null
 
       }
     

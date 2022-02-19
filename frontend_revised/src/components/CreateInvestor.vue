@@ -44,7 +44,7 @@
                     <p style="color:red; font-weight:bold">Required</p>
                 </div>
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-5">
                     <label style ="font-size:14pt" >Investor Address</label>
                     <input type="text" class="form-control" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="investor.investor_address" required>
                     <p style="color:red; font-weight:bold">Required</p>
@@ -56,34 +56,56 @@
                     <p style="color:red; font-weight:bold">Required</p>
                 </div>
 
-                 <div class="form-group col-md-1">
-                    
-                    <label style ="font-size:14pt">State</label>
-                    
-                    <select  v-model="investor.state" required> 
-                     <option v-for="state in states" v-bind:key="state">{{state}}</option>
-                    </select>
-                    <p style="color:red; font-weight:bold">Required</p>
-                    
-                </div>
+                 
 
                 </div>
 
 
                 <div class="form-group row">
                 
+                <div class="form-group col-md-1">
+                    <br>
+                    <label style ="font-size:14pt">State</label>
+                    
+                    <select  v-model="investor.investor_state" required> 
+                     <option v-for="state in states" v-bind:key="state">{{state}}</option>
+                    </select>
+                    <p style="color:red; font-weight:bold">Required</p>
+                    
+                </div>
+
+                <div class="form-group col-md-1">
+
+                </div>
                 
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                     <br>
                     <label style ="font-size:14pt">Zip</label>
                     <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
                       <p style="color:red; font-weight:bold">Required</p>
                 </div>
 
-                <div class="form-group col-sm-1">
+                <div  class="form-group col-md-1">
 
                 </div>
+
+                 <div class="form-group col-md-2">
+                    
+                    <br>
+                    <label style ="font-size:14pt">Country</label>
+                    
+                    <select  v-model="investor.investor_country" required> 
+                     <option v-for="country in countries" v-bind:key="country">{{country}}</option>
+                    </select>
+                    <p style="color:red; font-weight:bold">Required</p>
+                    
+                </div>
+
+                <div  class="form-group col-md-1">
+
+                </div>
+
 
                  <div class="form-group col-md-2">
                     
@@ -96,9 +118,6 @@
                     
                 </div>
 
-                <div class="form-group col-sm-2">
-
-                </div>
 
                  <div class="form-group col-md-2">
                     
@@ -111,8 +130,6 @@
                     
                 </div>
 
-
-            
                 
                 </div>
 
@@ -161,20 +178,19 @@
                    investor_address: '',
                    investor_city: '',
                    investor_zipcode: '',
-                   state: '',
+                   investor_state: '',
+                   investor_country:'',
                    investor_status: '',
                    investor_type: '',
                    
 
                 },
                 //static data for dropdown lists
-                //languages: ['English','Spanish','Vietnamese','Russian','Bilingual','German','Italian','French','Portuguese','Mandarin Chinese','Arabic','Hindi','Japanese','Punjabi'],
-                //ethnicities:['American Indian or Alaska Native','Asian','Black or African American','Hispanic or Latino','Native Hawaiian or Other Pacific Islander','White'],
                 states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
-                //races:['White','Black or African American','American Indian or Alaska Native','Asian','Native Hawaiian and Pacific Islander','Hispanic or Latino']
-                investor_status: ['pending', 'processing', 'complete'],
-                investor_type:['Bank','Entrepreneur','Worker'],
+                countries:['United States'],
+                investor_status: [' ','pending', 'processing', 'complete'],
+                investor_type:[' ','Bank','Entrepreneur','Worker'],
             }
         },
         methods: {
@@ -201,7 +217,8 @@
                    investor_address: '',
                    investor_city: '',
                    investor_zipcode: '',
-                   state: '',
+                   investor_state: '',
+                   investor_country:'',
                    investor_status: '',
                    investor_type: '',
                   }

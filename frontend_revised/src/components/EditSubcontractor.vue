@@ -74,17 +74,19 @@
 
                 <div class="form-group row">
 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-5">
                     <label style ="font-size:14pt" >Address</label>
                     <input type="text" class="form-control" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="subcontractor.subcontractor_address" required>
                     <p style="color:red; font-weight:bold">Required</p>
                 </div>
                 
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label style ="font-size:14pt" >City</label>
                     <input type="text" class="form-control" pattern="[A-Za-z]{5,35}" v-model="subcontractor.subcontractor_city" required>
                     <p style="color:red; font-weight:bold">Required</p>
                 </div>
+
+                
 
                  <div class="form-group col-md-1">
                     
@@ -97,24 +99,40 @@
                     
                 </div>
 
+                <div class="form-group col-md-1">
+
+                </div>
+
+                <div class="form-group col-md-2">
+                    <label style ="font-size:14pt">Zip</label>
+                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="subcontractor.subcontractor_zipcode" required>
+                      <p style="color:red; font-weight:bold">Required</p>
+                </div>
+
                 </div>
 
         
 
                 <div class="form-group row">
 
+
                 <div class="form-group col-md-2">
+                    
                     <br>
-                    <label style ="font-size:14pt">Zip</label>
-                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="subcontractor.subcontractor_zipcode" required>
-                      <p style="color:red; font-weight:bold">Required</p>
+                    <label style ="font-size:14pt">Country</label>
+                    
+                    <select  v-model="subcontractor.subcontractor_country" required> 
+                     <option v-for="country in countries" v-bind:key="country">{{country}}</option>
+                    </select>
+                    <p style="color:red; font-weight:bold">Required</p>
+                    
                 </div>
 
-                <div class="form-group col-md-2">
+                
 
-                </div>
 
-                 <div class="form-group col-md-4">
+
+                <div class="form-group col-md-3">
                     
                     <br>
                     <label style ="font-size:14pt">Subcontractor Status</label>
@@ -122,10 +140,11 @@
                     <select  v-model="subcontractor.subcontractor_status" > 
                      <option v-for="subcontractor_status in subcontractor_status" v-bind:key="subcontractor_status">{{subcontractor_status}}</option>
                     </select>
+                    <p style="color:red; font-weight:bold">Required</p>
                     
                 </div>
 
-                <div class="form-group col-md-4">
+                 <div class="form-group col-md-4">
                     
                     <br>
                     <label style ="font-size:14pt">Subcontractor Type</label>
@@ -133,10 +152,9 @@
                     <select  v-model="subcontractor.subcontractor_type" > 
                      <option v-for="subcontractor_type in subcontractor_type" v-bind:key="subcontractor_type">{{subcontractor_type}}</option>
                     </select>
+                    <p style="color:red; font-weight:bold">Required</p>
                     
                 </div>
-
-                
 
 
                 </div>
@@ -182,6 +200,7 @@ export default {
             //static data for dropdown lists
                 states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
+                countries:['United States'],
                 subcontractor_status: ['Available', 'Unavailable', 'Working','Unknown'],
                 subcontractor_type:['Electrical','Roofing','Remodeling','Mechanical','Air Conditioning','Construction'],
                 
