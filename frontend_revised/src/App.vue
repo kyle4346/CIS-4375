@@ -4,7 +4,7 @@
     <nav class="navbar navbar-expand navbar-light bg-light">
 
       <div class="container">
-        <a class="navbar-brand float-left " style="font-size:20px; color: Blue; font-weight:bold;" href="/">Pipeline International App</a>
+        <a class="navbar-brand float-left " style="font-size:20px; color: Blue; font-weight:bold;" href="/">CFC Management App</a>
         <ul class="nav navbar-nav mr-auto" >
           <li class="nav-item">
             <router-link class="nav-link" style="font-size:20px; color: Blue; font-weight:bold;" to="/createInvestor">Create Investor Form</router-link>

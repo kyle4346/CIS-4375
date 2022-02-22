@@ -18,20 +18,20 @@ const routes = [
     //This route takes us to the Create Client Form using the Create Component 
     path: '/createInvestor',
     name: 'createInvestor',
-    component: () => import('../components/CreateInvestor')
+    component: () => import('../components/Investor/CreateInvestor')
   },
   {
     //This route takes us to the View Clients based on the ListComponent
     path: '/viewInvestor',
     name: 'viewInvestor',
-    component: () => import('../components/ViewInvestor')
+    component: () => import('../components/Investor/ViewInvestor')
   },
   {
     //this edit route takes us to the editComponent to be 
     //able to edit the fields once in the view clients
     path: '/editInvestor',
     name: 'editInvestor',
-    component: () => import('../components/EditInvestor')
+    component: () => import('../components/Investor/EditInvestor')
  },
  
  
@@ -40,21 +40,21 @@ const routes = [
     //This route takes us to the Create Client Form using the Create Component 
     path: '/createSubcontractor',
     name: 'createSubcontractor',
-    component: () => import('../components/CreateSubcontractor') 
+    component: () => import('../components/Subcontractor/CreateSubcontractor') 
    
   },
   {
     //route to allow to viewClient Activity based on componet ViewClientActivity 
     path: '/viewSubcontractor',
     name: 'viewSubcontractor',
-    component: () => import('../components/ViewSubcontractor')
+    component: () => import('../components/Subcontractor/ViewSubcontractor')
   },
  
   {
     //route to be used to edit client activity based on the component EditClientActivity
     path: '/editSubcontractor',
     name: 'editSubcontractor',
-    component: () => import('../components/EditSubcontractor')
+    component: () => import('../components/Subcontractor/EditSubcontractor')
  },
 
 {
