@@ -1,9 +1,9 @@
 <template>
   <div>
-    <!-- Nav bar  customize based on what is desired -->
-    <nav class="navbar navbar-expand navbar-light bg-light">
+     <!-- Nav bar  customize based on what is desired -->
+   <!-- <nav class="navbar navbar-expand navbar-light bg-light">
       <div class="container">
-        <a class="navbar-brand float-left " style="font-size:20px; color: Blue; font-weight:bold;" href="/">CFC Management App</a>
+        <a class="navbar-brand float-left " style="font-size:20px; color: Blue; font-weight:bold;" href="/">Home</a>
         <ul class="nav navbar-nav mr-auto" >
           <li class="nav-item">
             <router-link class="nav-link" style="font-size:20px; color: Blue; font-weight:bold;" to="/createInvestor">Create Investor Form</router-link>
@@ -27,6 +27,8 @@
         </ul>
       </div>
 
+
+
       <div class="dropdown">
   <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
     Dropdown button
@@ -40,7 +42,91 @@
     <li><a class="dropdown-item" href="#">Something else here</a></li>
   </ul>
 </div>
-    </nav>
+    </nav> 
+    -->
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+
+  <div class="container">
+
+<a class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold;" href="/" role="button">Home</a>
+
+    <!-- Example single danger button -->
+<div class="btn-group col-md-2">
+  
+  <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
+    Create Entry
+  </button>
+  <ul class="dropdown-menu">
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; text-align:left;" to="/createInvestor">Create Investor Form</router-link>
+    </li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractor">Create Subcontractor Form</router-link>
+    </li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+
+<!-- Example single danger button -->
+<div class="btn-group col-md-2">
+  
+  <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
+    View Tables
+  </button>
+  <ul class="dropdown-menu">
+     <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestor">View Investors</router-link>
+    </li>
+     <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractor">View Subcontractors</router-link>
+    </li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/activity">View Client Activities</router-link>
+    </li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+ 
+
+
+<!-- Example single danger button -->
+<div class="btn-group col-md-2">
+  
+  <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
+    Reports
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+<div class="btn-group col-md-2">
+  
+  <button type="button" class="btn btn-primary dropdown-toggle"  style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
+    Charts
+  </button>
+  <ul class="dropdown-menu">
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><a class="dropdown-item" href="#">Separated link</a></li>
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+
+
 
     <!-- Router view -->
     <div class="container mt-5">
@@ -48,3 +134,9 @@
     </div>
   </div>
 </template>
+
+<style>
+.btn{
+  display:inline-block;
+}
+</style>
