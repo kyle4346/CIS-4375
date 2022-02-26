@@ -26,6 +26,20 @@
           </li>  
         </ul>
       </div>
+
+      <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: Blue; font-weight:bold;" to="/createInvestor">Create Investor Form</router-link>
+    </li>
+    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li><a class="dropdown-item" href="#">Another action</a></li>
+    <li><a class="dropdown-item" href="#">Something else here</a></li>
+  </ul>
+</div>
     </nav>
 
     <!-- Router view -->
