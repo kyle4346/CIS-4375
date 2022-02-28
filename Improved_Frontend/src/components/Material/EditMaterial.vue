@@ -24,12 +24,10 @@
                     
                 </div>
 
-                <div class="col-md-4 col-form-label">
+                <div class="form-group col-md-4 ">
                     <label style ="font-size:14pt" >Material Amount</label>
-                     <div class="col-sm-8">
                     <input type="number" class="form-control"  min="0" max="100000" placeholder="1000"  v-model="material.material_item_number" required>
                     <p style="color:red; font-weight:bold">Number only Required</p>
-                    </div>
                 </div>
 
                 </div>
