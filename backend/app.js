@@ -16,7 +16,8 @@ let InvestorModel = require('./models/investor');
 //import the subcontractor model schema from another file
 let SubcontractorModel = require('./models/subcontractor');
 
-
+//import the subcontractor model schema from another file
+let MaterialModel = require('./models/material');
 
 ////import the cfcworker_client_activity model schema from another file
 //let cfcworker_client_activityModel = require('./models/cfcworker_client_activity');
@@ -196,9 +197,83 @@ app.delete('/subcontractor/:id', (req, res, next) => {
 //***************************************************** */
 
 
+//*******************************Start of Material Intake Form*************************************** */
+// endpoint that will create a general information document - Create Operation
+app.post('/material', (req, res, next) => {
+
+  MaterialModel.create(req.body, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        // res.json(data)
+        res.send('Material Form Information is added to the database');
+      }
+  });
+});
+
+//create an endpoint to get all general information from the API  -Read Operation
+app.get('/materials', (req, res, next) => {
+  //very plain way to get all the data from the collection through the mongoose schema
+  MaterialModel.find((error, data) => {
+      if (error) {
+        //here we are using a call to next() to send an error message back
+        return next(error)
+      } else {
+        res.json(data)
+      }
+    })
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/material/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  MaterialModel.findOne({ material_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Material Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
+app.put('/material/:id', (req, res, next) => {
+//Update data in the client form information table based on client id 
+MaterialModel.findOneAndUpdate({ material_id: req.params.id }, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.send('Material Form Information is edited via PUT');
+        console.log('Material Form Information successfully updated!', data)
+      }
+    })
+});
+
+//delete a client form information by clientID  -Delete Operation 
+app.delete('/material/:id', (req, res, next) => {
+  
+  //mongoose will use clientID of document to delete 
+  MaterialModel.findOneAndRemove({ material_id: req.params.id}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+         res.status(200).json({
+           msg: data
+         });
+      //  res.send('Student is deleted');
+      }
+    });
+});
 
 
 
+//****************************************End of Material Intake Form******************************** */
 
 
 
