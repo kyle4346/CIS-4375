@@ -18,7 +18,7 @@ let MaterialSchema = new Schema({
      
     material_information: {
         type: String,
-        minLength: 5,
+        minLength: 0,
         maxLength: 60,
        
         
