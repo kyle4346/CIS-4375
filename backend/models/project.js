@@ -10,10 +10,11 @@ let ProjectSchema = new Schema({
     
     project_number: {
         type: Number,
-        min:0,
+        min:1,
         max: 999999,
         not: null,
-        required: true
+        required: true,
+        unique: true
     },
      
     project_name: {
@@ -54,7 +55,7 @@ let ProjectSchema = new Schema({
       
       project_estimated_cost: {
         type: Number,
-        min: 1,
+        min: 0,
         max: 99999999,
         
       },
@@ -75,7 +76,7 @@ let ProjectSchema = new Schema({
       project_actual_duration: {
         type: String,
         minLength: 0,
-        maxLength: 55,
+        maxLength: 25,
         
   
       },

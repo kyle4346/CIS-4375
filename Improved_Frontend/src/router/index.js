@@ -84,6 +84,31 @@ const routes = [
 //******************************End of Material Intake Form*********************************************************************************/
 
 
+//*******************************Start of Project Intake Form************************************************************************** */
+{
+  //This route takes us to the Create Client Form using the Create Component 
+  path: '/createProject',
+  name: 'createProject',
+  component: () => import('../components/Project/CreateProject') 
+ 
+},
+{
+  //route to allow to viewClient Activity based on componet ViewClientActivity 
+  path: '/viewProject',
+  name: 'viewProject',
+  component: () => import('../components/Project/ViewProject')
+},
+
+{
+  //route to be used to edit client activity based on the component EditClientActivity
+  path: '/editProject',
+  name: 'editProject',
+  component: () => import('../components/Project/EditProject')
+},
+
+
+//*******************************End of Project Intake Form********************************************************************************************************* */
+
 
 //***********Client Activity************* */
 {
