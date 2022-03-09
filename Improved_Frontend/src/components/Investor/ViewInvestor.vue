@@ -49,7 +49,7 @@
         },
         // this is using created hook 
         created() {
-            let apiURL = 'http://localhost:27017/investors';
+            let apiURL = 'https://data.mongodb-api.com/app/data-nhwaq/endpoint/getallinvestors';//http://localhost:27017/investors
             axios.get(apiURL).then(res => {
                 this.investors = res.data;
             }).catch(error => {

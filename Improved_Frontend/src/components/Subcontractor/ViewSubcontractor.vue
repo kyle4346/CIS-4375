@@ -53,7 +53,7 @@
         },
         // this is using created hook 
         created() {
-            let apiURL = 'http://localhost:27017/subcontractors';
+            let apiURL = 'https://data.mongodb-api.com/app/data-nhwaq/endpoint/getallsubcontractors';//http://localhost:27017/subcontractors
             axios.get(apiURL).then(res => {
                 this.subcontractors = res.data;
             }).catch(error => {

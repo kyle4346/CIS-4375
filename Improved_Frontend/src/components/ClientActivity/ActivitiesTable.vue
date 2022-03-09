@@ -2,31 +2,38 @@
   <div class="container">
     <h1>Master Data Table</h1>
 
-
     <table class="styled-table">
       <thead>
         <tr>
-          <th>ID</th>
-          <th>Category</th>
-          <th>Contractor</th>
-          <th>Phase</th>
-          <th>Actions</th>
+          <th>Project Num</th>
+          <th>Project Name</th>
+          <th>Project Done</th>
+          <th>Project Status</th>
+          <th>Project Type</th>
+          <th>Project Location</th>
+          <th>City</th>
+          <th>State</th>
+          <th>Project Location Status</th>
+          <!-- <th>Actions</th> -->
         </tr>
       </thead>
       <tbody>
-        
-        <tr v-for="user_alias in User" v-bind:key="user_alias._id">
-          <td> {{user_alias.id}}</td>
-          <td> {{user_alias.Category}}</td>
-          <td>{{user_alias.Contractor}}</td>
-          <td>{{user_alias.Phase}}</td>
+        <tr v-for="User in Users" :key="User.project_number">
+          <td>{{ project.project_number }}</td>
+          <td>{{ project.project_name }}</td>
+          <td>{{ project.project_completed }}</td>
+          <td>{{ project.project_status_type }}</td>
+          <td>{{ project.project_type_description }}</td>
+          <td>{{ project.project_location_name }}</td>
+          <td>{{ project.project_location_city }}</td>
+          <td>{{ project.project_location_state }}</td>
+          <td>{{ project.project_location_status_type }}</td>
 
-          <td><img alt="trash" class="ic" src="../../assets/trash.jpg">
-          <img alt="Add" class="ic2" src="../../assets/Add.png">
-          <img alt="info" class="ic3" src="../../assets/info.png"></td>
-          
-          
-
+          <!-- <td>
+            <img alt="trash" class="ic" src="../../assets/trash.jpg" />
+            <img alt="Add" class="ic2" src="../../assets/Add.png" />
+            <img alt="info" class="ic3" src="../../assets/info.png" />
+          </td> -->
         </tr>
       </tbody>
     </table>
@@ -34,31 +41,29 @@
 </template>
 
 <script>
-import axios from 'axios';
-
+import axios from "axios";
 
 export default {
-  name:'ActivitiesTable',
+  name: "ActivitiesTable",
   data() {
-    return{
-      User: [],
-    }
+    return {
+      Users: [],
+    };
   },
   created() {
-    axios.get('http://localhost:3000/activity')
-    .then((resp) => {
-      console.log(resp.data);
-      this.User = resp.data;
-    })
-    .catch((error) => {
-      console.log(error)
-    })
+    axios
+      .get("https://data.mongodb-api.com/app/data-nhwaq/endpoint/getstuff") //http://localhost:3000/activity
+      .then((resp) => {
+        console.log(resp.data);
+        this.Users = resp.data;
+      })
+      .catch((error) => {
+        console.log(error);
+      });
 
-    axios.delete()
-    
-  }
-}
-
+    axios.delete();
+  },
+};
 </script>
 
 <style scoped>

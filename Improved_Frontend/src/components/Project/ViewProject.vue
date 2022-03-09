@@ -17,7 +17,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="project in projects" :key="project.project_id">
+                    <tr v-for="project in projects" :key="project.project_number">
                         <td>{{ project.project_number }}</td>
                         <td>{{ project.project_name }}</td>
                         <td>{{ project.project_completed }}</td>
@@ -55,7 +55,7 @@
         },
         // this is using created hook 
         created() {
-            let apiURL = 'http://localhost:27017/projects';
+            let apiURL = 'https://data.mongodb-api.com/app/data-nhwaq/endpoint/projects';//http://localhost:27017/projects
             axios.get(apiURL).then(res => {
                 this.projects = res.data;
             }).catch(error => {
