@@ -14,7 +14,7 @@
           <th>City</th>
           <th>State</th>
           <th>Project Location Status</th>
-          <!-- <th>Actions</th> -->
+          <th>Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -29,11 +29,18 @@
           <td>{{ User.project_location_state }}</td>
           <td>{{ User.project_location_status_type }}</td>
 
-          <!-- <td>
-            <img alt="trash" class="ic" src="../../assets/trash.jpg" />
-            <img alt="Add" class="ic2" src="../../assets/Add.png" />
-            <img alt="info" class="ic3" src="../../assets/info.png" />
-          </td> -->
+          <td>
+            <button
+              @click.prevent="deletesomething(User.project_number)"
+              class="btn btn-danger"
+            >
+              Delete
+            </button>
+            <!-- User.project_number -->
+            <button @click.prevent="senddata()" class="btn btn-success">
+              Post
+            </button>
+          </td>
         </tr>
       </tbody>
     </table>
@@ -48,6 +55,17 @@ export default {
   data() {
     return {
       Users: [],
+      Addexample: {
+        project_number: "18",
+        project_name: "three story house",
+        project_completed: "No",
+        project_status_type: "Started",
+        project_type_description: "Build from Scratch",
+        project_location_name: "Cinco Ranch",
+        project_location_city: "Rosenber",
+        project_location_state: "AZ",
+        project_location_status_type: "not available",
+      },
     };
   },
   created() {
@@ -60,8 +78,98 @@ export default {
       .catch((error) => {
         console.log(error);
       });
+  },
+  methods: {
+    deletesomething(id) {
+      console.log(id);
+      let apiURL = `https://data.mongodb-api.com/app/data-nhwaq/endpoint/data/beta/action/deleteOne`; //http://localhost:27017/project/${id}
+      //let indexOfArrayItem = this.Users.findIndex((i) => i.project_number === id);
+      /*let something = {
+      dataSource: "Cluster0",
+      database: "Client",
+      collection: "activity",
+      filter: { project_number : '19' }
+      };*/
+      let headers = {
+        "Content-Type": "application/json",
+        "Access-Control-Request-Headers": "*",
+      }; //, "Access-Control-Request-Headers": "*"
 
-    axios.delete();
+      if (window.confirm("Do you really want to delete?")) {
+        axios.post(apiURL,
+            {
+              dataSource: "Cluster0",
+              database: "Client",
+              collection: "activity",
+              filter: { project_number: id },
+            },
+            { headers }
+          )
+          .then((res) => {
+            console.log(res);
+            //this.$router.push("/activity");
+          })
+          .catch((error) => {
+            this.errors.push(
+              "Error in the form submission" + error.response.data
+            );
+          });
+      }
+    },
+    senddata() 
+    {
+      // let headers = {
+      //   "Content-Type": "application/json",
+      //   "Access-Control-Request-Headers": "*",
+      //   "Access-Control-Allow-Origin": "*",
+      //   "dataSource": "Cluster0",
+      //   "database": "Client",
+      //   "collection": "activity"
+      // };
+      axios
+        .post(
+          "https://data.mongodb-api.com/app/data-nhwaq/endpoint/insertsysone",
+          {
+            dataSource: "Cluster0",
+            database: "Client",
+            collection: "activity",
+            document: {
+              project_number: "18",
+              project_name: "three story house",
+              project_completed: "No",
+              project_status_type: "Started",
+              project_type_description: "Build from Scratch",
+              project_location_name: "Cinco Ranch",
+              project_location_city: "Rosenber",
+              project_location_state: "AZ",
+              project_location_status_type: "not available",
+            },
+          },
+          {
+            "Content-Type": "application/json",
+          }
+        )
+        .then(() => {
+          this.$router.push("/activity");
+          this.Addexample = {
+            project_number: "18",
+            project_name: "three story house",
+            project_completed: "No",
+            project_status_type: "Started",
+            project_type_description: "Build from Scratch",
+            project_location_name: "Cinco Ranch",
+            project_location_city: "Rosenber",
+            project_location_state: "AZ",
+            project_location_status_type: "not available",
+          };
+        })
+        .then((response) => {
+          console.log(response);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
   },
 };
 </script>
