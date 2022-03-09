@@ -19,15 +19,15 @@
       </thead>
       <tbody>
         <tr v-for="User in Users" :key="User.project_number">
-          <td>{{ project.project_number }}</td>
-          <td>{{ project.project_name }}</td>
-          <td>{{ project.project_completed }}</td>
-          <td>{{ project.project_status_type }}</td>
-          <td>{{ project.project_type_description }}</td>
-          <td>{{ project.project_location_name }}</td>
-          <td>{{ project.project_location_city }}</td>
-          <td>{{ project.project_location_state }}</td>
-          <td>{{ project.project_location_status_type }}</td>
+          <td>{{ User.project_number }}</td>
+          <td>{{ User.project_name }}</td>
+          <td>{{ User.project_completed }}</td>
+          <td>{{ User.project_status_type }}</td>
+          <td>{{ User.project_type_description }}</td>
+          <td>{{ User.project_location_name }}</td>
+          <td>{{ User.project_location_city }}</td>
+          <td>{{ User.project_location_state }}</td>
+          <td>{{ User.project_location_status_type }}</td>
 
           <!-- <td>
             <img alt="trash" class="ic" src="../../assets/trash.jpg" />
