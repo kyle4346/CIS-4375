@@ -8,13 +8,20 @@ let InvestorSchema = new Schema({
     
     investor_iD: { type: String, default: uuid.v1 },
     
-    investor_name: {
+    investor_fname: {
         type: String,
-        minLength: 5,
-        maxLength: 40,
+        minLength: 2,
+        maxLength: 30,
         not: null,
         required: true
     },
+    investor_lname: {
+      type: String,
+      minLength: 2,
+      maxLength: 30,
+      not: null,
+      required: true
+  },
      
     investor_detail: {
         type: String,
@@ -95,6 +102,12 @@ let InvestorSchema = new Schema({
         maxLength: 20,
 
       },
+      project_number: {
+        type: Number,
+        min:0,
+        max: 999999,
+        unique: true
+    },
     
 
   }, {

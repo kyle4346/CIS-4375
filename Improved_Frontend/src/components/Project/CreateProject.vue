@@ -9,19 +9,19 @@
                 <strong style ="font-size:150%">General Information</strong>
                 <br>
                 <br>
-                
+                <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
                 <br>
 
                 <div class="form-group col-md-4">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number*</label>
                     <input  type="number" class="form-control" id="inputProjectNum" placeholder="10000" min="1" max="999999" v-model="project.project_number" required>
-                    <p style="color:red; font-weight:bold">Required numbers only</p>
+                    
                 </div>
 
                 <div class="form-group col-md-4">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectName">Project Name</label>
-                    <input  type="text" class="form-control" id="inputProjectName" pattern="[A-Za-z\s]{5,75}" v-model="project.project_name" required>
-                    <p style="color:red; font-weight:bold">Required letters only</p>
+                    <label style ="font-size:14pt; text-align:left;" for="inputProjectName">Project Name*</label>
+                    <input  type="text" class="form-control" id="inputProjectName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="project.project_name" required>
+                    
                 </div>
         
 
@@ -43,7 +43,7 @@
                      <label style ="font-size:14pt" class="form-check-label" for="projectComplete1">
                      <input class="form-check-input" type="radio"  id="projectComplete1" value="Yes"  v-model="project.project_completed"   required>Yes    
                      </label>
-                     <p style="color:red; font-weight:bold">Required</p>
+                     
                 </div>
                    
                 <div class="form-check-inline col-md-1">
@@ -53,16 +53,16 @@
                 </div>
 
                 <div class="form-group col-md-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectBudget">Project Budget</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputProjectBudget">Project Budget*</label>
                     <input  type="number" class="form-control" id="inputProjectBudget" placeholder="10000" min="1" max="99999999" v-model="project.project_budget" required>
-                    <p style="color:red; font-weight:bold">Required numbers only</p>
+                    
                 </div>
                 
 
                 <div class="form-group col-md-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectEstimate">Project Estimated Cost</label>
                     <input  type="number" class="form-control" id="inputProjectEstimate" placeholder="10000" min="0" max="99999999" v-model="project.project_estimated_cost" >
-                    <p style="color:red; font-weight:bold">Required numbers only</p>
+                    
                     <br>
                 </div>
 
@@ -74,19 +74,19 @@
                 <div class="form-group col-md-4">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectActual">Project Actual Cost</label>
                     <input  type="number" class="form-control" id="inputProjectActual" placeholder="10000" min="0" max="99999999" v-model="project.project_actual_cost" >
-                    <p style="color:red; font-weight:bold">Required numbers only</p>
+                    
                 </div>
 
                 <div class="form-group col-md-4">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectEstimatedDuration">Project Estimated Duration</label>
                     <input  type="text" class="form-control" id="inputProjectEstimatedDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="project.project_estimated_duration" >
-                    <p style="color:red; font-weight:bold">Required letters only</p>
+                    
                 </div>
 
                 <div class="form-group col-md-4">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectActualDuration">Project Actual Duration</label>
                     <input  type="text" class="form-control" id="inputProjectActualDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="project.project_actual_duration" >
-                    <p style="color:red; font-weight:bold">Required letters only</p>
+                    
 
                     <br>
                 </div>
@@ -98,11 +98,11 @@
                 <div class="form-group col-md-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectPercentComplete">Project % Done</label>
                     <input  type="number" class="form-control" id="inputProjectPercentComplete" placeholder="50" min="0" max="100" v-model="project.project_percent_complete" >
-                    <p style="color:red; font-weight:bold">Required numbers only</p>
+                   
                 </div>
 
                 <div class="form-group col-md-auto">
-                    <label style ="font-size:14pt">Project Start Date</label>
+                    <label style ="font-size:14pt">Project Start Date*</label>
                     <input type="date" class="form-control" v-model="project.project_start_date" required>
                 </div>
 
@@ -115,13 +115,13 @@
                     <label style ="font-size:14pt">Project Actual End Date</label>
                     <input type="date" class="form-control" v-model="project.project_actual_end_date" >
                     <br>
-                    <br>
+                    
                 </div>
 
                 </div>
 
                 <div class="form-group row">
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                     
                     <label style ="font-size:14pt">Project Status</label>
                     
@@ -141,10 +141,12 @@
                     
                 </div>
 
-                <div class="form-group col-md-auto">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectLocationName">Project Location Name</label>
+                <div class="form-group col-md-3">
+                    <label style ="font-size:14pt; text-align:left;" for="inputProjectLocationName">Project Location Name*</label>
                     <input  type="text" class="form-control" id="inputProjectLocationName" pattern="[A-Za-z\s]{5,55}" v-model="project.project_location_name" required>
-                    <p style="color:red; font-weight:bold">Required letters only</p>
+
+                    <br>
+                   
                 </div>
                 </div>
 
@@ -154,55 +156,58 @@
 
                 <strong style ="font-size:150%">Project Location General Information</strong>
                 
+                <div >
+                    <br>
+                <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
+            
+                </div>
                 
-               
-
                 <div class="form-group row">
                     
                  <div class="form-group col-md-5">
-                     <br>
-                    <label style ="font-size:14pt" >Address</label>
+                    
+                    <label style ="font-size:14pt" >Address*</label>
                     <input type="text" class="form-control" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="project.project_location_street" required>
-                    <p style="color:red; font-weight:bold">Required</p>
+                   
                 </div>
 
                 <div class="form-group col-md-3">
-                    <br>
-                    <label style ="font-size:14pt" >City</label>
+                    
+                    <label style ="font-size:14pt" >City*</label>
                     <input type="text" class="form-control" pattern="[A-Za-z]{3,40}" v-model="project.project_location_city" required>
-                    <p style="color:red; font-weight:bold">Required</p>
+                    
                 </div>
 
                 <div class="form-group col-md-2">
-                    <br>
-                    <label style ="font-size:14pt">Zipcode</label>
+                    
+                    <label style ="font-size:14pt">Zipcode*</label>
                     <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="project.project_location_zipcode" required>
-                      <p style="color:red; font-weight:bold">Required</p>
+                      
                       <br>
                 </div>
 
                 </div>
 
                 <div class="form-group row">
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-1">
                     
-                    <label style ="font-size:14pt">Project State</label>
+                    <label style ="font-size:14pt">State*</label>
                     
                     <select  v-model="project.project_location_state" required> 
                      <option v-for="project_location_state in project_location_states" v-bind:key="project_location_state">{{project_location_state}}</option>
                     </select>
-                    <p style="color:red; font-weight:bold">Required</p>
+                    
                     
                 </div>
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-2">
                     
-                    <label style ="font-size:14pt">Project Country</label>
+                    <label style ="font-size:14pt">Country*</label>
                     
                     <select  v-model="project.project_location_country" required> 
                      <option v-for="project_location_country in project_location_countries" v-bind:key="project_location_country">{{project_location_country}}</option>
                     </select>
-                    <p style="color:red; font-weight:bold">Required</p>
+                    
                     
                     
                 </div>
@@ -210,12 +215,12 @@
                 
 
                 <div class="form-group col-md-3">
-                    <label style ="font-size:14pt">Project Location Status</label>
+                    <label style ="font-size:14pt">Project Location Status*</label>
                     
                     <select  v-model="project.project_location_status_type" required> 
                      <option v-for="project_location_status_type in project_location_status_types" v-bind:key="project_location_status_type">{{project_location_status_type}}</option>
                     </select>
-                    <p style="color:red; font-weight:bold">Required</p>
+                   
                     <br>
                     <br>
                 </div>
@@ -233,7 +238,7 @@
 
 
                 <br>
-                <button class="btn btn-danger mt-3">Create</button>
+                <button class="btn btn-danger mt-3" style ="font-size:14pt">Create</button>
                 <br>
                 <br>
                 <br>

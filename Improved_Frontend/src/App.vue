@@ -63,6 +63,9 @@
     <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractor">Create Subcontractor Form</router-link>
     </li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployee">Create Employee Form</router-link>
+    </li>
     <li class="dropdown-item">
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createProject">Create Project Form</router-link>
     </li>
@@ -84,6 +87,9 @@
     </li>
      <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractor">View Subcontractors</router-link>
+    </li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployee">View Employees</router-link>
     </li>
     <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewProject">View Projects</router-link>

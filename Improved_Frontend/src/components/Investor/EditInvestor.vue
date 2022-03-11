@@ -1,7 +1,7 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-md-8"> 
-            <h3 class="text-center" style="font-size:200%; font-weight:bold">Investor Intake Form</h3>
+            <h3 class="text-center" style="font-size:200%; font-weight:bold">Update Investor Intake Form</h3>
             <br>
             <form @submit.prevent="handleUpdateForm">
                 
@@ -9,107 +9,39 @@
                 <strong style ="font-size:150%">General Information</strong>
                 <br>
                 <br>
-                
+                <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
                 <br>
-                <div class="form-group col-md-4">
-                    <label style ="font-size:14pt; text-align:left;" for="inputName">Investor Name</label>
-                    <input  type="text" class="form-control" id="inputName" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_name" required>
-                    <p style="color:red; font-weight:bold">Required letters only</p>
+                <div class="form-group col-md-auto">
+                    <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name*</label>
+                    <input  type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_fname" required>
+
+                </div>
+                <div class="form-group col-md-auto">
+                    <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name*</label>
+                    <input  type="text" class="form-control" id="inputLName" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_lname" required>
+                    
                 </div>
         
 
                  <div class="form-group col-md-4">
-                    <label style ="font-size:14pt" for="inputShortNotes">Investor Details</label>
+                    <label style ="font-size:14pt" for="inputShortNotes">Investor Details*</label>
                     <textarea type="text" class="form-control" id="inputShortNotes" maxlength="60"   rows="3" v-model="investor.investor_detail" ></textarea>
-                    
-                </div>
-
-                <div class="form-group col-md-4">
-                    <label style ="font-size:14pt">Investor Phone</label>
-                    <input type="tel" class="form-control" placeholder="123-455-6786" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="investor.investor_phone" required>
-                </div>
-
                     <br>
+                </div>
+                    
                  </div>
 
-                <br>
-                <br>
+                 <div class="form-group row">
 
-                <div class="form-group row">
-                
-                <div class="form-group col-md-4">
-                    
-                    <label style ="font-size:14pt">Investor Email</label>
-                    <input type="email" class="form-control" placeholder="yourname123@mail.com" v-model="investor.investor_email" required>
-                    <p style="color:red; font-weight:bold">Required</p>
-                </div>
-
-                <div class="form-group col-md-5">
-                    <label style ="font-size:14pt" >Investor Address</label>
-                    <input type="text" class="form-control" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="investor.investor_address" required>
-                    <p style="color:red; font-weight:bold">Required</p>
-                </div>
-                
-                <div class="form-group col-md-3">
-                    <label style ="font-size:14pt" >Investor City</label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]{5,35}" v-model="investor.investor_city" required>
-                    <p style="color:red; font-weight:bold">Required</p>
-                </div>
-
-                 
-
-                </div>
-
-
-                <div class="form-group row">
-                
-                <div class="form-group col-md-1">
-                    <br>
-                    <label style ="font-size:14pt">State</label>
-                    
-                    <select  v-model="investor.investor_state" required> 
-                     <option v-for="state in states" v-bind:key="state">{{state}}</option>
-                    </select>
-                    <p style="color:red; font-weight:bold">Required</p>
+                <div class="form-group col-md-auto">
+                    <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
+                    <input  type="number" class="form-control" id="inputProjectNum" placeholder="10000" min="0" max="999999" v-model="investor.project_number" >
                     
                 </div>
-
-                <div class="form-group col-md-1">
-
-                </div>
-                
 
                 <div class="form-group col-md-2">
-                    <br>
-                    <label style ="font-size:14pt">Zip</label>
-                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
-                      <p style="color:red; font-weight:bold">Required</p>
-                </div>
-
-                <div  class="form-group col-md-1">
-
-                </div>
-
-                 <div class="form-group col-md-2">
                     
-                    <br>
-                    <label style ="font-size:14pt">Country</label>
                     
-                    <select  v-model="investor.investor_country" required> 
-                     <option v-for="country in countries" v-bind:key="country">{{country}}</option>
-                    </select>
-                    <p style="color:red; font-weight:bold">Required</p>
-                    
-                </div>
-
-                <div  class="form-group col-md-1">
-
-                </div>
-
-
-                 <div class="form-group col-md-2">
-                    
-                    <br>
                     <label style ="font-size:14pt">Investor Status</label>
                    
                     <select  v-model="investor.investor_status" > 
@@ -121,7 +53,7 @@
 
                  <div class="form-group col-md-2">
                     
-                    <br>
+                   
                     <label style ="font-size:14pt">Investor Type</label>
                     
                     <select  v-model="investor.investor_type" > 
@@ -129,6 +61,86 @@
                     </select>
                     
                 </div>
+                
+                <div class="form-group col-md-auto">
+                    <label style ="font-size:14pt">Investor Phone*</label>
+                    <input type="tel" class="form-control" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="investor.investor_phone" required>
+                    <br>
+                </div>
+                       
+                 </div>
+
+              
+                
+
+                <div class="form-group row">
+                
+                <div class="form-group col-md-4">
+                    
+                    <label style ="font-size:14pt">Investor Email*</label>
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" v-model="investor.investor_email" required>
+                    
+                </div>
+
+                <div class="form-group col-md-5">
+                    <label style ="font-size:14pt" >Investor Address*</label>
+                    <input type="text" class="form-control" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="investor.investor_address" required>
+                    
+                </div>
+                
+                <div class="form-group col-md-3">
+                    <label style ="font-size:14pt" >Investor City*</label>
+                    <input type="text" class="form-control" pattern="[A-Za-z]{5,35}" v-model="investor.investor_city" required>
+                    
+                </div>
+
+                </div>
+                
+                <div class="form-group row">
+                
+                <div class="form-group col-md-1">
+                    <br>
+                    <label style ="font-size:14pt">State*</label>
+                    
+                    <select  v-model="investor.investor_state" required> 
+                     <option v-for="state in states" v-bind:key="state">{{state}}</option>
+                    </select>
+                   
+                    
+                </div>
+
+                <div class="form-group col-md-1">
+
+                </div>
+                
+
+                <div class="form-group col-md-2">
+                    <br>
+                    <label style ="font-size:14pt">Zip*</label>
+                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
+                      
+                </div>
+
+                <div  class="form-group col-md-1">
+
+                </div>
+
+                 <div class="form-group col-md-2">
+                    
+                    <br>
+                    <label style ="font-size:14pt">Country*</label>
+                    
+                    <select  v-model="investor.investor_country" required> 
+                     <option v-for="country in countries" v-bind:key="country">{{country}}</option>
+                    </select>
+                    
+                    
+                </div>
+
+                <div  class="form-group col-md-1">
+
+                </div>
+
 
                 
                 </div>
@@ -149,7 +161,7 @@
 
 
                 <br>
-                <button class="btn btn-danger mt-3">Update</button>
+                <button class="btn btn-danger mt-3" style ="font-size:14pt">Update</button>
                 <br>
                 <br>
                 <br>

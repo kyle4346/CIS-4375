@@ -59,29 +59,29 @@ const routes = [
 //********************End of Subcontractor Intake Form**************************** */
 
 
-//******************************Start of Material Intake Form***************************************************/
+//******************************Start of Employee Intake Form***************************************************/
 {
   //This route takes us to the Create Client Form using the Create Component 
-  path: '/createMaterial',
-  name: 'createMaterial',
-  component: () => import('../components/Material/CreateMaterial') 
+  path: '/createEmployee',
+  name: 'createEmployee',
+  component: () => import('../components/Employee/CreateEmployee') 
  
 },
 {
   //route to allow to viewClient Activity based on componet ViewClientActivity 
-  path: '/viewMaterial',
-  name: 'viewMaterial',
-  component: () => import('../components/Material/ViewMaterial')
+  path: '/viewEmployee',
+  name: 'viewEmployee',
+  component: () => import('../components/Employee/ViewEmployee')
 },
 
 {
   //route to be used to edit client activity based on the component EditClientActivity
-  path: '/editMaterial',
-  name: 'editMaterial',
-  component: () => import('../components/Material/EditMaterial')
+  path: '/editEmployee',
+  name: 'editEmployee',
+  component: () => import('../components/Employee/EditEmployee')
 },
 
-//******************************End of Material Intake Form*********************************************************************************/
+//******************************End of Employee Intake Form*********************************************************************************/
 
 
 //*******************************Start of Project Intake Form************************************************************************** */

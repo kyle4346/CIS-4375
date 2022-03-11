@@ -17,7 +17,7 @@ let InvestorModel = require('./models/investor');
 let SubcontractorModel = require('./models/subcontractor');
 
 //import the subcontractor model schema from another file
-let MaterialModel = require('./models/material');
+let EmployeeModel = require('./models/employee');
 
 //import the subcontractor model schema from another file
 let ProjectModel = require('./models/project');
@@ -200,24 +200,24 @@ app.delete('/subcontractor/:id', (req, res, next) => {
 //***************************************************** */
 
 
-//*******************************Start of Material Intake Form*************************************** */
+//*******************************Start of employee Intake Form*************************************** */
 // endpoint that will create a general information document - Create Operation
-app.post('/material', (req, res, next) => {
+app.post('/employee', (req, res, next) => {
 
-  MaterialModel.create(req.body, (error, data) => {
+  EmployeeModel.create(req.body, (error, data) => {
       if (error) {
         return next(error)
       } else {
         // res.json(data)
-        res.send('Material Form Information is added to the database');
+        res.send('employee Form Information is added to the database');
       }
   });
 });
 
 //create an endpoint to get all general information from the API  -Read Operation
-app.get('/materials', (req, res, next) => {
+app.get('/employees', (req, res, next) => {
   //very plain way to get all the data from the collection through the mongoose schema
-  MaterialModel.find((error, data) => {
+  EmployeeModel.find((error, data) => {
       if (error) {
         //here we are using a call to next() to send an error message back
         return next(error)
@@ -228,14 +228,14 @@ app.get('/materials', (req, res, next) => {
 });
 
 // endpoint for retrieving client form information by clientID - Read Operation 2
-app.get('/material/:id', (req, res, next) => {
+app.get('/employee/:id', (req, res, next) => {
   //find data based on the client id for the collection client form information
-  MaterialModel.findOne({ material_id: req.params.id}, (error, data) => {
+  EmployeeModel.findOne({ employee_id: req.params.id}, (error, data) => {
       if (error) {
           return next(error)
       } else if (data === null) {
           // Sending 404 when not found something is a good practice
-        res.status(404).send('Material Form Information not found');
+        res.status(404).send('employee Form Information not found');
       }
       else {
         res.json(data)
@@ -244,25 +244,25 @@ app.get('/material/:id', (req, res, next) => {
 });
 
 // Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
-app.put('/material/:id', (req, res, next) => {
+app.put('/employee/:id', (req, res, next) => {
 //Update data in the client form information table based on client id 
-MaterialModel.findOneAndUpdate({ material_id: req.params.id }, {
+EmployeeModel.findOneAndUpdate({ employee_id: req.params.id }, {
       $set: req.body
     }, (error, data) => {
       if (error) {
         return next(error);
       } else {
-        res.send('Material Form Information is edited via PUT');
-        console.log('Material Form Information successfully updated!', data)
+        res.send('employee Form Information is edited via PUT');
+        console.log('employee Form Information successfully updated!', data)
       }
     })
 });
 
 //delete a client form information by clientID  -Delete Operation 
-app.delete('/material/:id', (req, res, next) => {
+app.delete('/employee/:id', (req, res, next) => {
   
   //mongoose will use clientID of document to delete 
-  MaterialModel.findOneAndRemove({ material_id: req.params.id}, (error, data) => {
+  EmployeeModel.findOneAndRemove({ employee_id: req.params.id}, (error, data) => {
       if (error) {
         return next(error);
       } else {
@@ -276,7 +276,7 @@ app.delete('/material/:id', (req, res, next) => {
 
 
 
-//****************************************End of Material Intake Form******************************** */
+//****************************************End of employee Intake Form******************************** */
 
 //****************************************Start of Project Intake Form */
 // endpoint that will create a general information document - Create Operation

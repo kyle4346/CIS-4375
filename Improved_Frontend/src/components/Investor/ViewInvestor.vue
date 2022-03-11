@@ -4,7 +4,8 @@
             <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Investor Name</th>
+                        <th>Investor Fname</th>
+                        <th>Investor Lname</th>
                         <th>Investor Details</th>
                         <th>Investor Phone</th>
                         <th>Investor Email</th>
@@ -15,7 +16,8 @@
                 </thead>
                 <tbody>
                     <tr v-for="investor in investors" :key="investor.investor_iD">
-                        <td>{{ investor.investor_name }}</td>
+                        <td>{{ investor.investor_fname }}</td>
+                        <td>{{ investor.investor_lname }}</td>
                         <td>{{ investor.investor_detail }}</td>
                         <td>{{ investor.investor_phone }}</td>
                         <td>{{ investor.investor_email }}</td>
