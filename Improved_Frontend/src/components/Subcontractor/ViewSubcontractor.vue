@@ -33,7 +33,7 @@
 
 
                         <button @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" class="btn btn-danger">Delete</button>
-                        <button @click.prevent="senddatasub()" class="btn btn-success">Post</button>
+                        
                         </td>
                     </tr>
                 </tbody>
@@ -54,7 +54,7 @@
         },
         // this is using created hook 
         created() {
-            let apiURL = 'https://data.mongodb-api.com/app/data-nhwaq/endpoint/getallsubcontractors';//http://localhost:27017/subcontractors
+            let apiURL = 'http://localhost:27017/subcontractors';
             axios.get(apiURL).then(res => {
                 this.subcontractors = res.data;
             }).catch(error => {
@@ -64,63 +64,17 @@
         methods: {
             deleteSubcontractor(id){
                 console.log(id)
-                let apiURL = `https://data.mongodb-api.com/app/data-nhwaq/endpoint/subcontractor`;//http://localhost:27017/subcontractor/${id}
-                //let indexOfArrayItem = this.subcontractors.findIndex(i => i.subcontractor_id === id);
-                let headers = 
-                {
-                    "Content-Type": "application/json",
-                    
-                }; //, "Access-Control-Request-Headers": "*"
+                let apiURL = `http://localhost:27017/subcontractor/${id}`;
+                let indexOfArrayItem = this.subcontractors.findIndex(i => i.subcontractor_id === id);
 
                 if (window.confirm("Do you really want to delete?")) {
-                    axios.post(apiURL,//axios.delete(apiURL)
-            {
-              dataSource: "Cluster0",
-              database: "components",
-              collection: "subcontractor",
-              filter: { subcontractor_id: id },
-            },
-            { headers })
-                    .then(() => {
-                        //this.subcontractors.splice(indexOfArrayItem, 1);
+                    axios.delete(apiURL).then(() => {
+                        this.subcontractors.splice(indexOfArrayItem, 1);
                     }).catch(error => {
                         console.log(error)
                     });
                 }
-            },
-            senddatasub() {
-            axios.post("https://data.mongodb-api.com/app/data-nhwaq/endpoint/insertsysone",
-          {
-            dataSource: "Cluster0",
-            database: "components",
-            collection: "subcontractor",
-            document: 
-            {
-            subcontractor_id: "20",
-            subcontractor_fname: "Alberto",
-            subcontractor_lname: "Cuardall",
-            subcontractor_business_name: "business 3",
-            subcontractor_rate: "51",
-            subcontractor_phone: "504-305-4424",
-            subcontractor_email: "acuardallj@harvard.edu",
-            subcontractor_status: "available",
-            subcontractor_type: "Framing (Wood)",
-},
-          },
-          {
-            "Content-Type": "application/json",
-          }
-        )
-        .then(() => {
-          this.$router.push("/viewSubcontractor");
-        })
-        .then((response) => {
-          console.log(response);
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    },
+            }
         }
     }
 </script>

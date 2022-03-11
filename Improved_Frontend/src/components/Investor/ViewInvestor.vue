@@ -51,7 +51,7 @@
         },
         // this is using created hook 
         created() {
-            let apiURL = 'https://data.mongodb-api.com/app/data-nhwaq/endpoint/getallinvestors';//http://localhost:27017/investors
+            let apiURL = 'http://localhost:27017/investors';
             axios.get(apiURL).then(res => {
                 this.investors = res.data;
             }).catch(error => {
@@ -61,24 +61,12 @@
         methods: {
             deleteInvestor(id){
                 console.log(id)
-                let apiURL = `https://data.mongodb-api.com/app/data-nhwaq/endpoint/deleteinvestorbyid`;//http://localhost:27017/investor/${id}
-                //let indexOfArrayItem = this.investors.findIndex(i => i.investor_iD === id);
-                let headers = 
-                {
-                    "Content-Type": "application/json",
-                    
-                }; //, "Access-Control-Request-Headers": "*"
+                let apiURL = `http://localhost:27017/investor/${id}`;
+                let indexOfArrayItem = this.investors.findIndex(i => i.investor_iD === id);
 
                 if (window.confirm("Do you really want to delete?")) {
-                    axios.post(apiURL,//axios.delete(apiURL)
-            {
-              dataSource: "Cluster0",
-              database: "components",
-              collection: "investors",
-              filter: { investor_iD: id },
-            },
-            { headers }).then(() => {
-                       //this.investors.splice(indexOfArrayItem, 1);
+                    axios.delete(apiURL).then(() => {
+                        this.investors.splice(indexOfArrayItem, 1);
                     }).catch(error => {
                         console.log(error)
                     });
