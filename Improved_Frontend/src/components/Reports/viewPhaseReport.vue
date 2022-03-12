@@ -1,6 +1,6 @@
 <template>
     <div class="row">
-         <h2>Activities for: {{projects.project_name}}, {{projects.project_number}}</h2>
+         <h2>Phases for: {{projects.project_name}}, {{projects.project_start_date}}</h2>
         <div class="col-lg-12">
 
             <table class="table table-striped">
@@ -13,6 +13,7 @@
                         <th>Phase Cost:</th>
                         <th>Phase Completed:</th>
                         
+                        
                     </tr>
                 </thead>
                 <tbody>
@@ -22,6 +23,7 @@
                         <td>{{ phase.phase_name }}</td>
                         <td>{{ phase.phase_cost }}</td>
                         <td>{{ phase.phase_completed}} </td>
+                        
                         
                     </tr>
                 </tbody>
@@ -67,7 +69,7 @@
             });
     
         // this is using created hook 
-            let apiURL1 = `http://localhost:27017//project_report/${this.$route.params.id}`;
+            let apiURL1 = `http://localhost:27017/project_report/${this.$route.params.id}`;
             axios.get(apiURL1).then(res => {
                 this.projects = res.data;
             }).catch(error => {

@@ -332,6 +332,22 @@ app.get('/project/:id', (req, res, next) => {
 });
 
 // endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/project/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  ProjectModel.findOne({ project_number: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Project Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
 app.get('/project_report/:id', (req, res, next) => {
   //find data based on the client id for the collection client form information
   ProjectModel.findOne({ project_number: req.params.id}, (error, data) => {
@@ -699,17 +715,14 @@ that matches based on client ID  --Jose Zelaya*/
 app.get('/project_phase_report/:id', (req, res, next) => {
 
 
-  ProjectModel.aggregate([
+  PhaseModel.aggregate([
     { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,project_number: 1, project_name: 1 , project_start_date:1} },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,project_number: 1, phase_number: 1, phase_name: 1, phase_cost:1 , phase_completed:1, project_number: 1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'project',
         localField : 'project_number',
         foreignField : 'project_number',
         as : 'project',
-        pipeline:[
-          
-        ]
     } }
   ],
    (error, data) => {
