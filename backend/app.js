@@ -22,6 +22,17 @@ let EmployeeModel = require('./models/employee');
 //import the subcontractor model schema from another file
 let ProjectModel = require('./models/project');
 
+//import the subcontractor model schema from another file
+let PhaseModel = require('./models/phase');
+
+//import the subcontractor model schema from another file
+let StepModel = require('./models/step');
+
+//import the subcontractor model schema from another file
+let TaskModel = require('./models/task');
+
+
+
 ////import the cfcworker_client_activity model schema from another file
 //let cfcworker_client_activityModel = require('./models/cfcworker_client_activity');
 
@@ -352,6 +363,240 @@ app.delete('/project/:id', (req, res, next) => {
     });
 });
 //*****************************************End of Project Intake Form Jose Zelaya*/
+
+
+
+//*************************************Start of the Phase Info********************************************* */
+// endpoint that will create a general information document - Create Operation
+app.post('/phase', (req, res, next) => {
+
+  PhaseModel.create(req.body, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        // res.json(data)
+        res.send('Phase Form Information is added to the database');
+      }
+  });
+});
+
+//create an endpoint to get all general information from the API  -Read Operation
+app.get('/phases', (req, res, next) => {
+  //very plain way to get all the data from the collection through the mongoose schema
+  PhaseModel.find((error, data) => {
+      if (error) {
+        //here we are using a call to next() to send an error message back
+        return next(error)
+      } else {
+        res.json(data)
+      }
+    })
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/phase/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  PhaseModel.findOne({ phase_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Phase Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
+app.put('/phase/:id', (req, res, next) => {
+//Update data in the client form information table based on client id 
+PhaseModel.findOneAndUpdate({ phase_id: req.params.id }, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.send('Phase Form Information is edited via PUT');
+        console.log('Phase Form Information successfully updated!', data)
+      }
+    })
+});
+
+//delete a client form information by clientID  -Delete Operation 
+app.delete('/phase/:id', (req, res, next) => {
+  
+  //mongoose will use clientID of document to delete 
+  PhaseModel.findOneAndRemove({ phase_id: req.params.id}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+         res.status(200).json({
+           msg: data
+         });
+      //  res.send('Student is deleted');
+      }
+    });
+});
+
+//*************************************End of the Phase Info********************************************* */
+
+
+
+//*************************************Start of the Step****************************************************************** */
+// endpoint that will create a general information document - Create Operation
+app.post('/step', (req, res, next) => {
+
+  StepModel.create(req.body, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        // res.json(data)
+        res.send('Step Form Information is added to the database');
+      }
+  });
+});
+
+//create an endpoint to get all general information from the API  -Read Operation
+app.get('/steps', (req, res, next) => {
+  //very plain way to get all the data from the collection through the mongoose schema
+  StepModel.find((error, data) => {
+      if (error) {
+        //here we are using a call to next() to send an error message back
+        return next(error)
+      } else {
+        res.json(data)
+      }
+    })
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/step/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  StepModel.findOne({ step_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Step Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
+app.put('/step/:id', (req, res, next) => {
+//Update data in the client form information table based on client id 
+StepModel.findOneAndUpdate({ step_id: req.params.id }, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.send('Step Form Information is edited via PUT');
+        console.log('Step Form Information successfully updated!', data)
+      }
+    })
+});
+
+//delete a client form information by clientID  -Delete Operation 
+app.delete('/step/:id', (req, res, next) => {
+  
+  //mongoose will use clientID of document to delete 
+  StepModel.findOneAndRemove({ step_id: req.params.id}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+         res.status(200).json({
+           msg: data
+         });
+      //  res.send('Student is deleted');
+      }
+    });
+});
+//*************************************End of the Step****************************************************************** */
+
+
+
+
+//************************************Start of the Task****************************************************************** */
+
+// endpoint that will create a general information document - Create Operation
+app.post('/task', (req, res, next) => {
+
+  TaskModel.create(req.body, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        // res.json(data)
+        res.send('Task Form Information is added to the database');
+      }
+  });
+});
+
+//create an endpoint to get all general information from the API  -Read Operation
+app.get('/tasks', (req, res, next) => {
+  //very plain way to get all the data from the collection through the mongoose schema
+  TaskModel.find((error, data) => {
+      if (error) {
+        //here we are using a call to next() to send an error message back
+        return next(error)
+      } else {
+        res.json(data)
+      }
+    })
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/task/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  TaskModel.findOne({ task_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Task Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
+app.put('/task/:id', (req, res, next) => {
+//Update data in the client form information table based on client id 
+TaskModel.findOneAndUpdate({ task_id: req.params.id }, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.send('Task Form Information is edited via PUT');
+        console.log('Task Form Information successfully updated!', data)
+      }
+    })
+});
+
+//delete a client form information by clientID  -Delete Operation 
+app.delete('/task/:id', (req, res, next) => {
+  
+  //mongoose will use clientID of document to delete 
+  TaskModel.findOneAndRemove({ task_id: req.params.id}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+         res.status(200).json({
+           msg: data
+         });
+      //  res.send('Student is deleted');
+      }
+    });
+});
+//************************************End of the Task****************************************************************** */
 
 
 
