@@ -31,11 +31,20 @@
                             <router-link :to="{name: 'editProject', params: { id: project.project_id}}" style="text-align: center;" class="btn btn-success">Edit
                             </router-link>
 
+                        <button @click.prevent="deleteProject(project.project_id)" class="btn btn-danger">Delete</button>
+
+                            <br>
+                            <br>
+                            <router-link :to="{name: 'createPhase', params: { id: project.project_number}}" style="text-align: center;" class="btn btn-success">Add Phase
+                            </router-link>
+
+                            <br>
+                            <br>
+                            <router-link :to="{name: 'project_phase_report', params: { id: project.project_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-info">View Phases
+                            </router-link>
                             
 
 
-                        <button @click.prevent="deleteProject(project.project_id)" class="btn btn-danger">Delete</button>
-                       
                         </td>
                     </tr>
                 </tbody>

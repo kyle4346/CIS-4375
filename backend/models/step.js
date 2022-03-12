@@ -14,7 +14,7 @@ let StepSchema = new Schema({
         max: 999999,
         not: null,
         required: true,
-        unique: true
+        unique: false
     },
     phase_number: {
         type: Number,
@@ -22,7 +22,7 @@ let StepSchema = new Schema({
         max: 999999,
         not: null,
         required: true,
-        unique: true
+        
     },
     step_number: {
         type: Number,
@@ -30,7 +30,7 @@ let StepSchema = new Schema({
         max: 999999,
         not: null,
         required: true,
-        unique: true
+       
     },
      
     step_name: {

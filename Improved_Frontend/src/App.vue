@@ -70,7 +70,9 @@
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createProject">Create Project Form</router-link>
     </li>
     <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
+    <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createPhase">Create Phase Form</router-link>
+    </li>
   </ul>
 </div>
 
@@ -98,11 +100,13 @@
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/activity">View Client Activities</router-link>
     </li>
     <li><hr class="dropdown-divider"></li>
-    <li><a class="dropdown-item" href="#">Separated link</a></li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewPhase">View Phase</router-link>
+    </li>
   </ul>
 </div>
  
-
+project_phase_report
 
 <!-- Example single danger button -->
 <div class="btn-group col-md-2">
@@ -111,7 +115,9 @@
     Reports
   </button>
   <ul class="dropdown-menu">
-    <li><a class="dropdown-item" href="#">Action</a></li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to=""></router-link>
+    </li>
     <li><a class="dropdown-item" href="#">Another action</a></li>
     <li><a class="dropdown-item" href="#">Something else here</a></li>
     <li><hr class="dropdown-divider"></li>

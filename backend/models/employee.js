@@ -106,7 +106,7 @@ let EmployeeSchema = new Schema({
         type: Number,
         min:0,
         max: 999999,
-        unique: true
+        unique: false
     },
     
 

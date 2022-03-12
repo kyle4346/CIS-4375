@@ -9,12 +9,12 @@ let ProjectSchema = new Schema({
     project_id: { type: String, default: uuid.v1 },
     
     project_number: {
-        type: Number,
-        min:1,
-        max: 999999,
-        not: null,
-        required: true,
-        unique: true
+      type: String,
+      minLength:1,
+      maxLength:9,
+      not: null,
+      required: true,
+      unique: false
     },
      
     project_name: {

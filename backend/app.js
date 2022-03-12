@@ -33,8 +33,7 @@ let TaskModel = require('./models/task');
 
 
 
-////import the cfcworker_client_activity model schema from another file
-//let cfcworker_client_activityModel = require('./models/cfcworker_client_activity');
+
 
 // setting up mongoose DB connection
 mongoose
@@ -320,6 +319,22 @@ app.get('/projects', (req, res, next) => {
 app.get('/project/:id', (req, res, next) => {
   //find data based on the client id for the collection client form information
   ProjectModel.findOne({ project_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Project Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/project_report/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  ProjectModel.findOne({ project_number: req.params.id}, (error, data) => {
       if (error) {
           return next(error)
       } else if (data === null) {
@@ -681,17 +696,20 @@ app.delete('/cfcworker_client_activity/:id', (req, res, next) => {
 Retrieve first name , last name and client id from general information  
 Then retrive all the activity content from the cfcworker cleint activity 
 that matches based on client ID  --Jose Zelaya*/ 
-app.get('/client_info/:id', (req, res, next) => {
+app.get('/project_phase_report/:id', (req, res, next) => {
 
 
-  cfcworker_client_activityModel.aggregate([
-    { $match : { clientID: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,clientID : 1,clientProgram: 1, shortNotes: 1, startDate: 1 , timeSpent:1, usedServices: 1, needAddressed:1, relManagerID: 1} },  //retrieve these fieldnames from the genral information schema
+  ProjectModel.aggregate([
+    { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,project_number: 1, project_name: 1 , project_start_date:1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
-        from : 'client_form',
-        localField : 'clientID',
-        foreignField : 'clientID',
-        as : 'client_form',
+        from : 'project',
+        localField : 'project_number',
+        foreignField : 'project_number',
+        as : 'project',
+        pipeline:[
+          
+        ]
     } }
   ],
    (error, data) => {

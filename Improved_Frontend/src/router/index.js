@@ -110,6 +110,32 @@ const routes = [
 //*******************************End of Project Intake Form********************************************************************************************************* */
 
 
+
+//*******************************Start of Phase**************************************************************************** */
+{
+  //This route takes us to the Create Client Form using the Create Component 
+  path: '/createPhase',
+  name: 'createPhase',
+  component: () => import('../components/Phase/CreatePhase') 
+ 
+},
+{
+  //route to allow to viewClient Activity based on componet ViewClientActivity 
+  path: '/viewPhase',
+  name: 'viewPhase',
+  component: () => import('../components/Phase/ViewPhase')
+},
+
+{
+  //route to be used to edit client activity based on the component EditClientActivity
+  path: '/editPhase',
+  name: 'editPhase',
+  component: () => import('../components/Phase/EditPhase')
+},
+
+//*******************************End of Phase**************************************************************************** */
+
+
 //***********Client Activity************* */
 {
   path: '/activity',
@@ -117,6 +143,16 @@ const routes = [
     component: () => import('../components/ClientActivity/ActivitiesTable.vue')
 },
 
+//*******************Start of Reports***************************** */
+{
+  //view client info based on the component client info
+    path: '/project_phase_report/:id',
+    name: 'project_phase_report',
+    component: () => import('../components/Reports/viewPhaseReport')
+
+},
+
+//*******************End of Reports***************************** */
 //*******Vue Chart******* */
 {
   //Activities Summary chart based on the component VueChartJS

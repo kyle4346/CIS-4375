@@ -9,20 +9,21 @@ let PhaseSchema = new Schema({
     phase_id: { type: String, default: uuid.v1 },
     
     project_number: {
-        type: Number,
-        min:1,
-        max: 999999,
-        not: null,
-        required: true,
-        unique: true
+      type: String,
+      minLength:1,
+      maxLength:9,
+      not: null,
+      required: true,
+      unique: false
+       
     },
     phase_number: {
         type: Number,
         min:1,
-        max: 999999,
+        max: 6,
         not: null,
         required: true,
-        unique: true
+        
     },
      
     phase_name: {

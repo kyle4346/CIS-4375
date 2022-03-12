@@ -104,9 +104,9 @@ let InvestorSchema = new Schema({
       },
       project_number: {
         type: Number,
-        min:0,
+        min:1,
         max: 999999,
-        unique: true
+        unique: false
     },
     
 
