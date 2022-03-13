@@ -440,6 +440,23 @@ app.get('/phase/:id', (req, res, next) => {
   });
 });
 
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/phase_report/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  PhaseModel.findOne({ phase_number: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Project Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
 // Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
 app.put('/phase/:id', (req, res, next) => {
 //Update data in the client form information table based on client id 
@@ -712,6 +729,7 @@ app.delete('/cfcworker_client_activity/:id', (req, res, next) => {
 Retrieve first name , last name and client id from general information  
 Then retrive all the activity content from the cfcworker cleint activity 
 that matches based on client ID  --Jose Zelaya*/ 
+//*****************Start of Reports ******************************************************************** */
 app.get('/project_phase_report/:id', (req, res, next) => {
 
 
@@ -734,6 +752,36 @@ app.get('/project_phase_report/:id', (req, res, next) => {
   });
 });
 //End of aggregate 
+
+//Report to get steps linked to a phase 
+app.get('/project_step_report/:id', (req, res, next) => {
+
+
+  StepModel.aggregate([
+    { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,phase_number: 1, step_name: 1, step_cost:1 , step_completed:1} },  //retrieve these fieldnames from the genral information schema
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+        from : 'phase',
+        localField : 'phase_number',
+        foreignField : 'phase_number',
+        as : 'phase',
+    } }
+  ],
+   (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        res.json(data);
+      }
+  });
+});
+//End of aggregate 
+
+
+
+
+
+//************************End of Reports************************************************************* */
 
 //Supervisor View by client ID view specific data over client activities --Jose Zelaya 
 app.get('/supervisor_view/:id', (req, res, next) => {

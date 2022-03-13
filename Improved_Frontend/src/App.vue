@@ -73,6 +73,10 @@
     <li class="dropdown-item">
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createPhase">Create Phase Form</router-link>
     </li>
+
+    <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createStep">Create Step Form</router-link>
+    </li>
   </ul>
 </div>
 
@@ -94,14 +98,17 @@
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployee">View Employees</router-link>
     </li>
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewProject">View Projects</router-link>
-    </li>
-    <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/activity">View Client Activities</router-link>
     </li>
     <li><hr class="dropdown-divider"></li>
+     <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewProject">View Projects</router-link>
+    </li>
     <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewPhase">View Phase</router-link>
+    </li>
+     <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewStep">View Step</router-link>
     </li>
   </ul>
 </div>

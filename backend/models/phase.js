@@ -18,11 +18,12 @@ let PhaseSchema = new Schema({
        
     },
     phase_number: {
-        type: Number,
-        min:1,
-        max: 6,
-        not: null,
-        required: true,
+      type: String,
+      minLength:1,
+      maxLength:9,
+      not: null,
+      required: true,
+      unique: false
         
     },
      

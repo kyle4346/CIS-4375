@@ -31,7 +31,13 @@
 
                             <br>
                             <br>
-                            
+                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center;" class="btn btn-success">Add Step
+                            </router-link>
+
+                            <br>
+                            <br>
+                            <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-info">View Steps
+                            </router-link>
 
 
                         </td>

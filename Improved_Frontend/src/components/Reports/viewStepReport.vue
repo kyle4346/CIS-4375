@@ -1,29 +1,24 @@
 <template>
     <div class="row">
-         <h2>Phases for Project: {{projects.project_name}}, Project Start Date is {{projects.project_start_date}}</h2>
+         <h2>Steps for Phase Number: {{phases.phase_number}}, Phase Name: {{phases.phase_name}}</h2>
         <div class="col-lg-12">
 
             <table class="table table-striped">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>Project Number:</th>
-                        <th>Phase Num:</th>
-                        <th>Phase Name:</th>
-                        <th>Phase Cost:</th>
-                        <th>Phase Completed:</th>
+                        <th>Step Name:</th>
+                        <th>Step Cost:</th>
+                        <th>Step Completed:</th>
                         
                         
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="phase in Phases" :key="phase.phase_id">
-                        <td>{{ phase.project_number}} </td>
-                        <td>{{ phase.phase_number }}</td>
-                        <td>{{ phase.phase_name }}</td>
-                        <td>{{ phase.phase_cost }}</td>
-                        <td>{{ phase.phase_completed}} </td>
-                        
+                    <tr v-for="step in Steps" :key="step.step_id">
+                        <td>{{ step.step_name}} </td>
+                        <td>{{ step.step_cost }}</td>
+                        <td>{{ step.step_completed }}</td>
                         
                     </tr>
                 </tbody>
@@ -43,14 +38,13 @@
         data() {
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
-                Phases: [], 
-                projects: {},
-                phase: {
-                   phase_number: '',
-                   phase_name: '',
-                   phase_cost: '',
-                   phase_completed: '',
-                   project_number: this.$route.params.id 
+                Steps: [], 
+                phases: {},
+                step: {
+                   step_name: '',
+                   step_cost: '',
+                   step_completed: '',
+                   phase_number: this.$route.params.id 
                    
                 },
                 
@@ -61,17 +55,17 @@
 
         // this is using created hook 
         created() {
-            let apiURL = `http://localhost:27017/project_phase_report/${this.$route.params.id}`;
+            let apiURL = `http://localhost:27017/project_step_report/${this.$route.params.id}`;
             axios.get(apiURL).then(res => {
-                this.Phases = res.data;
+                this.Steps = res.data;
             }).catch(error => {
                 console.log(error)
             });
     
         // this is using created hook 
-            let apiURL1 = `http://localhost:27017/project_report/${this.$route.params.id}`;
+            let apiURL1 = `http://localhost:27017/phase_report/${this.$route.params.id}`;
             axios.get(apiURL1).then(res => {
-                this.projects = res.data;
+                this.phases = res.data;
             }).catch(error => {
                 console.log(error)
             });

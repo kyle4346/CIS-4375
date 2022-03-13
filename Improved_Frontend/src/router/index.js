@@ -136,6 +136,59 @@ const routes = [
 //*******************************End of Phase**************************************************************************** */
 
 
+
+//*******************************Start of Step***************************************************************** */
+{
+  //This route takes us to the Create Client Form using the Create Component 
+  path: '/createStep',
+  name: 'createStep',
+  component: () => import('../components/Step/CreateStep') 
+ 
+},
+{
+  //route to allow to viewClient Activity based on componet ViewClientActivity 
+  path: '/viewStep',
+  name: 'viewStep',
+  component: () => import('../components/Step/ViewStep')
+},
+
+{
+  //route to be used to edit client activity based on the component EditClientActivity
+  path: '/editStep',
+  name: 'editStep',
+  component: () => import('../components/Step/EditStep')
+},
+//*******************************End of Step***************************************************************** */
+
+
+
+
+//*******************************Start of Task****************************************************************************** */
+{
+  //This route takes us to the Create Client Form using the Create Component 
+  path: '/createTask',
+  name: 'createTask',
+  component: () => import('../components/Task/CreateTask') 
+ 
+},
+{
+  //route to allow to viewClient Activity based on componet ViewClientActivity 
+  path: '/viewTask',
+  name: 'viewTask',
+  component: () => import('../components/Task/ViewTask')
+},
+
+{
+  //route to be used to edit client activity based on the component EditClientActivity
+  path: '/editTask',
+  name: 'editTask',
+  component: () => import('../components/Task/EditTask')
+},
+//*******************************End of Task****************************************************************************** */
+
+
+
+
 //***********Client Activity************* */
 {
   path: '/activity',
@@ -149,6 +202,15 @@ const routes = [
     path: '/project_phase_report/:id',
     name: 'project_phase_report',
     component: () => import('../components/Reports/viewPhaseReport')
+
+},
+
+
+{
+  //view client info based on the component client info
+    path: '/project_step_report/:id',
+    name: 'project_step_report',
+    component: () => import('../components/Reports/viewStepReport')
 
 },
 
