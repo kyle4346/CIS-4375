@@ -5,26 +5,26 @@
             <br>
             <form @submit.prevent="handleUpdateForm">
                 
-                <div class="form-group row">
+                  <div class="form-group row">
                 <strong style ="font-size:150%">General Information</strong>
                 <br>
                 <br>
                 <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
                 <br>
 
-                <div class="form-group col-md-auto">
+                <div class="form-group col-md-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepProjectNum">Project Number*</label>
                     <input  type="text" class="form-control" id="inputStepProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="step.project_number" required>
                     
                 </div>
 
-                <div class="form-group col-md-auto">
+                <div class="form-group col-md-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepPhaseNum">Phase Number*</label>
                     <input  type="text" class="form-control" id="inputStepPhaseNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="step.phase_number" required>
                     
                 </div>
 
-                <div class="form-group col-md-auto">
+                <div class="form-group col-md-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepNum">Step Number*</label>
                     <input  type="text" class="form-control" id="inputStepNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="step.step_number" required>
                     <br>
@@ -35,7 +35,7 @@
 
                 <div class="form-group row">
 
-                <div class="form-group col-md-3">
+                <div class="form-group col-md-4">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepName">Step Name*</label>
                     <input  type="text" class="form-control" id="inputStepName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="step.step_name" required>
                 </div> 
@@ -48,8 +48,10 @@
                 </div>
 
                 <div class="form-group row">
+                
+                
 
-                <legend style ="font-size:14pt" class="col-form-label col-md-auto pt-0">Is Step Completed?*</legend>
+                <legend style ="font-size:14pt" class="col-form-label col-md-3 pt-0">Is Step Completed?*</legend>
 
                 <div class="form-check-inline col-md-1">
                      <label style ="font-size:14pt" class="form-check-label" for="stepComplete1">
@@ -65,7 +67,7 @@
                 </div>
 
 
-                <div class="form-group col-md-2">
+                <div class="form-group col-md-3">
                     <label style ="font-size:14pt">Step Status*</label>
                     
                     <select  v-model="step.step_status_type" required> 
@@ -80,20 +82,20 @@
 
                 
                 <div class="form-group row">
-                <div class="form-group col-md-auto">
+                <div class="form-group col-md-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Step Cost</label>
                     <input  type="number" class="form-control" id="inputStepBudget" placeholder="10000" min="1" max="99999999" v-model="step.step_cost" required>
                     
                 </div>
 
-                <div class="form-group col-md-auto">
+                <div class="form-group col-md-4">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepDuration">Step Duration</label>
                     <input  type="text" class="form-control" id="inputStepDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="step.step_duration" >
                     
                 </div>
 
     
-                <div class="form-group col-md-auto">
+                <div class="form-group col-md-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepPercentComplete">Step % Done</label>
                     <input  type="number" class="form-control" id="inputStepPercentComplete" placeholder="50" min="0" max="100" v-model="step.step_percent_complete" >
                    <br>
