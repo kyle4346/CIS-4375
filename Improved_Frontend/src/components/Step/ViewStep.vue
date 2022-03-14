@@ -33,7 +33,13 @@
 
                             <br>
                             <br>
-                            
+                            <router-link :to="{name: 'createTask', params: { id: step.step_number}}" style="text-align: center;" class="btn btn-success">Add Task
+                            </router-link>
+
+                            <br>
+                            <br>
+                            <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-info">View Tasks
+                            </router-link>
 
 
                         </td>

@@ -449,7 +449,7 @@ app.get('/phase_report/:id', (req, res, next) => {
           return next(error)
       } else if (data === null) {
           // Sending 404 when not found something is a good practice
-        res.status(404).send('Project Form Information not found');
+        res.status(404).send('Phase Form Information not found');
       }
       else {
         res.json(data)
@@ -523,6 +523,22 @@ app.get('/steps', (req, res, next) => {
 app.get('/step/:id', (req, res, next) => {
   //find data based on the client id for the collection client form information
   StepModel.findOne({ step_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Step Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/step_report/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  StepModel.findOne({ step_number: req.params.id}, (error, data) => {
       if (error) {
           return next(error)
       } else if (data === null) {
@@ -765,6 +781,30 @@ app.get('/project_step_report/:id', (req, res, next) => {
         localField : 'phase_number',
         foreignField : 'phase_number',
         as : 'phase',
+    } }
+  ],
+   (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        res.json(data);
+      }
+  });
+});
+//End of aggregate 
+
+//Report to get tasks linked to a step 
+app.get('/project_task_report/:id', (req, res, next) => {
+
+
+  TaskModel.aggregate([
+    { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,step_number: 1, task_name: 1, task_number:1 , task_completed:1} },  //retrieve these fieldnames from the genral information schema
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+        from : 'step',
+        localField : 'step_number',
+        foreignField : 'step_number',
+        as : 'step',
     } }
   ],
    (error, data) => {

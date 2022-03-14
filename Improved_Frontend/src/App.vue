@@ -77,6 +77,10 @@
     <li class="dropdown-item">
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createStep">Create Step Form</router-link>
     </li>
+
+     <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createTask">Create Task Form</router-link>
+    </li>
   </ul>
 </div>
 
@@ -109,6 +113,9 @@
     </li>
      <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewStep">View Step</router-link>
+    </li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewTask">View Task</router-link>
     </li>
   </ul>
 </div>

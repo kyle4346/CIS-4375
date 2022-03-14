@@ -214,6 +214,14 @@ const routes = [
 
 },
 
+{
+  //view client info based on the component client info
+    path: '/project_task_report/:id',
+    name: 'project_task_report',
+    component: () => import('../components/Reports/viewTaskReport')
+
+},
+
 //*******************End of Reports***************************** */
 //*******Vue Chart******* */
 {

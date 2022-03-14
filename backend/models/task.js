@@ -9,35 +9,38 @@ let TaskSchema = new Schema({
     task_id: { type: String, default: uuid.v1 },
     
     project_number: {
-        type: Number,
-        min:1,
-        max: 999999,
-        not: null,
-        required: true,
-        unique: false
+      type: String,
+      minLength:1,
+      maxLength:9,
+      not: null,
+      required: true,
+      unique: false
     },
     phase_number: {
-        type: Number,
-        min:1,
-        max: 999999,
-        not: null,
-        required: true,
+      type: String,
+      minLength:1,
+      maxLength:9,
+      not: null,
+      required: true,
+      unique: false
         
     },
     step_number: {
-        type: Number,
-        min:1,
-        max: 999999,
-        not: null,
-        required: true,
+      type: String,
+      minLength:1,
+      maxLength:9,
+      not: null,
+      required: true,
+      unique: false
        
     },
     task_number: {
-        type: Number,
-        min:1,
-        max: 999999,
-        not: null,
-        required: true,
+      type: String,
+      minLength:1,
+      maxLength:9,
+      not: null,
+      required: true,
+      unique: false
         
     },
     task_name: {
