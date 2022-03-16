@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-            <table class="table table-striped">
+            <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num</th>
@@ -31,7 +31,7 @@
 
                             <br>
                             <br>
-                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center;" class="btn btn-success">Add Step
+                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center;" class="btn btn-secondary">Add Step
                             </router-link>
 
                             <br>
@@ -45,6 +45,12 @@
                 </tbody>
             </table>
         </div>
+
+        <p>
+             <br>
+             <br>
+      <router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:525px;" to="/viewProject">View Projects</router-link>
+        </p>
     </div>
 
 </template>
@@ -87,8 +93,51 @@
 
 
 
-<style>
-    .btn-success {
+<style scoped>
+/* Styles taken from Educba.com at https://www.educba.com/vue-js-table/*/
+.styled-table {
+  border-collapse: collapse;
+  font-size: 12pt;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+.styled-table thead tr {
+  background-color: #267bfa;
+  color: #ffffff;
+}
+.btn-success {
         margin-right: 10px;
-    }
+}
+
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #267bfa;
+}
+.ic {
+  width: 64px;
+  height: 64px;
+}
+.ic2 {
+  width: 64px;
+  height: 64px;
+}
+.ic3 {
+  width: 64px;
+  height: 64px;
+}
 </style>

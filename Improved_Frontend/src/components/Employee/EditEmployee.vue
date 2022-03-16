@@ -24,11 +24,7 @@
                     
                 </div>
 
-                 <div class="form-group col-md-auto">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
-                    <input  type="number" class="form-control" id="inputProjectNum" placeholder="10000" min="0" max="999999" v-model="employee.project_number" >
                     
-                </div>
 
                 <div class="form-group col-md-auto">
                 <legend style ="font-size:14pt" class="col-form-label pt-0">Gender*</legend>

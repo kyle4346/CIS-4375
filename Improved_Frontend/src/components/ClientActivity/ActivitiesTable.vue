@@ -31,15 +31,11 @@
 
           <td>
             <button
-              @click.prevent="deletesomething(User.project_number)"
-              class="btn btn-danger"
-            >
-              Delete
-            </button>
+              @click.prevent="deletesomething(User.project_number)" class="btn btn-danger">Delete</button>
+            <br>
+            <br>
             <!-- User.project_number -->
-            <button @click.prevent="senddata()" class="btn btn-success">
-              Post
-            </button>
+            <button @click.prevent="senddata()" class="btn btn-success">Post</button>
           </td>
         </tr>
       </tbody>
@@ -183,12 +179,16 @@ export default {
   width: 100%;
   height: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  text-align: center;
+  text-align: left;
 }
 .styled-table thead tr {
-  background-color: #009879;
+  background-color: #267bfa;
   color: #ffffff;
 }
+.btn-success {
+        margin-right: 10px;
+}
+
 
 .styled-table th,
 .styled-table td {
@@ -203,7 +203,7 @@ export default {
 }
 
 .styled-table tbody tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #267bfa;
 }
 .ic {
   width: 64px;

@@ -54,7 +54,7 @@
 <div class="btn-group col-md-2">
   
   <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
-    Create Entry
+    Intake Forms
   </button>
   <ul class="dropdown-menu">
     <li class="dropdown-item" >
@@ -89,7 +89,7 @@
 <div class="btn-group col-md-2">
   
   <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
-    View Tables
+    View Forms
   </button>
   <ul class="dropdown-menu">
      <li class="dropdown-item" >

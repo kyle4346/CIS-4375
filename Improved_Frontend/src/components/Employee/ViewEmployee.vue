@@ -1,11 +1,12 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-            <table class="table table-striped">
+            <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Employee FName</th>
-                        <th>Employee LName</th>
+                      
+                        <th>Employee First Name</th>
+                        <th>Employee Last Name</th>
                         <th>Employee Phone</th>
                         <th>Employee Email</th>
                         <th>Employee Title</th>
@@ -15,6 +16,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="employee in employees" :key="employee.employee_id">
+                        
                         <td>{{ employee.employee_first_name }}</td>
                         <td>{{ employee.employee_last_name }}</td>
                         <td>{{ employee.employee_phone }}</td>
@@ -75,9 +77,52 @@
 </script>
 
 
-
-<style>
-    .btn-success {
+<style scoped>
+/* Styles taken from Educba.com at https://www.educba.com/vue-js-table/*/
+.styled-table {
+  border-collapse: collapse;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  text-align: left;
+}
+.styled-table thead tr {
+  background-color: #267bfa;
+  color: #ffffff;
+}
+.btn-success {
         margin-right: 10px;
-    }
+}
+
+
+.styled-table th,
+.styled-table td {
+  padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #267bfa;
+}
+.ic {
+  width: 64px;
+  height: 64px;
+}
+.ic2 {
+  width: 64px;
+  height: 64px;
+}
+.ic3 {
+  width: 64px;
+  height: 64px;
+}
 </style>
+
