@@ -36,7 +36,7 @@
 
                             <br>
                             <br>
-                            <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-info">View Steps
+                            <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Steps
                             </router-link>
 
 

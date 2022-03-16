@@ -85,7 +85,7 @@
 /* Styles taken from Educba.com at https://www.educba.com/vue-js-table/*/
 .styled-table {
   border-collapse: collapse;
-  font-size: 0.9em;
+  font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
   height: 100%;
@@ -97,7 +97,7 @@
   color: #ffffff;
 }
 .btn-success {
-        margin-right: 10px;
+        margin-right: 6px;
 }
 
 

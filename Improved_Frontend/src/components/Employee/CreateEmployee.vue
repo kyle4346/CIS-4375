@@ -24,8 +24,6 @@
                     
                 </div>
 
-                
-
                 <div class="form-group col-md-auto">
                 <legend style ="font-size:14pt" class="col-form-label pt-0">Gender*</legend>
                 <!--<div class="col-sm-10"> -->

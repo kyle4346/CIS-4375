@@ -86,7 +86,7 @@
 /* Styles taken from Educba.com at https://www.educba.com/vue-js-table/*/
 .styled-table {
   border-collapse: collapse;
-  font-size: 0.9rem;
+  font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
   height: 100%;

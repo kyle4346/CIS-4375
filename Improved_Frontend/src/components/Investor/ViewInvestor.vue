@@ -2,14 +2,14 @@
     <div class="row">
         <div class="col-lg-12">
             <table class="styled-table">
-                <col   style="width:14%"> 
-                <col   style="width:14%"> 
+                <col   style="width:15%"> 
+                <col   style="width:15%"> 
+                <col   style="width:12%"> 
+                <col   style="width:12%"> 
+                <col   style="width:10%"> 
                 <col   style="width:12%"> 
                 <col   style="width:11%"> 
-                <col   style="width:10%"> 
-                <col   style="width:11%"> 
-                <col   style="width:10%"> 
-                <col   style="width:0%"> 
+                <col   style="width:13%"> 
                 <thead class="thead-dark">
                     <tr>
                         <th>Investor First Name</th>
@@ -90,7 +90,7 @@
 /* Styles taken from Educba.com at https://www.educba.com/vue-js-table/*/
 .styled-table {
   border-collapse: collapse;
-  font-size: 0.9em;
+  font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
   height: 100%;
@@ -102,7 +102,7 @@
   color: #ffffff;
 }
 .btn-success {
-        margin-right: 10px;
+        margin-right: 6px;
 }
 
 
