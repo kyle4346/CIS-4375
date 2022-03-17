@@ -1,6 +1,11 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
+             <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Subcontractorss:</strong>
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchSubcontractors" placeholder="ex: last name or first name" /> 
+
+            <br>
+            <br>
             <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
@@ -16,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="subcontractor in subcontractors" :key="subcontractor.subcontractor_id">
+                    <tr v-for="subcontractor in filteredSubcontractors" :key="subcontractor.subcontractor_id">
                         <td>{{ subcontractor.subcontractor_fname }}</td>
                         <td>{{ subcontractor.subcontractor_lname }}</td>
                         <td>{{ subcontractor.subcontractor_business_name }}</td>
@@ -49,7 +54,8 @@
     export default {
         data() {
             return {
-                subcontractors: []
+                subcontractors: [],
+                searchSubcontractors: ''
             }
         },
         // this is using created hook 
@@ -60,6 +66,20 @@
             }).catch(error => {
                 console.log(error)
             });
+        },
+        computed: {
+            filteredSubcontractors: function(){
+
+
+                return this.subcontractors.filter((subcontractor) =>{
+
+                    return subcontractor.subcontractor_fname.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
+                           subcontractor.subcontractor_lname.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
+                           subcontractor.subcontractor_phone.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
+                           subcontractor.subcontractor_email.toLowerCase().match(this.searchSubcontractors.toLowerCase()) 
+                    
+                })
+            }    
         },
         methods: {
             deleteSubcontractor(id){

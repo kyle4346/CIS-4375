@@ -1,6 +1,11 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
+             <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Tasks:</strong>
+            <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchTasks" placeholder="ex: Project Num or Task Num" /> 
+           <br>
+           <br>
+            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:645px;" to="/viewStep">View Steps</router-link></p>
             <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
@@ -16,7 +21,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="task in tasks" :key="task.task_id">
+                    <tr v-for="task in filteredTasks" :key="task.task_id">
                         <td>{{ task.project_number }}</td>
                         <td>{{ task.phase_number }}</td>
                         <td>{{ task.step_number }}</td>
@@ -41,11 +46,6 @@
                 </tbody>
             </table>
         </div>
-         <p>
-             <br>
-             <br>
-      <router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:525px;" to="/viewStep">View Steps</router-link>
-        </p>
     </div>
 
 </template>
@@ -56,7 +56,8 @@
     export default {
         data() {
             return {
-                tasks: []
+                tasks: [],
+                searchTasks: ''
             }
         },
         // this is using created hook 
@@ -67,6 +68,21 @@
             }).catch(error => {
                 console.log(error)
             });
+        },
+         computed: {
+            filteredTasks: function(){
+
+
+                return this.tasks.filter((task) =>{
+
+                    return task.project_number.toLowerCase().match(this.searchTasks.toLowerCase()) ||
+                           task.phase_number.toLowerCase().match(this.searchTasks.toLowerCase()) ||
+                           task.step_number.toLowerCase().match(this.searchTasks.toLowerCase()) ||
+                           task.task_number.toLowerCase().match(this.searchTasks.toLowerCase()) ||
+                           task.task_name.toLowerCase().match(this.searchTasks.toLowerCase())
+                    
+                })
+            }    
         },
         methods: {
             deleteTask(id){

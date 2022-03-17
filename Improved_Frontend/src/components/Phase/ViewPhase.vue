@@ -1,6 +1,13 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
+            <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Phases:</strong>
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchPhases" placeholder="ex: Project Num or Phase Num" /> 
+            <br>
+            <br>
+
+<p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:645px;" to="/viewProject">View Projects</router-link></p>
+            
             <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
@@ -15,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="phase in phases" :key="phase.phase_id">
+                    <tr v-for="phase in filteredPhases" :key="phase.phase_id">
                         <td>{{ phase.project_number }}</td>
                         <td>{{ phase.phase_number }}</td>
                         <td>{{ phase.phase_name }}</td>
@@ -46,11 +53,6 @@
             </table>
         </div>
 
-        <p>
-             <br>
-             <br>
-      <router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:525px;" to="/viewProject">View Projects</router-link>
-        </p>
     </div>
 
 </template>
@@ -61,7 +63,8 @@
     export default {
         data() {
             return {
-                phases: []
+                phases: [],
+                searchPhases:''
             }
         },
         // this is using created hook 
@@ -72,6 +75,20 @@
             }).catch(error => {
                 console.log(error)
             });
+        },
+        computed: {
+            filteredPhases: function(){
+
+
+                return this.phases.filter((phase) =>{
+
+                    return phase.project_number.toLowerCase().match(this.searchPhases.toLowerCase()) ||
+                           phase.phase_number.toLowerCase().match(this.searchPhases.toLowerCase()) ||
+                           phase.phase_name.toLowerCase().match(this.searchPhases.toLowerCase()) 
+                           
+                    
+                })
+            }    
         },
         methods: {
             deletePhase(id){

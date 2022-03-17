@@ -1,6 +1,11 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
+             <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Projects:</strong>
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchProjects" placeholder="ex: Project Num or Project Name" /> 
+
+            <br>
+            <br>
             <table class="table styled-table">
                 <col   style="width:9%"> 
                 <col   style="width:0%"> 
@@ -27,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="project in projects" :key="project.project_number">
+                    <tr v-for="project in filteredProjects" :key="project.project_number">
                         <td>{{ project.project_number }}</td>
                         <td>{{ project.project_name }}</td>
                         <td>{{ project.project_completed }}</td>
@@ -75,7 +80,9 @@
     export default {
         data() {
             return {
-                projects: []
+                projects: [],
+                searchProjects: ''
+
             }
         },
         // this is using created hook 
@@ -86,6 +93,20 @@
             }).catch(error => {
                 console.log(error)
             });
+        },
+        computed: {
+            filteredProjects: function(){
+
+
+                return this.projects.filter((project) =>{
+
+                    return project.project_number.toLowerCase().match(this.searchProjects.toLowerCase()) ||
+                           project.project_name.toLowerCase().match(this.searchProjects.toLowerCase()) ||
+                           project.project_location_name.toLowerCase().match(this.searchProjects.toLowerCase()) 
+                           
+                    
+                })
+            }    
         },
         methods: {
             deleteProject(id){

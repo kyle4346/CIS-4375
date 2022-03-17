@@ -1,6 +1,13 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
+             
+             <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Steps:</strong>
+            <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchSteps" placeholder="ex: Project Num or Step Num" /> 
+           <br>
+           <br>
+            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:645px;" to="/viewPhase">View Phases</router-link></p>
+            
             <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
@@ -16,7 +23,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="step in steps" :key="step.step_id">
+                    <tr v-for="step in filteredSteps" :key="step.step_id">
                         <td>{{ step.project_number }}</td>
                         <td>{{ step.phase_number }}</td>
                         <td>{{ step.step_number }}</td>
@@ -48,12 +55,8 @@
             </table>
         </div>
 
-         <p>
-             <br>
-             <br>
-      <router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:525px;" to="/viewPhase">View Phases</router-link>
-        </p>
     </div>
+
 
 </template>
 
@@ -63,7 +66,8 @@
     export default {
         data() {
             return {
-                steps: []
+                steps: [],
+                searchSteps: ''
             }
         },
         // this is using created hook 
@@ -74,6 +78,20 @@
             }).catch(error => {
                 console.log(error)
             });
+        },
+        computed: {
+            filteredSteps: function(){
+
+
+                return this.steps.filter((step) =>{
+
+                    return step.project_number.toLowerCase().match(this.searchSteps.toLowerCase()) ||
+                           step.phase_number.toLowerCase().match(this.searchSteps.toLowerCase()) ||
+                           step.step_number.toLowerCase().match(this.searchSteps.toLowerCase()) || 
+                           step.step_name.toLowerCase().match(this.searchSteps.toLowerCase()) 
+                    
+                })
+            }    
         },
         methods: {
             deleteStep(id){

@@ -1,6 +1,13 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
+
+        <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Investors:</strong>
+        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: last name or first name" />
+        
+          <br>
+          <br>
+          
             <table class="styled-table">
                 <col   style="width:15%"> 
                 <col   style="width:15%"> 
@@ -11,6 +18,8 @@
                 <col   style="width:11%"> 
                 <col   style="width:13%"> 
                 <thead class="thead-dark">
+                   
+        
                     <tr>
                         <th>Investor First Name</th>
                         <th>Investor Last Name</th>
@@ -23,7 +32,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="investor in investors" :key="investor.investor_iD">
+                    <tr v-for="investor in filteredInvestors" :key="investor.investor_iD">
                         <td>{{ investor.investor_fname }}</td>
                         <td>{{ investor.investor_lname }}</td>
                         <td>{{ investor.investor_detail }}</td>
@@ -54,7 +63,8 @@
     export default {
         data() {
             return {
-                investors: []
+                investors: [] ,
+                search: ''
             }
         },
         // this is using created hook 
@@ -65,6 +75,20 @@
             }).catch(error => {
                 console.log(error)
             });
+        },
+        computed: {
+            filteredInvestors: function(){
+
+
+                return this.investors.filter((investor) =>{
+
+                    return investor.investor_lname.toLowerCase().match(this.search.toLowerCase()) ||
+                           investor.investor_fname.toLowerCase().match(this.search.toLowerCase()) ||
+                           investor.investor_phone.toLowerCase().match(this.search.toLowerCase()) ||
+                           investor.investor_email.toLowerCase().match(this.search.toLowerCase()) 
+                    
+                })
+            }    
         },
         methods: {
             deleteInvestor(id){

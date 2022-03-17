@@ -1,6 +1,13 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
+
+            <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Employees:</strong>
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchEmployees" placeholder="ex: last name or first name" /> 
+
+            <br>
+            <br>
+
             <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
@@ -15,7 +22,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="employee in employees" :key="employee.employee_id">
+                    <tr v-for="employee in filteredEmployees" :key="employee.employee_id">
                         
                         <td>{{ employee.employee_first_name }}</td>
                         <td>{{ employee.employee_last_name }}</td>
@@ -46,7 +53,8 @@
     export default {
         data() {
             return {
-                employees: []
+                employees: [],
+                searchEmployees: ''
             }
         },
         // this is using created hook 
@@ -57,6 +65,20 @@
             }).catch(error => {
                 console.log(error)
             });
+        },
+       computed: {
+            filteredEmployees: function(){
+
+
+                return this.employees.filter((employee) =>{
+
+                    return employee.employee_first_name.toLowerCase().match(this.searchEmployees.toLowerCase()) ||
+                           employee.employee_last_name.toLowerCase().match(this.searchEmployees.toLowerCase()) ||
+                           employee.employee_phone.toLowerCase().match(this.searchEmployees.toLowerCase()) ||
+                           employee.employee_email.toLowerCase().match(this.searchEmployees.toLowerCase()) 
+                    
+                })
+            }    
         },
         methods: {
             deleteEmployee(id){
