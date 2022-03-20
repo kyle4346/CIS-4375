@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-             <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Projects:</strong>
+             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Projects:</strong>
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchProjects" placeholder="ex: Project Num or Project Name" /> 
 
             <br>

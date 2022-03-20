@@ -1,9 +1,13 @@
 <template>
     <div class="row">
          <h2>Phases for Project: {{projects.project_name}}, Project Start Date is {{projects.project_start_date}}</h2>
-         
         <div class="col-lg-12">
+            <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Projects:</strong>
+            <input type="text" class="projectNum" style="margin-left:5px; align:center; font-size: 12pt;"  size="30"  v-model="projects" placeholder="ex: Project Num" /> 
+            
+
           <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1070px; margin-top: -80px;" to="/viewProject">View Projects</router-link>
+      
             <table class="styled-table">
                 
                 <thead class="thead-dark">
@@ -49,7 +53,6 @@
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
                 phases: [], 
-                searchPhaseReport: '',
                 projects: {},
                 phase: {
                    phase_number: '',

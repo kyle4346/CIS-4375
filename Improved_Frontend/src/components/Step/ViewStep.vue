@@ -2,11 +2,11 @@
     <div class="row">
         <div class="col-lg-12">
              
-             <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Steps:</strong>
+             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Steps:</strong>
             <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchSteps" placeholder="ex: Project Num or Step Num" /> 
            <br>
            <br>
-            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:645px;" to="/viewPhase">View Phases</router-link></p>
+            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:850px; margin-top: -110px;" to="/viewPhase">View Phases</router-link></p>
             
             <table class="styled-table">
                 <thead class="thead-dark">

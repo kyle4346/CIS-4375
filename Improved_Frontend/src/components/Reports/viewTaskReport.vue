@@ -1,12 +1,18 @@
 <template>
     <div class="row">
-         <h2>Tasks for Step Number: {{steps.step_number}}, Step Name: {{steps.step_name}}</h2>
+         <h2 style="margin-left:400px">
+          Tasks for Step Number: {{steps.step_number}} 
+          <br>  
+          Step Name: {{steps.step_name}}</h2>
+        
+          
         <div class="col-lg-12">
-
+            <br>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
-                    <tr>
+                    <tr>  
+                        <th>Project Number:</th>
                         <th>Task Name:</th>
                         <th>task Num:</th>
                         <th>Task Completed:</th>
@@ -16,6 +22,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="task in Tasks" :key="task.task_id">
+                        <td>{{ task.project_number}} </td>
                         <td>{{ task.task_name}} </td>
                         <td>{{ task.task_number }}</td>
                         <td>{{ task.task_completed }}</td>

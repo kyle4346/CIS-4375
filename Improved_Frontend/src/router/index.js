@@ -223,6 +223,16 @@ const routes = [
 },
 
 //*******************End of Reports***************************** */
+{
+  //view client info based on the component client info
+    path: '/project_phase_report/',
+    name: 'phase_report',
+    component: () => import('../components/ReportTab/phasereport')
+
+},
+//********************Start of Tab Reports*********************************************** */
+
+//********************End of Tab Reports*********************************************** */
 //*******Vue Chart******* */
 {
   //Activities Summary chart based on the component VueChartJS

@@ -128,7 +128,7 @@
   </button>
   <ul class="dropdown-menu">
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to=""></router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/project_phase_report/">Phase Report</router-link>
     </li>
     <li><a class="dropdown-item" href="#">Another action</a></li>
     <li><a class="dropdown-item" href="#">Something else here</a></li>

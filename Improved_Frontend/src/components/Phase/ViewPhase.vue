@@ -1,12 +1,12 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-            <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Phases:</strong>
+            <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Phases:</strong>
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchPhases" placeholder="ex: Project Num or Phase Num" /> 
             <br>
             <br>
 
-<p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:645px;" to="/viewProject">View Projects</router-link></p>
+<p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:870px; margin-top: -110px;" to="/viewProject">View Projects</router-link></p>
             
             <table class="styled-table">
                 <thead class="thead-dark">

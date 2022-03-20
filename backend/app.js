@@ -774,7 +774,7 @@ app.get('/project_step_report/:id', (req, res, next) => {
 
 
   StepModel.aggregate([
-    { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
+    { $match : { phase_number: (req.params.id) } },  //match client id if so retrieve that data
     { $project : {_id:0 ,phase_number: 1, step_name: 1, step_cost:1 , step_completed:1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'phase',
@@ -798,8 +798,8 @@ app.get('/project_task_report/:id', (req, res, next) => {
 
 
   TaskModel.aggregate([
-    { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,step_number: 1, task_name: 1, task_number:1 , task_completed:1} },  //retrieve these fieldnames from the genral information schema
+    { $match : { step_number: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,project_number: 1, step_number: 1, task_name: 1, task_number:1 , task_completed:1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'step',
         localField : 'step_number',

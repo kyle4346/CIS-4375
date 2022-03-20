@@ -1,11 +1,11 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-             <strong style="margin-left:470px; font-size: 20pt; color:Black; "  >Search Tasks:</strong>
+             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Tasks:</strong>
             <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchTasks" placeholder="ex: Project Num or Task Num" /> 
            <br>
            <br>
-            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:645px;" to="/viewStep">View Steps</router-link></p>
+            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:850px; margin-top: -110px;" to="/viewStep">View Steps</router-link></p>
             <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
