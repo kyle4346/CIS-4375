@@ -31,9 +31,9 @@ let EmployeeSchema = new Schema({
        
     },
     employee_salary: {
-        type: Number,
-        min: 0,
-        max: 9999999,
+        type: String,
+        minLength: 0,
+        maxLength: 9999999,
         not: null,
         required: true
 

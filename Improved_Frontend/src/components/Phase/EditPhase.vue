@@ -1,65 +1,69 @@
 <template>
     <div class="row justify-content-center"> 
-        <div class="col-md-8"> 
-            <h3 class="text-center" style="font-size:200%; font-weight:bold">Update Phase Intake Form</h3>
-            <br>
+        <div class="col-lg-12"> 
+            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Update Phase Intake Form</h1>
+            <strong style ="font-size:150%">General Information</strong>
+             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                 
                 <div class="form-group row">
-                <strong style ="font-size:150%">General Information</strong>
-                <br>
-                <br>
-                <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
-                <br>
-
-                <div class="form-group col-md-4">
-                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseProjectNum">Project Number*</label>
+                <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseProjectNum">Project Number</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputPhaseProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="phase.project_number" required>
                     
                 </div>
 
-                <div class="form-group col-md-4">
-                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseNum">Phase Number*</label>
+                <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseNum">Phase Number</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputPhaseNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="phase.phase_number" required>
                     
                 </div>
 
-                <div class="form-group col-md-4">
-                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseName">Phase Name*</label>
+                <div class="form-group col-lg-3">
+                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseName">Phase Name</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputPhaseName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="phase.phase_name" required>
                     
-                    <br>
-                    
                 </div>
-                </div>
-        
 
-                <div class="form-group row">
-                 <div class="form-group col-md-4">
-                    <label style ="font-size:14pt" for="inputPhaseNotes">Phase Details*</label>
+                <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt" for="inputPhaseNotes">Phase Details</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <textarea type="text" class="form-control" id="inputPhaseNotes" minlength="5" maxlength="75"   rows="3" v-model="phase.phase_description" ></textarea>
-                <br>
+                    <br>
                 </div>
+                
+                <div class="form-group col-lg-3">
+                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Phase Completed?</label>
+                <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                <br>
 
-                <legend style ="font-size:14pt" class="col-form-label col-md-auto pt-0">Is Phase Completed?*</legend>
-
-                <div class="form-check-inline col-md-1">
+                <div class="form-check-inline col-lg-auto">
                      <label style ="font-size:14pt" class="form-check-label" for="phaseComplete1">
                      <input class="form-check-input" type="radio"  id="phaseComplete1" value="Yes"  v-model="phase.phase_completed"   required>Yes    
                      </label>
                      
                 </div>
                    
-                <div class="form-check-inline col-md-1">
+                <div class="form-check-inline col-lg-auto">
                     <label style ="font-size:14pt" class="form-check-label" for="phaseComplete2">
                     <input class="form-check-input" type="radio"  id="phaseComplete2" value="No" v-model="phase.phase_completed" required>No
                     </label>
+                    
                 </div>
 
 
-                <div class="form-group col-md-2">
+                </div>
+
+                </div>
+                
+                <div class="form-group row">
+
+                <div class="form-group col-lg-2">
                     <label style ="font-size:14pt">Phase Status</label>
-                    
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <select  v-model="phase.phase_status_type" required> 
                      <option v-for="phase_status_type in phase_status_type" v-bind:key="phase_status_type">{{phase_status_type}}</option>
                     </select>
@@ -67,27 +71,25 @@
                     
                 </div>
 
-                </div>
-                <div class="form-group row">
-                <div class="form-group col-md-auto">
+                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseBudget">Phase Cost</label>
                     <input  type="number" class="form-control" id="inputPhaseBudget" placeholder="10000" min="1" max="99999999" v-model="phase.phase_cost" required>
                     
                 </div>
 
-                <div class="form-group col-md-auto">
+                <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseEstimatedDuration">Phase Estimated Duration</label>
                     <input  type="text" class="form-control" id="inputPhaseEstimatedDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="phase.phase_estimated_duration" >
                     
                 </div>
 
-                <div class="form-group col-md-auto">
+                <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Phase Actual Duration</label>
                     <input  type="text" class="form-control" id="inputPhaseActualDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="phase.phase_actual_duration" >
                     
                 </div>
 
-                <div class="form-group col-md-auto">
+                <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhasePercentComplete">Phase % Done</label>
                     <input  type="number" class="form-control" id="inputPhasePercentComplete" placeholder="50" min="0" max="100" v-model="phase.phase_percent_complete" >
                    <br>
@@ -97,17 +99,17 @@
                 <div class="form-group row">
                 
 
-                <div class="form-group col-md-auto">
+                <div  class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phase Start Date*</label>
                     <input type="date" class="form-control" v-model="phase.phase_start_date" required>
                 </div>
 
-                <div class="form-group col-md-auto">
+                <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phase Estimated End Date</label>
                     <input type="date" class="form-control" v-model="phase.phase_estimated_end_date" >
                 </div>
 
-                <div class="form-group col-md-auto">
+                <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phase Actual End Date</label>
                     <input type="date" class="form-control" v-model="phase.phase_actual_end_date" >
                     <br>
