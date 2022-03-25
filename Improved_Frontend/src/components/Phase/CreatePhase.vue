@@ -100,7 +100,8 @@
                 
 
                 <div  class="form-group col-lg-auto">
-                    <label style ="font-size:14pt">Phase Start Date*</label>
+                    <label style ="font-size:14pt">Phase Start Date</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="phase.phase_start_date" required>
                 </div>
 

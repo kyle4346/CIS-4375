@@ -103,11 +103,14 @@ let InvestorSchema = new Schema({
 
       },
       project_number: {
-        type: Number,
-        min:1,
-        max: 999999,
-        unique: false
+      type: String,
+      minLength:1,
+      maxLength:9,
+      not: null,
+      required: true,
+      unique: false
     },
+    
     
 
   }, {

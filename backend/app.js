@@ -818,6 +818,37 @@ app.get('/project_task_report/:id', (req, res, next) => {
 //End of aggregate 
 
 
+//Report to get Investor linked to Project 
+app.get('/investor_project_report/:id', (req, res, next) => {
+
+
+  InvestorModel.aggregate([
+    { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,project_number: 1, investor_fname: 1, investor_lname:1 } },  //retrieve these fieldnames from the genral information schema
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+        from : 'project',
+        localField : 'project_number',
+        foreignField : 'project_number',
+        as : 'project',
+    } },
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+      from : 'subcontractor',
+      localField : 'project_number',
+      foreignField : 'project_number',
+      as : 'subcontractor',
+  } }
+  ],
+   (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        res.json(data);
+      }
+  });
+});
+//End of aggregate 
+
+
 
 
 

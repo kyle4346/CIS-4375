@@ -47,7 +47,7 @@
 
                  <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left; margin-left:15px;" for="inputProjectNum">Project Number</label>
-                    <input  style="margin-left:15px;" type="number" class="form-control" id="inputProjectNum" placeholder="10000" min="0" max="999999" v-model="subcontractor.project_number" >
+                    <input  style="margin-left:15px;" type="text" class="form-control" id="inputTaskProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="subcontractor.project_number" >
                 </div>
 
                 <div class="form-group col-lg-2">

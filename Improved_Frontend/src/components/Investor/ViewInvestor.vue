@@ -43,11 +43,18 @@
                         <td>
                             <router-link :to="{name: 'editInvestor', params: { id: investor.investor_iD}}" style="text-align: center;" class="btn btn-success">Edit
                             </router-link>
+                            <button @click.prevent="deleteInvestor(investor.investor_iD)" class="btn btn-danger">Delete</button>
 
-                            
+                            <br>
+                            <br>
+                            <router-link :to="{name: 'createPhase', params: { id: investor.project_number}}" style="text-align: center;" class="btn btn-secondary">Add Project
+                            </router-link>
 
+                            <br>
+                            <br>
+                            <router-link :to="{name: 'investor_project_report', params: { id: investor.project_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Project
+                            </router-link>
 
-                        <button @click.prevent="deleteInvestor(investor.investor_iD)" class="btn btn-danger">Delete</button>
                         </td>
                     </tr>
                 </tbody>

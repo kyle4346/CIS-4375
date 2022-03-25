@@ -222,15 +222,33 @@ const routes = [
 
 },
 
-//*******************End of Reports***************************** */
+
 {
   //view client info based on the component client info
-    path: '/project_phase_report/',
-    name: 'phase_report',
-    component: () => import('../components/ReportTab/phasereport')
+    path: '/investor_project_report/:id',
+    name: 'investor_project_report',
+    component: () => import('../components/Reports/viewInvestorReport')
 
 },
-//********************Start of Tab Reports*********************************************** */
+
+{
+  //view client info based on the component client info
+    path: '/employee_project_report/:id',
+    name: 'employee_project_report',
+    component: () => import('../components/Reports/viewEmployeeReport')
+
+},
+
+{
+  //view client info based on the component client info
+    path: '/subcontractor_step_report/:id',
+    name: 'subcontractor_step_report',
+    component: () => import('../components/Reports/viewSubcontractorReport')
+
+},
+
+
+
 
 //********************End of Tab Reports*********************************************** */
 //*******Vue Chart******* */
