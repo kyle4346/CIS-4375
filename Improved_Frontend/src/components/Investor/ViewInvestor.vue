@@ -47,12 +47,8 @@
 
                             <br>
                             <br>
-                            <router-link :to="{name: 'createPhase', params: { id: investor.project_number}}" style="text-align: center;" class="btn btn-secondary">Add Project
-                            </router-link>
-
-                            <br>
-                            <br>
-                            <router-link :to="{name: 'investor_project_report', params: { id: investor.project_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Project
+                           
+                            <router-link :to="{name: 'investor_project_report', params: { id: investor.isid}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Projects
                             </router-link>
 
                         </td>
