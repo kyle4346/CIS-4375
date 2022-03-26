@@ -14,7 +14,7 @@ let ProjectSchema = new Schema({
       maxLength:9,
       not: null,
       required: true,
-      unique: false
+      unique: true
     },
      
     project_name: {
@@ -165,6 +165,14 @@ let ProjectSchema = new Schema({
         maxLength: 40,
         required: true,
         not: null
+      },
+      psid: {
+        type: String,
+        minLength: 5,
+        maxLength: 5,
+        required: true,
+        not: null,
+        unique:true
       },
     
   }, {

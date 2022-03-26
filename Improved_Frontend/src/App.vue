@@ -81,6 +81,10 @@
      <li class="dropdown-item">
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createTask">Create Task Form</router-link>
     </li>
+
+     <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createInvestorAssigned">Investor Assigned Form</router-link>
+    </li>
   </ul>
 </div>
 
@@ -116,6 +120,10 @@
     </li>
     <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewTask">View Task</router-link>
+    </li>
+
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestorAssigned">View Assigned Investors</router-link>
     </li>
   </ul>
 </div>

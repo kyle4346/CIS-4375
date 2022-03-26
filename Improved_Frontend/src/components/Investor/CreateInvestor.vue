@@ -2,14 +2,11 @@
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
             <h1 class="text-center" style="font-size:200%; font-weight:bold">Investor Intake Form</h1>
-            
+            <strong style ="font-size:150%">General Information</strong>
+            <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">
                 
                 <div class="form-group row">
-                <strong style ="font-size:150%">General Information</strong>
-                
-                <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
-                <br>
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -20,6 +17,12 @@
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputLName" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_lname" required>
+                    
+                </div>
+
+                 <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorID">ISID</label>
+                    <input   type="text" class="form-control" id="inputInvestorID" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor.isid" >
                     
                 </div>
         
@@ -60,8 +63,8 @@
                 <div class="form-group row">
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
-                    <input   type="text" class="form-control" id="inputPhaseProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="investor.project_number" >
+                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Number</label>
+                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="investor.project_number" >
                     
                 </div>
 
@@ -185,6 +188,7 @@
                    investor_status: '',
                    investor_type: '',
                    project_number: '',
+                   isid:''
                    
 
                 },
@@ -226,6 +230,7 @@
                    investor_status: '',
                    investor_type: '',
                    project_number: '',
+                   isid:''
 
                   }
                 }).catch(error => {

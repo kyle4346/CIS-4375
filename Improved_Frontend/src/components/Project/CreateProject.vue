@@ -3,16 +3,21 @@
         <div class="col-lg-12"> 
             <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px;">Project Intake Form</h1>
             <strong style ="font-size:150%;">General Information</strong>
+            <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">
                 
                 <div class="form-group row">
-                <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
-                <br>
+                <div class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputProject">PSID</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputProject" placeholder="10000" pattern="[0-9]{5,5}" v-model="project.psid" required>
+                    
+                </div>
 
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputPhaseProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="project.project_number" required>
+                    <input  type="text" class="form-control" id="inputProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="project.project_number" required>
                     
                 </div>
 
@@ -275,7 +280,8 @@
                    project_location_zipcode: '',
                    project_location_state: '' ,
                    project_location_country: '',
-                   project_location_status_type: ''
+                   project_location_status_type: '',
+                   psid: ''
                    
 
                 },
@@ -326,7 +332,8 @@
                    project_location_zipcode: '',
                    project_location_state: '' ,
                    project_location_country: '',
-                   project_location_status_type: ''
+                   project_location_status_type: '',
+                   psid: ''
                   }
                 }).catch(error => {
                     this.errors.push("Error in the form submission" + error.response.data);

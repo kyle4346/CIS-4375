@@ -34,19 +34,22 @@ let InvestorAssignedSchema = new Schema({
       
   },
     
-    investor_iD: {
+    isid: {
       type: String,
-      minLength: 0,
-      maxLength: 12,
+      minLength: 5,
+      maxLength: 5,
       required: true,
-      not: null
+      not: null,
+      unique:true
     },
     
-    project_id: {
-        type: String,
-        maxLength: 55,
-        required: true,
-        not: null
+    psid: {
+      type: String,
+      minLength: 5,
+      maxLength: 5,
+      required: true,
+      not: null,
+      unique:true
       
       
     }, 

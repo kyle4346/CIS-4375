@@ -110,8 +110,14 @@ let InvestorSchema = new Schema({
       required: true,
       unique: false
     },
-    
-    
+    isid: {
+      type: String,
+      minLength:5,
+      maxLength:5,
+      not: null,
+      required: true,
+      unique: true
+    },
 
   }, {
     collection: 'investor'

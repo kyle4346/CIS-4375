@@ -31,6 +31,9 @@ let StepModel = require('./models/step');
 //import the subcontractor model schema from another file
 let TaskModel = require('./models/task');
 
+//import the subcontractor model schema from another file
+let InvestorAssignedModel = require('./models/investor_assigned');
+
 
 
 
@@ -663,6 +666,82 @@ app.delete('/task/:id', (req, res, next) => {
 //************************************End of the Task****************************************************************** */
 
 
+//*************************************Intake forms for Specialized Reports*********************************************************************************** */
+app.post('/investor_assigned', (req, res, next) => {
+
+  InvestorAssignedModel.create(req.body, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        // res.json(data)
+        res.send('Investor Assigned Form Information is added to the database');
+      }
+  });
+});
+
+//create an endpoint to get all general information from the API  -Read Operation
+app.get('/investor_assigned', (req, res, next) => {
+  //very plain way to get all the data from the collection through the mongoose schema
+  InvestorAssignedModel.find((error, data) => {
+      if (error) {
+        //here we are using a call to next() to send an error message back
+        return next(error)
+      } else {
+        res.json(data)
+      }
+    })
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/investor_assigned/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  InvestorAssignedModel.findOne({ investor_assigned_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Investor Assigned Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
+app.put('/investor_assigned/:id', (req, res, next) => {
+//Update data in the client form information table based on client id 
+InvestorAssignedModel.findOneAndUpdate({ investor_assigned_id: req.params.id }, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.send('Investor Assigned Form Information is edited via PUT');
+        console.log('Investor Assigned Form Information successfully updated!', data)
+      }
+    })
+});
+
+//delete a client form information by clientID  -Delete Operation 
+app.delete('/investor_assigned/:id', (req, res, next) => {
+  
+  //mongoose will use clientID of document to delete 
+  InvestorAssignedModel.findOneAndRemove({ investor_assigned_id: req.params.id}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+         res.status(200).json({
+           msg: data
+         });
+      //  res.send('Student is deleted');
+      }
+    });
+});
+
+//*************************************Intake forms for Specialized Reports*********************************************************************************** */
+
+
 
 //***************Start of CFC Worker Client Activity Jose Zelaya***********
 
@@ -822,21 +901,21 @@ app.get('/project_task_report/:id', (req, res, next) => {
 app.get('/investor_project_report/:id', (req, res, next) => {
 
 
-  InvestorModel.aggregate([
-    { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,project_number: 1, investor_fname: 1, investor_lname:1 } },  //retrieve these fieldnames from the genral information schema
+  InvestorAssignedModel.aggregate([
+    { $match : { isid: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,isid: 1, psid: 1, project_number: 1,  } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
-        from : 'project',
-        localField : 'project_number',
-        foreignField : 'project_number',
-        as : 'project',
+        from : 'investor',
+        localField : 'isid',
+        foreignField : 'isid',
+        as : 'investor',
     } },
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
-      from : 'subcontractor',
-      localField : 'project_number',
-      foreignField : 'project_number',
-      as : 'subcontractor',
-  } }
+      from : 'project',
+      localField : 'psid',
+      foreignField : 'psid',
+      as : 'project',
+  } },
   ],
    (error, data) => {
       if (error) {

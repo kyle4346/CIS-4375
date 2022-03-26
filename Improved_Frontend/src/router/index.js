@@ -187,7 +187,30 @@ const routes = [
 //*******************************End of Task****************************************************************************** */
 
 
+//********************************Start of Investor Assigned**************************************************************************************** */
+//This route takes us to the Create Client Form using the Create Component 
+{
+path: '/createInvestorAssigned',
+name: 'createInvestorAssigned',
+component: () => import('../components/InvestorProject/CreateInvestorProject') 
 
+},
+{
+//route to allow to viewClient Activity based on componet ViewClientActivity 
+path: '/editInvestorAssigned',
+name: 'editInvestorAssigned',
+component: () => import('../components/InvestorProject/EditInvestorProject')
+},
+
+{
+//route to be used to edit client activity based on the component EditClientActivity
+path: '/viewInvestorAssigned',
+name: 'viewInvestorAssigned',
+component: () => import('../components/InvestorProject/ViewInvestorProject')
+},
+
+
+//********************************End of Investor Assigned******************************************************************************************************************** */
 
 //***********Client Activity************* */
 {
