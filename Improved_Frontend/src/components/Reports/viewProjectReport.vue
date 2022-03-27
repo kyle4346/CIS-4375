@@ -3,34 +3,36 @@
          
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1075px; margin-top: -50px;" to="/viewSubcontractor">View Subcontractors</router-link>
+          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1130px; margin-top: -50px;" to="/viewProject">View Projects</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>SUBID</th>
-                        <th>STEPID</th>
-                        <th>Project Number</th>
-                        <th>Assigned Date</th>
-                        <th>Step Cost</th>
-                        <th>Subcontractor Paid</th>
+                        <th>ISID</th>
+                        <th>PSID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        
+                        <th>Project Number</th>
+                        <th>Investor Assigned Date</th>
+                        <th>Investment Amount</th>
+                        <th>Investor Paid</th>
+                        <th>Project Name</th>
+                        <th>Project Information</th>
                        
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="subcontractor_assigned in subcontractor_assigneds" :key="subcontractor_assigned.subcontractor_assigned_id">
-                        <td>{{ subcontractor_assigned.subid}}</td>
-                        <td>{{ subcontractor_assigned.stepid}}</td>
-                        <td>{{ subcontractor_assigned.project_number}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_date}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_cost}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
-                        <td>{{ subcontractors.subcontractor_fname}}</td>
-                        <td>{{ subcontractors.subcontractor_lname}}</td>
-                        
+                    <tr v-for="investor_assigned in investor_assigneds" :key="investor_assigned.investor_assigned_id">
+                        <td>{{ investor_assigned.isid }}</td>
+                        <td>{{ investor_assigned.psid }}</td>
+                        <td>{{ investor_assigned.investor_firstname }}</td>
+                        <td>{{ investor_assigned.investor_lastname }}</td>
+                        <td>{{ investor_assigned.project_number }}</td>
+                        <td>{{ investor_assigned.investor_assigned_date }}</td>
+                        <td>{{ investor_assigned.investor_assigned_cost }}</td>
+                        <td>{{ investor_assigned.investor_assigned_paid}}</td>
+                        <td>{{ projects.project_name}}</td>
+                        <td>{{ projects.project_information}}</td>
                   
                     </tr>
                 </tbody>
@@ -54,11 +56,11 @@
         data() {
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
-                subcontractor_assigneds: [], 
-                subcontractors:{},
-                subcontractor_assigned: {
+                investor_assigneds: [], 
+                projects:{},
+                investor_assigned: {
     
-                   subid: this.$route.params.id,
+                   psid: this.$route.params.id,
                 },
                 
                 
@@ -67,21 +69,21 @@
 
         // this is using created hook 
         created() {
-            let apiURL = `http://localhost:27017/subcontractor_step_report/${this.$route.params.id}`;
+            let apiURL = `http://localhost:27017/project_investor_report/${this.$route.params.id}`;
             axios.get(apiURL).then(res => {
-                this.subcontractor_assigneds = res.data;
+                this.investor_assigneds = res.data;
             }).catch(error => {
                 console.log(error)
             });
     
-        // this is using created hook 
-           let apiURL1 = `http://localhost:27017/subcontractor_num/${this.$route.params.id}`;
+    
+            // this is using created hook 
+           let apiURL1 = `http://localhost:27017/project_num/${this.$route.params.id}`;
             axios.get(apiURL1).then(res => {
-                this.subcontractors = res.data;
-            }).catch(error => {
-               console.log(error)
-           });
-
+               this.projects = res.data;
+           }).catch(error => {
+                console.log(error)
+            });
 
         },
         

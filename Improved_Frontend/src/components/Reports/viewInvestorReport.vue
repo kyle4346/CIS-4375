@@ -1,31 +1,35 @@
 <template>
     <div class="row">
-         <h2>Phases for Project: {{projects.project_name}}, Project Start Date is {{projects.project_start_date}}</h2>
+         
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1070px; margin-top: -80px;" to="/viewProject">View Projects</router-link>
+          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1130px; margin-top: -50px;" to="/viewInvestor">View Investors</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>Project Number:</th>
-                        <th>Phase Num:</th>
-                        <th>Phase Name:</th>
-                        <th>Phase Cost:</th>
-                        <th>Phase Completed:</th>
-                        
-                        
+                        <th>ISID</th>
+                        <th>PSID</th>
+                        <th>Project Number</th>
+                        <th>Investor Assigned Date</th>
+                        <th>Investment Amount</th>
+                        <th>Investor Paid</th>
+                        <th>Investor FName</th>
+                        <th>Investor LName</th>
+                       
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="phase in phases" :key="phase.phase_id">
-                        <td>{{ phase.project_number}} </td>
-                        <td>{{ phase.phase_number }}</td>
-                        <td>{{ phase.phase_name }}</td>
-                        <td>{{ phase.phase_cost }}</td>
-                        <td>{{ phase.phase_completed}} </td>
-                        
-                        
+                    <tr v-for="investor_assigned in investor_assigneds" :key="investor_assigned.investor_assigned_id">
+                        <td>{{ investor_assigned.isid }}</td>
+                        <td>{{ investor_assigned.psid }}</td>
+                        <td>{{ investor_assigned.project_number }}</td>
+                        <td>{{ investor_assigned.investor_assigned_date }}</td>
+                        <td>{{ investor_assigned.investor_assigned_cost }}</td>
+                        <td>{{ investor_assigned.investor_assigned_paid}}</td>
+                        <td>{{ investors.investor_fname}}</td>
+                        <td>{{ investors.investor_lname}}</td>
+                  
                     </tr>
                 </tbody>
             </table>
@@ -48,36 +52,34 @@
         data() {
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
-                phases: [], 
-                searchPhaseReport: '',
-                projects: {},
-                phase: {
-                   phase_number: '',
-                   phase_name: '',
-                   phase_cost: '',
-                   phase_completed: '',
-                   project_number: this.$route.params.id 
-                   
+                investor_assigneds: [], 
+                investors:{},
+                investor_assigned: {
+    
+                   isid: this.$route.params.id,
                 },
+                
+                
             }
         },
 
         // this is using created hook 
         created() {
-            let apiURL = `http://localhost:27017/project_phase_report/${this.$route.params.id}`;
+            let apiURL = `http://localhost:27017/investor_project_report/${this.$route.params.id}`;
             axios.get(apiURL).then(res => {
-                this.phases = res.data;
+                this.investor_assigneds = res.data;
             }).catch(error => {
                 console.log(error)
             });
     
         // this is using created hook 
-            let apiURL1 = `http://localhost:27017/project_report/${this.$route.params.id}`;
+           let apiURL1 = `http://localhost:27017/investor_num/${this.$route.params.id}`;
             axios.get(apiURL1).then(res => {
-                this.projects = res.data;
+                this.investors = res.data;
             }).catch(error => {
-                console.log(error)
-            });
+               console.log(error)
+           });
+
 
         },
         

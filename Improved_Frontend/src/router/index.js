@@ -212,6 +212,36 @@ component: () => import('../components/InvestorProject/ViewInvestorProject')
 
 //********************************End of Investor Assigned******************************************************************************************************************** */
 
+//********************************Start of Subcontractor Assigned**************************************************************************************** */
+//This route takes us to the Create Client Form using the Create Component 
+{
+  path: '/createSubcontractorAssigned',
+  name: 'createSubcontractorAssigned',
+  component: () => import('../components/SubcontractorAssigned/createSubcontractorStep') 
+  
+  },
+  {
+  //route to allow to viewClient Activity based on componet ViewClientActivity 
+  path: '/editSubcontractorAssigned',
+  name: 'editSubcontractorAssigned',
+  component: () => import('../components/SubcontractorAssigned/editSubcontractorStep')
+  },
+  
+  {
+  //route to be used to edit client activity based on the component EditClientActivity
+  path: '/viewSubcontractorAssigned',
+  name: 'viewSubcontractorAssigned',
+  component: () => import('../components/SubcontractorAssigned/viewSubcontractorStep')
+  },
+  
+  
+  //********************************End of Subcontractor Assigned******************************************************************************************************************** */
+
+
+
+
+
+
 //***********Client Activity************* */
 {
   path: '/activity',
@@ -270,8 +300,21 @@ component: () => import('../components/InvestorProject/ViewInvestorProject')
 
 },
 
+{
+  //view client info based on the component client info
+    path: '/step_subcontractor_report/:id',
+    name: 'step_subcontractor_report',
+    component: () => import('../components/Reports/viewStepAssignSubcontractorReport')
 
+},
 
+{
+  //view client info based on the component client info
+    path: '/project_investor_report/:id',
+    name: 'project_investor_report',
+    component: () => import('../components/Reports/viewProjectReport')
+
+},
 
 //********************End of Tab Reports*********************************************** */
 //*******Vue Chart******* */

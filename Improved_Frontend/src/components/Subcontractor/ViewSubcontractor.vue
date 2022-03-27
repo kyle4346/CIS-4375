@@ -1,7 +1,7 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Subcontractorss:</strong>
+             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Subcontractors:</strong>
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchSubcontractors" placeholder="ex: last name or first name" /> 
 
             <br>
@@ -33,11 +33,14 @@
                         <td>
                             <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" style="text-align: center;" class="btn btn-success">Edit
                             </router-link>
-
                             
+                            <button @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" class="btn btn-danger">Delete</button>
 
+                            <br>
+                            <br>
 
-                        <button @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" class="btn btn-danger">Delete</button>
+                            <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff " class="btn btn-dark">Assigned Steps
+                            </router-link>
                         
                         </td>
                     </tr>

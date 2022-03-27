@@ -48,6 +48,12 @@
                             <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Tasks
                             </router-link>
 
+                            <br>
+                            <br>
+                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.stepid}}"  style="text-align: center; margin-right:10px; background-color: #5d00ff" class="btn btn-dark">Assigned Subcontractors
+                            </router-link>
+
+                                                           
 
                         </td>
                     </tr>

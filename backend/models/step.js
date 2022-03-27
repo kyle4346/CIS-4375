@@ -107,6 +107,14 @@ let StepSchema = new Schema({
         not: null
 
       },
+      stepid: {
+        type: String,
+        minLength: 5,
+        maxLength: 5,
+        required: true,
+        not: null,
+        unique:true
+      }
       
     
   }, {

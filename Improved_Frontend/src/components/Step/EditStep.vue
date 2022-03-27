@@ -5,8 +5,7 @@
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
-                 
-                <div class="form-group row">
+               <div class="form-group row">
             
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepProjectNum">Project Number</label>
@@ -110,6 +109,13 @@
                     <label style ="font-size:14pt">Step End Date</label>
                     <input type="date" class="form-control" v-model="step.step_end_date" >
                      <br>
+                </div>
+
+                <div class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputStepIDNum">STEPID</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputStepIDNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="step.stepid" required>
+                    
                 </div>
 
                 </div>

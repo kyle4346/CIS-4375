@@ -4,18 +4,18 @@ const Schema = mongoose.Schema;
 
 //Jose Zelaya
 
-let InvestorAssignedSchema = new Schema({
+let SubcontractorAssignedSchema = new Schema({
     
-    investor_assigned_id: { type: String, default: uuid.v1 },
+  subcontractor_assigned_id: { type: String, default: uuid.v1 },
 
-   investor_firstname: {
+   subcontractor_firstname: {
       type: String,
       minLength: 2,
       maxLength: 30,
       not: null,
       required: true
    },
-   investor_lastname: {
+   subcontractor_lastname: {
     type: String,
     minLength: 2,
     maxLength: 30,
@@ -31,25 +31,25 @@ let InvestorAssignedSchema = new Schema({
       required: true,
       unique: false
     },
-    investor_assigned_date: {
+    subcontractor_assigned_date: {
       type: String,
      
   },
      
-  investor_assigned_cost: {
+  subcontractor_assigned_cost: {
         type: String,
           
         
     },
 
-    investor_assigned_paid: {
+    subcontractor_assigned_paid: {
       type: String,
       minLength:2,
       maxLength:3
       
   },
     
-    isid: {
+    subid: {
       type: String,
       minLength: 5,
       maxLength: 5,
@@ -58,7 +58,7 @@ let InvestorAssignedSchema = new Schema({
       unique:true
     },
     
-    psid: {
+    stepid: {
       type: String,
       minLength: 5,
       maxLength: 5,
@@ -73,7 +73,7 @@ let InvestorAssignedSchema = new Schema({
     
 
   }, {
-    collection: 'investor_assigned'
+    collection: 'subcontractor_assigned'
 });
 
-module.exports = mongoose.model('investor_assigned', InvestorAssignedSchema)
+module.exports = mongoose.model('subcontractor_assigned', SubcontractorAssignedSchema)

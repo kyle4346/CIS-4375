@@ -3,7 +3,7 @@
          
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1075px; margin-top: -50px;" to="/viewSubcontractor">View Subcontractors</router-link>
+          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1075px; margin-top: -50px;" to="/viewStep">View Steps</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
@@ -11,11 +11,14 @@
                         <th>SUBID</th>
                         <th>STEPID</th>
                         <th>Project Number</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                         <th>Assigned Date</th>
                         <th>Step Cost</th>
                         <th>Subcontractor Paid</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Step Num</th>
+                        <th>Step Name</th>
+                        <th>Step Status</th>
                         
                        
                     </tr>
@@ -25,13 +28,15 @@
                         <td>{{ subcontractor_assigned.subid}}</td>
                         <td>{{ subcontractor_assigned.stepid}}</td>
                         <td>{{ subcontractor_assigned.project_number}}</td>
+                        <td>{{ subcontractor_assigned.subcontractor_firstname}}</td>
+                        <td>{{ subcontractor_assigned.subcontractor_lastname}}</td>
                         <td>{{ subcontractor_assigned.subcontractor_assigned_date}}</td>
                         <td>{{ subcontractor_assigned.subcontractor_assigned_cost}}</td>
                         <td>{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
-                        <td>{{ subcontractors.subcontractor_fname}}</td>
-                        <td>{{ subcontractors.subcontractor_lname}}</td>
+                        <td>{{ steps.step_number}}</td>
+                        <td>{{ steps.step_name}}</td>
+                        <td>{{ steps.step_status_type}}</td>
                         
-                  
                     </tr>
                 </tbody>
             </table>
@@ -55,10 +60,10 @@
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
                 subcontractor_assigneds: [], 
-                subcontractors:{},
+                steps:{},
                 subcontractor_assigned: {
     
-                   subid: this.$route.params.id,
+                   stepid: this.$route.params.id,
                 },
                 
                 
@@ -67,7 +72,7 @@
 
         // this is using created hook 
         created() {
-            let apiURL = `http://localhost:27017/subcontractor_step_report/${this.$route.params.id}`;
+            let apiURL = `http://localhost:27017/step_subcontractor_report/${this.$route.params.id}`;
             axios.get(apiURL).then(res => {
                 this.subcontractor_assigneds = res.data;
             }).catch(error => {
@@ -75,9 +80,9 @@
             });
     
         // this is using created hook 
-           let apiURL1 = `http://localhost:27017/subcontractor_num/${this.$route.params.id}`;
+           let apiURL1 = `http://localhost:27017/step_num/${this.$route.params.id}`;
             axios.get(apiURL1).then(res => {
-                this.subcontractors = res.data;
+                this.steps = res.data;
             }).catch(error => {
                console.log(error)
            });

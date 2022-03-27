@@ -7,19 +7,21 @@
             <br>
             <br>
             <table class="table styled-table">
-                <col   style="width:9%"> 
-                <col   style="width:0%"> 
-                <col   style="width:10%"> 
-                <col   style="width:10%"> 
-                <col   style="width:0%"> 
-                <col   style="width:12%"> 
+                <col   style="width:0%; text-align:center"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:15%"> 
-                <col   style="width:13%">
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%">
+                <col   style="width:0%">
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num</th>
+                        <th>PSID</th>
                         <th>Project Name</th>
                         <th>Project Done</th>
                         <th>Project Status</th>
@@ -34,6 +36,7 @@
                 <tbody>
                     <tr v-for="project in filteredProjects" :key="project.project_number">
                         <td>{{ project.project_number }}</td>
+                        <td>{{ project.psid }}</td>
                         <td>{{ project.project_name }}</td>
                         <td>{{ project.project_completed }}</td>
                         <td>{{ project.project_status_type }}</td>
@@ -61,6 +64,12 @@
                             <br>
                             <br>
                             <router-link :to="{name: 'viewPhase', params: { id: project.project_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-primary">View Phases
+                            </router-link>
+
+                            <br>
+                            <br>
+                           
+                            <router-link :to="{name: 'project_investor_report', params: { id:project.psid}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff " class="btn btn-dark">Assigned Investors
                             </router-link>
                             
 
@@ -100,7 +109,8 @@
 
                 return this.projects.filter((project) =>{
 
-                    return project.project_number.toLowerCase().match(this.searchProjects.toLowerCase()) ||
+                    return project.project_number.match(this.searchProjects) ||
+                           project.psid.match(this.searchProjects) ||
                            project.project_name.toLowerCase().match(this.searchProjects.toLowerCase()) ||
                            project.project_location_name.toLowerCase().match(this.searchProjects.toLowerCase()) 
                            

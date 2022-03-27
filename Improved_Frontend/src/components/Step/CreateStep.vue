@@ -112,6 +112,13 @@
                      <br>
                 </div>
 
+                <div class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputStepIDNum">STEPID</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputStepIDNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="step.stepid" required>
+                    
+                </div>
+
                 </div>
 
                 
@@ -159,6 +166,7 @@
                    step_start_date:'',
                    step_end_date: '',
                    step_status_type: '',
+                   stepid:''
                    
 
                 },
@@ -195,6 +203,7 @@
                    step_start_date:'',
                    step_end_date: '',
                    step_status_type: '',
+                   stepid:''
                   }
                 }).catch(error => {
                     this.errors.push("Error in the form submission" + error.response.data);

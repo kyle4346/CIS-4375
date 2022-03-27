@@ -1,7 +1,7 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Investor Assigned Intake Form</h1>
+            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Subcontractor Assigned Intake Form</h1>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">
@@ -11,34 +11,34 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{0,40}" v-model="investor_assigned.investor_firstname" required>
+                    <input  type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{0,40}" v-model="subcontractor_assigned.subcontractor_firstname" required>
 
                 </div>
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputLName" pattern="[A-Za-z\s]{0,40}" v-model="investor_assigned.investor_lastname" required>
+                    <input  type="text" class="form-control" id="inputLName" pattern="[A-Za-z\s]{0,40}" v-model="subcontractor_assigned.subcontractor_lastname" required>
                     
                 </div>
 
                  <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Number</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="investor_assigned.project_number" required>
+                    <input   type="text" class="form-control" id="inputSubcontractorProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="subcontractor_assigned.project_number" required>
                     
                 </div>
 
                  <div class="form-group col-lg-auto">
-                    <label style ="font-size:14pt">Investor Assigned Date</label>
+                    <label style ="font-size:14pt">Subcontractor Assigned Date</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="date" class="form-control" v-model="investor_assigned.investor_assigned_date" required>
+                    <input type="date" class="form-control" v-model="subcontractor_assigned.subcontractor_assigned_date" required>
                     
                 </div>
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestmentRate">Investment Amount</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorRate">Step Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputInvestmentRate" placeholder="$10,000.00" pattern="[a-zA-Z\d\s\-\,\#\.\$\+]+{5,25}" v-model="investor_assigned.investor_assigned_cost" required>
+                    <input  type="text" class="form-control" id="inputSubcontractorRate" placeholder="$10,000.00" pattern="[a-zA-Z\d\s\-\,\#\.\$\+]+{5,25}" v-model="subcontractor_assigned.subcontractor_assigned_cost" required>
                     <br>
                 </div>
 
@@ -46,20 +46,20 @@
 
                 <div class="form-group row">
                 <div style="margin-left:20px" class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label pt-0">Investor Paid</label>
+                <label style ="font-size:14pt" class="col-form-label pt-0">Subcontractor Paid</label>
                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                 <br>
                 <!--<div class="col-sm-10"> -->
           
                 <div class="form-check-inline col-lg-0">
-                     <label  style ="font-size:14pt" class="form-check-label" for="InvestorPaid1">
-                     <input class="form-check-input" type="radio" id="InvestorPaid1" value="Yes"  v-model="investor_assigned.investor_assigned_paid"   required>Yes    
+                     <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorPaid1">
+                     <input class="form-check-input" type="radio" id="SubcontractorPaid1" value="Yes"  v-model="subcontractor_assigned.subcontractor_assigned_paid"   required>Yes    
                      </label>
                 </div>
              
                 <div  class="form-check-inline col-lg-0">
-                    <label  style ="font-size:14pt" class="form-check-label" for="InvestorPaid2">
-                    <input class="form-check-input" type="radio"  id="InvestorPaid2" value="No"  v-model="investor_assigned.investor_assigned_paid" required>No
+                    <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorPaid2">
+                    <input class="form-check-input" type="radio"  id="SubcontractorPaid2" value="No"  v-model="subcontractor_assigned.subcontractor_assigned_paid" required>No
                     </label>
 
                 </div>
@@ -67,16 +67,16 @@
                 </div>
 
                 <div  style="margin-left:-20px" class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorAssignedNum">ISID</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorAssignedNum">subid</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor_assigned.isid" >
+                    <input   type="text" class="form-control" id="inputSubcontractorAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor_assigned.subid" >
                     
                 </div>
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorAssignedProjectNum">PSID</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputStepAssignedProjectNum">stepid</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor_assigned.psid" >
+                    <input   type="text" class="form-control" id="inputStepAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor_assigned.stepid" >
                     
                 </div>
                 
@@ -112,15 +112,15 @@
             return {
                 //retrieving data from the client_form schema getting the data 
                 errors: [],
-                investor_assigned: {
-                   investor_firstname: '',
-                   investor_lastname:'',
+                subcontractor_assigned: {
+                   subcontractor_firstname: '',
+                   subcontractor_lastname:'',
                    project_number: '',
-                   investor_assigned_date: '',
-                   investor_assigned_cost: '',
-                   investor_assigned_paid: '',
-                   isid: '',
-                   psid: '',
+                   subcontractor_assigned_date: '',
+                   subcontractor_assigned_cost: '',
+                   subcontractor_assigned_paid: '',
+                   subid: '',
+                   stepid: '',
                    
                    
 
@@ -134,26 +134,26 @@
                 //first validation 
                 this.errors = [];
 
-                if(!this.investor_assigned.project_number){
+                if(!this.subcontractor_assigned.subcontractor_firstname){
 
-                    this.errors.push("Pass Numbers only.");
+                    this.errors.push("Pass Letters only.");
 
             }
                 //posing data that has been created to route passing the client_form schema data
-                let apiURL = 'http://localhost:27017/investor_assigned';
+                let apiURL = 'http://localhost:27017/subcontractor_assigned';
                 
-                axios.post(apiURL, this.investor_assigned).then(() => {
+                axios.post(apiURL, this.subcontractor_assigned).then(() => {
                     //chnaging the view to the list
-                  this.$router.push('/viewInvestorAssigned')
-                  this.investor_assigned = {
-                   investor_firstname: '',
-                   investor_lastname:'',
+                  this.$router.push('/viewSubcontractorAssigned')
+                  this.subcontractor_assigned = {
+                   subcontractor_firstname: '',
+                   subcontractor_lastname:'',
                    project_number: '',
-                   investor_assigned_date: '',
-                   investor_assigned_cost: '',
-                   investor_assigned_paid: '',
-                   isid: '',
-                   psid: '',
+                   subcontractor_assigned_date: '',
+                   subcontractor_assigned_cost: '',
+                   subcontractor_assigned_paid: '',
+                   subid: '',
+                   stepid: '',
 
                   }
                 }).catch(error => {

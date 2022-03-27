@@ -34,6 +34,12 @@ let TaskModel = require('./models/task');
 //import the subcontractor model schema from another file
 let InvestorAssignedModel = require('./models/investor_assigned');
 
+//import the subcontractor model schema from another file
+let EmployeeAssignedModel = require('./models/employee_assigned');
+
+//import the subcontractor model schema from another file
+let SubcontractorAssignedModel = require('./models/subcontractor_assigned');
+
 
 
 
@@ -97,6 +103,23 @@ app.get('/investor/:id', (req, res, next) => {
         }
     });
 });
+
+// Report for Investor Assigned
+app.get('/investor_num/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  InvestorModel.findOne({ isid: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Investor Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
 
 // Updating - editing client form information - using PUT by clientID  - Update Operation
 app.put('/investor/:id', (req, res, next) => {
@@ -166,6 +189,22 @@ app.get('/subcontractors', (req, res, next) => {
 app.get('/subcontractor/:id', (req, res, next) => {
   //find data based on the client id for the collection client form information
   SubcontractorModel.findOne({ subcontractor_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Subcontractor Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Report for Subcontractor Assigned
+app.get('/subcontractor_num/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  SubcontractorModel.findOne({ subid: req.params.id}, (error, data) => {
       if (error) {
           return next(error)
       } else if (data === null) {
@@ -366,6 +405,22 @@ app.get('/project_report/:id', (req, res, next) => {
   });
 });
 
+// Report for Investor Assigned
+app.get('/project_num/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  ProjectModel.findOne({ psid: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Project Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
 // Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
 app.put('/project/:id', (req, res, next) => {
 //Update data in the client form information table based on client id 
@@ -554,6 +609,24 @@ app.get('/step_report/:id', (req, res, next) => {
   });
 });
 
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/step_num/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  StepModel.findOne({ stepid: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Step Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+
 // Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
 app.put('/step/:id', (req, res, next) => {
 //Update data in the client form information table based on client id 
@@ -739,6 +812,157 @@ app.delete('/investor_assigned/:id', (req, res, next) => {
     });
 });
 
+//************************************End of Investor Assigned Report*************************************************************************************** */
+
+
+//************************************Start of Subcontractor Assigned Report******************************************************************************************* */
+app.post('/subcontractor_assigned', (req, res, next) => {
+
+  SubcontractorAssignedModel.create(req.body, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        // res.json(data)
+        res.send('Subcontractor Assigned Form Information is added to the database');
+      }
+  });
+});
+
+//create an endpoint to get all general information from the API  -Read Operation
+app.get('/subcontractor_assigned', (req, res, next) => {
+  //very plain way to get all the data from the collection through the mongoose schema
+  SubcontractorAssignedModel.find((error, data) => {
+      if (error) {
+        //here we are using a call to next() to send an error message back
+        return next(error)
+      } else {
+        res.json(data)
+      }
+    })
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/subcontractor_assigned/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  SubcontractorAssignedModel.findOne({ subcontractor_assigned_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Subcontractor Assigned Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
+app.put('/subcontractor_assigned/:id', (req, res, next) => {
+//Update data in the client form information table based on client id 
+SubcontractorAssignedModel.findOneAndUpdate({ subcontractor_assigned_id: req.params.id }, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.send('Subcontractor Assigned Form Information is edited via PUT');
+        console.log('Subcontractor Assigned Form Information successfully updated!', data)
+      }
+    })
+});
+
+//delete a client form information by clientID  -Delete Operation 
+app.delete('/subcontractor_assigned/:id', (req, res, next) => {
+  
+  //mongoose will use clientID of document to delete 
+  SubcontractorAssignedModel.findOneAndRemove({ subcontractor_assigned_id: req.params.id}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+         res.status(200).json({
+           msg: data
+         });
+      //  res.send('Student is deleted');
+      }
+    });
+});
+//************************************End of Subcontractor Assigned Report******************************************************************************************* */
+
+//************************************Start of Employee Assigned Report*************************************************************************************************************************** */
+app.post('/employee_assigned', (req, res, next) => {
+
+  EmployeeAssignedModel.create(req.body, (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        // res.json(data)
+        res.send('Employee Assigned Form Information is added to the database');
+      }
+  });
+});
+
+//create an endpoint to get all general information from the API  -Read Operation
+app.get('/employee_assigned', (req, res, next) => {
+  //very plain way to get all the data from the collection through the mongoose schema
+  EmployeeAssignedModel.find((error, data) => {
+      if (error) {
+        //here we are using a call to next() to send an error message back
+        return next(error)
+      } else {
+        res.json(data)
+      }
+    })
+});
+
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/employee_assigned/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  EmployeeAssignedModel.findOne({ employee_assigned_id: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Employee Assigned Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
+// Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
+app.put('/employee_assigned/:id', (req, res, next) => {
+//Update data in the client form information table based on client id 
+EmployeeAssignedModel.findOneAndUpdate({ employee_assigned_id: req.params.id }, {
+      $set: req.body
+    }, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+        res.send('Employee Assigned Form Information is edited via PUT');
+        console.log('Employee Assigned Form Information successfully updated!', data)
+      }
+    })
+});
+
+//delete a client form information by clientID  -Delete Operation 
+app.delete('/employee_assigned/:id', (req, res, next) => {
+  
+  //mongoose will use clientID of document to delete 
+  EmployeeAssignedModel.findOneAndRemove({ employee_assigned_id: req.params.id}, (error, data) => {
+      if (error) {
+        return next(error);
+      } else {
+         res.status(200).json({
+           msg: data
+         });
+      //  res.send('Student is deleted');
+      }
+    });
+});
+//************************************End of Employee Assigned Report*************************************************************************************************************************** */
+
 //*************************************Intake forms for Specialized Reports*********************************************************************************** */
 
 
@@ -903,12 +1127,13 @@ app.get('/investor_project_report/:id', (req, res, next) => {
 
   InvestorAssignedModel.aggregate([
     { $match : { isid: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,isid: 1, psid: 1, project_number: 1,  } },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,isid: 1, psid:1, project_number: 1, investor_assigned_date:1 ,investor_assigned_cost: 1, investor_assigned_paid:1,  } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'investor',
         localField : 'isid',
         foreignField : 'isid',
         as : 'investor',
+       
     } },
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
       from : 'project',
@@ -927,6 +1152,133 @@ app.get('/investor_project_report/:id', (req, res, next) => {
 });
 //End of aggregate 
 
+
+//Report to get project linked to investor assigned
+app.get('/project_investor_report/:id', (req, res, next) => {
+
+
+  InvestorAssignedModel.aggregate([
+    { $match : { psid: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,psid:1,isid: 1, investor_firstname:1, investor_lastname:1, project_number: 1, investor_assigned_date:1 ,investor_assigned_cost: 1, investor_assigned_paid:1,  } },  //retrieve these fieldnames from the genral information schema
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+        from : 'project',
+        localField : 'psid',
+        foreignField : 'psid',
+        as : 'project',
+       
+    } },
+  ],
+   (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        res.json(data);
+      }
+  });
+});
+//End of aggregate 
+
+
+//Report to get subcontractor linked to subcontractor assigned
+app.get('/subcontractor_step_report/:id', (req, res, next) => {
+
+
+  SubcontractorAssignedModel.aggregate([
+    { $match : { subid: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,subid:1,stepid: 1, project_number: 1, subcontractor_assigned_date:1 ,subcontractor_assigned_cost: 1, subcontractor_assigned_paid:1 } },  //retrieve these fieldnames from the genral information schema
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+        from : 'subcontractor',
+        localField : 'subid',
+        foreignField : 'subid',
+        as : 'subcontractor',
+       
+    } },
+  ],
+   (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        res.json(data);
+      }
+  });
+});
+//End of aggregate 
+
+//Report to get step linked to subcontractor assigned
+app.get('/step_subcontractor_report/:id', (req, res, next) => {
+
+
+  SubcontractorAssignedModel.aggregate([
+    { $match : { stepid: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,subid:1,stepid: 1, subcontractor_firstname:1, subcontractor_lastname:1, project_number: 1, subcontractor_assigned_date:1 ,subcontractor_assigned_cost: 1, subcontractor_assigned_paid:1,  } },  //retrieve these fieldnames from the genral information schema
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+        from : 'step',
+        localField : 'stepid',
+        foreignField : 'stepid',
+        as : 'step',
+       
+    } },
+  ],
+   (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        res.json(data);
+      }
+  });
+});
+//End of aggregate 
+
+
+//Report to get employee linked to employee assigned
+app.get('/employee_employeeAssigned_report/:id', (req, res, next) => {
+
+
+  EmployeeAssignedModel.aggregate([
+    { $match : { empid: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,empid:1,psid: 1, project_number: 1,employee_firstname:1, employee_lastname:1, employee_assigned_date:1  } },  //retrieve these fieldnames from the genral information schema
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+        from : 'employee',
+        localField : 'empid',
+        foreignField : 'empid',
+        as : 'employee',
+       
+    } },
+  ],
+   (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        res.json(data);
+      }
+  });
+});
+//End of aggregate 
+
+//Report to get project linked to employee assigned
+app.get('/project_employeeAssigned_report/:id', (req, res, next) => {
+
+
+  EmployeeAssignedModel.aggregate([
+    { $match : { psid: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,empid:1,psid: 1, project_number: 1,employee_firstname:1, employee_lastname:1, employee_assigned_date:1  } },  //retrieve these fieldnames from the genral information schema
+    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
+        from : 'project',
+        localField : 'psid',
+        foreignField : 'psid',
+        as : 'project',
+       
+    } },
+  ],
+   (error, data) => {
+      if (error) {
+        return next(error)
+      } else {
+        res.json(data);
+      }
+  });
+});
+//End of aggregate 
 
 
 

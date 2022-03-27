@@ -72,7 +72,7 @@ let SubcontractorSchema = new Schema({
       
      subcontractor_city: {
         type: String,
-        minLength: 5 ,
+        minLength: 2,
         maxLength: 35,
         required: true,
         not: null
@@ -124,6 +124,14 @@ let SubcontractorSchema = new Schema({
       not: null,
       required: true,
       unique: false
+    },
+    subid: {
+      type: String,
+      minLength: 5,
+      maxLength: 5,
+      required: true,
+      not: null,
+      unique:true
     },
     
 

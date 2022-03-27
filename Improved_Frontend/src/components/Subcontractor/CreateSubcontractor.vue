@@ -81,8 +81,16 @@
 
             
                 <div class="form-group row">
+                 
+                 <div style="margin-left:-15px;" class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left; margin-left:15px" for="inputProjectNum">SUBID</label>
+                    <input  style="margin-left:15px;" type="text" class="form-control" id="inputTaskProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor.subid" >
+                </div>
 
-                <div class="form-group col-lg-3">
+                
+                
+
+                <div style=" margin-left:15px" class="form-group col-lg-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputTrade">Subcontractor Business Name</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputTrade" pattern="[A-Za-z\s]{5,25}" v-model="subcontractor.subcontractor_business_name" required>
@@ -105,7 +113,7 @@
                      
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div class="form-group col-lg-3">
                     
                     <label style ="font-size:14pt">Subcontractor Email</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -126,7 +134,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]{5,35}" v-model="subcontractor.subcontractor_city" required>
+                    <input type="text" class="form-control" pattern="[A-Za-z]{2,35}" v-model="subcontractor.subcontractor_city" required>
                     
                      
                 </div>
@@ -212,6 +220,7 @@
                    subcontractor_status:'',
                    subcontractor_type: '',
                    project_number:'',
+                   subid: '',
                    
                    
 
@@ -256,6 +265,7 @@
                    subcontractor_status:'',
                    subcontractor_type: '',
                    project_number:'',
+                   subid: '',
                   }
                 }).catch(error => {
                     this.errors.push("Error in the form submission" + error.response.data);

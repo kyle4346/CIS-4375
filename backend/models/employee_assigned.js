@@ -4,18 +4,18 @@ const Schema = mongoose.Schema;
 
 //Jose Zelaya
 
-let InvestorAssignedSchema = new Schema({
+let EmployeeAssignedSchema = new Schema({
     
-    investor_assigned_id: { type: String, default: uuid.v1 },
+   employee_assigned_id: { type: String, default: uuid.v1 },
 
-   investor_firstname: {
+   employee_firstname: {
       type: String,
       minLength: 2,
       maxLength: 30,
       not: null,
       required: true
    },
-   investor_lastname: {
+   employee_lastname: {
     type: String,
     minLength: 2,
     maxLength: 30,
@@ -31,25 +31,12 @@ let InvestorAssignedSchema = new Schema({
       required: true,
       unique: false
     },
-    investor_assigned_date: {
+    employee_assigned_date: {
       type: String,
      
   },
      
-  investor_assigned_cost: {
-        type: String,
-          
-        
-    },
-
-    investor_assigned_paid: {
-      type: String,
-      minLength:2,
-      maxLength:3
-      
-  },
-    
-    isid: {
+    empid: {
       type: String,
       minLength: 5,
       maxLength: 5,
@@ -73,7 +60,7 @@ let InvestorAssignedSchema = new Schema({
     
 
   }, {
-    collection: 'investor_assigned'
+    collection: 'employee_assigned'
 });
 
-module.exports = mongoose.model('investor_assigned', InvestorAssignedSchema)
+module.exports = mongoose.model('employee_assigned', EmployeeAssignedSchema)

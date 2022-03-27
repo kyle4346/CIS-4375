@@ -9,30 +9,33 @@
           <br>
           
             <table class="styled-table">
-                <col   style="width:15%"> 
-                <col   style="width:15%"> 
-                <col   style="width:12%"> 
-                <col   style="width:12%"> 
+                <col   style="width:1%"> 
+                <col   style="width:9%"> 
+                <col   style="width:3%"> 
+                <col   style="width:11%"> 
                 <col   style="width:10%"> 
                 <col   style="width:12%"> 
-                <col   style="width:11%"> 
-                <col   style="width:13%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
+                <col   style="width:9%">
                 <thead class="thead-dark">
                    
         
                     <tr>
-                        <th>Investor First Name</th>
-                        <th>Investor Last Name</th>
+                        <th>ISID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                         <th>Investor Details</th>
-                        <th>Investor Phone</th>
-                        <th>Investor Email</th>
-                        <th>Investor Status</th>
-                        <th>Investor Type</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Status</th>
+                        <th>Type</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="investor in filteredInvestors" :key="investor.investor_iD">
+                        <td>{{ investor.isid }}</td>
                         <td>{{ investor.investor_fname }}</td>
                         <td>{{ investor.investor_lname }}</td>
                         <td>{{ investor.investor_detail }}</td>
