@@ -3,7 +3,7 @@
          
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1075px; margin-top: -50px;" to="/viewStep">View Steps</router-link>
+          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1165px; margin-top: -50px;" to="/viewStep">View Steps</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
