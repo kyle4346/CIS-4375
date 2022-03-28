@@ -79,7 +79,8 @@
 
                 <div style="margin-left:-200px" class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Step Cost</label>
-                    <input  type="number" class="form-control" id="inputStepBudget" placeholder="10000" min="1" max="99999999" v-model="step.step_cost" required>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" pattern="[$\0-9\.]{1,15}" v-model="step.step_cost" required>
                     
                 </div>
 

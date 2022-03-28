@@ -99,13 +99,16 @@ let TaskSchema = new Schema({
         type: String,
         minLength: 0,
         maxLength: 75,
+        not:null,
+        required: true
        
 
     },
     task_material_aquired: {
         type: String,
         minLength:2,
-        maxLength:3
+        maxLength:3,
+        require:true
 
     },
     task_status_type: {

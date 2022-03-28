@@ -9,16 +9,30 @@
                  
                 <div class="form-group row">
 
+               <div   class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedNum">EMPID</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input   type="text" class="form-control" id="inputEmployeeAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee_assigned.empid" required>
+                    
+                </div>
+
+                <div class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedProjectNum">PSID</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input   type="text" class="form-control" id="inputEmployeeAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee_assigned.psid" required>
+                    
+                </div>
+
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputEmployeeFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputEmployeeFName" pattern="[A-Za-z\s]{0,40}" v-model="employee_assigned.employee_firstname" required>
+                    <input  type="text" class="form-control" id="inputEmployeeFName" pattern="[A-Za-z\s]{2,30}" v-model="employee_assigned.employee_firstname" required>
 
                 </div>
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputEmployeeLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputEmployeeLName" pattern="[A-Za-z\s]{0,40}" v-model="employee_assigned.employee_lastname" required>
+                    <input  type="text" class="form-control" id="inputEmployeeLName" pattern="[A-Za-z\s]{2,30}" v-model="employee_assigned.employee_lastname" required>
                     
                 </div>
 
@@ -33,20 +47,6 @@
                     <label style ="font-size:14pt">Employee Assigned Date</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="employee_assigned.employee_assigned_date" required>
-                    
-                </div>
-
-                <div   class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedNum">EMPID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputEmployeeAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee_assigned.empid" >
-                    
-                </div>
-
-                <div class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedProjectNum">PSID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputEmployeeAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee_assigned.psid" >
                     
                 </div>
 

@@ -29,7 +29,7 @@ let ProjectSchema = new Schema({
     project_information: {
         type: String,
         minLength: 0,
-        maxLength: 255,
+        maxLength: 45,
         not: null,
         required: true
     },
@@ -45,24 +45,28 @@ let ProjectSchema = new Schema({
     }, 
     
     project_budget: {
-        type: Number,
-        min: 1,
-        max: 99999999,
-        required: true,
-        not: null
+       type: String,
+       minLength: 1,
+       maxLength: 15,
+       not: null,
+       required: true
         
       },
       
       project_estimated_cost: {
-        type: Number,
-        min: 0,
-        max: 99999999,
+      type: String,
+       minLength: 1,
+       maxLength: 15,
+       not: null,
+       required: true
         
       },
       project_actual_cost: {
-        type: Number,
-        min: 0,
-        max: 99999999,
+      type: String,
+       minLength: 1,
+       maxLength: 15,
+       not: null,
+       required: true
         
       },
       
@@ -109,12 +113,16 @@ let ProjectSchema = new Schema({
         type: String,
         minLength: 6,
         maxLength: 25,
+        required:true,
+        not:null
 
       },
       project_type_description: {
         type: String,
         minLength: 5,
         maxLength: 35,
+        required:true,
+        not:null
 
       },
       project_location_name: {

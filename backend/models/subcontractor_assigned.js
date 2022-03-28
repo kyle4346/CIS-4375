@@ -33,11 +33,17 @@ let SubcontractorAssignedSchema = new Schema({
     },
     subcontractor_assigned_date: {
       type: String,
+      required:true,
+      not:null
      
   },
      
   subcontractor_assigned_cost: {
-        type: String,
+    type: String,
+    minLength:1 ,
+    maxLength: 15,
+    required:true,
+    not:null
           
         
     },
@@ -45,7 +51,8 @@ let SubcontractorAssignedSchema = new Schema({
     subcontractor_assigned_paid: {
       type: String,
       minLength:2,
-      maxLength:3
+      maxLength:3,
+      required:true
       
   },
     

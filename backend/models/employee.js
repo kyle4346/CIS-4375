@@ -94,12 +94,16 @@ let EmployeeSchema = new Schema({
         type: String,
         minLength: 0,
         maxLength: 35,
+        required: true,
+        not:null
 
       },
     employee_title_description: {
         type: String,
         minLength: 0,
         maxLength: 35,
+        required: true,
+        not:null
 
       },
       project_number: {

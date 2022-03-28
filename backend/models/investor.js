@@ -27,6 +27,8 @@ let InvestorSchema = new Schema({
         type: String,
         minLength: 5,
         maxLength: 60,
+        required: true,
+        not:null
        
         
     },
@@ -93,6 +95,8 @@ let InvestorSchema = new Schema({
         type: String,
         minLength: 0,
         maxLength: 20,
+        required: true,
+        not:null
         
 
     },
@@ -100,6 +104,8 @@ let InvestorSchema = new Schema({
         type: String,
         minLength: 0,
         maxLength: 20,
+        required: true,
+        not:null
 
       },
       project_number: {

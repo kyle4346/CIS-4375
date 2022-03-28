@@ -91,7 +91,8 @@
                     return investor.investor_lname.toLowerCase().match(this.search.toLowerCase()) ||
                            investor.investor_fname.toLowerCase().match(this.search.toLowerCase()) ||
                            investor.investor_phone.toLowerCase().match(this.search.toLowerCase()) ||
-                           investor.investor_email.toLowerCase().match(this.search.toLowerCase()) 
+                           investor.investor_email.toLowerCase().match(this.search.toLowerCase()) ||
+                           investor.isid.match(this.search) 
                     
                 })
             }    

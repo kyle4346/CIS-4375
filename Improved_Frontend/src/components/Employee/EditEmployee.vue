@@ -5,6 +5,7 @@
             <br>
             <form @submit.prevent="handleUpdateForm">
                 
+                 
                 <div class="form-group row">
                 <br>
                 <br>
@@ -51,7 +52,7 @@
                 <div style="margin-left:25px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt ">Employee Title</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <select  v-model="employee.employee_title_description" > 
+                    <select  v-model="employee.employee_title_description" required> 
                      <option v-for="employee_title_description in employee_title_description" v-bind:key="employee_title_description">{{employee_title_description}}</option>
                     </select>
                     
@@ -60,7 +61,7 @@
                 <div style="margin-left:-70px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Employee Status</label>
                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <select  v-model="employee.employee_status_type" > 
+                    <select  v-model="employee.employee_status_type" required> 
                      <option v-for="employee_status_type in employee_status_type" v-bind:key="employee_status_type">{{employee_status_type}}</option>
                     </select> 
                 </div>
@@ -68,7 +69,7 @@
                 <div style="margin-left:-60px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Employee Salary</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="$65,000.50"   pattern="[$\0-9\.]{1,30}" v-model="employee.employee_salary" required>  
+                    <input type="text" class="form-control" placeholder="$65,000.50"   pattern="[$\0-9\.]{1,15}" v-model="employee.employee_salary" required>  
                 </div>
 
                 </div>
@@ -85,7 +86,7 @@
                     
                     <label style ="font-size:14pt">Employee Email</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="email" class="form-control" placeholder="yourname123@mail.com" v-model="employee.employee_email" required>
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="25" v-model="employee.employee_email" required>
                     
                 </div>
 
@@ -149,9 +150,11 @@
                  <div  style="margin-left:20px" class="form-group col-lg-1">
                     <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedNum">EMPID</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputEmployeeAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee.empid" >
+                    <input   type="text" class="form-control" id="inputEmployeeAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee.empid" required>
                     
                 </div>
+               
+
 
                  </div>
 

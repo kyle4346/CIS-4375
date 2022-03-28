@@ -9,6 +9,7 @@
             <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
+                        <th>SUBID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Business Name</th>
@@ -22,6 +23,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="subcontractor in filteredSubcontractors" :key="subcontractor.subcontractor_id">
+                        <td>{{ subcontractor.subid }}</td>
                         <td>{{ subcontractor.subcontractor_fname }}</td>
                         <td>{{ subcontractor.subcontractor_lname }}</td>
                         <td>{{ subcontractor.subcontractor_business_name }}</td>
@@ -79,7 +81,8 @@
                     return subcontractor.subcontractor_fname.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
                            subcontractor.subcontractor_lname.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
                            subcontractor.subcontractor_phone.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
-                           subcontractor.subcontractor_email.toLowerCase().match(this.searchSubcontractors.toLowerCase()) 
+                           subcontractor.subcontractor_email.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
+                           subcontractor.subid.match(this.searchSubcontractors)
                     
                 })
             }    

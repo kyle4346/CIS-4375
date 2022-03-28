@@ -1301,6 +1301,16 @@ app.get('/project_employee_report/:id', (req, res, next) => {
 
 //************************End of Reports************************************************************* */
 
+//*************************Charts- View the count of projects ************************************************************************* */
+
+
+
+
+
+
+
+//*************************End of Charts ************************************************************************* */
+
 //Supervisor View by client ID view specific data over client activities --Jose Zelaya 
 app.get('/supervisor_view/:id', (req, res, next) => {
 

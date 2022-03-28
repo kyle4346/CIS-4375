@@ -31,7 +31,8 @@
 
                  <div class="form-group col-lg-2">
                     <label style ="font-size:14pt" for="inputProjectNotes">Project Details</label>
-                    <textarea type="text" class="form-control" id="inputProjectNotes" minlength="0" maxlength="255"   rows="3" v-model="project.project_information" ></textarea>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <textarea type="text" class="form-control" id="inputProjectNotes" minlength="0" maxlength="45"   rows="3" v-model="project.project_information" required></textarea>
                     <br>
                    
                 </div>
@@ -55,14 +56,12 @@
                 </div>
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:-20px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectBudget">Project Budget</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="number" class="form-control" id="inputProjectBudget" placeholder="10000" min="1" max="99999999" v-model="project.project_budget" required>
+                    <input  type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[$\0-9\.]{1,15}" v-model="project.project_budget" required>
                     
                 </div>
-
-
 
                 </div>
 
@@ -70,14 +69,14 @@
         
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectEstimate">Project Estimated Cost</label>
-                    <input  type="number" class="form-control" id="inputProjectEstimate" placeholder="10000" min="0" max="99999999" v-model="project.project_estimated_cost" >
+                    <input  type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" size="12"  pattern="[$\0-9\.]{1,15}" v-model="project.project_estimated_cost" >
                     
                     
                 </div>
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectActual">Project Actual Cost</label>
-                    <input  type="number" class="form-control" id="inputProjectActual" placeholder="10000" min="0" max="99999999" v-model="project.project_actual_cost" >
+                    <input  type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" size="12"  pattern="[$\0-9\.]{1,15}" v-model="project.project_actual_cost" >
                     
                 </div>
 
@@ -127,8 +126,9 @@
                 <div style="margin-left:20px;" class="form-group col-lg-2">
                     
                     <label style ="font-size:14pt">Project Status</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     
-                    <select  v-model="project.project_status_type" > 
+                    <select  v-model="project.project_status_type" required> 
                      <option v-for="project_status_type in project_status_types" v-bind:key="project_status_type">{{project_status_type}}</option>
                     </select>
                     
@@ -137,8 +137,9 @@
                 <div style="margin-left:-50px;"  class="form-group col-lg-2">
                     
                     <label  style ="font-size:14pt">Project Type</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     
-                    <select  v-model="project.project_type_description" > 
+                    <select  v-model="project.project_type_description" required> 
                      <option v-for="project_type_description in project_type_descriptions" v-bind:key="project_type_description">{{project_type_description}}</option>
                     </select>
                     
@@ -289,8 +290,8 @@
                 project_location_states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','lg',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 project_location_countries:['United States'],
-                project_status_types:[' ','complete', 'in-progress', 'on-hold', 'not-started'],
-                project_type_descriptions:[' ','Exterior-Based','All-Around','Minor-Maintenance', 'Build-from-Scratch'],
+                project_status_types:['complete', 'in-progress', 'on-hold', 'not-started'],
+                project_type_descriptions:['Exterior-Based','All-Around','Minor-Maintenance', 'Build-from-Scratch'],
                 project_location_status_types: ['Available', 'Unavailable', 'Unknown'],
             }
         },

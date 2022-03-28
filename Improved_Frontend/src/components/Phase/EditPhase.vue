@@ -6,6 +6,7 @@
              <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                 
+                
                 <div class="form-group row">
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseProjectNum">Project Number</label>
@@ -73,7 +74,8 @@
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseBudget">Phase Cost</label>
-                    <input  type="number" class="form-control" id="inputPhaseBudget" placeholder="10000" min="1" max="99999999" v-model="phase.phase_cost" required>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00" pattern="[$\0-9\.]{1,15}" v-model="phase.phase_cost" required>
                     
                 </div>
 
@@ -100,7 +102,8 @@
                 
 
                 <div  class="form-group col-lg-auto">
-                    <label style ="font-size:14pt">Phase Start Date*</label>
+                    <label style ="font-size:14pt">Phase Start Date</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="phase.phase_start_date" required>
                 </div>
 
@@ -117,6 +120,7 @@
                 </div>
 
                 </div>
+
 
 
                     <br>

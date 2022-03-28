@@ -5,7 +5,7 @@
              <strong style ="font-size:150%">General Information</strong>
             <form @submit.prevent="handleUpdateForm">
                 
-                 <div class="form-group row">
+                <div class="form-group row">
             
                 <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
 
@@ -84,7 +84,8 @@
                  
                  <div style="margin-left:-15px;" class="form-group col-lg-1">
                     <label style ="font-size:14pt; text-align:left; margin-left:15px" for="inputProjectNum">SUBID</label>
-                    <input  style="margin-left:15px;" type="text" class="form-control" id="inputTaskProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor.subid" >
+                    <label style ="font-size:14pt; color:red; font-weight:bold margin-left:15px;"> * </label>
+                    <input  style="margin-left:15px;" type="text" class="form-control" id="inputTaskProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor.subid" required>
                 </div>
 
                 
@@ -102,7 +103,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputSRate">Subcontractor Rate</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputSRate" placeholder="$100/hr" pattern="[a-zA-Z\d\s\-\,\#\.\$\+]+{5,25}" v-model="subcontractor.subcontractor_rate" required>
+                    <input  type="text" class="form-control" id="inputSRate" placeholder="$100/hr" pattern="[$\0-9\hr]{5,25}" v-model="subcontractor.subcontractor_rate" required>
                     
                 </div>
 
@@ -216,7 +217,7 @@ export default {
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 countries:['United States'],
                 subcontractor_status: ['Available', 'Unavailable', 'Working','Unknown'],
-                subcontractor_type:['Electrical','Roofing','Remodeling','Mechanical','Air Conditioning','Construction'],
+                subcontractor_type:['Electrical','Roofing','Remodeling','Mechanical','Air Conditioning','Construction','Pluming'],
                 
         }
 

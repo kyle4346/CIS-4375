@@ -73,7 +73,8 @@
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseBudget">Phase Cost</label>
-                    <input  type="number" class="form-control" id="inputPhaseBudget" placeholder="10000" min="1" max="99999999" v-model="phase.phase_cost" required>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00" pattern="[$\0-9\.]{1,15}" v-model="phase.phase_cost" required>
                     
                 </div>
 

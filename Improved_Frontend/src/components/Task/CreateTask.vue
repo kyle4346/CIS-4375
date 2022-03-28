@@ -48,7 +48,8 @@
                 <div class="form-group row">
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputTaskNotes">Task Details*</label>
+                    <label style ="font-size:14pt" for="inputTaskNotes">Task Details</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <textarea type="text" class="form-control" id="inputTaskNotes" minlength="0" maxlength="255"   rows="3" v-model="task.task_description" required></textarea>
                 <br>
                 </div>
@@ -117,7 +118,8 @@
 
                 <div class="form-group col-lg-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskMaterial">Task Material</label>
-                    <input  type="text" class="form-control" id="inputTaskMaterial" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,75}" v-model="task.task_material" >
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputTaskMaterial" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,75}" v-model="task.task_material" required>
                 </div> 
 
                 <div class="form-group col-lg-2">
@@ -126,14 +128,14 @@
                 <br>
                 <div style="margin-left: 20px;" class="form-check-inline col-lg-auto">
                      <label style ="font-size:14pt" class="form-check-label" for="taskMaterial1">
-                     <input class="form-check-input" type="radio"  id="taskMaterial1" value="Yes"  v-model="task.task_material_aquired"   >Yes    
+                     <input class="form-check-input" type="radio"  id="taskMaterial1" value="Yes"  v-model="task.task_material_aquired"   required>Yes    
                      </label>
                      
                 </div>
                    
                 <div style="margin-left: 40px;" class="form-check-inline col-lg-auto">
                     <label style ="font-size:14pt" class="form-check-label" for="taskMaterial2">
-                    <input class="form-check-input" type="radio"  id="taskMaterial2" value="No" v-model="task.task_material_aquired" >No
+                    <input class="form-check-input" type="radio"  id="taskMaterial2" value="No" v-model="task.task_material_aquired" required>No
                     </label>
                 </div>
                 </div>

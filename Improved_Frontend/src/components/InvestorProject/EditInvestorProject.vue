@@ -7,7 +7,21 @@
             <form @submit.prevent="handleUpdateForm">
                 
                  
-                <div class="form-group row">
+               <div class="form-group row">
+
+                <div  class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorAssignedNum">ISID</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input   type="text" class="form-control" id="inputInvestorAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor_assigned.isid" required>
+                    
+                </div>
+
+                <div class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorAssignedProjectNum">PSID</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input   type="text" class="form-control" id="inputInvestorAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor_assigned.psid" required>
+                    
+                </div>
 
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
@@ -33,19 +47,22 @@
                     <label style ="font-size:14pt">Investor Assigned Date</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="investor_assigned.investor_assigned_date" required>
-                    
-                </div>
-
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestmentRate">Investment Amount</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputInvestmentRate" placeholder="$10,000.00" pattern="[a-zA-Z\d\s\-\,\#\.\$\+]+{5,25}" v-model="investor_assigned.investor_assigned_cost" required>
                     <br>
                 </div>
+
+                
 
                 </div>
 
                 <div class="form-group row">
+
+                <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputInvestmentRate">Investment Amount</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputInvestmentRate" placeholder="$20,000.50"   pattern="[$\0-9\.]{1,15}" v-model="investor_assigned.investor_assigned_cost" required>
+                    
+                </div>
+
                 <div style="margin-left:20px" class="form-group col-lg-2">
                 <label style ="font-size:14pt" class="col-form-label pt-0">Investor Paid</label>
                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -67,20 +84,6 @@
                 
                 </div>
 
-                <div  style="margin-left:-20px" class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorAssignedNum">ISID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor_assigned.isid" >
-                    
-                </div>
-
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorAssignedProjectNum">PSID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor_assigned.psid" >
-                    
-                </div>
-                
                 </div>
 
                     <br>

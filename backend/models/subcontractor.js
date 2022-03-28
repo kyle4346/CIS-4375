@@ -33,6 +33,8 @@ let SubcontractorSchema = new Schema({
         type: String,
         minLength: 5,
         maxLength: 25,
+        required:true,
+        not:null
        
         
     },

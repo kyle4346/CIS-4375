@@ -33,11 +33,17 @@ let InvestorAssignedSchema = new Schema({
     },
     investor_assigned_date: {
       type: String,
+      required:true,
+      not:null
      
   },
      
   investor_assigned_cost: {
         type: String,
+        minLength:1 ,
+        maxLength: 15,
+        required:true,
+        not:null
           
         
     },
@@ -45,7 +51,9 @@ let InvestorAssignedSchema = new Schema({
     investor_assigned_paid: {
       type: String,
       minLength:2,
-      maxLength:3
+      maxLength:3,
+      required:true,
+      not:null
       
   },
     

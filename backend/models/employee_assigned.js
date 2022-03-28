@@ -33,6 +33,8 @@ let EmployeeAssignedSchema = new Schema({
     },
     employee_assigned_date: {
       type: String,
+      required:true,
+      not:null
      
   },
      

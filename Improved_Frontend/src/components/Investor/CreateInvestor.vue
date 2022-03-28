@@ -20,9 +20,10 @@
                     
                 </div>
 
-                 <div class="form-group col-lg-2">
+                 <div class="form-group col-lg-1">
                     <label style ="font-size:14pt; text-align:left;" for="inputInvestorID">ISID</label>
-                    <input   type="text" class="form-control" id="inputInvestorID" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor.isid" >
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input   type="text" class="form-control" id="inputInvestorID" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor.isid" required>
                     
                 </div>
         
@@ -30,7 +31,7 @@
                  <div class="form-group col-lg-2">
                     <label style ="font-size:14pt" for="inputShortNotes">Investor Details</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <textarea type="text" class="form-control" id="inputShortNotes" maxlength="60"   rows="3" v-model="investor.investor_detail" ></textarea>
+                    <textarea type="text" class="form-control" id="inputShortNotes" maxlength="60"   rows="3" v-model="investor.investor_detail" required></textarea>
                     <br>
                 </div>
 

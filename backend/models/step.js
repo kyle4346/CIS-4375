@@ -63,10 +63,11 @@ let StepSchema = new Schema({
     }, 
     
     step_cost: {
-        type: Number,
-        min: 1,
-        max: 99999999,
-        
+      type: String,
+      minLength: 1,
+      maxLength: 15,
+      not: null,
+      required: true
         
       },
      

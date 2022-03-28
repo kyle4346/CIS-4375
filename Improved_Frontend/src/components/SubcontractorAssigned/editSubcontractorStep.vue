@@ -9,6 +9,20 @@
                  
                 <div class="form-group row">
 
+                <div  class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorAssignedNum">SUBID</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input   type="text" class="form-control" id="inputSubcontractorAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor_assigned.subid" required>
+                    
+                </div>
+
+                <div class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputStepAssignedProjectNum">STEPID</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input   type="text" class="form-control" id="inputStepAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor_assigned.stepid" required>
+                    
+                </div>
+
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -33,24 +47,25 @@
                     <label style ="font-size:14pt">Subcontractor Assigned Date</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="subcontractor_assigned.subcontractor_assigned_date" required>
-                    
-                </div>
-
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorRate">Step Cost</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputSubcontractorRate" placeholder="$10,000.00" pattern="[a-zA-Z\d\s\-\,\#\.\$\+]+{5,25}" v-model="subcontractor_assigned.subcontractor_assigned_cost" required>
                     <br>
                 </div>
 
                 </div>
 
                 <div class="form-group row">
+
+                <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorRate">Step Cost</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  type="text" class="form-control" id="inputSubcontractorRate" placeholder="$10,000.50"   pattern="[$\0-9\.]{1,15}" v-model="subcontractor_assigned.subcontractor_assigned_cost" required>
+                    
+                </div>
+
                 <div style="margin-left:20px" class="form-group col-lg-2">
                 <label style ="font-size:14pt" class="col-form-label pt-0">Subcontractor Paid</label>
                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                <br>
-                <!--<div class="col-sm-10"> -->
+                
+               
           
                 <div class="form-check-inline col-lg-0">
                      <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorPaid1">
@@ -66,21 +81,6 @@
                 </div>
                 
                 </div>
-
-                <div  style="margin-left:-20px" class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorAssignedNum">subid</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputSubcontractorAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor_assigned.subid" >
-                    
-                </div>
-
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepAssignedProjectNum">stepid</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputStepAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor_assigned.stepid" >
-                    
-                </div>
-                
                 </div>
 
                     <br>
