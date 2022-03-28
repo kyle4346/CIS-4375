@@ -34,11 +34,18 @@
                             <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}" style="text-align: center;" class="btn btn-success">Edit
                             </router-link>
 
-                            
-
-
+                
                         <button @click.prevent="deleteEmployee(employee.employee_id)" class="btn btn-danger">Delete</button>
+                        
+                        <br>
+                        <br>
+
+                         <router-link :to="{name: 'employee_project_report', params: { id:employee.empid}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff " class="btn btn-dark">Assigned Projects
+                        </router-link>
+
                         </td>
+
+                        
                     </tr>
                 </tbody>
             </table>

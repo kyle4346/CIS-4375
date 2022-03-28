@@ -238,6 +238,32 @@ component: () => import('../components/InvestorProject/ViewInvestorProject')
   //********************************End of Subcontractor Assigned******************************************************************************************************************** */
 
 
+//********************************Start of Employee Assigned**************************************************************************************** */
+//This route takes us to the Create Client Form using the Create Component 
+{
+  path: '/createEmployeeAssigned',
+  name: 'createEmployeeAssigned',
+  component: () => import('../components/EmployeeAssigned/createEmployeeProject') 
+  
+  },
+  {
+  //route to allow to viewClient Activity based on componet ViewClientActivity 
+  path: '/editEmployeeAssigned',
+  name: 'editEmployeeAssigned',
+  component: () => import('../components/EmployeeAssigned/editEmployeeProject')
+  },
+  
+  {
+  //route to be used to edit client activity based on the component EditClientActivity
+  path: '/viewEmployeeAssigned',
+  name: 'viewEmployeeAssigned',
+  component: () => import('../components/EmployeeAssigned/viewEmployeeProject')
+  },
+  
+  
+  //********************************End of Employee Assigned******************************************************************************************************************** */
+
+
 
 
 
@@ -289,6 +315,14 @@ component: () => import('../components/InvestorProject/ViewInvestorProject')
     path: '/employee_project_report/:id',
     name: 'employee_project_report',
     component: () => import('../components/Reports/viewEmployeeReport')
+
+},
+
+{
+  //view client info based on the component client info
+    path: '/project_employee_report/:id',
+    name: 'project_employee_report',
+    component: () => import('../components/Reports/viewProjectEmployeeReport')
 
 },
 

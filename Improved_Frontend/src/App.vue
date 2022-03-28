@@ -89,6 +89,10 @@
      <li class="dropdown-item">
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractorAssigned">Subcontractor Assigned Form</router-link>
     </li>
+
+     <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployeeAssigned">Employee Assigned Form</router-link>
+    </li>
   </ul>
 </div>
 
@@ -133,6 +137,12 @@
     <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractorAssigned">View Assigned Subcontractors</router-link>
     </li>
+
+     <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployeeAssigned">View Assigned Employees</router-link>
+    </li>
+
+    
   </ul>
 </div>
  

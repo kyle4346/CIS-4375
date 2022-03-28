@@ -71,6 +71,14 @@
                            
                             <router-link :to="{name: 'project_investor_report', params: { id:project.psid}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff " class="btn btn-dark">Assigned Investors
                             </router-link>
+
+                            <br>
+                            <br>
+
+                            <router-link :to="{name: 'project_employee_report', params: { id:project.psid}}"  style="text-align: center; margin-right:10px; background-color:#ff8400 " class="btn btn-dark">Assigned Employees
+                            </router-link>
+
+                            
                             
 
 

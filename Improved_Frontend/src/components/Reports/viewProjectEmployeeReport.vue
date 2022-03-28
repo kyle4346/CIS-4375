@@ -3,7 +3,7 @@
          
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1115px; margin-top: -50px;" to="/viewEmployee">View Employees</router-link>
+          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1140px; margin-top: -50px;" to="/viewProject">View Projects</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
@@ -11,8 +11,8 @@
                         <th>EMPID</th>
                         <th>PSID</th>
                         <th>Project Number</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Project Name</th>
+                        <th>Project Status</th>
                         <th>Assigned Date</th>
                         
                         
@@ -24,8 +24,8 @@
                         <td>{{ employee_assigned.empid}}</td>
                         <td>{{ employee_assigned.psid}}</td>
                         <td>{{ employee_assigned.project_number}}</td>
-                        <td>{{ employees.employee_firstname}}</td>
-                        <td>{{ employees.employee_lastname}}</td>
+                        <td>{{ projects.project_name}}</td>
+                        <td>{{ projects.project_status_type}}</td>
                         <td>{{ employee_assigned.employee_assigned_date}}</td>
                         
                         
@@ -52,10 +52,10 @@
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
                 employee_assigneds: [], 
-                employees:{},
+                projects:{},
                 employee_assigned: {
     
-                   empid: this.$route.params.id,
+                   psid: this.$route.params.id,
                 },
                 
                 
@@ -72,9 +72,9 @@
             });
     
         // this is using created hook 
-           let apiURL1 = `http://localhost:27017/employee_num/${this.$route.params.id}`;
+           let apiURL1 = `http://localhost:27017/project_num/${this.$route.params.id}`;
             axios.get(apiURL1).then(res => {
-                this.employees = res.data;
+                this.projects = res.data;
             }).catch(error => {
                console.log(error)
            });

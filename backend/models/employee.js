@@ -108,6 +108,15 @@ let EmployeeSchema = new Schema({
         max: 999999,
         unique: false
     },
+
+     empid: {
+      type: String,
+      minLength: 5,
+      maxLength: 5,
+      required: true,
+      not: null,
+      unique:true
+    },
     
 
   }, {

@@ -931,6 +931,22 @@ app.get('/employee_assigned/:id', (req, res, next) => {
   });
 });
 
+// endpoint for retrieving Employee to Project report
+app.get('/employee_num/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  EmployeeAssignedModel.findOne({ empid: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('Employee Assigned Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
 // Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
 app.put('/employee_assigned/:id', (req, res, next) => {
 //Update data in the client form information table based on client id 
@@ -1231,12 +1247,12 @@ app.get('/step_subcontractor_report/:id', (req, res, next) => {
 
 
 //Report to get employee linked to employee assigned
-app.get('/employee_employeeAssigned_report/:id', (req, res, next) => {
+app.get('/employee_project_report/:id', (req, res, next) => {
 
 
   EmployeeAssignedModel.aggregate([
     { $match : { empid: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,empid:1,psid: 1, project_number: 1,employee_firstname:1, employee_lastname:1, employee_assigned_date:1  } },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,empid:1,psid: 1, project_number: 1, employee_assigned_date:1  } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'employee',
         localField : 'empid',
@@ -1256,12 +1272,12 @@ app.get('/employee_employeeAssigned_report/:id', (req, res, next) => {
 //End of aggregate 
 
 //Report to get project linked to employee assigned
-app.get('/project_employeeAssigned_report/:id', (req, res, next) => {
+app.get('/project_employee_report/:id', (req, res, next) => {
 
 
   EmployeeAssignedModel.aggregate([
     { $match : { psid: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,empid:1,psid: 1, project_number: 1,employee_firstname:1, employee_lastname:1, employee_assigned_date:1  } },  //retrieve these fieldnames from the genral information schema
+    { $project : {id:0 ,empid:1,psid: 1, project_number: 1,employee_firstname:1, employee_lastname:1, employee_assigned_date:1 } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'project',
         localField : 'psid',

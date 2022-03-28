@@ -21,7 +21,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Employee Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputLName" placeholder="$60,000.00" pattern="[$\0-9\.\0-9]{1,30}" v-model="employee.employee_last_name" required>
+                    <input  type="text" class="form-control" id="inputLName"  pattern="[A-Za-z\s]{1,30}" v-model="employee.employee_last_name" required>
                     
                 </div>
 
@@ -68,7 +68,7 @@
                 <div style="margin-left:-60px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Employee Salary</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="$65,000.50"   pattern="[]{1,30}" v-model="employee.employee_salary" required>  
+                    <input type="text" class="form-control" placeholder="$65,000.50"   pattern="[$\0-9\.]{1,30}" v-model="employee.employee_salary" required>  
                 </div>
 
                 </div>
@@ -110,19 +110,6 @@
                 </div>
 
                  <div class="form-group row"> 
-                    
-                    <div class="form-group col-lg-1">
-                    <label style ="font-size:14pt">Zipcode</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="employee.employee_zipcode" required>
-                     
-                </div>
-
-                <div class="form-group col-lg-1">
-                
-                </div>
-
-                
 
                 <div class="form-group col-lg-1">
                     
@@ -134,10 +121,15 @@
                     
                     
                 </div>
-                <div class="form-group col-lg-1">
-                
+                    
+                <div style="margin-left:-10px" class="form-group col-lg-1">
+                    <label style ="font-size:14pt">Zipcode</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="employee.employee_zipcode" required>
+                     
                 </div>
-                 <div class="form-group col-lg-2">
+
+                 <div style="margin-left:20px" class="form-group col-lg-2">
                     
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -146,18 +138,20 @@
                      <option v-for="employee_country in employee_country" v-bind:key="employee_country">{{employee_country}}</option>
                     </select>
                     
-                    <br>
-                    <br>
-                    
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:-60px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="EmployeeinputProjectNum">Project Number</label>
                     <input  type="number" class="form-control" id="EmployeeinputProjectNum" placeholder="10000" min="0" max="999999" v-model="employee.project_number" >
                     
                 </div>
-               
 
+                 <div  style="margin-left:20px" class="form-group col-lg-1">
+                    <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedNum">EMPID</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input   type="text" class="form-control" id="inputEmployeeAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee.empid" >
+                    
+                </div>
 
                  </div>
 
