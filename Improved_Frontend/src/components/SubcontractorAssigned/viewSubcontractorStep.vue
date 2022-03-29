@@ -32,12 +32,12 @@
                 </thead>
                 <tbody>
                     <tr v-for="subcontractor_assigned in filteredSubcontractorsAssigned" :key="subcontractor_assigned.subcontractor_assigned_id">
-                        <td>{{ subcontractor_assigned.subid }}</td>
-                        <td>{{ subcontractor_assigned.stepid }}</td>
-                        <td>{{ subcontractor_assigned.project_number }}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_date }}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_cost }}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
+                        <td style="vertical-align:top">{{ subcontractor_assigned.subid }}</td>
+                        <td style="vertical-align:top">{{ subcontractor_assigned.stepid }}</td>
+                        <td style="vertical-align:top">{{ subcontractor_assigned.project_number }}</td>
+                        <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_date }}</td>
+                        <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_cost }}</td>
+                        <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
                         <td>
                             <router-link :to="{name: 'editSubcontractorAssigned', params: { id: subcontractor_assigned.subcontractor_assigned_id}}" style="text-align: center;" class="btn btn-success">Edit
                             </router-link>

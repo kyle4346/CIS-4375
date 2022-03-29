@@ -61,30 +61,12 @@
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createProject">Create Project</router-link>
     </li>
 
-    <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createPhase">Create Phase</router-link>
-    </li>
-
-    <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createStep">Create Step</router-link>
-    </li>
-
-     <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createTask">Create Task</router-link>
-    </li>
+    
     <li><hr class="dropdown-divider"></li>
      <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewProject">View Projects</router-link>
     </li>
-    <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewPhase">View Phase</router-link>
-    </li>
-     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewStep">View Step</router-link>
-    </li>
-    <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewTask">View Task</router-link>
-    </li>
+    
   </ul>
 </div>
 <div   class="btn-group col-md-2">

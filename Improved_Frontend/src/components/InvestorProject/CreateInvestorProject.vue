@@ -1,7 +1,9 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Investor Assigned</h1>
+        <div style="margin-left:525px; margin-top: -50px">
+            <u class="text-center" style="font-size:200%; font-weight:bold;">Investor Assigned</u>
+        </div>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">

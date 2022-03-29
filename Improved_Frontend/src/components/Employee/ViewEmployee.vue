@@ -33,12 +33,12 @@
                 <tbody>
                     <tr v-for="employee in filteredEmployees" :key="employee.employee_id">
                         
-                        <td>{{ employee.employee_first_name }}</td>
-                        <td>{{ employee.employee_last_name }}</td>
-                        <td>{{ employee.employee_phone }}</td>
-                        <td>{{ employee.employee_email }}</td>
-                        <td>{{ employee.employee_title_description}}</td>
-                        <td>{{ employee.employee_status_type}}</td>
+                        <td style="vertical-align:top">{{ employee.employee_first_name }}</td>
+                        <td style="vertical-align:top">{{ employee.employee_last_name }}</td>
+                        <td style="vertical-align:top">{{ employee.employee_phone }}</td>
+                        <td style="vertical-align:top">{{ employee.employee_email }}</td>
+                        <td style="vertical-align:top">{{ employee.employee_title_description}}</td>
+                        <td style="vertical-align:top">{{ employee.employee_status_type}}</td>
                         <td>
                             <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}" style="text-align: center; margin-top:-40px" class="btn btn-success">Edit
                             </router-link>

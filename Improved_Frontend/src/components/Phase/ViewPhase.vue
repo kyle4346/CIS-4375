@@ -9,7 +9,7 @@
 <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:870px; margin-top: -110px;" to="/viewProject">View Projects</router-link></p>
             
             <table class="styled-table">
-                <col   style="width:0%; "> 
+                <col   style="width:0%; text-align:center"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -33,13 +33,13 @@
                 </thead>
                 <tbody>
                     <tr v-for="phase in filteredPhases" :key="phase.phase_id">
-                        <td>{{ phase.project_number }}</td>
-                        <td>{{ phase.phase_number }}</td>
-                        <td>{{ phase.phase_name }}</td>
-                        <td>{{ phase.phase_completed }}</td>
-                        <td>{{ phase.phase_status_type}}</td>
-                        <td>{{ phase.phase_cost }}</td>
-                        <td>{{ phase.phase_start_date }}</td>
+                        <td style="vertical-align:top">{{ phase.project_number }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_number }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_name }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_completed }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_status_type}}</td>
+                        <td style="vertical-align:top">{{ phase.phase_cost }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_start_date }}</td>
                         <td>
                             <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}" style="text-align: center; margin-top:-60px"  class="btn btn-success">Edit
                             </router-link>
@@ -52,10 +52,19 @@
                             <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center; " class="btn btn-secondary">Add Step
                             </router-link>
 
+                            <br>
+                            <br>
+
+                            <router-link :to="{name: 'viewStep', params: { id: phase.phase_number}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff" class="btn btn-primary">View Steps
+                            </router-link>
+
+                            <br>
+                            <br>
+
                     
                         </td> 
                         <td>
-                                <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-top: -140px; background-color:#FFD700; color: black " class="btn btn-dark">Assigned Steps
+                                <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-top: -220px; background-color:#FFD700; color: black " class="btn btn-dark">Assigned Steps
                             </router-link>
                         </td>
                     </tr>

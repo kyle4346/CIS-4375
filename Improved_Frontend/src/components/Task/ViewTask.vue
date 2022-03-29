@@ -22,14 +22,14 @@
                 </thead>
                 <tbody>
                     <tr v-for="task in filteredTasks" :key="task.task_id">
-                        <td>{{ task.project_number }}</td>
-                        <td>{{ task.phase_number }}</td>
-                        <td>{{ task.step_number }}</td>
-                        <td>{{ task.task_number }}</td>
-                        <td>{{ task.task_name }}</td>
-                        <td>{{ task.task_completed }}</td>
-                        <td>{{ task.task_status_type}}</td>
-                        <td>{{ task.task_start_date }}</td>
+                        <td style="vertical-align:top">{{ task.project_number }}</td>
+                        <td style="vertical-align:top">{{ task.phase_number }}</td>
+                        <td style="vertical-align:top">{{ task.step_number }}</td>
+                        <td style="vertical-align:top">{{ task.task_number }}</td>
+                        <td style="vertical-align:top">{{ task.task_name }}</td>
+                        <td style="vertical-align:top">{{ task.task_completed }}</td>
+                        <td style="vertical-align:top">{{ task.task_status_type}}</td>
+                        <td style="vertical-align:top">{{ task.task_start_date }}</td>
                         <td>
                             <router-link :to="{name: 'editTask', params: { id: task.task_id}}" style="text-align: center; margin-top:-70px" class="btn btn-success">Edit
                             </router-link>

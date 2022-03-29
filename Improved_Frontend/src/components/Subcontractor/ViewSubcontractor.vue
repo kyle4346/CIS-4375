@@ -36,15 +36,15 @@
                 </thead>
                 <tbody>
                     <tr v-for="subcontractor in filteredSubcontractors" :key="subcontractor.subcontractor_id">
-                        <td>{{ subcontractor.subid }}</td>
-                        <td>{{ subcontractor.subcontractor_fname }}</td>
-                        <td>{{ subcontractor.subcontractor_lname }}</td>
-                        <td>{{ subcontractor.subcontractor_business_name }}</td>
-                        <td>{{ subcontractor.subcontractor_rate }}</td>
-                        <td>{{ subcontractor.subcontractor_phone}}</td>
-                        <td>{{ subcontractor.subcontractor_email }}</td>
-                        <td>{{ subcontractor.subcontractor_status }}</td>
-                        <td>{{ subcontractor.subcontractor_type }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subid }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_fname }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_lname }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_business_name }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_rate }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_phone}}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_email }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_status }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_type }}</td>
                         <td>
                             
                             <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" style="text-align: center;" class="btn btn-success">Edit

@@ -32,12 +32,12 @@
                 </thead>
                 <tbody>
                     <tr v-for="investor_assigned in filteredInvestorsAssigned" :key="investor_assigned.investor_assigned_id">
-                        <td>{{ investor_assigned.isid }}</td>
-                        <td>{{ investor_assigned.psid }}</td>
-                        <td>{{ investor_assigned.project_number }}</td>
-                        <td>{{ investor_assigned.investor_assigned_date }}</td>
-                        <td>{{ investor_assigned.investor_assigned_cost }}</td>
-                        <td>{{ investor_assigned.investor_assigned_paid}}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.isid }}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.psid }}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.project_number }}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_assigned_date }}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_assigned_cost }}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_assigned_paid}}</td>
                         <td>
                             <router-link :to="{name: 'editInvestorAssigned', params: { id: investor_assigned.investor_assigned_id}}" style="text-align: center;" class="btn btn-success">Edit
                             </router-link>
