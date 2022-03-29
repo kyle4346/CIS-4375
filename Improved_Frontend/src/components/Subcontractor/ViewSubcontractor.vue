@@ -7,6 +7,18 @@
             <br>
             <br>
             <table class="styled-table">
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:10%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:1%">
+                <col   style="width:2%">
+               
                 <thead class="thead-dark">
                     <tr>
                         <th>SUBID</th>
@@ -19,6 +31,7 @@
                         <th>Status</th>
                         <th>Type</th>
                         <th>Actions</th>
+                        <th>Reports</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,18 +46,27 @@
                         <td>{{ subcontractor.subcontractor_status }}</td>
                         <td>{{ subcontractor.subcontractor_type }}</td>
                         <td>
+                            
                             <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" style="text-align: center;" class="btn btn-success">Edit
                             </router-link>
+
+                            <br>
+
+                            <br>
                             
-                            <button @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" class="btn btn-danger">Delete</button>
-
-                            <br>
-                            <br>
-
-                            <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff " class="btn btn-dark">Assigned Steps
-                            </router-link>
+                            
+                            
+                            <button style=" margin-left:0px;" @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" class="btn btn-danger">Delete</button>
+                            
                         
                         </td>
+
+                        <td>
+                            
+                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  style="text-align: center; margin-right:10px; margin-top:-40px; color:black; background-color:#FFD700" class="btn btn-dark">Assigned Steps
+                            </router-link>
+                        </td>
+
                     </tr>
                 </tbody>
             </table>

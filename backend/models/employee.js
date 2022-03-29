@@ -49,6 +49,7 @@ let EmployeeSchema = new Schema({
     employee_email: {
         type: String,
         maxLength: 55,
+        unique:true,
         not: null,
         required: true
 
@@ -107,20 +108,15 @@ let EmployeeSchema = new Schema({
 
       },
       project_number: {
-        type: Number,
-        min:0,
-        max: 999999,
+        type: String,
+        minLength:1,
+        maxLength:2,
+        not: null,
+        required: true,
         unique: false
     },
 
-     empid: {
-      type: String,
-      minLength: 5,
-      maxLength: 5,
-      required: true,
-      not: null,
-      unique:true
-    },
+   
     
 
   }, {

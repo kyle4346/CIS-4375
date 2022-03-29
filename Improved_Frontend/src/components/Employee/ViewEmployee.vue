@@ -9,6 +9,14 @@
             <br>
 
             <table class="styled-table">
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:1%"> 
                 <thead class="thead-dark">
                     <tr>
                       
@@ -19,6 +27,7 @@
                         <th>Employee Title</th>
                         <th>Employee Status</th>
                         <th>Actions</th>
+                        <th>Reports</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,18 +40,21 @@
                         <td>{{ employee.employee_title_description}}</td>
                         <td>{{ employee.employee_status_type}}</td>
                         <td>
-                            <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}" style="text-align: center;" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}" style="text-align: center; margin-top:-40px" class="btn btn-success">Edit
                             </router-link>
 
-                
-                        <button @click.prevent="deleteEmployee(employee.employee_id)" class="btn btn-danger">Delete</button>
+                            <br>
+                        <button @click.prevent="deleteEmployee(employee.employee_id)" style="text-align: center; margin-top:10px" class="btn btn-danger">Delete</button>
                         
-                        <br>
-                        <br>
+                        
 
-                         <router-link :to="{name: 'employee_project_report', params: { id:employee.empid}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff " class="btn btn-dark">Assigned Projects
+                       
+
+                        </td>
+
+                        <td>
+                        <router-link :to="{name: 'employee_project_report', params: { id:employee.empid}}"  style="text-align: center; margin-top:-70px; color:black; background-color:#FFD700 " class="btn btn-dark">Assigned Projects
                         </router-link>
-
                         </td>
 
                         

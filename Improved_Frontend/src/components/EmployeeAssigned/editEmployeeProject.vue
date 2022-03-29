@@ -1,28 +1,12 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Update Employee Assigned Intake Form</h1>
+            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Update Employee Assigned</h1>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
-                
-                 
-                <div class="form-group row">
-
-               <div   class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedNum">EMPID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputEmployeeAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee_assigned.empid" required>
-                    
-                </div>
-
-                <div class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedProjectNum">PSID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputEmployeeAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee_assigned.psid" required>
-                    
-                </div>
-
+  
+               <div class="form-group row">
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputEmployeeFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -36,10 +20,18 @@
                     
                 </div>
 
+                <div class="form-group col-lg-auto">
+                    
+                    <label style ="font-size:14pt">Email</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="25" v-model="employee_assigned.employee_email" required>
+                    
+                </div>
+
                  <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputEmployeeProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputEmployeeProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="employee_assigned.project_number" required>
+                    <input   type="text" class="form-control" id="inputEmployeeProjectNum" placeholder="1-99" pattern="[0-9]{1,9}" v-model="employee_assigned.project_number" required>
                     
                 </div>
 

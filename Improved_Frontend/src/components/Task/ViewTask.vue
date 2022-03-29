@@ -31,13 +31,14 @@
                         <td>{{ task.task_status_type}}</td>
                         <td>{{ task.task_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editTask', params: { id: task.task_id}}" style="text-align: center;" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editTask', params: { id: task.task_id}}" style="text-align: center; margin-top:-70px" class="btn btn-success">Edit
                             </router-link>
+
+                            <br>
 
                         <button @click.prevent="deleteTask(task.task_id)" class="btn btn-danger">Delete</button>
 
-                            <br>
-                            <br>
+                            
                             
 
 

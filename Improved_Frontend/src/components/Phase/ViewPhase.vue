@@ -9,6 +9,15 @@
 <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:870px; margin-top: -110px;" to="/viewProject">View Projects</router-link></p>
             
             <table class="styled-table">
+                <col   style="width:0%; "> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:5%"> 
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num</th>
@@ -19,6 +28,7 @@
                         <th>Phase Cost</th>
                         <th>Phase Start Date</th>
                         <th>Actions</th>
+                        <th>Report</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -31,22 +41,22 @@
                         <td>{{ phase.phase_cost }}</td>
                         <td>{{ phase.phase_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}" style="text-align: center;" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}" style="text-align: center; margin-top:-60px"  class="btn btn-success">Edit
+                            </router-link>
+                            <br>
+
+                        <button @click.prevent="deletePhase(phase.phase_id)" class="btn btn-danger" style="margin-top:0px">Delete</button>
+
+                            <br>
+                            <br>
+                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center; " class="btn btn-secondary">Add Step
                             </router-link>
 
-                        <button @click.prevent="deletePhase(phase.phase_id)" class="btn btn-danger">Delete</button>
-
-                            <br>
-                            <br>
-                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center;" class="btn btn-secondary">Add Step
+                    
+                        </td> 
+                        <td>
+                                <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-top: -140px; background-color:#FFD700; color: black " class="btn btn-dark">Assigned Steps
                             </router-link>
-
-                            <br>
-                            <br>
-                            <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Steps
-                            </router-link>
-
-
                         </td>
                     </tr>
                 </tbody>

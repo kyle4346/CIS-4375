@@ -25,11 +25,9 @@ let InvestorSchema = new Schema({
      
     investor_detail: {
         type: String,
-        minLength: 5,
-        maxLength: 60,
-        required: true,
-        not:null
-       
+        minLength: 0,
+        maxLength: 35,
+      
         
     },
     
@@ -111,19 +109,12 @@ let InvestorSchema = new Schema({
       project_number: {
       type: String,
       minLength:1,
-      maxLength:9,
+      maxLength:2,
       not: null,
       required: true,
       unique: false
     },
-    isid: {
-      type: String,
-      minLength:5,
-      maxLength:5,
-      not: null,
-      required: true,
-      unique: true
-    },
+   
 
   }, {
     collection: 'investor'

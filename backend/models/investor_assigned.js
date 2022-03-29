@@ -26,7 +26,7 @@ let InvestorAssignedSchema = new Schema({
     project_number: {
       type: String,
       minLength:1,
-      maxLength:9,
+      maxLength:2,
       not: null,
       required: true,
       unique: false
@@ -57,25 +57,16 @@ let InvestorAssignedSchema = new Schema({
       
   },
     
-    isid: {
-      type: String,
-      minLength: 5,
-      maxLength: 5,
-      required: true,
-      not: null,
-      unique:true
-    },
+  investor_email: {
+    type: String,
+    maxLength: 55,
+    required: true,
+    not: null
+  
+  
+}, 
     
-    psid: {
-      type: String,
-      minLength: 5,
-      maxLength: 5,
-      required: true,
-      not: null,
-      unique:true
-      
-      
-    }, 
+   
     
     
     

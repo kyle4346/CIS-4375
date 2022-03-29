@@ -32,7 +32,7 @@ let SubcontractorSchema = new Schema({
     subcontractor_business_name: {
         type: String,
         minLength: 5,
-        maxLength: 25,
+        maxLength: 35,
         required:true,
         not:null
        
@@ -59,6 +59,7 @@ let SubcontractorSchema = new Schema({
         type: String,
         maxLength: 55,
         required: true,
+        unique:true,
         not: null
         
       },
@@ -120,21 +121,14 @@ let SubcontractorSchema = new Schema({
 
       },
       project_number: {
-      type: String,
-      minLength:1,
-      maxLength:9,
-      not: null,
-      required: true,
-      unique: false
+        type: String,
+        minLength:1,
+        maxLength:2,
+        not: null,
+        required: true,
+        unique: false
     },
-    subid: {
-      type: String,
-      minLength: 5,
-      maxLength: 5,
-      required: true,
-      not: null,
-      unique:true
-    },
+   
     
 
   }, {

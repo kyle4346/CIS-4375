@@ -1,7 +1,9 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Phase Intake Form</h1>
+        <div style="margin-left:525px; margin-top: -50px">
+        <u class="text-center" style="font-size:200%; font-weight:bold; ">Create Phase </u>
+        </div> 
              <strong style ="font-size:150%">General Information</strong>
              <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">
@@ -10,18 +12,22 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputPhaseProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="phase.project_number" required>
+                    <input  type="text" class="form-control" id="inputPhaseProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="phase.project_number" required>
                     
                 </div>
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseNum">Phase Number</label>
+
+                    <label style ="font-size:14pt">Phase Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputPhaseNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="phase.phase_number" required>
-                    
+                    <br>
+                    <select  v-model="phase.phase_number" required> 
+                     <option v-for="phase_number in phase_numbers" v-bind:key="phase_number">{{phase_number}}</option>
+                    </select>
+                   
                 </div>
 
-                <div class="form-group col-lg-3">
+                <div style="margin-left:-50px" class="form-group col-lg-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseName">Phase Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputPhaseName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="phase.phase_name" required>
@@ -29,9 +35,8 @@
                 </div>
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputPhaseNotes">Phase Details</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <textarea type="text" class="form-control" id="inputPhaseNotes" minlength="5" maxlength="75"   rows="3" v-model="phase.phase_description" ></textarea>
+                    <label style ="font-size:14pt" for="inputPhaseNotes">Phase Comments</label>
+                    <textarea type="text" class="form-control" id="inputPhaseNotes" minlength="0" maxlength="35"   rows="1" v-model="phase.phase_description" ></textarea>
                     <br>
                 </div>
                 
@@ -79,22 +84,25 @@
                 </div>
 
                 <div style="margin-left:20px" class="form-group col-lg-auto">
-                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseEstimatedDuration">Phase Estimated Duration</label>
-                    <input  type="text" class="form-control" id="inputPhaseEstimatedDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="phase.phase_estimated_duration" >
-                    
-                </div>
-
-                <div style="margin-left:20px" class="form-group col-lg-auto">
-                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Phase Actual Duration</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Phase Duration</label>
                     <input  type="text" class="form-control" id="inputPhaseActualDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="phase.phase_actual_duration" >
                     
                 </div>
 
                 <div style="margin-left:20px" class="form-group col-lg-auto">
-                    <label style ="font-size:14pt; text-align:left;" for="inputPhasePercentComplete">Phase % Done</label>
-                    <input  type="number" class="form-control" id="inputPhasePercentComplete" placeholder="50" min="0" max="100" v-model="phase.phase_percent_complete" >
-                   <br>
+
+                    <label style ="font-size:14pt">Phase % Done</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <br>
+                    <select   v-model="phase.phase_percent_complete" required> 
+                     <option  v-for="phase_percent_complete in phase_percent_completes" v-bind:key="phase_percent_complete">{{phase_percent_complete}}</option>
+                    </select>
+                    <br>
+                    <br>
+                    <br>
+                   
                 </div>
+                
                 </div>
 
                 <div class="form-group row">
@@ -108,6 +116,7 @@
 
                 <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phase Estimated End Date</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="phase.phase_estimated_end_date" >
                 </div>
 
@@ -161,7 +170,6 @@
                    phase_description: '',
                    phase_completed: '',
                    phase_cost: '',
-                   phase_estimated_duration: '',
                    phase_actual_duration: '',
                    phase_percent_complete: '',
                    phase_start_date:'',
@@ -173,6 +181,8 @@
                 },
                 //static data for dropdown lists
                 phase_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
+                phase_numbers:['1','2','3','4','5','6'],
+                phase_percent_completes:['0%','25%','50%','75%','100%']
             }
         },
         methods: {

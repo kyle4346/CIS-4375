@@ -17,7 +17,8 @@
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%">
-                <col   style="width:0%">
+                <col   style="width:10%">
+                <col   style="width:5%">
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num</th>
@@ -31,6 +32,7 @@
                         <th>State</th>
                         <th>Project Location Status</th>
                         <th>Actions</th>
+                        <th>Reports</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -48,8 +50,10 @@
                         <td>
                             <router-link :to="{name: 'editProject', params: { id: project.project_id}}" style="text-align: center;" class="btn btn-success">Edit
                             </router-link>
+                            <br>
+                            <br>
 
-                        <button @click.prevent="deleteProject(project.project_id)" class="btn btn-danger">Delete</button>
+                        <button  @click.prevent="deleteProject(project.project_id)" class="btn btn-danger">Delete</button>
 
                             <br>
                             <br>
@@ -58,30 +62,27 @@
 
                             <br>
                             <br>
-                            <router-link :to="{name: 'project_phase_report', params: { id: project.project_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Phases
+                            <router-link :to="{name: 'viewPhase', params: { id: project.project_number}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff" class="btn btn-primary">View Phases
                             </router-link>
 
                             <br>
                             <br>
-                            <router-link :to="{name: 'viewPhase', params: { id: project.project_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-primary">View Phases
+                        
+                        </td>
+                        <td>
+                        <router-link :to="{name: 'project_phase_report', params: { id: project.project_number}}"  style="text-align: center; margin-right:10px; color:black; background-color:#FFD700" class="btn btn-dark">Assigned Phases Report
                             </router-link>
-
                             <br>
                             <br>
                            
-                            <router-link :to="{name: 'project_investor_report', params: { id:project.psid}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff " class="btn btn-dark">Assigned Investors
+                            <router-link :to="{name: 'project_investor_report', params: { id:project.psid}}"  style="text-align: center; margin-right:10px;  color:black; background-color:#FFD700 " class="btn btn-dark">Assigned Investors Report
                             </router-link>
 
                             <br>
                             <br>
 
-                            <router-link :to="{name: 'project_employee_report', params: { id:project.psid}}"  style="text-align: center; margin-right:10px; background-color:#ff8400 " class="btn btn-dark">Assigned Employees
+                            <router-link :to="{name: 'project_employee_report', params: { id:project.psid}}"  style="text-align: center; margin-right:10px;  color:black; background-color:#FFD700 " class="btn btn-dark">Assigned Employees Report
                             </router-link>
-
-                            
-                            
-
-
                         </td>
                     </tr>
                 </tbody>

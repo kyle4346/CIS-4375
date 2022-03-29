@@ -9,15 +9,16 @@
           <br>
           
             <table class="styled-table">
-                <col   style="width:1%"> 
-                <col   style="width:9%"> 
-                <col   style="width:3%"> 
-                <col   style="width:11%"> 
-                <col   style="width:10%"> 
-                <col   style="width:12%"> 
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:9%">
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:1%">
+                <col   style="width:7%">
                 <thead class="thead-dark">
                    
         
@@ -31,6 +32,7 @@
                         <th>Status</th>
                         <th>Type</th>
                         <th>Actions</th>
+                        <th>Reports</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -44,16 +46,21 @@
                         <td>{{ investor.investor_status}}</td>
                         <td>{{ investor.investor_type }}</td>
                         <td>
-                            <router-link :to="{name: 'editInvestor', params: { id: investor.investor_iD}}" style="text-align: center;" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editInvestor', params: { id: investor.investor_iD}}" style="text-align: center; margin-top:-10px" class="btn btn-success">Edit
                             </router-link>
-                            <button @click.prevent="deleteInvestor(investor.investor_iD)" class="btn btn-danger">Delete</button>
 
                             <br>
-                            <br>
+
+                            <button @click.prevent="deleteInvestor(investor.investor_iD)"  style="text-align: center; margin-top:20px" class="btn btn-danger">Delete</button>
+
+                            
                            
-                            <router-link :to="{name: 'investor_project_report', params: { id: investor.isid}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Projects
-                            </router-link>
+                           
 
+                        </td>
+                        <td>
+                             <router-link :to="{name: 'investor_project_report', params: { id: investor.isid}}"  style="text-align: center; margin-top:-20px; color:black; background-color:#FFD700" class="btn btn-dark">Assigned Projects Report
+                            </router-link>
                         </td>
                     </tr>
                 </tbody>

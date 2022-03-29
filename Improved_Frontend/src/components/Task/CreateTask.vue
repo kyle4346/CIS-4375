@@ -1,7 +1,10 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top: -35px">Task Intake Form</h1>
+            <div style="margin-left:525px; margin-top: -50px">
+            <u class="text-center" style="font-size:200%; font-weight:bold;">Create Task</u>
+            </div>
+
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             
@@ -12,31 +15,38 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputTaskProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="task.project_number" required>
+                    <input  type="text" class="form-control" id="inputTaskProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="task.project_number" required>
                     
                 </div>
 
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskPhaseNum">Phase Number</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputTaskPhaseNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="task.phase_number" required>
-                    
-                </div>
-
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskStepNum">Step Number</label>
+                <div style="margin-left:20px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">Phase Number</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputTaskStepNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="task.step_number" required>
-                    
+                     <br>
+                    <select  v-model="task.phase_number" required> 
+                     <option v-for="phase_number in phase_numbers" v-bind:key="phase_number">{{phase_number}}</option>
+                    </select>
                 </div>
 
-                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskNum">Task Number</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputTaskNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="task.task_number" required>
+                <div style="margin-left:-50px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">Step Number</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                     <br>
+                    <select  v-model="task.step_number" required> 
+                     <option v-for="step_number in step_numbers" v-bind:key="step_number">{{step_number}}</option>
+                    </select>
                 </div>
 
-                <div class="form-group col-lg-3">
+                 <div style="margin-left:-60px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">Task Number</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                     <br>
+                    <select  v-model="task.task_number" required> 
+                     <option v-for="task_number in task_numbers" v-bind:key="task_number">{{task_number}}</option>
+                    </select>
+                </div>
+
+                <div style="margin-left:-60px;" class="form-group col-lg-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Task Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
@@ -48,9 +58,8 @@
                 <div class="form-group row">
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputTaskNotes">Task Details</label>
-                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <textarea type="text" class="form-control" id="inputTaskNotes" minlength="0" maxlength="255"   rows="3" v-model="task.task_description" required></textarea>
+                    <label style ="font-size:14pt" for="inputTaskNotes">Task Comments</label> 
+                    <textarea type="text" class="form-control" id="inputTaskNotes" minlength="0" maxlength="35"   rows="1" v-model="task.task_description" ></textarea>
                 <br>
                 </div>
 
@@ -75,9 +84,7 @@
 
                  </div>
                 
-
-                
-                <div class="form-group col-lg-2">
+                <div style="margin-left:-30px;" class="form-group col-lg-2">
                    
                     <label style ="font-size:14pt">Task Status</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -89,14 +96,21 @@
 
                
 
-                <div class="form-group col-lg-3">
+                <div style="margin-left:-60px;" class="form-group col-lg-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskDuration">Task Duration</label>
                     <input  type="text" class="form-control" id="inputTaskDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="task.task_duration" >
                 </div>
 
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskPercentComplete">Task % Done</label>
-                    <input  type="number" class="form-control" id="inputTaskPercentComplete" placeholder="50" min="0" max="100" v-model="task.task_percent_complete" >
+                <div style="margin-left:20px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">Task % Done</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                     <br>
+                    <select  v-model="task.task_percent_complete" required> 
+                     <option v-for="task_percent_complete in task_percent_completes" v-bind:key="task_percent_complete">{{task_percent_complete}}</option>
+                    </select>
+                    <br>
+                    <br>
+                    
                 </div>
 
 
@@ -192,6 +206,10 @@
                 },
                 //static data for dropdown lists
                 task_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
+                phase_numbers:['1','2','3','4','5','6'],
+                step_numbers:['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'],
+                task_numbers:['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'],
+                task_percent_completes:['0%','25%','50%','75%','100%']
             }
         },
         methods: {

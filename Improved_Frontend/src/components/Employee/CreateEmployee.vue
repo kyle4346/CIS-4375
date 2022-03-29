@@ -1,17 +1,15 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold">Employee Intake Form</h1>
+        <div style="margin-left:525px; margin-top: -50px">
+            <u class="text-center" style="font-size:200%; font-weight:bold">Create Employee </u>
+        </div>
             <strong style ="font-size:150%">General Information</strong>
-            <br>
+            
             <form @submit.prevent="handleSubmitForm">
                 
                 <div class="form-group row">
-                <br>
-                <br>
                 <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
-                <br>
-
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">Employee First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -69,7 +67,7 @@
                 <div style="margin-left:-60px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Employee Salary</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="$65,000.50"   pattern="[$\0-9\.]{1,15}" v-model="employee.employee_salary" required>  
+                    <input type="text" class="form-control" placeholder="$65,000.50"  pattern="[^$\0-9\.]{1,15}" v-model="employee.employee_salary" required>  
                 </div>
 
                 </div>
@@ -124,7 +122,7 @@
                 </div>
                     
                 <div style="margin-left:-10px" class="form-group col-lg-1">
-                    <label style ="font-size:14pt">Zipcode</label>
+                    <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="employee.employee_zipcode" required>
                      
@@ -141,21 +139,11 @@
                     
                 </div>
 
-                <div style="margin-left:-60px" class="form-group col-lg-auto">
+                <div style="margin-left:-60px" class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="EmployeeinputProjectNum">Project Number</label>
-                    <input  type="number" class="form-control" id="EmployeeinputProjectNum" placeholder="10000" min="0" max="999999" v-model="employee.project_number" >
+                    <input  type="text" class="form-control" id="EmployeeinputProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="employee.project_number" >
                     
                 </div>
-
-                 <div  style="margin-left:20px" class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputEmployeeAssignedNum">EMPID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputEmployeeAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="employee.empid" required>
-                    
-                </div>
-               
-
-
                  </div>
 
                 

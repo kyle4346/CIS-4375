@@ -9,6 +9,16 @@
             <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:850px; margin-top: -110px;" to="/viewPhase">View Phases</router-link></p>
             
             <table class="styled-table">
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:2%">
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num</th>
@@ -20,6 +30,7 @@
                         <th>Step Cost</th>
                         <th>Step Start Date</th>
                         <th>Actions</th>
+                        <th>Reports</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -33,27 +44,26 @@
                         <td>{{ step.step_cost }}</td>
                         <td>{{ step.step_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editStep', params: { id: step.step_id}}" style="text-align: center;" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editStep', params: { id: step.step_id}}" style="text-align: center; margin-top:-70px" class="btn btn-success">Edit
                             </router-link>
+                            <br>
 
                         <button @click.prevent="deleteStep(step.step_id)" class="btn btn-danger">Delete</button>
 
                             <br>
-                            <br>
-                            <router-link :to="{name: 'createTask', params: { id: step.step_number}}" style="text-align: center;" class="btn btn-secondary">Add Task
+                            
+                            <router-link :to="{name: 'createTask', params: { id: step.step_number}}" style="text-align: center; margin-top:20px" class="btn btn-secondary">Add Task
+                            </router-link>
+                                 
+                        </td>
+                        <td>
+                            <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"  style="text-align: center; margin-top:-70px; color:black; background-color:#FFD700" class="btn btn-dark">Assigned Tasks
                             </router-link>
 
                             <br>
-                            <br>
-                            <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"  style="text-align: center; margin-right:10px;" class="btn btn-dark">Assigned Tasks
-                            </router-link>
-
-                            <br>
-                            <br>
-                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.stepid}}"  style="text-align: center; margin-right:10px; background-color: #5d00ff" class="btn btn-dark">Assigned Subcontractors
-                            </router-link>
-
-                                                           
+                            
+                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.stepid}}"  style="text-align: center; margin-top:5px; color:black; background-color:#FFD700" class="btn btn-dark">Assigned Subcontractors
+                            </router-link> 
 
                         </td>
                     </tr>

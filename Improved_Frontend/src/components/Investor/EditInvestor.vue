@@ -1,37 +1,32 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold">Update Investor Intake Form</h1>
+        <div style="margin-left:525px; margin-top: -50px">
+            <u class="text-center" style="font-size:200%; font-weight:bold">Update Investor </u>
+        </div>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                 
-              <div class="form-group row">
+             <div class="form-group row">
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_fname" required>
+                    <input  type="text" class="form-control" id="inputFName" placeholder="Mark" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_fname" required>
 
                 </div>
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputLName" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_lname" required>
+                    <input  type="text" class="form-control" id="inputLName"  placeholder="Richards" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_lname" required>
                     
                 </div>
 
-                 <div class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorID">ISID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorID" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor.isid" required>
-                    
-                </div>
         
 
                  <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputShortNotes">Investor Details</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <textarea type="text" class="form-control" id="inputShortNotes" maxlength="60"   rows="3" v-model="investor.investor_detail" required></textarea>
+                    <label style ="font-size:14pt" for="inputShortNotes">Investor Comments</label>
+                    <textarea type="text" class="form-control" id="inputShortNotes" minlength="0" maxlength="35"   rows="1" v-model="investor.investor_detail" ></textarea>
                     <br>
                 </div>
 
@@ -65,29 +60,29 @@
 
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Number</label>
-                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="investor.project_number" >
+                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="investor.project_number" >
                     
                 </div>
 
                 <div class="form-group col-lg-auto">
                     
-                    <label style ="font-size:14pt">Investor Email</label>
+                    <label style ="font-size:14pt">Email</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="email" class="form-control" placeholder="yourname123@mail.com" v-model="investor.investor_email" required>
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="25" v-model="investor.investor_email" required>
                     
                 </div>
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Investor Phone</label>
+                    <label style ="font-size:14pt">Phone</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="tel" class="form-control" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="investor.investor_phone" required>
                     
                 </div>
 
                  <div class="form-group col-lg-4">
-                    <label style ="font-size:14pt" >Investor Address</label>
+                    <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="investor.investor_address" required>
+                    <input type="text" class="form-control" placeholder="Apt#123 street address" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="investor.investor_address" required>
                     <br>
                 </div>
 
@@ -96,9 +91,9 @@
                 <div class="form-group row">
 
                      <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" >Investor City</label>
+                    <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]{5,35}" v-model="investor.investor_city" required>
+                    <input type="text" class="form-control" placeholder="Dallas" pattern="[A-Za-z]{5,35}" v-model="investor.investor_city" required>
                     
                 </div> 
 
@@ -124,7 +119,7 @@
 
                 <div class="form-group col-lg-1">
                     
-                    <label style ="font-size:14pt">Zip</label>
+                    <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
                       

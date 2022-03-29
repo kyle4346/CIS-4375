@@ -56,26 +56,16 @@ let SubcontractorAssignedSchema = new Schema({
       
   },
     
-    subid: {
-      type: String,
-      minLength: 5,
-      maxLength: 5,
-      required: true,
-      not: null,
-      unique:true
-    },
+  subcontractor_email: {
+    type: String,
+    maxLength: 55,
+    required: true,
+    unique:true,
+    not: null
     
-    stepid: {
-      type: String,
-      minLength: 5,
-      maxLength: 5,
-      required: true,
-      not: null,
-      unique:true
-      
-      
-    }, 
+  },
     
+   
     
     
 

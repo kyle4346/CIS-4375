@@ -1,44 +1,52 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Step Intake Form</h1>
+        <div style="margin-left:525px; margin-top: -50px">
+             <u class="text-center" style="font-size:200%; font-weight:bold;">Create Step</u>
+        </div>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">
                 
-                <div class="form-group row">
+               <div class="form-group row">
             
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepProjectNum">Project Number</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputStepProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="step.project_number" required>
+                    <input  type="text" class="form-control" id="inputStepProjectNum" placeholder="1-99 " pattern="[0-9]{1,2}" v-model="step.project_number" required>
                     
                 </div>
 
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepPhaseNum">Phase Number</label>
+                <div style="margin-left:20px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">Phase Number</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputStepPhaseNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="step.phase_number" required>
-                    
+                     <br>
+                    <select  v-model="step.phase_number" required> 
+                     <option v-for="phase_number in phase_numbers" v-bind:key="phase_number">{{phase_number}}</option>
+                    </select>
                 </div>
 
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepNum">Step Number</label>
+                <div style="margin-left:-50px;" class="form-group col-lg-2">
+                     <label style ="font-size:14pt">Step Number</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputStepNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="step.step_number" required>
+                     <br>
+                    <select  v-model="step.step_number" required> 
+                     <option v-for="step_number in step_numbers" v-bind:key="step_number">{{step_number}}</option>
+                    </select>
+
+                   
                     
                 </div>
 
-                 <div class="form-group col-lg-3">
+                 <div style="margin-left:-60px;" class="form-group col-lg-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepName">Step Name</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputStepName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="step.step_name" required>
                 </div> 
 
-                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputStepNotes">Step Details</label>
-                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <textarea type="text" class="form-control" id="inputStepNotes" minlength="0" maxlength="255"   rows="3" v-model="step.step_description" required></textarea>
+                 <div  style="margin-left:20px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt" for="inputStepNotes">Step Comments</label>
+                    <textarea type="text" class="form-control" id="inputStepNotes" minlength="0" maxlength="35"   rows="3" v-model="step.step_description" ></textarea>
                 <br>
                 </div>
 
@@ -67,7 +75,7 @@
                 </div>
 
 
-                <div style=" margin-right:20px" class="form-group col-lg-3">
+                <div style=" margin-left:-20px" class="form-group col-lg-3">
                     <label style ="font-size:14pt">Step Status</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
@@ -77,7 +85,7 @@
             
                 </div>
 
-                <div style="margin-left:-200px" class="form-group col-lg-2">
+                <div style="margin-left:-180px" class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Step Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" pattern="[$\0-9\.]{1,15}" v-model="step.step_cost" required>
@@ -91,9 +99,15 @@
                 </div>
 
                 <div  class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepPercentComplete">Step % Done</label>
-                    <input  type="number" class="form-control" id="inputStepPercentComplete" placeholder="50" min="0" max="100" v-model="step.step_percent_complete" >
-                   <br>
+                    <label style ="font-size:14pt">Step % Done</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                     <br>
+                    <select  v-model="step.step_percent_complete" required> 
+                     <option v-for="step_percent_complete in step_percent_completes" v-bind:key="step_percent_complete">{{step_percent_complete}}</option>
+                    </select>
+                    <br>
+                    <br>
+                    
                 </div>
 
                 </div>
@@ -112,14 +126,6 @@
                     <input type="date" class="form-control" v-model="step.step_end_date" >
                      <br>
                 </div>
-
-                <div class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepIDNum">STEPID</label>
-                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputStepIDNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="step.stepid" required>
-                    
-                </div>
-
                 </div>
 
                 
@@ -167,12 +173,15 @@
                    step_start_date:'',
                    step_end_date: '',
                    step_status_type: '',
-                   stepid:''
+                   
                    
 
                 },
                 //static data for dropdown lists
                 step_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
+                phase_numbers:['1','2','3','4','5','6'],
+                step_numbers:['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'],
+                step_percent_completes:['0%','25%','50%','75%','100%']
             }
         },
         methods: {

@@ -1,38 +1,35 @@
 <template>
     <div class="row justify-content-center"> 
-        <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px;">Project Intake Form</h1>
+        <div style="" class="col-lg-12"> 
+            <div style="margin-left:525px; margin-top: -50px" >
+                <u class="text-center" style="font-size:200%; font-weight:bold; ">Create Project</u>
+            </div>
+            
+            
             <strong style ="font-size:150%;">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">
                 
                 <div class="form-group row">
-                <div class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProject">PSID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputProject" placeholder="10000" pattern="[0-9]{5,5}" v-model="project.psid" required>
-                    
-                </div>
-
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="project.project_number" required>
+                    <input  type="text" class="form-control" id="inputProjectNum" placeholder="1-99" pattern="[0-9]{1,3}" v-model="project.project_number" required>
                     
                 </div>
 
                 <div class="form-group col-lg-3">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectName">Project Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputProjectName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="project.project_name" required>
+                    <input  type="text" class="form-control" id="inputProjectName" placeholder="Mario Custom Home" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,35}" v-model="project.project_name" required>
                     
                 </div>
         
 
-                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputProjectNotes">Project Details</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <textarea type="text" class="form-control" id="inputProjectNotes" minlength="0" maxlength="45"   rows="3" v-model="project.project_information" required></textarea>
+                 <div class="form-group col-lg-3">
+                    <label style ="font-size:14pt" for="inputProjectNotes">Project Comments</label>
+                    
+                    <textarea type="text" class="form-control" id="inputProjectNotes" minlength="0" maxlength="45"  placeholder="Two-Story House"  rows="1" v-model="project.project_information" ></textarea>
                     <br>
                    
                 </div>
@@ -59,7 +56,7 @@
                 <div style="margin-left:-20px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectBudget">Project Budget</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[$\0-9\.]{1,15}" v-model="project.project_budget" required>
+                    <input  type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[^$\0-9\.]{1,15}" v-model="project.project_budget" required>
                     
                 </div>
 
@@ -69,14 +66,14 @@
         
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectEstimate">Project Estimated Cost</label>
-                    <input  type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" size="12"  pattern="[$\0-9\.]{1,15}" v-model="project.project_estimated_cost" >
+                    <input  type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" size="12"  pattern="[^$\0-9\.]{1,15}" v-model="project.project_estimated_cost" >
                     
                     
                 </div>
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectActual">Project Actual Cost</label>
-                    <input  type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" size="12"  pattern="[$\0-9\.]{1,15}" v-model="project.project_actual_cost" >
+                    <input  type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" size="12"  pattern="[^$\0-9\.]{1,15}" v-model="project.project_actual_cost" >
                     
                 </div>
 
@@ -93,13 +90,18 @@
 
                 </div>
 
-                <div class="form-group col-lg-auto">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectPercentComplete">Project % Done</label>
-                    <input  type="number" class="form-control" id="inputProjectPercentComplete" placeholder="50" min="0" max="100" v-model="project.project_percent_complete" >
-                   
+                <div style="margin-left:20px;" class="form-group col-lg-2">
+                    
+                    <label style ="font-size:14pt">Project % Done</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <br>
+                    <select  v-model="project.project_percent_complete" required> 
+                     <option v-for="project_percent_complete in project_percent_completes" v-bind:key="project_percent_complete">{{project_percent_complete}}</option>
+                    </select>
+                    
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:-20px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Project Start Date</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="project.project_start_date" required>
@@ -144,29 +146,16 @@
                     </select>
                     
                 </div>
-
-                <div class="form-group col-lg-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectLocationName">Project Location Name</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputProjectLocationName" pattern="[A-Za-z\s]{5,55}" v-model="project.project_location_name" required>
                 </div>
 
-                </div>
-
-                <strong style ="font-size:150%">Project Location General Information</strong>
-                
-                <div >
-                <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
-            
-                </div>
-                
                 <div class="form-group row">
-                    
+                    <strong style ="font-size:150%">Project Location General Information</strong>
+                    <br>
+                    <br>
                  <div class="form-group col-lg-4">
-                    
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="project.project_location_street" required>
+                    <input type="text" class="form-control" placeholder="Apt 232 street address" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="project.project_location_street" required>
                    
                 </div>
 
@@ -174,15 +163,15 @@
                     
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" pattern="[A-Za-z]{3,40}" v-model="project.project_location_city" required>
+                    <input type="text" class="form-control" placeholder="Fresno" pattern="[A-Za-z]{3,40}" v-model="project.project_location_city" required>
                     
                 </div>
 
                 <div style="margin-left: 10px;" class="form-group col-lg-1">
                     
-                    <label style ="font-size:14pt">Zipcode</label>
+                    <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="project.project_location_zipcode" required>
+                    <input type="zip" class="form-control" placeholder="XXXXX" pattern="[0-9]{5}" v-model="project.project_location_zipcode" required>
                       
                       <br>
                 </div>
@@ -275,14 +264,13 @@
                    project_actual_end_date: '',
                    project_status_type: '',
                    project_type_description: '',
-                   project_location_name: '',
                    project_location_street: '',
                    project_location_city: '',
                    project_location_zipcode: '',
                    project_location_state: '' ,
                    project_location_country: '',
                    project_location_status_type: '',
-                   psid: ''
+                   
                    
 
                 },
@@ -290,9 +278,10 @@
                 project_location_states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','lg',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 project_location_countries:['United States'],
-                project_status_types:['complete', 'in-progress', 'on-hold', 'not-started'],
-                project_type_descriptions:['Exterior-Based','All-Around','Minor-Maintenance', 'Build-from-Scratch'],
-                project_location_status_types: ['Available', 'Unavailable', 'Unknown'],
+                project_percent_completes:['0%','25%','50%','75%','100%'],
+                project_status_types:['Complete', 'In-Progress', 'On-Hold', 'Not-Started','Cancelled'],
+                project_type_descriptions:['Remodeling','Minor Maintenance', 'New Construction'],
+                project_location_status_types: ['Available', 'Unavailable'],
             }
         },
         methods: {
@@ -327,14 +316,12 @@
                    project_actual_end_date: '',
                    project_status_type: '',
                    project_type_description: '',
-                   project_location_name: '',
                    project_location_street: '',
                    project_location_city: '',
                    project_location_zipcode: '',
                    project_location_state: '' ,
                    project_location_country: '',
                    project_location_status_type: '',
-                   psid: ''
                   }
                 }).catch(error => {
                     this.errors.push("Error in the form submission" + error.response.data);

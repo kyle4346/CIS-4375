@@ -11,7 +11,7 @@ let StepSchema = new Schema({
     project_number: {
       type: String,
       minLength:1,
-      maxLength:9,
+      maxLength:2,
       not: null,
       required: true,
       unique: false
@@ -19,7 +19,7 @@ let StepSchema = new Schema({
     phase_number: {
       type: String,
       minLength:1,
-      maxLength:9,
+      maxLength:2,
       not: null,
       required: true,
       unique: false
@@ -37,19 +37,18 @@ let StepSchema = new Schema({
      
     step_name: {
         type: String,
-        minLength: 5,
-        maxLength: 75,
-        not: null,
-        required: true
+        minLength: 0,
+        maxLength: 35,
+        
         
     },
     
     step_description: {
         type: String,
         minLength: 0,
-        maxLength: 255,
-        not: null,
-        required: true
+        maxLength: 35,
+       
+        
     },
     
     step_completed: {
@@ -81,9 +80,10 @@ let StepSchema = new Schema({
       
       
       step_percent_complete:{
-        type: Number,
-        min: 0,
-        max: 100,
+        type: String,
+        minLength:2,
+        maxLength:4,
+        require:true
         
 
     },

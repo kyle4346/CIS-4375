@@ -48,73 +48,29 @@
 
   <div class="container">
 
-<a class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold;" href="/" role="button">Home</a>
+<a class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold;" href="/" role="button">Dashboard</a>
 
     <!-- Example single danger button -->
-<div class="btn-group col-md-2">
+    <div class="btn-group col-md-2">
   
   <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
-    Intake Forms
+    Project Information
   </button>
   <ul class="dropdown-menu">
-    <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; text-align:left;" to="/createInvestor">Create Investor Form</router-link>
-    </li>
-    <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractor">Create Subcontractor Form</router-link>
-    </li>
-    <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployee">Create Employee Form</router-link>
-    </li>
     <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createProject">Create Project Form</router-link>
-    </li>
-    <li><hr class="dropdown-divider"></li>
-    <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createPhase">Create Phase Form</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createProject">Create Project</router-link>
     </li>
 
     <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createStep">Create Step Form</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createPhase">Create Phase</router-link>
+    </li>
+
+    <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createStep">Create Step</router-link>
     </li>
 
      <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createTask">Create Task Form</router-link>
-    </li>
-     <li><hr class="dropdown-divider"></li>
-
-     <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createInvestorAssigned">Investor Assigned Form</router-link>
-    </li>
-     <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractorAssigned">Subcontractor Assigned Form</router-link>
-    </li>
-
-     <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployeeAssigned">Employee Assigned Form</router-link>
-    </li>
-  </ul>
-</div>
-
-
-<!-- Example single danger button -->
-<div class="btn-group col-md-2">
-  
-  <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
-    View Forms
-  </button>
-  <ul class="dropdown-menu">
-     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestor">View Investors</router-link>
-    </li>
-     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractor">View Subcontractors</router-link>
-    </li>
-    <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployee">View Employees</router-link>
-    </li>
-    <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/activity">View Client Activities</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createTask">Create Task</router-link>
     </li>
     <li><hr class="dropdown-divider"></li>
      <li class="dropdown-item" >
@@ -129,17 +85,76 @@
     <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewTask">View Task</router-link>
     </li>
-  <li><hr class="dropdown-divider"></li>
+  </ul>
+</div>
+<div   class="btn-group col-md-2">
+  
+  <button  type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
+    Personnel Information
+  </button>
+  <ul class="dropdown-menu">
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestorAssigned">View Assigned Investors</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; text-align:left;" to="/createInvestor">Create Investor</router-link>
+    </li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractor">Create Subcontractor</router-link>
+    </li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployee">Create Employee</router-link>
+    </li>
+    
+    
+
+    
+     <li><hr class="dropdown-divider"></li>
+      <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestor">View Investors</router-link>
+    </li>
+     <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractor">View Subcontractors</router-link>
+    </li>
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployee">View Employees</router-link>
+    </li>
+    <li><hr class="dropdown-divider"></li>
+
+     <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createInvestorAssigned">Investor Assigned</router-link>
+    </li>
+     <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractorAssigned">Subcontractor Assigned</router-link>
+    </li>
+
+     <li class="dropdown-item">
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployeeAssigned">Employee Assigned</router-link>
+    </li>
+  </ul>
+</div>
+
+
+
+
+<!-- Example single danger button -->
+<div style="margin-right:80px"  class="btn-group col-md-2">
+  
+  <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
+    Resource Assignments
+  </button>
+  <ul class="dropdown-menu">
+    
+   
+   
+  
+    <li class="dropdown-item" >
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestorAssigned">Assigned Investors</router-link>
     </li>
 
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractorAssigned">View Assigned Subcontractors</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractorAssigned">Assigned Subcontractors</router-link>
     </li>
 
      <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployeeAssigned">View Assigned Employees</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployeeAssigned">Assigned Employees</router-link>
     </li>
 
     
@@ -147,7 +162,8 @@
 </div>
  
 <!-- Example single danger button -->
-<div class="btn-group col-md-2">
+
+<!-- <div class="btn-group col-md-2">
   
   <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
     Reports
@@ -163,7 +179,8 @@
   </ul>
 </div>
 
-<div class="btn-group col-md-2">
+-->
+<!-- <div class="btn-group col-md-2">
   
   <button type="button" class="btn btn-primary dropdown-toggle"  style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
     Charts
@@ -176,7 +193,7 @@
     <li><a class="dropdown-item" href="#">Separated link</a></li>
   </ul>
 </div>
-
+ -->
   </div>
 </nav>
 

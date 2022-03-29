@@ -26,7 +26,7 @@ let EmployeeAssignedSchema = new Schema({
     project_number: {
       type: String,
       minLength:1,
-      maxLength:9,
+      maxLength:2,
       not: null,
       required: true,
       unique: false
@@ -38,28 +38,16 @@ let EmployeeAssignedSchema = new Schema({
      
   },
      
-    empid: {
-      type: String,
-      minLength: 5,
-      maxLength: 5,
-      required: true,
-      not: null,
-      unique:true
-    },
+  employee_email: {
+    type: String,
+    maxLength: 55,
+    unique:true,
+    not: null,
+    required: true
+
+  },
     
-    psid: {
-      type: String,
-      minLength: 5,
-      maxLength: 5,
-      required: true,
-      not: null,
-      unique:true
-      
-      
-    }, 
-    
-    
-    
+
 
   }, {
     collection: 'employee_assigned'

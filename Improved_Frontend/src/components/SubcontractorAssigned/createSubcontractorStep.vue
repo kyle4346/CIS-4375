@@ -1,27 +1,12 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Subcontractor Assigned Intake Form</h1>
+            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Subcontractor Assigned</h1>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">
                 
                 <div class="form-group row">
-
-                <div  class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorAssignedNum">SUBID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputSubcontractorAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor_assigned.subid" required>
-                    
-                </div>
-
-                <div class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepAssignedProjectNum">STEPID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputStepAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="subcontractor_assigned.stepid" required>
-                    
-                </div>
-
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -35,12 +20,21 @@
                     
                 </div>
 
+                <div class="form-group col-lg-3">
+                    
+                    <label style ="font-size:14pt">Email</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" v-model="subcontractor_assigned.subcontractor_email" required>
+                    <br>
+                </div>
+
                  <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputSubcontractorProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="subcontractor_assigned.project_number" required>
+                    <input   type="text" class="form-control" id="inputSubcontractorProjectNum" placeholder="1-99" pattern="[0-9]{1,9}" v-model="subcontractor_assigned.project_number" required>
                     
                 </div>
+
 
                  <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Subcontractor Assigned Date</label>
@@ -120,8 +114,8 @@
                    subcontractor_assigned_date: '',
                    subcontractor_assigned_cost: '',
                    subcontractor_assigned_paid: '',
-                   subid: '',
-                   stepid: '',
+                   subcontractor_email:''
+                   
                    
                    
 
@@ -153,8 +147,8 @@
                    subcontractor_assigned_date: '',
                    subcontractor_assigned_cost: '',
                    subcontractor_assigned_paid: '',
-                   subid: '',
-                   stepid: '',
+                   subcontractor_email:''
+                  
 
                   }
                 }).catch(error => {

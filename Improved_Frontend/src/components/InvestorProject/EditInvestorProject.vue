@@ -1,27 +1,13 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Update Investor Assigned Intake Form</h1>
+            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Update Investor Assigned</h1>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                 
                  
                <div class="form-group row">
-
-                <div  class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorAssignedNum">ISID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorAssignedNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor_assigned.isid" required>
-                    
-                </div>
-
-                <div class="form-group col-lg-1">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorAssignedProjectNum">PSID</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorAssignedProjectNum" placeholder="10000" pattern="[0-9]{5,5}" v-model="investor_assigned.psid" required>
-                    
-                </div>
 
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
@@ -36,10 +22,18 @@
                     
                 </div>
 
+                 <div  class="form-group col-lg-3">
+                    
+                    <label style ="font-size:14pt">Email</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="25" v-model="investor_assigned.investor_email" required>
+                    
+                </div>
+
                  <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="10000" pattern="[0-9]{1,9}" v-model="investor_assigned.project_number" required>
+                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="1-99" pattern="[0-9]{1,9}" v-model="investor_assigned.project_number" required>
                     
                 </div>
 
@@ -84,6 +78,7 @@
                 
                 </div>
 
+                
                 </div>
 
                     <br>

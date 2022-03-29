@@ -11,7 +11,7 @@ let ProjectSchema = new Schema({
     project_number: {
       type: String,
       minLength:1,
-      maxLength:9,
+      maxLength:2,
       not: null,
       required: true,
       unique: true
@@ -20,7 +20,7 @@ let ProjectSchema = new Schema({
     project_name: {
         type: String,
         minLength: 5,
-        maxLength: 75,
+        maxLength: 35,
         not: null,
         required: true
         
@@ -30,8 +30,7 @@ let ProjectSchema = new Schema({
         type: String,
         minLength: 0,
         maxLength: 45,
-        not: null,
-        required: true
+       
     },
     
     project_completed: {
@@ -86,10 +85,10 @@ let ProjectSchema = new Schema({
       },
       
       project_percent_complete:{
-        type: Number,
-        min: 0,
-        max: 100,
-        
+        type: String,
+        minLength:2,
+        maxLength:4,
+        require:true
 
       },
       
@@ -125,14 +124,7 @@ let ProjectSchema = new Schema({
         not:null
 
       },
-      project_location_name: {
-        type: String,
-        minLength: 5,
-        maxLength: 55,
-        required: true,
-        not: null
 
-      },
       project_location_street: {
         type: String,
         minLength: 5,
@@ -174,14 +166,7 @@ let ProjectSchema = new Schema({
         required: true,
         not: null
       },
-      psid: {
-        type: String,
-        minLength: 5,
-        maxLength: 5,
-        required: true,
-        not: null,
-        unique:true
-      },
+      
     
   }, {
     collection: 'project'
