@@ -20,14 +20,14 @@
                 <thead class="thead-dark">
                     <tr>
                       
-                        <th>Employee First Name</th>
-                        <th>Employee Last Name</th>
-                        <th>Employee Phone</th>
-                        <th>Employee Email</th>
-                        <th>Employee Title</th>
-                        <th>Employee Status</th>
-                        <th>Actions</th>
-                        <th>Reports</th>
+                        <th style="position:sticky">Employee First Name</th>
+                        <th style="position:sticky">Employee Last Name</th>
+                        <th style="position:sticky">Employee Phone</th>
+                        <th style="position:sticky">Employee Email</th>
+                        <th style="position:sticky">Employee Title</th>
+                        <th style="position:sticky">Employee Status</th>
+                        <th style="position:sticky">Actions</th>
+                        <th style="position:sticky">Reports</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -39,21 +39,21 @@
                         <td style="vertical-align:top">{{ employee.employee_email }}</td>
                         <td style="vertical-align:top">{{ employee.employee_title_description}}</td>
                         <td style="vertical-align:top">{{ employee.employee_status_type}}</td>
-                        <td>
-                            <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}" style="text-align: center; margin-top:-40px" class="btn btn-success">Edit
+                        <td style="position:sticky">
+                            <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}" style="text-align: center; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
+
                             </router-link>
 
                             <br>
-                        <button @click.prevent="deleteEmployee(employee.employee_id)" style="text-align: center; margin-top:10px" class="btn btn-danger">Delete</button>
+
+                        
+                        <button @click.prevent="deleteEmployee(employee.employee_id)" style="text-align: center; margin-top:2px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
                         
                         
-
-                       
-
                         </td>
 
-                        <td>
-                        <router-link :to="{name: 'employee_project_report', params: { id:employee.empid}}"  style="text-align: center; margin-top:-70px; color:black; background-color:#FFD700 " class="btn btn-dark">Assigned Projects
+                        <td style="position:sticky">
+                        <router-link :to="{name: 'employee_project_report', params: { id:employee.employee_email}}"  style="text-align: center;  color:black; background-color:#FFD700; padding: 7px 2px; font-size:16px" class="btn btn-dark">Assigned Projects
                         </router-link>
                         </td>
 
@@ -129,13 +129,26 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
 }
-.btn-success {
-        margin-right: 6px;
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
+
 
 
 .styled-table th,
@@ -166,4 +179,3 @@
   height: 64px;
 }
 </style>
-

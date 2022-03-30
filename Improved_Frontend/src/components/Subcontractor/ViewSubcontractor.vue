@@ -47,7 +47,7 @@
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_type }}</td>
                         <td>
                             
-                            <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" style="text-align: center;" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" style="text-align: center; margin-top:-20px; padding: 1px 12px; font-size:16px" class="btn btn-success">Edit
                             </router-link>
 
                             <br>
@@ -56,14 +56,14 @@
                             
                             
                             
-                            <button style=" margin-left:0px;" @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" class="btn btn-danger">Delete</button>
+                            <button  @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" style="text-align: center; margin-top:-50px; padding: 1px 3px; font-size:16px" class="btn btn-danger">Delete</button>
                             
                         
                         </td>
 
                         <td>
                             
-                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  style="text-align: center; margin-right:10px; margin-top:-40px; color:black; background-color:#FFD700" class="btn btn-dark">Assigned Steps
+                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  style="text-align: center;  margin-top:-30px; color:black; background-color:#FFD700; padding: 6px 3px; font-size:16px" class="btn btn-dark">Assigned Steps
                             </router-link>
                         </td>
 
@@ -140,13 +140,29 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
 }
-.btn-success {
-        margin-right: 6px;
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
+.btn-success {
+        margin-right: 10px;
+}
+
 
 
 .styled-table th,

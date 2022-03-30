@@ -67,7 +67,7 @@
                 <div style="margin-left:-60px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Employee Salary</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="$65,000.50"  pattern="[^$\0-9\.]{1,15}" v-model="employee.employee_salary" required>  
+                    <input type="text" class="form-control" placeholder="$65,000.50"  pattern="[^$\0-9\,\.]{1,15}" v-model="employee.employee_salary" required>  
                 </div>
 
                 </div>
@@ -141,7 +141,7 @@
 
                 <div style="margin-left:-60px" class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="EmployeeinputProjectNum">Project Number</label>
-                    <input  type="text" class="form-control" id="EmployeeinputProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="employee.project_number" >
+                    <input  type="text" class="form-control" id="EmployeeinputProjectNum" placeholder="1-99" pattern="[0-9]{0,2}" v-model="employee.project_number" >
                     
                 </div>
                  </div>
@@ -195,7 +195,6 @@
                    employee_status_type: '',
                    employee_title_description: '',
                    project_number:'',
-                   empid:'',
                    
                 },
                 //static data for dropdown lists
@@ -237,7 +236,6 @@
                    employee_status_type: '',
                    employee_title_description: '',
                    project_number:'',
-                   empid: ''
 
                   }
                 }).catch(error => {

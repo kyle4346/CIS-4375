@@ -56,7 +56,7 @@
                 <div style="margin-left:-20px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectBudget">Project Budget</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[^$\0-9\.]{1,15}" v-model="project.project_budget" required>
+                    <input  type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[^$\0-9\,\.]{1,15}" v-model="project.project_budget" required>
                     
                 </div>
 

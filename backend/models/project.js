@@ -54,18 +54,18 @@ let ProjectSchema = new Schema({
       
       project_estimated_cost: {
       type: String,
-       minLength: 1,
+       minLength: 0,
        maxLength: 15,
        not: null,
-       required: true
+       
         
       },
       project_actual_cost: {
       type: String,
-       minLength: 1,
+       minLength: 0,
        maxLength: 15,
        not: null,
-       required: true
+    
         
       },
       
