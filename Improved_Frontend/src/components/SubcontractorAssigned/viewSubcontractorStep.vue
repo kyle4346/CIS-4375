@@ -15,7 +15,7 @@
                 <col   style="width:16%"> 
                 <col   style="width:14%"> 
                 <col   style="width:0%"> 
-                <col   style="width:14%"> 
+                <col   style="width:5%"> 
                  
                 <thead class="thead-dark">
                    
@@ -39,12 +39,13 @@
                         <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_cost }}</td>
                         <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
                         <td>
-                            <router-link :to="{name: 'editSubcontractorAssigned', params: { id: subcontractor_assigned.subcontractor_assigned_id}}" style="text-align: center;" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editSubcontractorAssigned', params: { id: subcontractor_assigned.subcontractor_assigned_id}}" style="text-align: center; margin-top:0px; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
                             </router-link>
-                            <button @click.prevent="deleteSubcontractorAssigned(subcontractor_assigned.subcontractor_assigned_id)" style="margin-left:10px" class="btn btn-danger">Delete</button>
+                            <br>
+                            <br>
+                            <button @click.prevent="deleteSubcontractorAssigned(subcontractor_assigned.subcontractor_assigned_id)" style="text-align: center; margin-top:-30px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
 
-                            <br>
-                            <br>
+                            
                             
                         </td>
                     </tr>
@@ -115,17 +116,33 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 1%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
 }
-.btn-success {
-        margin-right: 6px;
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
+.btn-success {
+        margin-right: 10px;
+}
+
 
 
 .styled-table th,

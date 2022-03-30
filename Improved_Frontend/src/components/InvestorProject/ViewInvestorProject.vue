@@ -115,7 +115,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 10%;
+  height: 1%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
