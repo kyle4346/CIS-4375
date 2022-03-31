@@ -8,28 +8,25 @@
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>ISID</th>
-                        <th>PSID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
                         <th>Project Number</th>
                         <th>Investor Assigned Date</th>
                         <th>Investment Amount</th>
                         <th>Investor Paid</th>
-                        <th>Investor FName</th>
-                        <th>Investor LName</th>
+                       
                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="investor_assigned in investor_assigneds" :key="investor_assigned.investor_assigned_id">
-                        <td>{{ investor_assigned.isid }}</td>
-                        <td>{{ investor_assigned.psid }}</td>
+                        <td>{{ investors.investor_fname}}</td>
+                        <td>{{ investors.investor_lname}}</td>
                         <td>{{ investor_assigned.project_number }}</td>
                         <td>{{ investor_assigned.investor_assigned_date }}</td>
                         <td>{{ investor_assigned.investor_assigned_cost }}</td>
                         <td>{{ investor_assigned.investor_assigned_paid}}</td>
-                        <td>{{ investors.investor_fname}}</td>
-                        <td>{{ investors.investor_lname}}</td>
-                  
+                        
                     </tr>
                 </tbody>
             </table>
@@ -56,7 +53,7 @@
                 investors:{},
                 investor_assigned: {
     
-                   isid: this.$route.params.id,
+                   investor_email: this.$route.params.id,
                 },
                 
                 

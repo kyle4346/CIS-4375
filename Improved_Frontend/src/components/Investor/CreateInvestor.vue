@@ -59,7 +59,7 @@
 
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Number</label>
-                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="investor.project_number" >
+                    <input style="text-align:right;"  type="text" class="form-control" id="inputInvestorProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="investor.project_number" >
                     
                 </div>
 
@@ -120,7 +120,7 @@
                     
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
+                    <input style="text-align:right" type="zip" placeholder="XXXXX" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
                       
                 </div>
  
@@ -183,7 +183,7 @@
                    investor_status: '',
                    investor_type: '',
                    project_number: '',
-                   isid:''
+                   
                    
 
                 },
@@ -225,7 +225,7 @@
                    investor_status: '',
                    investor_type: '',
                    project_number: '',
-                   isid:''
+                   
 
                   }
                 }).catch(error => {

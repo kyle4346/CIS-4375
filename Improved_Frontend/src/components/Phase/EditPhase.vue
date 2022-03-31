@@ -3,12 +3,11 @@
         <div class="col-lg-12"> 
         <div style="margin-left:525px; margin-top: -50px">
             <u class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Update Phase </u>
-        </div>
+         </div> 
             <strong style ="font-size:150%">General Information</strong>
              <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
-                
-                <div class="form-group row">
+                 <div class="form-group row">
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>

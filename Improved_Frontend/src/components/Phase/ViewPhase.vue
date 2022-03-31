@@ -21,7 +21,7 @@
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num</th>
-                        <th>Phase Num</th>
+                        <th>Phase % Complete</th>
                         <th>Phase Name</th>
                         <th>Phase Completed</th>
                         <th>Phase Status</th>
@@ -34,7 +34,7 @@
                 <tbody>
                     <tr v-for="phase in filteredPhases" :key="phase.phase_id">
                         <td style="vertical-align:top">{{ phase.project_number }}</td>
-                        <td style="vertical-align:top">{{ phase.phase_number }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_percent_complete}}</td>
                         <td style="vertical-align:top">{{ phase.phase_name }}</td>
                         <td style="vertical-align:top">{{ phase.phase_completed }}</td>
                         <td style="vertical-align:top">{{ phase.phase_status_type}}</td>

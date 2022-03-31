@@ -21,7 +21,7 @@
                     <label style ="font-size:14pt">Phase Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="phase.phase_number" required> 
+                    <select  style="font-size:20px"  v-model="phase.phase_number" required> 
                      <option v-for="phase_number in phase_numbers" v-bind:key="phase_number">{{phase_number}}</option>
                     </select>
                    
@@ -94,7 +94,7 @@
                     <label style ="font-size:14pt">Phase % Done</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select   v-model="phase.phase_percent_complete" required> 
+                    <select style="font-size:20px"  v-model="phase.phase_percent_complete" required> 
                      <option  v-for="phase_percent_complete in phase_percent_completes" v-bind:key="phase_percent_complete">{{phase_percent_complete}}</option>
                     </select>
                     <br>
@@ -165,20 +165,23 @@
                 errors: [],
                 phase: {
                    project_number: '',
-                   phase_number: '',
+                   phase_number: 'A',
                    phase_name: '',
                    phase_description: '',
                    phase_completed: '',
                    phase_cost: '',
                    phase_actual_duration: '',
-                   phase_percent_complete: '',
+                   phase_percent_complete: 'A',
                    phase_start_date:'',
                    phase_estimated_end_date: '',
                    phase_actual_end_date: '',
                    phase_status_type: '',
-                   
+
+                 
+                 
 
                 },
+                
                 //static data for dropdown lists
                 phase_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
                 phase_numbers:['1','2','3','4','5','6'],

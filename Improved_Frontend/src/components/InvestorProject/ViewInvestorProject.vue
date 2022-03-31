@@ -21,8 +21,9 @@
                    
         
                     <tr>
-                        <th>ISID</th>
-                        <th>PSID</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
                         <th>Project Number</th>
                         <th>Investor Assigned Date</th>
                         <th>Investment Amount</th>
@@ -32,9 +33,10 @@
                 </thead>
                 <tbody>
                     <tr v-for="investor_assigned in filteredInvestorsAssigned" :key="investor_assigned.investor_assigned_id">
-                        <td style="vertical-align:top">{{ investor_assigned.isid }}</td>
-                        <td style="vertical-align:top">{{ investor_assigned.psid }}</td>
-                        <td style="vertical-align:top">{{ investor_assigned.project_number }}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_firstname}}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_lastname}}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_email}}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.project_number}}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_assigned_date }}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_assigned_cost }}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_assigned_paid}}</td>
@@ -80,8 +82,7 @@
 
                 return this.investor_assigneds.filter((investor_assigned) =>{
 
-                    return investor_assigned.isid.match(this.search) ||
-                           investor_assigned.psid.match(this.search) ||
+                    return investor_assigned.investor_email.toLowerCase().match(this.search.toLowerCase())  ||
                            investor_assigned.project_number.match(this.search) ||
                            investor_assigned.investor_assigned_paid.toLowerCase().match(this.search.toLowerCase()) 
                     

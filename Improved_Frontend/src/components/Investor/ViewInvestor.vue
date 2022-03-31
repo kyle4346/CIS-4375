@@ -23,7 +23,7 @@
                    
         
                     <tr>
-                        <th>ISID</th>
+                        <th>Project Number</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Investor Details</th>
@@ -37,7 +37,7 @@
                 </thead>
                 <tbody>
                     <tr v-for="investor in filteredInvestors" :key="investor.investor_iD">
-                        <td style="vertical-align:top">{{ investor.isid }}</td>
+                        <td style="vertical-align:top">{{ investor.project_number }}</td>
                         <td style="vertical-align:top">{{ investor.investor_fname }}</td>
                         <td style="vertical-align:top">{{ investor.investor_lname }}</td>
                         <td style="vertical-align:top">{{ investor.investor_detail }}</td>
@@ -53,13 +53,16 @@
 
                             <button @click.prevent="deleteInvestor(investor.investor_iD)"  style="text-align: center; margin-top:0px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
 
-                            
-                           
-                           
+                            <br>
 
+                             <router-link :to="{name: 'createInvestorAssigned', params: { id: investor.investor_email}}"  style="text-align: center; margin-top:15px; color:white; background-color:gray; padding: 1px 4px; font-size:16px" class="btn btn-dark">Investor Assigned
+                            </router-link>
+
+                         
+                            
                         </td>
                         <td>
-                             <router-link :to="{name: 'investor_project_report', params: { id: investor.isid}}"  style="text-align: center; margin-top:-20px; color:black; background-color:#FFD700; padding: 1px 4px; font-size:16px" class="btn btn-dark">Assigned Projects Report
+                             <router-link :to="{name: 'investor_project_report', params: { id: investor.investor_email}}"  style="text-align: center; margin-top:-90px; color:black; background-color:#FFD700; padding: 1px 4px; font-size:16px" class="btn btn-dark">Assigned Projects Report
                             </router-link>
                         </td>
                     </tr>
@@ -98,8 +101,8 @@
                     return investor.investor_lname.toLowerCase().match(this.search.toLowerCase()) ||
                            investor.investor_fname.toLowerCase().match(this.search.toLowerCase()) ||
                            investor.investor_phone.toLowerCase().match(this.search.toLowerCase()) ||
-                           investor.investor_email.toLowerCase().match(this.search.toLowerCase()) ||
-                           investor.isid.match(this.search) 
+                           investor.investor_email.toLowerCase().match(this.search.toLowerCase()) 
+                           
                     
                 })
             }    

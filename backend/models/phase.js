@@ -79,9 +79,10 @@ let PhaseSchema = new Schema({
       
       phase_percent_complete:{
         type: String,
-        minLength:2,
+        minLength:1,
         maxLength:4,
-        require:true
+        null:true,
+        required:true
         
 
       },

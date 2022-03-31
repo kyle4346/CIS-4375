@@ -211,7 +211,7 @@ export default {
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 countries:['United States'],
                 subcontractor_status: ['Available', 'Unavailable', 'Working','Unknown'],
-                subcontractor_type:['Electrical','Roofing','Remodeling','Mechanical','Air Conditioning','Construction','Plumming'],
+               subcontractor_type:['Electrical','Roofing','Remodeling','Mechanical','Air Conditioning','Construction','Plumbing','Other'],
                 
         }
 

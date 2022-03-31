@@ -7,7 +7,6 @@
             <br>
             <br>
             <table class="table styled-table">
-                <col   style="width:0%; text-align:center"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -22,7 +21,6 @@
                 <thead class="thead-dark">
                     <tr>
                         <th >Project Num</th>
-                        <th >PSID</th>
                         <th >Project Name</th>
                         <th >Project Done</th>
                         <th >Project Status</th>
@@ -38,7 +36,6 @@
                 <tbody>
                     <tr v-for="project in filteredProjects" :key="project.project_number">
                         <td style="position: relative;">{{ project.project_number }}</td>
-                        <td style="position: relative;" >{{ project.psid }}</td>
                         <td style="position: relative;" >{{ project.project_name }}</td>
                         <td style="position: relative;">{{ project.project_completed }}</td>
                         <td style="position: relative;">{{ project.project_status_type }}</td>

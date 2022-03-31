@@ -1142,12 +1142,12 @@ app.get('/investor_project_report/:id', (req, res, next) => {
 
 
   InvestorAssignedModel.aggregate([
-    { $match : { isid: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,isid: 1, psid:1, project_number: 1, investor_assigned_date:1 ,investor_assigned_cost: 1, investor_assigned_paid:1,  } },  //retrieve these fieldnames from the genral information schema
+    { $match : { investor_email: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,investor_email: 1, project_number: 1, investor_assigned_date:1 ,investor_assigned_cost: 1, investor_assigned_paid:1,  } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'investor',
-        localField : 'isid',
-        foreignField : 'isid',
+        localField : 'investor_email',
+        foreignField : 'investor_email',
         as : 'investor',
        
     } },

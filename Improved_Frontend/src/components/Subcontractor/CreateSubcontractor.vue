@@ -18,47 +18,23 @@
                     <input  type="text" class="form-control" id="inputFName" placeholder="Chase" pattern="[A-Za-z\s]{1,25}" v-model="subcontractor.subcontractor_fname" required>
                 </div>
 
-                <div class="form-group col-lg-2">
+                <div style="margin-left:20px" class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="text" class="form-control" placeholder="Williams" id="inputLName" pattern="[A-Za-z\s]{5,25}" v-model="subcontractor.subcontractor_lname" required>
                     
                 </div>
 
-                <div class="form-group col-lg-1">
-                <label style ="font-size:14pt" class="col-form-label pt-0">Gender</label>
-                <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                <br>
-                <!--<div class="col-sm-10"> -->
-          
-                <div class="form-check-inline col-lg-2">
-                     <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorGender1">
-                     <input class="form-check-input" type="radio" id="SubcontractorGender1" value="Male"  v-model="subcontractor.subcontractor_gender"   required>Male    
-                     </label>
-                </div>
-             
-                <div style="margin-left:25px;" class="form-check-inline col-lg-2">
-                    <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorGender2">
-                    <input class="form-check-input" type="radio"  id="SubcontractorGender2" value="Female"  v-model="subcontractor.subcontractor_gender" required>Female
-                    </label>
-
-                </div>
                 
-                </div>
 
 
-                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left; margin-left:15px;" for="inputProjectNum">Project Number</label>
-                    <input  style="margin-left:15px;" type="text" class="form-control" id="inputTaskProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="subcontractor.project_number" >
-                </div>
-
-                <div class="form-group col-lg-2">
+                <div style="margin-left:20px;" class="form-group col-lg-2">
                     
                     
-                    <label style ="font-size:14pt; margin-left:15px;">Subcontractor Status</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold margin-left:15px;"> * </label>
-                    <br>
-                    <select style="margin-left:15px;" v-model="subcontractor.subcontractor_status" required> 
+                    <label style ="font-size:14pt; margin-left:0px;">Subcontractor Status</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold "> * </label>
+                    
+                    <select style="margin-left:0px;" v-model="subcontractor.subcontractor_status" required> 
                      <option v-for="subcontractor_status in subcontractor_status" v-bind:key="subcontractor_status">{{subcontractor_status}}</option>
                     </select>
                     
@@ -96,7 +72,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputSRate">Subcontractor Rate</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputSRate" placeholder="$100/hr" pattern="[$\0-9\hr]{5,25}" v-model="subcontractor.subcontractor_rate" required>
+                    <input  style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100/hr" pattern="[$\0-9\hr]{5,25}" v-model="subcontractor.subcontractor_rate" required>
                     
                 </div>
 
@@ -145,9 +121,9 @@
                 </div>
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Zip</label>
+                    <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="zip" class="form-control" placeholder="XXXXX" pattern="[0-9]{5}" v-model="subcontractor.subcontractor_zipcode" required>
+                    <input style="text-align:right" type="zip" class="form-control" placeholder="XXXXX" pattern="[0-9]{5}" v-model="subcontractor.subcontractor_zipcode" required>
                      
                 </div>
 
@@ -224,7 +200,7 @@
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 countries:['United States'],
                 subcontractor_status: ['Available', 'Unavailable', 'Working','Unknown'],
-                subcontractor_type:['Electrical','Roofing','Remodeling','Mechanical','Air Conditioning','Construction','Plumming'],
+                subcontractor_type:['Electrical','Roofing','Remodeling','Mechanical','Air Conditioning','Construction','Plumbing','Other'],
             }
         },
         methods: {

@@ -14,7 +14,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputProjectNum" placeholder="1-99" pattern="[0-9]{1,3}" v-model="project.project_number" required>
+                    <input style="text-align:right;" type="text" class="form-control" id="inputProjectNum" placeholder="1-99" pattern="[0-9]{1,3}" v-model="project.project_number" required>
                     
                 </div>
 
@@ -56,7 +56,7 @@
                 <div style="margin-left:-20px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectBudget">Project Budget</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[^$\0-9\,\.]{1,15}" v-model="project.project_budget" required>
+                    <input style="text-align:right;" type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[^$\0-9\,\.]{1,15}" v-model="project.project_budget" required>
                     
                 </div>
 
@@ -66,20 +66,20 @@
         
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectEstimate">Project Estimated Cost</label>
-                    <input  type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" size="12"  pattern="[^$\0-9\.]{1,15}" v-model="project.project_estimated_cost" >
+                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" size="12"  pattern="[^$\0-9\.]{1,15}" v-model="project.project_estimated_cost" >
                     
                     
                 </div>
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectActual">Project Actual Cost</label>
-                    <input  type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" size="12"  pattern="[^$\0-9\.]{1,15}" v-model="project.project_actual_cost" >
+                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" size="12"  pattern="[^$\0-9\.]{1,15}" v-model="project.project_actual_cost" >
                     
                 </div>
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectEstimatedDuration">Project Estimated Duration</label>
-                    <input  type="text" class="form-control" id="inputProjectEstimatedDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="project.project_estimated_duration" >
+                    <input   type="text" class="form-control" id="inputProjectEstimatedDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="project.project_estimated_duration" >
                     
                 </div>
 
@@ -171,7 +171,7 @@
                     
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="zip" class="form-control" placeholder="XXXXX" pattern="[0-9]{5}" v-model="project.project_location_zipcode" required>
+                    <input style="text-align:right;" type="zip" class="form-control" placeholder="XXXXX" pattern="[0-9]{5}" v-model="project.project_location_zipcode" required>
                       
                       <br>
                 </div>
