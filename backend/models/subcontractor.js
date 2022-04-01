@@ -22,6 +22,13 @@ let SubcontractorSchema = new Schema({
       not: null,
       required: true
   },
+  subcontractor_detail: {
+    type: String,
+    minLength: 0,
+    maxLength: 55,
+    
+
+  },
     subcontractor_gender: {
       type: String,
       maxLength: 6,
@@ -120,14 +127,7 @@ let SubcontractorSchema = new Schema({
         not: null
 
       },
-      project_number: {
-        type: String,
-        minLength:1,
-        maxLength:2,
-        not: null,
-        required: true,
-        unique: false
-    },
+    
    
     
 

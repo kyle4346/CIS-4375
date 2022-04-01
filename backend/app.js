@@ -408,7 +408,7 @@ app.get('/project_report/:id', (req, res, next) => {
 // Report for Investor Assigned
 app.get('/project_num/:id', (req, res, next) => {
   //find data based on the client id for the collection client form information
-  ProjectModel.findOne({ psid: req.params.id}, (error, data) => {
+  ProjectModel.findOne({ project_number: req.params.id}, (error, data) => {
       if (error) {
           return next(error)
       } else if (data === null) {
@@ -1153,8 +1153,8 @@ app.get('/investor_project_report/:id', (req, res, next) => {
     } },
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
       from : 'project',
-      localField : 'psid',
-      foreignField : 'psid',
+      localField : 'project_number',
+      foreignField : 'project_number',
       as : 'project',
   } },
   ],

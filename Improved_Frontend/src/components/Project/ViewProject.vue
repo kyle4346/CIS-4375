@@ -1,13 +1,13 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Projects:</strong>
-            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchProjects" placeholder="ex: Project Num or Project Name" /> 
 
-            <br>
-            <br>
+            <strong style="margin-left:400px; font-size: 20pt; color:Black; ">Search Projects:</strong>
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchProjects" placeholder="ex:Project Num or Location " />  
+
+            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:890px; margin-top: -60px;" to="/createProject">Add Project</router-link></p>
+            
             <table class="table styled-table">
-                <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -25,7 +25,6 @@
                         <th >Project Done</th>
                         <th >Project Status</th>
                         <th >Project Type</th>
-                        <th >Project Location</th>
                         <th >City</th>
                         <th >State</th>
                         <th >Project Location Status</th>
@@ -34,17 +33,17 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="project in filteredProjects" :key="project.project_number">
+                    <tr v-for="project in filteredProjects" :key="project.project_id">
                         <td style="position: relative;">{{ project.project_number }}</td>
                         <td style="position: relative;" >{{ project.project_name }}</td>
                         <td style="position: relative;">{{ project.project_completed }}</td>
                         <td style="position: relative;">{{ project.project_status_type }}</td>
                         <td style="position: relative;">{{ project.project_type_description}}</td>
-                        <td style="position: relative;">{{ project.project_location_name }}</td>
                         <td style="position: relative;">{{ project.project_location_city }}</td>
                         <td style="position: relative;">{{ project.project_location_state }}</td>
                         <td style="position: relative;">{{ project.project_location_status_type }}</td>
                         <td style="position: relative;">
+
                             <router-link :to="{name: 'editProject', params: { id: project.project_id}}" style="text-align: center; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
                             </router-link>
                             <br>
@@ -62,8 +61,7 @@
                             <router-link :to="{name: 'viewPhase', params: { id: project.project_number}}"  style="text-align: center; margin-top:-10px; background-color:#5d00ff; padding: 5px 3px; font-size:16px" class="btn btn-primary">View Phases
                             </router-link>
 
-                            <br>
-                            <br>
+                            
                         
                         </td>
                         <td style="position: relative;" >
@@ -115,10 +113,9 @@
 
                 return this.projects.filter((project) =>{
 
-                    return project.project_number.match(this.searchProjects) ||
-                           project.psid.match(this.searchProjects) ||
-                           project.project_name.toLowerCase().match(this.searchProjects.toLowerCase()) ||
-                           project.project_location_name.toLowerCase().match(this.searchProjects.toLowerCase()) 
+                    return  project.project_number.toLowerCase().match(this.searchProjects.toLowerCase())||
+                            project.project_name.toLowerCase().match(this.searchProjects.toLowerCase()) 
+                          
                            
                     
                 })
@@ -151,7 +148,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -177,9 +174,6 @@
 .btn-success {
         margin-right: 10px;
 }
-
-
-
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;

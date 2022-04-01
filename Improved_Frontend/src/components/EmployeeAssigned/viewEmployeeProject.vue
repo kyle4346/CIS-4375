@@ -2,11 +2,10 @@
     <div class="row">
         <div class="col-lg-12">
 
-        <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Employees Assigned:</strong>
+        <strong style="margin-left:230px; font-size: 20pt; color:Black; "  >Search Employees Assigned:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="50" type="text" v-model="search" placeholder="ex: EMPID or first name or last name or project number  " />
-        
-          <br>
-          <br>
+        <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:1030px; margin-top: -60px; padding: 1px 2px;" to="/createEmployeeAssigned">Create Employee Assignment</router-link></p>
+         
           
             <table class="styled-table">
                 <col   style="width:1%"> 

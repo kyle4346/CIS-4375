@@ -11,7 +11,7 @@ let ProjectSchema = new Schema({
     project_number: {
       type: String,
       minLength:1,
-      maxLength:2,
+      maxLength:5,
       not: null,
       required: true,
       unique: true
@@ -57,6 +57,7 @@ let ProjectSchema = new Schema({
        minLength: 0,
        maxLength: 15,
        not: null,
+       required:true
        
         
       },
@@ -73,6 +74,7 @@ let ProjectSchema = new Schema({
         type: String,
         minLength: 0,
         maxLength: 25,
+        required:true
         
       },
       
@@ -100,6 +102,7 @@ let ProjectSchema = new Schema({
     },
       project_estimated_end_date: {
         type: String,
+        required:true
        
 
       },

@@ -4,12 +4,12 @@
 
         <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Investors:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: last name or first name" />
-        
-          <br>
-          <br>
+
+<p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:890px; margin-top: -60px;" to="/createInvestor">Add Investor</router-link></p>
+          
           
             <table class="styled-table">
-                <col   style="width:0%"> 
+                
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -23,10 +23,9 @@
                    
         
                     <tr>
-                        <th>Project Number</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Investor Details</th>
+                        <th>Investor Comments</th>
                         <th>Phone</th>
                         <th>Email</th>
                         <th>Status</th>
@@ -37,7 +36,6 @@
                 </thead>
                 <tbody>
                     <tr v-for="investor in filteredInvestors" :key="investor.investor_iD">
-                        <td style="vertical-align:top">{{ investor.project_number }}</td>
                         <td style="vertical-align:top">{{ investor.investor_fname }}</td>
                         <td style="vertical-align:top">{{ investor.investor_lname }}</td>
                         <td style="vertical-align:top">{{ investor.investor_detail }}</td>
@@ -101,8 +99,9 @@
                     return investor.investor_lname.toLowerCase().match(this.search.toLowerCase()) ||
                            investor.investor_fname.toLowerCase().match(this.search.toLowerCase()) ||
                            investor.investor_phone.toLowerCase().match(this.search.toLowerCase()) ||
-                           investor.investor_email.toLowerCase().match(this.search.toLowerCase()) 
-                           
+                           investor.investor_email.toLowerCase().match(this.search.toLowerCase()) ||
+                           investor.investor_status.toLowerCase().match(this.search.toLowerCase())||
+                           investor.investor_type.toLowerCase().match(this.search.toLowerCase())
                     
                 })
             }    

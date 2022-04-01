@@ -4,7 +4,7 @@
         <div style="margin-left:525px; margin-top: -50px">
              <u class="text-center" style="font-size:200%; font-weight:bold;">Create Step</u>
         </div>
-            <strong style ="font-size:150%">General Information</strong>
+            <strong style ="font-size:150%">Step General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleSubmitForm">
                 
@@ -13,7 +13,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepProjectNum">Project Number</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputStepProjectNum" placeholder="1-99 " pattern="[0-9]{1,2}" v-model="step.project_number" required>
+                    <input style="text-align:right"  type="text" class="form-control" id="inputStepProjectNum" placeholder="1-99999" pattern="[0-9]{1,2}" v-model="step.project_number" required>
                     
                 </div>
 
@@ -38,24 +38,32 @@
                     
                 </div>
 
-                 <div style="margin-left:-60px;" class="form-group col-lg-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepName">Step Name</label>
+                <div style="margin-left:-70px" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">Name</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputStepName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="step.step_name" required>
-                </div> 
-
-                 <div  style="margin-left:20px;" class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputStepNotes">Step Comments</label>
-                    <textarea type="text" class="form-control" id="inputStepNotes" minlength="0" maxlength="35"   rows="3" v-model="step.step_description" ></textarea>
-                <br>
+                     <br>
+                    <select  v-model="step.step_name" required> 
+                     <option v-for="step_name in step_names" v-bind:key="step_name" >{{step_name}}</option>
+                    </select>
+                    <br>
+                    <br>
+                   
                 </div>
+
+                
 
                 </div>
         
                 <div class="form-group row">
+
+                     <div  style="margin-left:0px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt" for="inputStepNotes">Comments</label>
+                    <textarea type="text" class="form-control" id="inputStepNotes" placeholder="Additional Notes" minlength="0" maxlength="35"   rows="3" v-model="step.step_description" ></textarea>
+                <br>
+                </div>
                 
-                <div class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Step Completed?</label>
+                <div  style="margin-left:20px;" class="form-group col-lg-2">
+                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Completed?</label>
                  <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                 <br>
 
@@ -75,8 +83,8 @@
                 </div>
 
 
-                <div style=" margin-left:-20px" class="form-group col-lg-3">
-                    <label style ="font-size:14pt">Step Status</label>
+                <div style=" margin-left:-50px" class="form-group col-lg-3">
+                    <label style ="font-size:14pt">Status</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
                     <select  v-model="step.step_status_type" required> 
@@ -86,24 +94,24 @@
                 </div>
 
                 <div style="margin-left:-180px" class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Step Cost</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" pattern="[$\0-9\.]{1,15}" v-model="step.step_cost" required>
+                    <input style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" pattern="[$\0-9\,\.]{1,15}" v-model="step.step_cost" required>
                     
                 </div>
 
-                 <div style=" margin-right:20px" class="form-group col-lg-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputStepDuration">Step Duration</label>
-                    <input  type="text" class="form-control" id="inputStepDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="step.step_duration" >
+                 <div style=" margin-right:20px" class="form-group col-lg-auto">
+                    <label style ="font-size:14pt; text-align:left;" for="inputStepDuration">Duration (days)</label>
+                    <input style="text-align:right" type="text" placeholder="3" class="form-control" size="10" id="inputStepDuration" pattern="[^0-9]+{0,2}" v-model="step.step_duration" >
                     
                 </div>
 
-                <div  class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Step % Done</label>
+                <div  style=" margin-left:-20px" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">% Finished</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
                     <select  v-model="step.step_percent_complete" required> 
-                     <option v-for="step_percent_complete in step_percent_completes" v-bind:key="step_percent_complete">{{step_percent_complete}}</option>
+                     <option v-for="step_percent_complete in step_percent_completes" v-bind:key="step_percent_complete" :value="step_percent_complete">{{step_percent_complete}}</option>
                     </select>
                     <br>
                     <br>
@@ -166,10 +174,10 @@
                    step_number: '',
                    step_name: '',
                    step_description: '',
-                   step_completed: '',
+                   step_completed: 'No',
                    step_cost: '',
                    step_duration: '',
-                   step_percent_complete: '',
+                   step_percent_complete: '0%',
                    step_start_date:'',
                    step_end_date: '',
                    step_status_type: '',
@@ -179,8 +187,10 @@
                 },
                 //static data for dropdown lists
                 step_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
-                phase_numbers:['1','2','3','4','5','6'],
-                step_numbers:['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'],
+                phase_numbers:['1','2','3','4','5','6','7','8'],
+                step_numbers:['1','2','3','4','5','6','7','8','9','10'],
+                step_names:['General Conditions','Apply for Permits','Site Work','Foundation','Framing','Roofing','Exterior Finishes','Rough-in plumbing',' Rough-in electrical','Rough-in HVAC','   Rough-in communication - phone, cable, computer, alarm',
+                'Insulation','Drywall','Paint and Wallpaper','Cabinets','Finish Plumbing','Finish Electrical','Finish HVAC','Carpet, Tile and Appliances',' Grounds Work','Landscaping ','Inspection','Walkthrough'],
                 step_percent_completes:['0%','25%','50%','75%','100%']
             }
         },

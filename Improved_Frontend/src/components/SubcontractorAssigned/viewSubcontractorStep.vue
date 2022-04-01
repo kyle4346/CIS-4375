@@ -2,11 +2,9 @@
     <div class="row">
         <div class="col-lg-12">
 
-        <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Subcontractors Assigned:</strong>
+        <strong style="margin-left:320px; font-size: 20pt; color:Black; "  >Search Subcontractors Assigned:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: SUBID or STEPID or Subcontractor Paid " />
-        
-          <br>
-          <br>
+         <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:1030px; margin-top: -60px; padding: 1px 2px;" to="/createSubcontractorAssigned">Create Subcontractor Assignment</router-link></p>
           
             <table class="styled-table">
                 <col   style="width:1%"> 

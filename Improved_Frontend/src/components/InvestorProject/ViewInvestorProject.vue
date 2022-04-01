@@ -4,9 +4,8 @@
 
         <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Investors Assigned:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: ISID or PSID or Investor Paid " />
-        
-          <br>
-          <br>
+        <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:1030px; margin-top: -60px; padding: 1px 2px;" to="/createInvestorAssigned">Create Investor Assignment</router-link></p>
+          
           
             <table class="styled-table">
                 <col   style="width:1%"> 
@@ -14,8 +13,8 @@
                 <col   style="width:12%"> 
                 <col   style="width:16%"> 
                 <col   style="width:14%"> 
-                <col   style="width:0%"> 
-                <col   style="width:2%"> 
+                <col   style="width:10%"> 
+                <col   style="width:30%"> 
                  
                 <thead class="thead-dark">
                    
@@ -43,7 +42,7 @@
                         <td>
                             <router-link :to="{name: 'editInvestorAssigned', params: { id: investor_assigned.investor_assigned_id}}" style="text-align: center; margin-top:0px; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
                             </router-link>
-                            
+                            <br>
                             <button @click.prevent="deleteInvestorAssigned(investor_assigned.investor_assigned_id)" style="text-align: center; margin-top:5px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
 
                             

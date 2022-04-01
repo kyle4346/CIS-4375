@@ -51,9 +51,10 @@
             //retrieving data from the Cfcworker_client_activities schema getting the data 
                 investor_assigneds: [], 
                 investors:{},
+                projects :{},
                 investor_assigned: {
-    
-                   investor_email: this.$route.params.id,
+                   
+                  investor_email: this.$route.params.id,
                 },
                 
                 
@@ -68,6 +69,8 @@
             }).catch(error => {
                 console.log(error)
             });
+
+           
     
         // this is using created hook 
            let apiURL1 = `http://localhost:27017/investor_num/${this.$route.params.id}`;
@@ -75,7 +78,8 @@
                 this.investors = res.data;
             }).catch(error => {
                console.log(error)
-           });
+           }); 
+
 
 
         },

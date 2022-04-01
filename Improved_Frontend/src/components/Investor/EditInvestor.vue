@@ -5,10 +5,10 @@
             <u class="text-center" style="font-size:200%; font-weight:bold">Update Investor </u>
         </div>
             <strong style ="font-size:150%">General Information</strong>
-            <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
+            <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                 
-             <div class="form-group row">
+           <div class="form-group row">
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -22,33 +22,33 @@
                     
                 </div>
 
-        
-
                  <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputShortNotes">Investor Comments</label>
-                    <textarea type="text" class="form-control" id="inputShortNotes" minlength="0" maxlength="35"   rows="1" v-model="investor.investor_detail" ></textarea>
+                    <label style ="font-size:14pt" for="inputShortNotes">Comments</label>
+                    <textarea type="text" class="form-control" placeholder="Additional Notes" id="inputShortNotes" minlength="0" maxlength="35"   rows="1" v-model="investor.investor_detail" ></textarea>
                     <br>
                 </div>
 
-                <div class="form-group col-lg-auto">
-        
-                    <label style ="font-size:14pt">Investor Status</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <br>
-                    <select  v-model="investor.investor_status" required> 
-                     <option v-for="investor_status in investor_status" v-bind:key="investor_status">{{investor_status}} </option>
-                    </select>
-                    
-                </div>
+               
 
                 <div class="form-group col-lg-auto">
                     
                    
-                    <label style ="font-size:14pt">Investor Type</label>
+                    <label style ="font-size:14pt">Type</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
                     <select  v-model="investor.investor_type" required> 
-                     <option v-for="investor_type in investor_type" v-bind:key="investor_type">{{investor_type}}</option>
+                     <option v-for="investor_type in investor_types" v-bind:key="investor_type">{{investor_type}}</option>
+                    </select>
+                    
+                </div>
+
+                 <div class="form-group col-lg-auto">
+        
+                    <label style ="font-size:14pt">Status</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <br>
+                    <select  v-model="investor.investor_status" required> 
+                     <option v-for="investor_status in investor_statuses" v-bind:key="investor_status">{{investor_status}} </option>
                     </select>
                     
                 </div>
@@ -57,12 +57,6 @@
                  </div>
 
                 <div class="form-group row">
-
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Number</label>
-                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="investor.project_number" >
-                    
-                </div>
 
                 <div class="form-group col-lg-auto">
                     
@@ -82,7 +76,7 @@
                  <div class="form-group col-lg-4">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="Apt#123 street address" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="investor.investor_address" required>
+                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="investor.investor_address" required>
                     <br>
                 </div>
 
@@ -93,7 +87,7 @@
                      <div class="form-group col-lg-2">
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="Dallas" pattern="[A-Za-z]{5,35}" v-model="investor.investor_city" required>
+                    <input type="text" class="form-control" placeholder="Dallas" pattern="[A-Za-z\s]{5,35}" v-model="investor.investor_city" required>
                     
                 </div> 
 
@@ -107,7 +101,7 @@
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
                     <select  v-model="investor.investor_state" required> 
-                     <option v-for="state in states" v-bind:key="state">{{state}}</option>
+                     <option v-for="investor_state in investor_states" v-bind:key="investor_state" :value="investor_state">{{investor_state}}</option>
                     </select>
                    
                 </div>
@@ -121,7 +115,7 @@
                     
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="zip" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
+                    <input style="text-align:right" type="zip" placeholder="XXXXX" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
                       
                 </div>
  
@@ -135,7 +129,7 @@
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
                     <select  v-model="investor.investor_country" required> 
-                     <option v-for="country in countries" v-bind:key="country">{{country}}</option>
+                     <option v-for="country in countries" v-bind:key="country" :value="country" >{{country}}</option>
                     </select>
                 </div>
                 </div>
@@ -178,12 +172,12 @@ export default {
 
 
             },//drop down lists found from createcomponent, unchanged of course
-            //static data for dropdown lists
-                states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
+             //static data for dropdown lists
+                investor_states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 countries:['United States'],
-                investor_status: ['pending', 'processing', 'complete'],
-                investor_type:['Bank','Entrepreneur','Worker'],
+                investor_statuses: ['Pending', 'Processing', 'Complete'],
+                investor_types:['Bank','Entrepreneur','Worker','Family/Friend','Other'],
                 
         }
 

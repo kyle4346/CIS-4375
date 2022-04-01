@@ -26,8 +26,7 @@ let EmployeeSchema = new Schema({
     employee_gender: {
         type: String,
         maxLength: 6,
-        not: null,
-        required: true
+        
        
     },
     employee_salary: {
@@ -107,13 +106,7 @@ let EmployeeSchema = new Schema({
         not:null
 
       },
-      project_number: {
-        type: String,
-        minLength:0,
-        maxLength:2,
-        not: null,
-        unique: false
-    },
+     
 
    
     

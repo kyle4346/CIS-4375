@@ -41,21 +41,21 @@
                         <td style="vertical-align:top">{{ phase.phase_cost }}</td>
                         <td style="vertical-align:top">{{ phase.phase_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}" style="text-align: center; margin-top:-60px"  class="btn btn-success">Edit
+                            <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}" style="text-align: center; margin-top:-30px; font-size: 16px; padding: 2px 12px"  class="btn btn-success">Edit
                             </router-link>
                             <br>
 
-                        <button @click.prevent="deletePhase(phase.phase_id)" class="btn btn-danger" style="margin-top:0px">Delete</button>
+                        <button @click.prevent="deletePhase(phase.phase_id)" class="btn btn-danger" style="margin-top:-10px; font-size: 16px; padding: 1px 3px">Delete</button>
 
                             <br>
                             <br>
-                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center; " class="btn btn-secondary">Add Step
+                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center; font-size: 16px; margin-top:-10px; padding: 2px 10px" class="btn btn-secondary">Add Step
                             </router-link>
 
                             <br>
                             <br>
 
-                            <router-link :to="{name: 'viewStep', params: { id: phase.phase_number}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff" class="btn btn-primary">View Steps
+                            <router-link :to="{name: 'viewStep', params: { id: phase.phase_number}}"  style="text-align: center; font-size: 16px; margin-top:-10px; padding: 2px 3px; background-color:#5d00ff" class="btn btn-primary">View Steps
                             </router-link>
 
                             <br>
@@ -64,7 +64,7 @@
                     
                         </td> 
                         <td>
-                                <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-top: -220px; background-color:#FFD700; color: black " class="btn btn-dark">Assigned Steps
+                                <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-top: -180px; background-color:#FFD700; color: black " class="btn btn-dark">Assigned Steps
                             </router-link>
                         </td>
                     </tr>

@@ -3,9 +3,8 @@
         <div class="col-lg-12">
              <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Subcontractors:</strong>
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchSubcontractors" placeholder="ex: last name or first name" /> 
-
-            <br>
-            <br>
+        <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:970px; margin-top: -60px;" to="/createSubcontractor">Add Subcontractor</router-link></p>
+          
             <table class="styled-table">
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -53,17 +52,18 @@
                             <br>
 
                             <br>
-                            
-                            
-                            
+                                        
                             <button  @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" style="text-align: center; margin-top:-50px; padding: 1px 3px; font-size:16px" class="btn btn-danger">Delete</button>
-                            
+                        
+
+                            <router-link :to="{name: 'createSubcontractorAssigned', params: { id: subcontractor.subcontractor_email}}"  style="text-align: center; margin-top:-15px; color:white; background-color:gray; padding: 1px 2px; font-size:16px" class="btn btn-dark">Subcontractor Assigned
+                            </router-link>
                         
                         </td>
 
                         <td>
                             
-                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  style="text-align: center;  margin-top:-30px; color:black; background-color:#FFD700; padding: 6px 3px; font-size:16px" class="btn btn-dark">Assigned Steps
+                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  style="text-align: center;  margin-top:-70px; color:black; background-color:#FFD700; padding: 6px 3px; font-size:16px" class="btn btn-dark">Assigned Steps
                             </router-link>
                         </td>
 

@@ -106,15 +106,7 @@ let InvestorSchema = new Schema({
         not:null
 
       },
-      project_number: {
-      type: String,
-      minLength:1,
-      maxLength:2,
-      not: null,
-      required: true,
-      unique: false
-    },
-   
+    
 
   }, {
     collection: 'investor'

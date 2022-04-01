@@ -5,17 +5,17 @@
             <u class="text-center" style="font-size:200%; font-weight:bold;">Create Task</u>
             </div>
 
-            <strong style ="font-size:150%">General Information</strong>
+            <strong style ="font-size:150%">Task General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             
             <form @submit.prevent="handleSubmitForm">
                 
                 <div class="form-group row">
                 
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputTaskProjectNum" placeholder="1-99" pattern="[0-9]{1,2}" v-model="task.project_number" required>
+                    <input style="text-align:right" size="10" type="text" class="form-control" id="inputTaskProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="task.project_number" required>
                     
                 </div>
 
@@ -47,9 +47,9 @@
                 </div>
 
                 <div style="margin-left:-60px;" class="form-group col-lg-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Task Name</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
+                    <input placeholder="Secure foundation permit" type="text" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
                     <br>
                 </div> 
 
@@ -58,13 +58,13 @@
                 <div class="form-group row">
 
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputTaskNotes">Task Comments</label> 
-                    <textarea type="text" class="form-control" id="inputTaskNotes" minlength="0" maxlength="35"   rows="1" v-model="task.task_description" ></textarea>
+                    <label style ="font-size:14pt" for="inputTaskNotes">Comments</label> 
+                    <textarea type="text" class="form-control" id="inputTaskNotes" minlength="0" placeholder="Additional Notes" maxlength="35"   rows="1" v-model="task.task_description" ></textarea>
                 <br>
                 </div>
 
-                <div class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Task Completed?</label>
+                <div style="margin-left: 20px;" class="form-group col-lg-2">
+                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Completed?</label>
                  <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                  <br>
                  <div style="margin-left: 10px;" class="form-check-inline col-lg-auto">
@@ -86,7 +86,7 @@
                 
                 <div style="margin-left:-30px;" class="form-group col-lg-2">
                    
-                    <label style ="font-size:14pt">Task Status</label>
+                    <label style ="font-size:14pt">Status</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
                     <select  v-model="task.task_status_type" required> 
@@ -96,21 +96,20 @@
 
                
 
-                <div style="margin-left:-60px;" class="form-group col-lg-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskDuration">Task Duration</label>
-                    <input  type="text" class="form-control" id="inputTaskDuration" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,25}" v-model="task.task_duration" >
+                <div style="margin-left:-60px;" class="form-group col-lg-auto">
+                    <label style ="font-size:14pt; text-align:left;" for="inputTaskDuration">Duration (hours)</label>
+                    <input style="text-align: right" type="text" placeholder="4" size="2" class="form-control" id="inputTaskDuration" pattern="[0-9]+{0,3}" v-model="task.task_duration" >
                 </div>
 
                 <div style="margin-left:20px;" class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Task % Done</label>
+                    <label style ="font-size:14pt">% Finished</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
                     <select  v-model="task.task_percent_complete" required> 
-                     <option v-for="task_percent_complete in task_percent_completes" v-bind:key="task_percent_complete">{{task_percent_complete}}</option>
+                     <option v-for="task_percent_complete in task_percent_completes" v-bind:key="task_percent_complete" :view="task_percent_complete">{{task_percent_complete}}</option>
                     </select>
                     <br>
                     <br>
-                    
                 </div>
 
 
@@ -118,26 +117,26 @@
 
                 <div class="form-group row">
                 <div class="form-group col-lg-auto">
-                    <label style ="font-size:14pt">Task Start Date</label>
+                    <label style ="font-size:14pt">Start Date</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="task.task_start_date" required>
                     
                 </div>
 
                 <div class="form-group col-lg-auto">
-                    <label style ="font-size:14pt">Task End Date</label>
+                    <label style ="font-size:14pt">End Date</label>
                     <input type="date" class="form-control" v-model="task.task_end_date" >
                      <br>
                 </div>
 
                 <div class="form-group col-lg-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskMaterial">Task Material</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputTaskMaterial">Material(s)</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputTaskMaterial" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,75}" v-model="task.task_material" required>
+                    <input placeholder="cement, wood planks, bricks" type="text" class="form-control" id="inputTaskMaterial" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,75}" v-model="task.task_material" required>
                 </div> 
 
                 <div class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Task Material Aquired?</label>
+                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Material(s) Aquired?</label>
                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                 <br>
                 <div style="margin-left: 20px;" class="form-check-inline col-lg-auto">
@@ -193,22 +192,22 @@
                    task_number: '',
                    task_name: '',
                    task_description: '',
-                   task_completed: '',
+                   task_completed: 'No',
                    task_duration: '',
-                   task_percent_complete: '',
+                   task_percent_complete: '0%',
                    task_start_date: '',
                    task_end_date: '',
                    task_material: '',
-                   task_material_aquired: '',
+                   task_material_aquired: 'No',
                    task_status_type: '',
                    
 
                 },
                 //static data for dropdown lists
                 task_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
-                phase_numbers:['1','2','3','4','5','6'],
-                step_numbers:['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'],
-                task_numbers:['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15','16'],
+                phase_numbers:['1','2','3','4','5','6','7','8'],
+                step_numbers:['1','2','3','4','5','6','7','8','9','10'],
+                task_numbers:['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],
                 task_percent_completes:['0%','25%','50%','75%','100%']
             }
         },

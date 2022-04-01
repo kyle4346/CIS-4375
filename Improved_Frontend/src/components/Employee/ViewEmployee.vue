@@ -5,9 +5,7 @@
             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Employees:</strong>
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchEmployees" placeholder="ex: last name or first name" /> 
 
-            <br>
-            <br>
-
+            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:930px; margin-top: -60px;" to="/createEmployee">Add Employee</router-link></p>
             <table class="styled-table">
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -49,11 +47,15 @@
                         
                         <button @click.prevent="deleteEmployee(employee.employee_id)" style="text-align: center; margin-top:2px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
                         
-                        
+                        <br>
+                        <br>
+                         <router-link :to="{name: 'createSubcontractorAssigned', params: { id: employee.employee_email}}"  style="text-align: center; margin-top:-15px; color:white; background-color:gray; height:60px; width:90px; font-size:16px" class="btn btn-dark">Employee Assigned
+                            </router-link>
+
                         </td>
 
                         <td style="position:sticky">
-                        <router-link :to="{name: 'employee_project_report', params: { id:employee.employee_email}}"  style="text-align: center;  color:black; background-color:#FFD700; padding: 7px 2px; font-size:16px" class="btn btn-dark">Assigned Projects
+                        <router-link :to="{name: 'employee_project_report', params: { id:employee.employee_email}}"  style="text-align: center;  margin-top:-70px; color:black; background-color:#FFD700; padding: 7px 2px; font-size:16px" class="btn btn-dark">Assigned Projects
                         </router-link>
                         </td>
 
@@ -148,8 +150,6 @@
     background: black;
 
 }
-
-
 
 .styled-table th,
 .styled-table td {
