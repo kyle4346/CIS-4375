@@ -183,9 +183,9 @@ export default {
 
     },
     created() {//Edits based on the client ID already entered
-        let apiURL = `http://localhost:27017/investor/${this.$route.params.id}`;
+        let apiURL = `https://data.mongodb-api.com/app/data-nhwaq/endpoint/getbyid`;//http://localhost:27017/investor/${this.$route.params.id}
 
-        axios.get(apiURL).then((res) => {
+        axios.get(apiURL, this.$route.params.id).then((res) => {
             this.investor = res.data;
         })//if everything is successful, then everything should show for this view
     },
@@ -199,7 +199,7 @@ export default {
                     this.errors.push("Pass letters only.");
 
             }
-            let apiURL = `http://localhost:27017/investor/${this.$route.params.id}`;
+            let apiURL = `https://data.mongodb-api.com/app/data-nhwaq/endpoint/getallinvestors`;//http://localhost:27017/investor/${this.$route.params.id}
             //pulls from back end of client ID to get all data pertaining to client
             axios.put(apiURL, this.investor).then((res) => {
                 console.log(res)

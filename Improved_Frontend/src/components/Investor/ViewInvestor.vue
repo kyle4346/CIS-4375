@@ -83,7 +83,7 @@
         },
         // this is using created hook 
         created() {
-            let apiURL = 'http://localhost:27017/investors';
+            let apiURL = 'https://data.mongodb-api.com/app/data-nhwaq/endpoint/getallinvestors'; //http://localhost:27017/investors
             axios.get(apiURL).then(res => {
                 this.investors = res.data;
             }).catch(error => {
@@ -109,7 +109,7 @@
         methods: {
             deleteInvestor(id){
                 console.log(id)
-                let apiURL = `http://localhost:27017/investor/${id}`;
+                let apiURL = `https://data.mongodb-api.com/app/data-nhwaq/endpoint/getallinvestors/${id}`;//http://localhost:27017/investor/${id}
                 let indexOfArrayItem = this.investors.findIndex(i => i.investor_iD === id);
 
                 if (window.confirm("Do you really want to delete?")) {

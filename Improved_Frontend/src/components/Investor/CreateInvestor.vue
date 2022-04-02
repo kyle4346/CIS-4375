@@ -201,7 +201,7 @@
 
             }
                 //posing data that has been created to route passing the client_form schema data
-                let apiURL = 'http://localhost:27017/investor';
+                let apiURL = 'https://data.mongodb-api.com/app/data-nhwaq/endpoint/data/beta/action/insertMany';//http://localhost:27017/investor
                 
                 axios.post(apiURL, this.investor).then(() => {
                     //chnaging the view to the list
