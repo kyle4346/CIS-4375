@@ -2,45 +2,43 @@
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
         <div style="margin-left:525px; margin-top: -50px">
-            <u class="text-center" style="font-size:200%; font-weight:bold;">Investor Assigned</u>
+            <u class="text-center" style="font-size:200%; font-weight:bold;">Assign Investor</u>
         </div>
-            <strong style ="font-size:150%">General Information</strong>
-            <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
+            <strong style ="font-size:150%">Assign General Information</strong>
+            <p style="color:red; font-size:125%; font-weight:bold">All Fields are Required</p>
             <form @submit.prevent="handleSubmitForm">
                 
                 <div class="form-group row">
-
+               <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Num.</label>
+                    
+                    <input style="text-align:right"  type="text" class="form-control" id="inputInvestorProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="investor_assigned.project_number" required>
+                    
+                </div>
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{0,40}" v-model="investor_assigned.investor_firstname" required>
+                    
+                    <input  type="text" class="form-control" placeholder="James" id="inputFName" pattern="[A-Za-z\s]{2,40}" v-model="investor_assigned.investor_assign_firstname" required>
 
                 </div>
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputLName" pattern="[A-Za-z\s]{0,40}" v-model="investor_assigned.investor_lastname" required>
+                   
+                    <input  type="text" class="form-control"  placeholder="Ford" id="inputLName" pattern="[A-Za-z\s]{2,40}" v-model="investor_assigned.investor_assign_lastname" required>
                     
                 </div>
 
                  <div  class="form-group col-lg-3">
                     
-                    <label style ="font-size:14pt">Email</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <label style ="font-size:14pt">Investor Email</label>
+                   
                     <input type="email" class="form-control" placeholder="yourname123@mail.com" size="25" v-model="investor_assigned.investor_email" required>
-                    
-                </div>
-
-                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Number</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputInvestorProjectNum" placeholder="1-99" pattern="[0-9]{1,9}" v-model="investor_assigned.project_number" required>
                     
                 </div>
 
                  <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Investor Assigned Date</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    
                     <input type="date" class="form-control" v-model="investor_assigned.investor_assigned_date" required>
                     <br>
                 </div>
@@ -53,14 +51,14 @@
 
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputInvestmentRate">Investment Amount</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputInvestmentRate" placeholder="$20,000.50"   pattern="[$\0-9\.]{1,15}" v-model="investor_assigned.investor_assigned_cost" required>
+                  
+                    <input  style="text-align:right" type="text" class="form-control" id="inputInvestmentRate" placeholder="$20,000.50"   pattern="[$\0-9\,\.]{1,15}" v-model="investor_assigned.investor_assigned_cost" required>
                     
                 </div>
 
                 <div style="margin-left:20px" class="form-group col-lg-2">
                 <label style ="font-size:14pt" class="col-form-label pt-0">Investor Paid</label>
-                <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                
                 <br>
                 <!--<div class="col-sm-10"> -->
           
@@ -114,12 +112,12 @@
                 //retrieving data from the client_form schema getting the data 
                 errors: [],
                 investor_assigned: {
-                   investor_firstname: '',
-                   investor_lastname:'',
+                   investor_assign_firstname: '',
+                   investor_assign_lastname:'',
                    project_number: '',
                    investor_assigned_date: '',
                    investor_assigned_cost: '',
-                   investor_assigned_paid: '',
+                   investor_assigned_paid: 'No',
                    investor_email:''
                    
                    
@@ -147,8 +145,8 @@
                     //chnaging the view to the list
                   this.$router.push('/viewInvestorAssigned')
                   this.investor_assigned = {
-                   investor_firstname: '',
-                   investor_lastname:'',
+                   investor_assign_firstname: '',
+                   investor_assign_lastname:'',
                    project_number: '',
                    investor_assigned_date: '',
                    investor_assigned_cost: '',

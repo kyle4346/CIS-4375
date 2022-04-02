@@ -3,31 +3,34 @@
         <div class="col-lg-12">
 
             <strong style="margin-left:400px; font-size: 20pt; color:Black; ">Search Projects:</strong>
-            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchProjects" placeholder="ex:Project Num or Location " />  
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchProjects" placeholder="Filter by Num. or Name" />  
 
-            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:890px; margin-top: -60px;" to="/createProject">Add Project</router-link></p>
+            <p><router-link class="btn addProject"  to="/createProject">Add Project</router-link></p>
             
             <table class="table styled-table">
                 <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%">
-                <col   style="width:10%">
-                <col   style="width:5%">
+                <col   style="width:1%"> 
+                <col   style="width:auto%"> 
+                <col   style="width:auto%"> 
+                <col   style="width:auto%"> 
+                <col   style="width:auto%"> 
+                <col   style="width:auto%"> 
+                <col   style="width:auto%">
+                <col   style="width:auto%">
+                <col   style="width:auto%">
+                <col   style="width:auto%">
                 <thead class="thead-dark">
                     <tr>
-                        <th >Project Num</th>
-                        <th >Project Name</th>
-                        <th >Project Done</th>
-                        <th >Project Status</th>
-                        <th >Project Type</th>
+                        <th>Num.</th>
+                        <th>Name</th>
+                        <th>Completed</th>
+                        <th> Budget</th>
+                        <th >Status</th>
+                        <th >Type</th>
                         <th >City</th>
-                        <th >State</th>
-                        <th >Project Location Status</th>
+                        <th >% Finished</th>
+                        <th >Estimated End Date</th>
+                       
                         <th >Actions</th>
                         <th >Reports</th>
                     </tr>
@@ -37,46 +40,46 @@
                         <td style="position: relative;">{{ project.project_number }}</td>
                         <td style="position: relative;" >{{ project.project_name }}</td>
                         <td style="position: relative;">{{ project.project_completed }}</td>
+                        <td style="position: relative;">{{ project.project_budget }}</td>
                         <td style="position: relative;">{{ project.project_status_type }}</td>
                         <td style="position: relative;">{{ project.project_type_description}}</td>
                         <td style="position: relative;">{{ project.project_location_city }}</td>
-                        <td style="position: relative;">{{ project.project_location_state }}</td>
-                        <td style="position: relative;">{{ project.project_location_status_type }}</td>
+                        <td style="position: relative;">{{ project.project_percent_complete }}</td>
+                        <td style="position: relative;">{{ project. project_estimated_end_date}}</td>
+                       
                         <td style="position: relative;">
 
-                            <router-link :to="{name: 'editProject', params: { id: project.project_id}}" style="text-align: center; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editProject', params: { id: project.project_id}}"  class="btn one">View / Edit
                             </router-link>
-                            <br>
-                            <br>
+                            
 
-                        <button  @click.prevent="deleteProject(project.project_id)" style="margin-top:-20px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
+                           <button  @click.prevent="deleteProject(project.project_id)"  class="btn two">Delete</button>
 
-                            <br>
-                            <br>
-                            <router-link :to="{name: 'createPhase', params: { id: project.project_number}}" style="text-align: center; margin-top:-5px; padding: 5px 10px; font-size:16px" class="btn btn-secondary">Add Phase
+                            
+                            <router-link :to="{name: 'createPhase', params: { id: project.project_number}}"  class="btn three">Add Phase
                             </router-link>
 
-                            <br>
-                            <br>
-                            <router-link :to="{name: 'viewPhase', params: { id: project.project_number}}"  style="text-align: center; margin-top:-10px; background-color:#5d00ff; padding: 5px 3px; font-size:16px" class="btn btn-primary">View Phases
+                            
+                            
+                            <router-link :to="{name: 'viewPhase', params: { id: project.project_number}}"   class="btn four">View Phases
                             </router-link>
 
                             
                         
                         </td>
                         <td style="position: relative;" >
-                        <router-link :to="{name: 'project_phase_report', params: { id: project.project_number}}"  style="text-align: center; margin-right:10px; color:black; background-color:#FFD700; padding: 0px 0px; font-size:16px" class="btn btn-dark">Assigned Phases Report
+                        <router-link :to="{name: 'project_phase_report', params: { id: project.project_number}}"  class="btn five">Assigned <br/> Phases<br/>
                             </router-link>
                             <br>
                             <br>
                            
-                            <router-link :to="{name: 'project_investor_report', params: { id:project.project_number}}"  style="text-align: center; margin-right:10px;  color:black; background-color:#FFD700 " class="btn btn-dark">Assigned Investors Report
+                            <router-link :to="{name: 'project_investor_report', params: { id:project.project_number}}"   class="btn six">Assigned <br/> Investors<br/> 
                             </router-link>
 
                             <br>
                             <br>
 
-                            <router-link :to="{name: 'project_employee_report', params: { id:project.project_number}}"  style="text-align: center; margin-right:10px;  color:black; background-color:#FFD700 " class="btn btn-dark">Assigned Employees Report
+                            <router-link :to="{name: 'project_employee_report', params: { id:project.project_number}}"  class="btn seven">Assigned <br/> Employees<br/> 
                             </router-link>
                         </td>
                     </tr>
@@ -114,8 +117,8 @@
                 return this.projects.filter((project) =>{
 
                     return  project.project_number.toLowerCase().match(this.searchProjects.toLowerCase())||
-                            project.project_name.toLowerCase().match(this.searchProjects.toLowerCase()) 
-                          
+                            project.project_name.toLowerCase().match(this.searchProjects.toLowerCase())  
+                            
                            
                     
                 })
@@ -148,7 +151,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 10%;
+  height: 109%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -171,9 +174,100 @@
     background: black;
 
 }
-.btn-success {
-        margin-right: 10px;
+.btn{
+position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
 }
+
+.addProject{
+    font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:900px; 
+    margin-top: -40px;
+}
+
+.one{
+   border: 2px solid black;
+   margin-top: -10px;
+   margin-left:-15px; 
+   color:white; 
+   background-color:green; 
+   padding: 0px 6px;
+   font-size:16px
+
+}
+
+.two{
+   border: 2px solid black;
+   margin-top: 25px;
+   margin-left:-15px; 
+   color:white; 
+   background-color:red; 
+   padding: 0px 22px;
+   font-size:16px
+    
+}
+
+.three{
+   border: 2px solid black;
+   margin-top: 65px;
+   margin-left:-15px; 
+   color:white; 
+   background-color:rgb(0, 195, 255); 
+   padding: 0px 6px;
+   font-size:16px
+    
+}
+
+.four{
+   border: 2px solid black;
+   margin-top: 105px;
+   margin-left: -15px;
+   margin-right:-20px;  
+   color:white; 
+   background-color:rgb(255, 6, 255); 
+   padding: 1px 0px;
+   font-size:16px
+
+
+}
+
+.five{
+   border: 2px solid black;
+   margin-top: -10px;
+   margin-left: -5px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 0px 8px;
+   font-size:16px
+}
+
+.six{
+   border: 2px solid black;
+   margin-top: -1px;
+   margin-left:-5px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 0px 8px;
+   font-size:16px
+}
+
+.seven{
+   border: 2px solid black;
+   margin-top: 10px;
+   margin-left:-5px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 0px 2px;
+   font-size:16px
+    
+}
+
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;

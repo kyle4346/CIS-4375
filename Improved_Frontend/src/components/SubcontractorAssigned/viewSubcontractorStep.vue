@@ -4,7 +4,7 @@
 
         <strong style="margin-left:320px; font-size: 20pt; color:Black; "  >Search Subcontractors Assigned:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: SUBID or STEPID or Subcontractor Paid " />
-         <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:1030px; margin-top: -60px; padding: 1px 2px;" to="/createSubcontractorAssigned">Create Subcontractor Assignment</router-link></p>
+         <p><router-link class="btn createSubcontractorAssign"  to="/createSubcontractorAssigned">Create Subcontractor Assignment</router-link></p>
           
             <table class="styled-table">
                 <col   style="width:1%"> 
@@ -37,11 +37,11 @@
                         <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_cost }}</td>
                         <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
                         <td>
-                            <router-link :to="{name: 'editSubcontractorAssigned', params: { id: subcontractor_assigned.subcontractor_assigned_id}}" style="text-align: center; margin-top:0px; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editSubcontractorAssigned', params: { id: subcontractor_assigned.subcontractor_assigned_id}}" style="text-align: center; margin-top:0px; padding: 2px 12px; font-size:16px" class="btn one">Edit
                             </router-link>
                             <br>
                             <br>
-                            <button @click.prevent="deleteSubcontractorAssigned(subcontractor_assigned.subcontractor_assigned_id)" style="text-align: center; margin-top:-30px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
+                            <button @click.prevent="deleteSubcontractorAssigned(subcontractor_assigned.subcontractor_assigned_id)" style="text-align: center; margin-top:-30px; padding: 2px 3px; font-size:16px" class="btn two">Delete</button>
 
                             
                             
@@ -137,8 +137,22 @@
     background: black;
 
 }
-.btn-success {
-        margin-right: 10px;
+.btn{
+position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
+}
+
+.createSubcontractorAssign{
+font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:1020px; 
+    margin-top: -40px;
+
 }
 
 

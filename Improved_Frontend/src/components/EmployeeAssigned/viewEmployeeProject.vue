@@ -2,45 +2,42 @@
     <div class="row">
         <div class="col-lg-12">
 
-        <strong style="margin-left:230px; font-size: 20pt; color:Black; "  >Search Employees Assigned:</strong>
-        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="50" type="text" v-model="search" placeholder="ex: EMPID or first name or last name or project number  " />
-        <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:1030px; margin-top: -60px; padding: 1px 2px;" to="/createEmployeeAssigned">Create Employee Assignment</router-link></p>
+        <strong style="margin-left:230px; font-size: 20pt; color:Black; "  >Search Assigned Employee:</strong>
+        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Last Name" />
+        <p><router-link class="btn createEmployeeAssign"  to="/createEmployeeAssigned">Create Employee Assignment</router-link></p>
          
           
             <table class="styled-table">
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:12%"> 
-                <col   style="width:16%"> 
-                <col   style="width:14%"> 
-                <col   style="width:0%"> 
-                <col   style="width:2%"> 
+                <col   style="width:10%"> 
+                <col   style="width:20%"> 
+                <col   style="width:20%"> 
+                <col   style="width:30%"> 
+                <col   style="width:60%"> 
+               
                  
                 <thead class="thead-dark">
                    
         
                     <tr>
-                        <th>EMPID</th>
-                        <th>PSID</th>
-                        <th>Project Number</th>
+                        <th>Project Num.</th>
                         <th>First Name</th>
                         <th>Last Name</th>
+                        <th>Employee Email</th>
                         <th>Assigned Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="employee_assigned in filteredEmployeesAssigned" :key="employee_assigned.employee_assigned_id">
-                        <td style="vertical-align:top">{{ employee_assigned.empid }}</td>
-                        <td style="vertical-align:top">{{ employee_assigned.psid}}</td>
                         <td style="vertical-align:top">{{ employee_assigned.project_number }}</td>
                         <td style="vertical-align:top">{{ employee_assigned.employee_firstname }}</td>
                         <td style="vertical-align:top">{{ employee_assigned.employee_lastname }}</td>
+                        <td style="vertical-align:top">{{ employee_assigned.employee_email }}</td>
                         <td style="vertical-align:top">{{ employee_assigned.employee_assigned_date}}</td>
                         <td>
-                            <router-link :to="{name: 'editEmployeeAssigned', params: { id: employee_assigned.employee_assigned_id}}" style="text-align: center; margin-top:0px; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editEmployeeAssigned', params: { id: employee_assigned.employee_assigned_id}}" class="btn one">View / Edit
                             </router-link>
-                            <button @click.prevent="deleteemployeeAssigned(employee_assigned.employee_assigned_id)" style="text-align: center; margin-top:5px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
+                            <button @click.prevent="deleteemployeeAssigned(employee_assigned.employee_assigned_id)" class="btn two">Delete</button>
 
                             
                             
@@ -78,9 +75,7 @@
 
                 return this.employee_assigneds.filter((employee_assigned) =>{
 
-                    return employee_assigned.empid.match(this.search) ||
-                           employee_assigned.project_number.match(this.search) ||
-                           employee_assigned.employee_firstname.toLowerCase().match(this.search.toLowerCase()) ||
+                    return employee_assigned.project_number.match(this.search) ||
                            employee_assigned.employee_lastname.toLowerCase().match(this.search.toLowerCase()) 
                     
                 })
@@ -136,10 +131,47 @@
     background: black;
 
 }
-.btn-success {
-        margin-right: 10px;
+.btn{
+position: -webkit-static;
+    position: static;
+    margin-right: 0px;
+
 }
 
+.createEmployeeAssign{
+font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    padding:6px 6px;
+    margin-top: -65px;
+    margin-left: 1005px;
+    margin-right:-30px; 
+
+}
+
+.one{
+   border: 2px solid black;
+   margin-top: -10px;
+   margin-left:-15px; 
+   color:white; 
+   background-color:green; 
+   padding: 0px 6px;
+   font-size:16px
+
+}
+
+.two{
+   border: 2px solid black;
+   margin-top: 10px;
+   margin-left:-15px; 
+   color:white; 
+   background-color:red; 
+   padding: 0px 22px;
+   font-size:16px
+    
+}
 
 
 .styled-table th,

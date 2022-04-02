@@ -88,8 +88,15 @@
                     
                 </div>
 
+                 <div style="margin-left:20px" class="form-group col-lg-auto">
+                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Estimated Duration (weeks)</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="6" id="inputPhaseActualDuration" pattern="[0-9]+{0,2}" v-model="phase.phase_estimated_duration" required>
+                    
+                </div>
+
                 <div style="margin-left:20px" class="form-group col-lg-auto">
-                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Duration (weeks)</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Actual Duration (weeks)</label>
                     <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="12" id="inputPhaseActualDuration" pattern="[0-9]+{0,2}" v-model="phase.phase_actual_duration" >
                     
                 </div>

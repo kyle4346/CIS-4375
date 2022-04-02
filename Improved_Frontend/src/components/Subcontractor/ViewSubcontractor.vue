@@ -3,24 +3,22 @@
         <div class="col-lg-12">
              <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Subcontractors:</strong>
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchSubcontractors" placeholder="ex: last name or first name" /> 
-        <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:970px; margin-top: -60px;" to="/createSubcontractor">Add Subcontractor</router-link></p>
+        <p><router-link class="btn createSub"  to="/createSubcontractor">Add Subcontractor</router-link></p>
           
             <table class="styled-table">
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
                 <col   style="width:10%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
                 <col   style="width:0%"> 
                 <col   style="width:1%">
                 <col   style="width:2%">
                
                 <thead class="thead-dark">
                     <tr>
-                        <th>SUBID</th>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Business Name</th>
@@ -35,7 +33,6 @@
                 </thead>
                 <tbody>
                     <tr v-for="subcontractor in filteredSubcontractors" :key="subcontractor.subcontractor_id">
-                        <td style="vertical-align:top">{{ subcontractor.subid }}</td>
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_fname }}</td>
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_lname }}</td>
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_business_name }}</td>
@@ -46,24 +43,21 @@
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_type }}</td>
                         <td>
                             
-                            <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" style="text-align: center; margin-top:-20px; padding: 1px 12px; font-size:16px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" class="btn one">Edit
                             </router-link>
 
-                            <br>
-
-                            <br>
-                                        
-                            <button  @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)" style="text-align: center; margin-top:-50px; padding: 1px 3px; font-size:16px" class="btn btn-danger">Delete</button>
+                                
+                            <button  @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)"  class="btn two">Delete</button>
                         
 
-                            <router-link :to="{name: 'createSubcontractorAssigned', params: { id: subcontractor.subcontractor_email}}"  style="text-align: center; margin-top:-15px; color:white; background-color:gray; padding: 1px 2px; font-size:16px" class="btn btn-dark">Subcontractor Assigned
+                            <router-link :to="{name: 'createSubcontractorAssigned', params: { id: subcontractor.subcontractor_email}}"   class="btn three">Subcontractor<br /> Assigned
                             </router-link>
                         
                         </td>
 
                         <td>
                             
-                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  style="text-align: center;  margin-top:-70px; color:black; background-color:#FFD700; padding: 6px 3px; font-size:16px" class="btn btn-dark">Assigned Steps
+                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  class="btn four">Assigned<br /> Steps
                             </router-link>
                         </td>
 
@@ -136,7 +130,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 110%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -159,11 +153,69 @@
     background: black;
 
 }
-.btn-success {
-        margin-right: 10px;
+.btn{
+    position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
 }
 
+.createSub{
+border: 2px solid black;
+font-size:20px; 
+color: White; 
+background-color: #267bfa;
+font-weight:bold; 
+margin-left:980px; 
+margin-top: -40px;
+}
 
+.one {
+   border: 2px solid black;
+   margin-top: -50px;
+   margin-left:-30px; 
+   color:white; 
+   background-color:green; 
+   padding: 1px 3px;
+   font-size:16px
+    
+    
+}
+
+.two {
+   border: 2px solid black;
+   margin-top: -50px;
+   margin-left:10px; 
+   color:white; 
+   background-color:red; 
+   padding: 1px 8px;
+   font-size:16px
+   
+    
+}
+
+.three{
+   border: 2px solid black;
+   margin-top: -15px;
+   margin-left:-30px; 
+   color:white; 
+   background-color:gray; 
+   padding: 1px 2px;
+   font-size:16px
+   
+    
+}
+
+.four{
+   border: 2px solid black;
+   margin-top: -50px;
+   margin-left:-5px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 19px 3px;
+   font-size:16px
+   
+}
 
 .styled-table th,
 .styled-table td {

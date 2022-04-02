@@ -2,28 +2,28 @@
     <div class="row">
         <div class="col-lg-12">
 
-        <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Investors Assigned:</strong>
-        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: ISID or PSID or Investor Paid " />
-        <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:1030px; margin-top: -60px; padding: 1px 2px;" to="/createInvestorAssigned">Create Investor Assignment</router-link></p>
+        <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Assigned Investors:</strong>
+        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Last Name " />
+        <p><router-link class="btn createInvestorAssign"  to="/createInvestorAssigned">Create Investor Assignment</router-link></p>
           
           
             <table class="styled-table">
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:12%"> 
-                <col   style="width:16%"> 
-                <col   style="width:14%"> 
-                <col   style="width:10%"> 
-                <col   style="width:30%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
                  
                 <thead class="thead-dark">
                    
         
                     <tr>
+                        <th>Project Num.</th>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Email</th>
-                        <th>Project Number</th>
+                        <th>Investor Email</th>
                         <th>Investor Assigned Date</th>
                         <th>Investment Amount</th>
                         <th>Investor Paid</th>
@@ -32,18 +32,18 @@
                 </thead>
                 <tbody>
                     <tr v-for="investor_assigned in filteredInvestorsAssigned" :key="investor_assigned.investor_assigned_id">
-                        <td style="vertical-align:top">{{ investor_assigned.investor_firstname}}</td>
-                        <td style="vertical-align:top">{{ investor_assigned.investor_lastname}}</td>
-                        <td style="vertical-align:top">{{ investor_assigned.investor_email}}</td>
                         <td style="vertical-align:top">{{ investor_assigned.project_number}}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_assign_firstname}}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_assign_lastname}}</td>
+                        <td style="vertical-align:top">{{ investor_assigned.investor_email}}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_assigned_date }}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_assigned_cost }}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_assigned_paid}}</td>
                         <td>
-                            <router-link :to="{name: 'editInvestorAssigned', params: { id: investor_assigned.investor_assigned_id}}" style="text-align: center; margin-top:0px; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editInvestorAssigned', params: { id: investor_assigned.investor_assigned_id}}"  class="btn one">View / Edit
                             </router-link>
-                            <br>
-                            <button @click.prevent="deleteInvestorAssigned(investor_assigned.investor_assigned_id)" style="text-align: center; margin-top:5px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
+                            
+                            <button @click.prevent="deleteInvestorAssigned(investor_assigned.investor_assigned_id)" class="btn two">Delete</button>
 
                             
                             
@@ -81,9 +81,8 @@
 
                 return this.investor_assigneds.filter((investor_assigned) =>{
 
-                    return investor_assigned.investor_email.toLowerCase().match(this.search.toLowerCase())  ||
-                           investor_assigned.project_number.match(this.search) ||
-                           investor_assigned.investor_assigned_paid.toLowerCase().match(this.search.toLowerCase()) 
+                    return investor_assigned.project_number.match(this.search) ||
+                           investor_assigned.investor_lastname.toLowerCase().match(this.search.toLowerCase())
                     
                 })
             }    
@@ -115,7 +114,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 1%;
+  height: 140%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -138,8 +137,44 @@
     background: black;
 
 }
-.btn-success {
-        margin-right: 10px;
+
+
+.btn{
+    position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
+}
+
+.createInvestorAssign{
+font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:1006px; 
+    margin-top: -40px;
+
+}
+.one{
+border: 2px solid black;
+   margin-top: -45px;
+   margin-left:-15px; 
+   color:white; 
+   background-color:green; 
+   padding: 1px 3px;
+   font-size:16px
+}
+
+.two{
+border: 2px solid black;
+   margin-top: -5px;
+   margin-left:-15px; 
+   color:white; 
+   background-color:red; 
+   padding: 1px 18px;
+   font-size:16px
+
 }
 
 

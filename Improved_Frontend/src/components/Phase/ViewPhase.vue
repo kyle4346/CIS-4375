@@ -6,13 +6,13 @@
             <br>
             <br>
 
-<p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:870px; margin-top: -110px;" to="/viewProject">View Projects</router-link></p>
+            <p><router-link class="btn createProject"  to="/viewProject">View Projects</router-link></p>
             
             <table class="styled-table">
-                <col   style="width:0%; text-align:center"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
                 <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:10%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -41,30 +41,27 @@
                         <td style="vertical-align:top">{{ phase.phase_cost }}</td>
                         <td style="vertical-align:top">{{ phase.phase_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}" style="text-align: center; margin-top:-30px; font-size: 16px; padding: 2px 12px"  class="btn btn-success">Edit
+                            <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}"  class="btn one">Edit
                             </router-link>
-                            <br>
+                           
 
-                        <button @click.prevent="deletePhase(phase.phase_id)" class="btn btn-danger" style="margin-top:-10px; font-size: 16px; padding: 1px 3px">Delete</button>
+                        <button @click.prevent="deletePhase(phase.phase_id)" class="btn two" >Delete</button>
 
-                            <br>
-                            <br>
-                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" style="text-align: center; font-size: 16px; margin-top:-10px; padding: 2px 10px" class="btn btn-secondary">Add Step
-                            </router-link>
-
-                            <br>
-                            <br>
-
-                            <router-link :to="{name: 'viewStep', params: { id: phase.phase_number}}"  style="text-align: center; font-size: 16px; margin-top:-10px; padding: 2px 3px; background-color:#5d00ff" class="btn btn-primary">View Steps
+                            
+                            <router-link :to="{name: 'createStep', params: { id: phase.phase_number}}" class="btn three">Add Step
                             </router-link>
 
-                            <br>
-                            <br>
+                            
+
+                            <router-link :to="{name: 'viewStep', params: { id: phase.phase_number}}" class="btn four">View Steps
+                            </router-link>
+
+                            
 
                     
                         </td> 
                         <td>
-                                <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}"  style="text-align: center; margin-top: -180px; background-color:#FFD700; color: black " class="btn btn-dark">Assigned Steps
+                                <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}" class="btn five">Assigned<br/>Steps
                             </router-link>
                         </td>
                     </tr>
@@ -136,7 +133,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 150%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -144,9 +141,78 @@
   background-color: #267bfa;
   color: #ffffff;
 }
-.btn-success {
-        margin-right: 10px;
+.btn{
+    position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
 }
+
+.createProject{
+    font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:890px; 
+    margin-top: -60px;
+
+}
+
+.one{
+   border: 2px solid black;
+   margin-top: -50px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:green; 
+   padding: 1px 3px;
+   font-size:16px
+
+}
+
+.two{
+   border: 2px solid black;
+   margin-top: -50px;
+   margin-left:25px; 
+   color:white; 
+   background-color:red; 
+   padding: 1px 2px;
+   font-size:16px
+
+}
+
+.three{
+   border: 2px solid black;
+   margin-top: -15px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:gray; 
+   padding: 1px 14px;
+   font-size:16px
+}
+
+.four{
+   border: 2px solid black;
+   margin-top: 20px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:rgb(255, 6, 255); 
+   padding: 1px 7px;
+   font-size:16px
+
+
+}
+
+.five{
+    border: 2px solid black;
+   margin-top: -50px;
+   margin-left:-6px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 25px 2px;
+   font-size:16px
+}
+
 
 
 .styled-table th,

@@ -7,7 +7,8 @@
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
-                <div class="form-group row">
+                 
+               <div class="form-group row">
             
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepProjectNum">Project Number</label>
@@ -123,17 +124,80 @@
                 <div class="form-group row">
             
                 <div class="form-group col-lg-auto">
-                    <label style ="font-size:14pt">Step Start Date</label>
+                    <label style ="font-size:14pt">Start Date</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="step.step_start_date" required>
                 </div>
 
                 <div  style="margin-left:20px " class="form-group col-lg-auto">
-                    <label style ="font-size:14pt">Step End Date</label>
+                    <label style ="font-size:14pt">End Date</label>
                     <input type="date" class="form-control" v-model="step.step_end_date" >
-                     <br>
+                    <br>
                 </div>
                 </div>
+
+                <div class="form-group row">
+                    <strong style ="font-size:150%"> Subcontractor Assignment Information</strong>
+                    <br>
+                    
+                    <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
+                    
+                    <input  type="text" class="form-control" id="inputFName" placeholder="Charles" pattern="[A-Za-z\s]{0,40}" v-model="step.subcontractor_fname" >
+
+                </div>
+                <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
+                    
+                    <input  type="text" class="form-control" id="inputLName" placeholder="Vaughn" pattern="[A-Za-z\s]{0,40}" v-model="step.subcontractor_lname" >
+                    
+                </div>
+                    <div class="form-group col-lg-3">
+                    
+                    <label style ="font-size:14pt">Email</label>
+                    
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" v-model="step.subcontractor_email" >
+                    <br>
+                </div>
+
+                <div class="form-group col-lg-auto">
+                    <label style ="font-size:14pt">Assignment Date</label>
+                    <input type="date" class="form-control" v-model="step.subcontractor_assigned_date" >
+                    
+                </div>
+                
+                </div>
+
+                 <div class="form-group row">
+
+                <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorRate">Subcontractor Fee</label>
+                   
+                    <input style="text-align:right" type="text" class="form-control" id="inputSubcontractorRate" placeholder="$2,500.50"   pattern="[^$\0-9\,\.]{1,9}" v-model="step.subcontractor_fee" >
+                    
+                </div>
+
+                 <div style="margin-left:20px" class="form-group col-lg-2">
+                <label style ="font-size:14pt" class="col-form-label pt-0">Subcontractor Paid </label> 
+                
+               
+          
+                <div class="form-check-inline col-lg-0">
+                     <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorPaid1">
+                     <input class="form-check-input" type="radio" id="SubcontractorPaid1" value="Yes"  v-model="step.subcontractor_paid"   >Yes    
+                     </label>
+                </div>
+             
+                <div  class="form-check-inline col-lg-0">
+                    <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorPaid2">
+                    <input class="form-check-input" type="radio"  id="SubcontractorPaid2" value="No"  v-model="step.subcontractor_paid" >No
+                    </label>
+
+                </div>
+                
+                </div>
+
+                 </div>
 
 
 
@@ -146,9 +210,9 @@
                     </p>
 
 
-                <br>
+                
                 <button class="btn btn-danger mt-3" style ="font-size:14pt">Update</button>
-                <br>
+                
                 <br>
                 <br>
 

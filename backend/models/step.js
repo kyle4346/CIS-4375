@@ -115,8 +115,47 @@ let StepSchema = new Schema({
         required: true,
         not: null,
         unique:true
-      }
+      },
+      subcontractor_email:{
+        type: String,
+        maxLength: 55,
+       
+        unique:true,
+        not: null
+
+      },
+      subcontractor_assigned_date:{
+        type: String,
+        
+        
+      },
+      subcontractor_fee:{
+        type: String,
+        minLength:2,
+        maxLength:9,
+        
+      },
+      subcontractor_paid:{
+      type: String,
+      minLength:2,
+      maxLength:3,
       
+
+      },
+      subcontractor_fname:{
+        type: String,
+        minLength: 1,
+        maxLength: 32,
+        
+
+      },
+      subcontractor_lname:{
+        type: String,
+        minLength: 1,
+        maxLength: 32,
+       
+
+      }
     
   }, {
     collection: 'step'

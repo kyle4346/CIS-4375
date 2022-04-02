@@ -6,19 +6,19 @@
             <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchSteps" placeholder="ex: Project Num or Step Num" /> 
            <br>
            <br>
-            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:850px; margin-top: -110px;" to="/viewPhase">View Phases</router-link></p>
+            <p><router-link class="btn createPhases"  to="/viewPhase">View Phases</router-link></p>
             
             <table class="styled-table">
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:2%">
+                <col   style="width:10%">
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num</th>
@@ -44,32 +44,25 @@
                         <td style="vertical-align:top">{{ step.step_cost }}</td>
                         <td style="vertical-align:top">{{ step.step_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editStep', params: { id: step.step_id}}" style="text-align: center; margin-top:-70px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editStep', params: { id: step.step_id}}"  class="btn one">Edit
                             </router-link>
-                            <br>
 
-                        <button @click.prevent="deleteStep(step.step_id)" class="btn btn-danger">Delete</button>
-
-                            <br>
+                        <button @click.prevent="deleteStep(step.step_id)" class="btn two">Delete</button>
                             
-                            <router-link :to="{name: 'createTask', params: { id: step.step_number}}" style="text-align: center; margin-top:20px" class="btn btn-secondary">Add Task
+                            <router-link :to="{name: 'createTask', params: { id: step.step_number}}"  class="btn three">Add Task
                             </router-link>
 
-                            <br>
-                            <br>
-                             <router-link :to="{name: 'viewTask', params: { id: step.step_number}}"  style="text-align: center; margin-right:10px; background-color:#5d00ff" class="btn btn-primary">View Tasks
+                             <router-link :to="{name: 'viewTask', params: { id: step.step_number}}"   class="btn four">View Tasks
                             </router-link>
 
                             
                                  
                         </td>
                         <td>
-                            <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"  style="text-align: center; margin-top:-180px; color:black; background-color:#FFD700" class="btn btn-dark">Assigned Tasks
+                            <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"   class="btn five">Assigned<br/> Tasks
                             </router-link>
 
-                            <br>
-                            
-                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.stepid}}"  style="text-align: center; margin-top:-70px; color:black; background-color:#FFD700" class="btn btn-dark">Assigned Subcontractors
+                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.stepid}}"   class="btn six">Assigned<br/> Subcontractors
                             </router-link> 
 
                         </td>
@@ -143,7 +136,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 97%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -151,10 +144,82 @@
   background-color: #267bfa;
   color: #ffffff;
 }
-.btn-success {
-        margin-right: 10px;
+
+.btn{
+    position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
 }
 
+.createPhases{
+font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:880px; 
+    margin-top: -60px;
+
+}
+
+.one{
+border: 2px solid black;
+   margin-top: -55px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:green; 
+   padding: 1px 3px;
+   font-size:16px
+}
+
+.two{
+border: 2px solid black;
+   margin-top: -55px;
+   margin-left:25px; 
+   color:white; 
+   background-color:red; 
+   padding: 1px 2px;
+   font-size:16px
+}
+
+.three{
+ border: 2px solid black;
+   margin-top: -15px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:gray; 
+   padding: 1px 14px;
+   font-size:16px
+}
+.four{
+border: 2px solid black;
+   margin-top: 21px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:rgb(255, 6, 255); 
+   padding: 1px 7px;
+   font-size:16px
+}
+.five{
+   border: 2px solid black;
+   margin-top: -55px;
+   margin-left:-6px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 0px 23px;
+   font-size:16px
+
+}
+.six{
+     border: 2px solid black;
+   margin-top: 0px;
+   margin-left:-6px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 0px 2px;
+   font-size:16px
+}
 
 .styled-table th,
 .styled-table td {

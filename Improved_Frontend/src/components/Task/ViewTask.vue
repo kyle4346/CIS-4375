@@ -5,7 +5,7 @@
             <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchTasks" placeholder="ex: Project Num or Task Num" /> 
            <br>
            <br>
-            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:850px; margin-top: -110px;" to="/viewStep">View Steps</router-link></p>
+            <p><router-link class="btn createSteps"  to="/viewStep">View Steps</router-link></p>
             <table class="styled-table">
                 <thead class="thead-dark">
                     <tr>
@@ -31,12 +31,11 @@
                         <td style="vertical-align:top">{{ task.task_status_type}}</td>
                         <td style="vertical-align:top">{{ task.task_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editTask', params: { id: task.task_id}}" style="text-align: center; margin-top:-70px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editTask', params: { id: task.task_id}}" class="btn one">Edit
                             </router-link>
 
-                            <br>
 
-                        <button @click.prevent="deleteTask(task.task_id)" class="btn btn-danger">Delete</button>
+                        <button @click.prevent="deleteTask(task.task_id)" class="btn two">Delete</button>
 
                             
                             
@@ -112,7 +111,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -120,11 +119,45 @@
   background-color: #267bfa;
   color: #ffffff;
 }
-.btn-success {
-        margin-right: 10px;
+
+.btn{
+    position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
 }
 
+.createSteps{
+font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:880px; 
+    margin-top: -60px;
 
+}
+
+.one{
+border: 2px solid black;
+   margin-top: -15px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:green; 
+   padding: 1px 3px;
+   font-size:16px
+}
+
+.two{
+border: 2px solid black;
+   margin-top: -15px;
+   margin-left:25px; 
+   color:white; 
+   background-color:red; 
+   padding: 1px 2px;
+   font-size:16px
+
+}
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;

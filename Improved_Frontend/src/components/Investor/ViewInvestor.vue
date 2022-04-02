@@ -5,7 +5,7 @@
         <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Investors:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: last name or first name" />
 
-<p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:890px; margin-top: -60px;" to="/createInvestor">Add Investor</router-link></p>
+<p><router-link class="btn createInvestor"  to="/createInvestor">Add Investor</router-link></p>
           
           
             <table class="styled-table">
@@ -44,23 +44,21 @@
                         <td style="vertical-align:top">{{ investor.investor_status}}</td>
                         <td style="vertical-align:top">{{ investor.investor_type }}</td>
                         <td>
-                            <router-link :to="{name: 'editInvestor', params: { id: investor.investor_iD}}" style="text-align: center; margin-top:-40px; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editInvestor', params: { id: investor.investor_iD}}" class="btn one">Edit
                             </router-link>
 
-                            <br>
 
-                            <button @click.prevent="deleteInvestor(investor.investor_iD)"  style="text-align: center; margin-top:0px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
+                            <button @click.prevent="deleteInvestor(investor.investor_iD)" class="btn two">Delete</button>
 
-                            <br>
-
-                             <router-link :to="{name: 'createInvestorAssigned', params: { id: investor.investor_email}}"  style="text-align: center; margin-top:15px; color:white; background-color:gray; padding: 1px 4px; font-size:16px" class="btn btn-dark">Investor Assigned
+                        
+                             <router-link :to="{name: 'createInvestorAssigned', params: { id: investor.investor_email}}"  class="btn three">Assign<br/> Investor
                             </router-link>
 
                          
                             
                         </td>
                         <td>
-                             <router-link :to="{name: 'investor_project_report', params: { id: investor.investor_email}}"  style="text-align: center; margin-top:-90px; color:black; background-color:#FFD700; padding: 1px 4px; font-size:16px" class="btn btn-dark">Assigned Projects Report
+                             <router-link :to="{name: 'investor_project_report', params: { id: investor.investor_email}}"  class="btn four">Assigned<br />Projects
                             </router-link>
                         </td>
                     </tr>
@@ -133,7 +131,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 130%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -156,11 +154,69 @@
     background: black;
 
 }
-.btn-success {
-        margin-right: 10px;
+.btn{
+position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
+}
+.createInvestor{
+border: 2px solid black;
+font-size:20px; 
+color: White; 
+background-color: #267bfa;
+font-weight:bold; 
+margin-left:920px; 
+margin-top: -40px;
 }
 
+.one {
+   border: 2px solid black;
+   margin-top: -50px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:green; 
+   padding: 1px 3px;
+   font-size:16px
+    
+    
+}
 
+.two {
+   border: 2px solid black;
+   margin-top: -50px;
+   margin-left:20px; 
+   color:white; 
+   background-color:red; 
+   padding: 1px 3px;
+   font-size:16px
+   
+    
+}
+
+.three{
+   border: 2px solid black;
+   margin-top: -15px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:rgb(255, 6, 255); 
+   padding: 1px 18px;
+   font-size:16px
+   
+    
+}
+
+.four{
+   border: 2px solid black;
+   margin-top: -50px;
+   margin-left:0px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 7px 2px;
+   font-size:16px
+   
+    
+}
 
 .styled-table th,
 .styled-table td {

@@ -5,7 +5,7 @@
             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Employees:</strong>
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchEmployees" placeholder="ex: last name or first name" /> 
 
-            <p><router-link class="btn btn-primary" style="font-size:20px; color: White; font-weight:bold; margin-left:930px; margin-top: -60px;" to="/createEmployee">Add Employee</router-link></p>
+            <p><router-link class="btn createEmployee"  to="/createEmployee">Add Employee</router-link></p>
             <table class="styled-table">
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -38,24 +38,24 @@
                         <td style="vertical-align:top">{{ employee.employee_title_description}}</td>
                         <td style="vertical-align:top">{{ employee.employee_status_type}}</td>
                         <td style="position:sticky">
-                            <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}" style="text-align: center; padding: 2px 12px; font-size:16px" class="btn btn-success">Edit
+                            <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}"  class="btn one">Edit
 
                             </router-link>
 
                             <br>
 
                         
-                        <button @click.prevent="deleteEmployee(employee.employee_id)" style="text-align: center; margin-top:2px; padding: 2px 3px; font-size:16px" class="btn btn-danger">Delete</button>
+                        <button @click.prevent="deleteEmployee(employee.employee_id)"  class="btn two">Delete</button>
                         
                         <br>
                         <br>
-                         <router-link :to="{name: 'createSubcontractorAssigned', params: { id: employee.employee_email}}"  style="text-align: center; margin-top:-15px; color:white; background-color:gray; height:60px; width:90px; font-size:16px" class="btn btn-dark">Employee Assigned
+                         <router-link :to="{name: 'createEmployeeAssigned', params: { id: employee.employee_email}}"  class="btn three">Employee<br/> Assigned
                             </router-link>
 
                         </td>
 
                         <td style="position:sticky">
-                        <router-link :to="{name: 'employee_project_report', params: { id:employee.employee_email}}"  style="text-align: center;  margin-top:-70px; color:black; background-color:#FFD700; padding: 7px 2px; font-size:16px" class="btn btn-dark">Assigned Projects
+                        <router-link :to="{name: 'employee_project_report', params: { id:employee.employee_email}}"  class="btn four">Assigned<br/> Projects
                         </router-link>
                         </td>
 
@@ -127,7 +127,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 115%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -149,6 +149,69 @@
     left: 0;
     background: black;
 
+}
+.createEmployee{
+border: 2px solid black;
+font-size:20px; 
+color: White; 
+background-color: #267bfa;
+font-weight:bold; 
+margin-left:980px; 
+margin-top: -40px;
+}
+
+.btn{
+    position: -webkit-absolute;
+    position: absolute;
+    margin-right: 0px;
+
+}
+
+.one {
+   border: 2px solid black;
+   margin-top: -19px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:green; 
+   padding: 1px 3px;
+   font-size:16px
+    
+    
+}
+
+.two {
+   border: 2px solid black;
+   margin-top: -43px;
+   margin-left:20px; 
+   color:white; 
+   background-color:red; 
+   padding: 1px 7px;
+   font-size:16px
+   
+    
+}
+
+.three{
+   border: 2px solid black;
+   margin-top: -55px;
+   margin-left:-20px; 
+   color:white; 
+   background-color:gray; 
+   padding: 1px 15px;
+   font-size:16px
+   
+    
+}
+
+.four{
+   border: 2px solid black;
+   margin-top: -55px;
+   margin-left:-2px; 
+   color:black; 
+   background-color:#FFD700; 
+   padding: 20px 3px;
+   font-size:16px
+   
 }
 
 .styled-table th,

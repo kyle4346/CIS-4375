@@ -8,14 +8,14 @@ let InvestorAssignedSchema = new Schema({
     
     investor_assigned_id: { type: String, default: uuid.v1 },
 
-   investor_firstname: {
+   investor_assign_firstname: {
       type: String,
       minLength: 2,
       maxLength: 30,
       not: null,
       required: true
    },
-   investor_lastname: {
+   investor_assign_lastname: {
     type: String,
     minLength: 2,
     maxLength: 30,

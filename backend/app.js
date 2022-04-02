@@ -107,7 +107,7 @@ app.get('/investor/:id', (req, res, next) => {
 // Report for Investor Assigned
 app.get('/investor_num/:id', (req, res, next) => {
   //find data based on the client id for the collection client form information
-  InvestorModel.findOne({ isid: req.params.id}, (error, data) => {
+  InvestorModel.findOne({ investor_email: req.params.id}, (error, data) => {
       if (error) {
           return next(error)
       } else if (data === null) {
@@ -1070,7 +1070,7 @@ app.get('/project_phase_report/:id', (req, res, next) => {
 
   PhaseModel.aggregate([
     { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,project_number: 1, phase_number: 1, phase_name: 1, phase_cost:1 , phase_completed:1, project_number: 1} },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,project_number: 1, phase_number: 1, phase_name: 1, phase_cost:1 , phase_estimated_duration:1, phase_completed:1, project_number: 1, phase_start_date:1, phase_estimated_end_date:1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'project',
         localField : 'project_number',
@@ -1143,7 +1143,7 @@ app.get('/investor_project_report/:id', (req, res, next) => {
 
   InvestorAssignedModel.aggregate([
     { $match : { investor_email: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,investor_email: 1, project_number: 1, investor_assigned_date:1 ,investor_assigned_cost: 1, investor_assigned_paid:1,  } },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,investor_email: 1, project_number: 1, investor_assigned_date:1 ,investor_assigned_cost: 1, investor_assigned_paid:1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'investor',
         localField : 'investor_email',
@@ -1151,12 +1151,7 @@ app.get('/investor_project_report/:id', (req, res, next) => {
         as : 'investor',
        
     } },
-    { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
-      from : 'project',
-      localField : 'project_number',
-      foreignField : 'project_number',
-      as : 'project',
-  } },
+
   ],
    (error, data) => {
       if (error) {

@@ -1,29 +1,46 @@
 <template>
     <div class="row">
-         <h2>Phases for Project: {{projects.project_name}}, Project Start Date is {{projects.project_start_date}}</h2>
+         <h2  class="reportPhase" > Project #{{projects.project_number}}:  {{projects.project_name}} <br/>  Project Duration: {{projects.project_estimated_duration}} Months  <br/> Budget: {{projects.project_budget}} </h2>
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1070px; margin-top: -80px;" to="/viewProject">View Projects</router-link>
+          <router-link class="btn viewProjects"  to="/viewProject">View Projects</router-link>
             <table class="styled-table">
+
+                <col   style="width:1%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+               
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>Project Number:</th>
-                        <th>Phase Num:</th>
-                        <th>Phase Name:</th>
-                        <th>Phase Cost:</th>
-                        <th>Phase Completed:</th>
+                       
+                        <th>Phase Num.</th>
+                        <th>Phase Name</th>
+                        <th>Phase Completed</th>
+                        <th>Phase Cost</th>
+                        <th>Phase Estimated Duration</th>
+                        <th>Phase Estimated Start  Date</th>
+                        <th>Phase Estimated End  Date</th>
                         
                         
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="phase in phases" :key="phase.phase_id">
-                        <td>{{ phase.project_number}} </td>
-                        <td>{{ phase.phase_number }}</td>
-                        <td>{{ phase.phase_name }}</td>
-                        <td>{{ phase.phase_cost }}</td>
-                        <td>{{ phase.phase_completed}} </td>
+                        
+                        <td style="position: relative; text-align:left" >{{phase.phase_number }}</td>
+                        <td style="position: relative; text-align:left " >{{phase.phase_name }}</td>
+                        <td style="position: relative; text-align:left" >{{phase.phase_completed}} </td>
+                        <td style="position: relative; text-align:right" >{{phase.phase_cost}}</td>
+                        <td style="position: relative; text-align:left" >{{phase.phase_estimated_duration}} week(s) </td>
+                        <td style="position: relative; text-align:left" >{{phase.phase_start_date}}</td>
+                        <td style="position: relative; text-align:left" >{{phase.phase_estimated_end_date}}</td>
+
+                       
                         
                         
                     </tr>
@@ -49,13 +66,10 @@
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
                 phases: [], 
-                searchPhaseReport: '',
+                
                 projects: {},
                 phase: {
-                   phase_number: '',
-                   phase_name: '',
-                   phase_cost: '',
-                   phase_completed: '',
+                   
                    project_number: this.$route.params.id 
                    
                 },
@@ -100,7 +114,7 @@
   width: 100%;
   height: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  text-align: left;
+  
 }
 .styled-table thead tr {
   background-color: #267bfa;
@@ -110,6 +124,23 @@
         margin-right: 10px;
 }
 
+.viewProjects{
+    font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:1140px; 
+    margin-top: -50px;
+}
+
+.reportPhase{
+  margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: center;
+ }
 
 .styled-table th,
 .styled-table td {
