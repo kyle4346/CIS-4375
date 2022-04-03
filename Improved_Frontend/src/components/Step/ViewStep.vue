@@ -3,29 +3,33 @@
         <div class="col-lg-12">
              
              <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Steps:</strong>
-            <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchSteps" placeholder="ex: Project Num or Step Num" /> 
+            <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchSteps" placeholder="Filter by Project Num." /> 
            <br>
            <br>
             <p><router-link class="btn createPhases"  to="/viewPhase">View Phases</router-link></p>
             
             <table class="styled-table">
                 <col   style="width:1%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
                 <col   style="width:1%"> 
                 <col   style="width:1%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:10%">
+                <col   style="width:0%">
+                <col   style="width:0%">
+                <col   style="width:0%">
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num.</th>
-                        <th>Phase Name</th>
-                        <th>Step Name</th>
+                        <th>Phase</th>
+                        <th>Step</th>
                         <th>Completed</th>
-                        <th>Status</th>
                         <th>Cost</th>
+                        <th>Status</th>
+                        <th>Duration</th>
+                        <th>% Finished</th>
                         <th>Start Date</th>
                         <th>Actions</th>
                         <th>Reports</th>
@@ -37,8 +41,10 @@
                         <td style="vertical-align:top">{{ step.phase_number }}</td>
                         <td style="vertical-align:top">{{ step.step_number }}</td>
                         <td style="vertical-align:top">{{ step.step_completed }}</td>
-                        <td style="vertical-align:top">{{ step.step_status_type}}</td>
                         <td style="vertical-align:top">{{ step.step_cost }}</td>
+                        <td style="vertical-align:top">{{ step.step_status_type}}</td>
+                        <td style="vertical-align:top">{{ step.step_duration}} days</td>
+                        <td style="vertical-align:top">{{ step.step_percent_complete}}</td>
                         <td style="vertical-align:top">{{ step.step_start_date }}</td>
                         <td>
                             <router-link :to="{name: 'editStep', params: { id: step.step_id}}"  class="btn one">View / Edit
@@ -98,10 +104,8 @@
 
                 return this.steps.filter((step) =>{
 
-                    return step.project_number.toLowerCase().match(this.searchSteps.toLowerCase()) ||
-                           step.phase_number.toLowerCase().match(this.searchSteps.toLowerCase()) ||
-                           step.step_number.toLowerCase().match(this.searchSteps.toLowerCase()) || 
-                           step.step_name.toLowerCase().match(this.searchSteps.toLowerCase()) 
+                    return step.project_number.toLowerCase().match(this.searchSteps.toLowerCase()) 
+                          
                     
                 })
             }    
@@ -133,7 +137,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 115%;
+  height: 175%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -170,66 +174,66 @@ font-size:20px;
     color: White; 
     background-color: #267bfa;
     font-weight:bold; 
-    margin-left:880px; 
-    margin-top: -60px;
+    margin-left:1153px; 
+    margin-top: -65px;
 
 }
 
 .one{
 border: 2px solid black;
    margin-top: -75px;
-   margin-left:-20px; 
+   margin-left:-22px; 
    color:white; 
    background-color:green; 
-   padding: 1px 4px;
+   padding: 1px 2px;
    font-size:16px
 }
 
 .two{
 border: 2px solid black;
    margin-top: -40px;
-   margin-left:-20px; 
+   margin-left:-22px; 
    color:white; 
    background-color:red; 
-   padding: 1px 19px;
+   padding: 1px 17px;
    font-size:16px
 }
 
 .three{
  border: 2px solid black;
    margin-top: -5px;
-   margin-left:-20px; 
+   margin-left:-22px; 
    color:white; 
    background-color:rgb(0, 195, 255); 
-   padding: 1px 9px;
+   padding: 1px 7px;
    font-size:16px
 }
 .four{
 border: 2px solid black;
    margin-top: 30px;
-   margin-left:-20px; 
+   margin-left:-22px; 
    color:white; 
    background-color:rgb(255, 6, 255); 
-   padding: 1px 2px;
+   padding: 1px 0px;
    font-size:16px
 }
 .five{
    border: 2px solid black;
    margin-top: -75px;
-   margin-left:-6px; 
+   margin-left:-29px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 7px 25px;
+   padding: 7px 21px;
    font-size:16px
 
 }
 .six{
      border: 2px solid black;
    margin-top: -5px;
-   margin-left:-6px; 
+   margin-left:-29px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 7px 4px;
+   padding: 7px 0px;
    font-size:16px
 }
 

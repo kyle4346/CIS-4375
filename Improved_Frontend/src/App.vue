@@ -58,13 +58,13 @@
   </button>
   <ul class="dropdown-menu">
     <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createProject">Create Project</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/createProject">Create Project</router-link>
     </li>
 
     
     <li><hr class="dropdown-divider"></li>
      <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewProject">View Projects</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/viewProject">View Projects</router-link>
     </li>
     
   </ul>
@@ -76,13 +76,13 @@
   </button>
   <ul class="dropdown-menu">
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; text-align:left;" to="/createInvestor">Create Investor</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/createInvestor">Create Investor</router-link>
     </li>
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractor">Create Subcontractor</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/createSubcontractor">Create Subcontractor</router-link>
     </li>
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployee">Create Employee</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/createEmployee">Create Employee</router-link>
     </li>
     
     
@@ -90,13 +90,13 @@
     
      <li><hr class="dropdown-divider"></li>
       <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestor">View Investors</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/viewInvestor">View Investors</router-link>
     </li>
      <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractor">View Subcontractors</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/viewSubcontractor">View Subcontractors</router-link>
     </li>
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployee">View Employees</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/viewEmployee">View Employees</router-link>
     </li>
    
 
@@ -116,7 +116,7 @@
   <ul class="dropdown-menu">
 
      <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createInvestorAssigned">Create Investor Assignment</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/createInvestorAssigned">Create Investor Assignment</router-link>
     </li>
    <!-- 
      <li class="dropdown-item">
@@ -124,14 +124,14 @@
     </li>
 -->
      <li class="dropdown-item">
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployeeAssigned">Create Employee Assignment</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/createEmployeeAssigned">Create Employee Assignment</router-link>
     </li>
     
    
    <li><hr class="dropdown-divider"></li>
   
     <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestorAssigned">View Assigned Investors</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/viewInvestorAssigned">View Assigned Investors</router-link>
     </li>
 <!--
     <li class="dropdown-item" >
@@ -139,7 +139,7 @@
     </li>
 -->
      <li class="dropdown-item" >
-      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployeeAssigned">View Assigned Employees</router-link>
+      <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold; padding:1px 1px; text-align: left" to="/viewEmployeeAssigned">View Assigned Employees</router-link>
     </li>
 
     
@@ -202,6 +202,5 @@
 .btn{
   display:inline-block;
 }
-
 
 </style>

@@ -3,11 +3,11 @@
         <div class="col-lg-12">
 
         <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Investors:</strong>
-        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: last name or first name" />
+        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Name, Type, or Status" />
 
 <p><router-link class="btn createInvestor"  to="/createInvestor">Add Investor</router-link></p>
           
-          
+          <br>
             <table class="styled-table">
                 
                 <col   style="width:0%"> 
@@ -25,11 +25,11 @@
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Investor Comments</th>
-                        <th>Phone</th>
+                        <th>Business Name</th>
                         <th>Email</th>
-                        <th>Status</th>
+                        <th>Phone</th>
                         <th>Type</th>
+                        <th>Status</th>
                         <th>Actions</th>
                         <th>Reports</th>
                     </tr>
@@ -39,10 +39,10 @@
                         <td style="vertical-align:top">{{ investor.investor_fname }}</td>
                         <td style="vertical-align:top">{{ investor.investor_lname }}</td>
                         <td style="vertical-align:top">{{ investor.investor_detail }}</td>
-                        <td style="vertical-align:top">{{ investor.investor_phone }}</td>
                         <td style="vertical-align:top">{{ investor.investor_email }}</td>
-                        <td style="vertical-align:top">{{ investor.investor_status}}</td>
+                        <td style="vertical-align:top">{{ investor.investor_phone }}</td>
                         <td style="vertical-align:top">{{ investor.investor_type }}</td>
+                        <td style="vertical-align:top">{{ investor.investor_status}}</td>
                         <td>
                             <router-link :to="{name: 'editInvestor', params: { id: investor.investor_iD}}" class="btn one">View / Edit
                             </router-link>
@@ -96,10 +96,9 @@
 
                     return investor.investor_lname.toLowerCase().match(this.search.toLowerCase()) ||
                            investor.investor_fname.toLowerCase().match(this.search.toLowerCase()) ||
-                           investor.investor_phone.toLowerCase().match(this.search.toLowerCase()) ||
-                           investor.investor_email.toLowerCase().match(this.search.toLowerCase()) ||
                            investor.investor_status.toLowerCase().match(this.search.toLowerCase())||
-                           investor.investor_type.toLowerCase().match(this.search.toLowerCase())
+                           investor.investor_type.toLowerCase().match(this.search.toLowerCase())  ||
+                           investor.investor_detail.toLowerCase().match(this.search.toLowerCase())
                     
                 })
             }    
@@ -166,8 +165,8 @@ font-size:20px;
 color: White; 
 background-color: #267bfa;
 font-weight:bold; 
-margin-left:920px; 
-margin-top: -40px;
+margin-left:1147px; 
+margin-top: -45px;
 }
 
 .one {
@@ -199,7 +198,7 @@ margin-top: -40px;
    margin-top: 10px;
    margin-left:-15px; 
    color:white; 
-   background-color:rgb(255, 6, 255); 
+   background-color:rgb(0, 195, 255); 
    padding: 1px 12px;
    font-size:16px
    

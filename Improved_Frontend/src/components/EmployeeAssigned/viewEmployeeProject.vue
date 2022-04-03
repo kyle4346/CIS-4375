@@ -3,7 +3,7 @@
         <div class="col-lg-12">
 
         <strong style="margin-left:350px; font-size: 20pt; color:Black; "  >Search Assigned Employee:</strong>
-        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Last Name" />
+        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Name" />
         <p><router-link class="btn createEmployeeAssign"  to="/createEmployeeAssigned">Create Employee Assignment</router-link></p>
          
           
@@ -13,8 +13,6 @@
                 <col   style="width:20%"> 
                 <col   style="width:30%"> 
                 <col   style="width:60%"> 
-               
-                 
                 <thead class="thead-dark">
                    
         
@@ -76,7 +74,8 @@
                 return this.employee_assigneds.filter((employee_assigned) =>{
 
                     return employee_assigned.project_number.match(this.search) ||
-                           employee_assigned.employee_lastname.toLowerCase().match(this.search.toLowerCase()) 
+                           employee_assigned.employee_lastname.toLowerCase().match(this.search.toLowerCase()) ||
+                           employee_assigned.employee_firstname.toLowerCase().match(this.search.toLowerCase()) 
                     
                 })
             }    
@@ -108,7 +107,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 1%;
+  height:10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -145,10 +144,9 @@ font-size:20px;
     background-color: #267bfa;
     font-weight:bold; 
     padding:6px 6px;
-    margin-top: -65px;
-    margin-left: 1005px;
-    margin-right:-30px; 
-
+    margin-top: -75px;
+    margin-left: 1004px;
+   
 }
 
 .one{

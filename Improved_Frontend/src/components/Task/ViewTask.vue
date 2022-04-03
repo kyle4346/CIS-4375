@@ -2,21 +2,34 @@
     <div class="row">
         <div class="col-lg-12">
              <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Tasks:</strong>
-            <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchTasks" placeholder="ex: Project Num or Task Num" /> 
+            <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchTasks" placeholder="Filter by Project Num." /> 
            <br>
            <br>
             <p><router-link class="btn createSteps"  to="/viewStep">View Steps</router-link></p>
             <table class="styled-table">
+                <col   style="width:1%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:1%">
+                <col   style="width:10%">
+                <col   style="width:0%">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Project Num</th>
-                        <th>Phase Num</th>
-                        <th>Step Num</th>
-                        <th>Task Num</th>
-                        <th>Task Name</th>
-                        <th>Task Completed</th>
-                        <th>Task Status</th>
-                        <th>Task Start Date</th>
+                        <th>Project Num.</th>
+                        <th>Phase</th>
+                        <th>Step</th>
+                        <th>Task</th>
+                        <th>Completed</th>
+                        <th>Material Acquired</th>
+                        <th>Status</th>
+                        <th>Duration</th>
+                        <th>% Finished</th>
+                        <th>Start Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -25,10 +38,12 @@
                         <td style="vertical-align:top">{{ task.project_number }}</td>
                         <td style="vertical-align:top">{{ task.phase_number }}</td>
                         <td style="vertical-align:top">{{ task.step_number }}</td>
-                        <td style="vertical-align:top">{{ task.task_number }}</td>
                         <td style="vertical-align:top">{{ task.task_name }}</td>
-                        <td style="vertical-align:top">{{ task.task_completed }}</td>
-                        <td style="vertical-align:top">{{ task.task_status_type}}</td>
+                        <td style="vertical-align:top">{{ task.task_completed}}</td>
+                        <td style="vertical-align:top">{{ task. task_material_aquired}}</td>
+                        <td style="vertical-align:top">{{ task.task_status_type }}</td>
+                        <td style="vertical-align:top">{{ task.task_duration}} hours</td>
+                        <td style="vertical-align:top">{{ task.task_percent_complete }}</td>
                         <td style="vertical-align:top">{{ task.task_start_date }}</td>
                         <td>
                             <router-link :to="{name: 'editTask', params: { id: task.task_id}}" class="btn one">View / Edit
@@ -148,8 +163,8 @@ font-size:20px;
     color: White; 
     background-color: #267bfa;
     font-weight:bold; 
-    margin-left:880px; 
-    margin-top: -60px;
+    margin-left:1164px; 
+    margin-top: -65px;
 
 }
 
@@ -159,7 +174,7 @@ border: 2px solid black;
    margin-left:-15px; 
    color:white; 
    background-color:green; 
-   padding: 1px 3px;
+   padding: 1px 1px;
    font-size:16px
 }
 
@@ -169,7 +184,7 @@ border: 2px solid black;
    margin-left:-15px; 
    color:white; 
    background-color:red; 
-   padding: 1px 18px;
+   padding: 1px 16px;
    font-size:16px
 
 }

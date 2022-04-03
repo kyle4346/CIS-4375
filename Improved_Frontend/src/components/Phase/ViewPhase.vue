@@ -2,31 +2,33 @@
     <div class="row">
         <div class="col-lg-12">
             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Phases:</strong>
-            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchPhases" placeholder="ex: Project Num or Phase Num" /> 
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchPhases" placeholder="Filter by Project Num." /> 
             <br>
             <br>
 
             <p><router-link class="btn createProject"  to="/viewProject">View Projects</router-link></p>
             
             <table class="styled-table">
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:0%"> 
-                <col   style="width:10%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:5%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
                 <thead class="thead-dark">
                     <tr>
-                        <th>Project Num</th>
-                        <th>Phase % Complete</th>
-                        <th>Phase Name</th>
-                        <th>Phase Completed</th>
-                        <th>Phase Status</th>
-                        <th>Phase Cost</th>
-                        <th>Phase Start Date</th>
+                        <th>Project Num.</th>
+                        <th>Phase</th>
+                        <th>Completed</th>
+                        <th>Cost</th>
+                        <th>Status</th>
+                        <th>Estimated Duration</th>
+                        <th>% Finished</th>
+                        <th>Start Date</th>
                         <th>Actions</th>
                         <th>Report</th>
                     </tr>
@@ -34,11 +36,12 @@
                 <tbody>
                     <tr v-for="phase in filteredPhases" :key="phase.phase_id">
                         <td style="vertical-align:top">{{ phase.project_number }}</td>
-                        <td style="vertical-align:top">{{ phase.phase_percent_complete}}</td>
-                        <td style="vertical-align:top">{{ phase.phase_name }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_number }}</td>
                         <td style="vertical-align:top">{{ phase.phase_completed }}</td>
-                        <td style="vertical-align:top">{{ phase.phase_status_type}}</td>
                         <td style="vertical-align:top">{{ phase.phase_cost }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_status_type}}</td>
+                         <td style="vertical-align:top">{{ phase.phase_estimated_duration}} weeks</td>
+                        <td style="vertical-align:top">{{ phase.phase_percent_complete}}</td>
                         <td style="vertical-align:top">{{ phase.phase_start_date }}</td>
                         <td>
                             <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}"  class="btn one">View / Edit
@@ -98,9 +101,9 @@
 
                 return this.phases.filter((phase) =>{
 
-                    return phase.project_number.toLowerCase().match(this.searchPhases.toLowerCase()) ||
-                           phase.phase_number.toLowerCase().match(this.searchPhases.toLowerCase()) ||
-                           phase.phase_name.toLowerCase().match(this.searchPhases.toLowerCase()) 
+                    return phase.project_number.toLowerCase().match(this.searchPhases.toLowerCase()) 
+                           
+                            
                            
                     
                 })
@@ -133,7 +136,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 115%;
+  height: 170%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -169,8 +172,8 @@
     color: White; 
     background-color: #267bfa;
     font-weight:bold; 
-    margin-left:890px; 
-    margin-top: -60px;
+    margin-left:1140px; 
+    margin-top: -70px;
 
 }
 
@@ -221,10 +224,10 @@
 .five{
     border: 2px solid black;
    margin-top: -70px;
-   margin-left:-20px; 
+   margin-left:-10px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 42px 9px;
+   padding: 42px 4px;
    font-size:16px
 }
 

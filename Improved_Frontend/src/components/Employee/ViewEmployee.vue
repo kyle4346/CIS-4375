@@ -3,9 +3,10 @@
         <div class="col-lg-12">
 
             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Employees:</strong>
-            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchEmployees" placeholder="ex: last name or first name" /> 
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchEmployees" placeholder="Filter by Name, Title, or Type " /> 
 
             <p><router-link class="btn createEmployee"  to="/createEmployee">Add Employee</router-link></p>
+            <br>
             <table class="styled-table">
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -18,12 +19,12 @@
                 <thead class="thead-dark">
                     <tr>
                       
-                        <th style="position:sticky">Employee First Name</th>
-                        <th style="position:sticky">Employee Last Name</th>
-                        <th style="position:sticky">Employee Phone</th>
-                        <th style="position:sticky">Employee Email</th>
-                        <th style="position:sticky">Employee Title</th>
-                        <th style="position:sticky">Employee Status</th>
+                        <th style="position:sticky">First Name</th>
+                        <th style="position:sticky">Last Name</th>
+                        <th style="position:sticky">Title</th>
+                        <th style="position:sticky">Email</th>
+                        <th style="position:sticky">Phone</th>
+                        <th style="position:sticky">Type</th>
                         <th style="position:sticky">Actions</th>
                         <th style="position:sticky">Reports</th>
                     </tr>
@@ -33,9 +34,9 @@
                         
                         <td style="vertical-align:top">{{ employee.employee_first_name }}</td>
                         <td style="vertical-align:top">{{ employee.employee_last_name }}</td>
+                         <td style="vertical-align:top">{{ employee.employee_title_description}}</td>
+                         <td style="vertical-align:top">{{ employee.employee_email }}</td>
                         <td style="vertical-align:top">{{ employee.employee_phone }}</td>
-                        <td style="vertical-align:top">{{ employee.employee_email }}</td>
-                        <td style="vertical-align:top">{{ employee.employee_title_description}}</td>
                         <td style="vertical-align:top">{{ employee.employee_status_type}}</td>
                         <td style="position:sticky">
                             <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}"  class="btn one">View / Edit
@@ -95,9 +96,8 @@
 
                     return employee.employee_first_name.toLowerCase().match(this.searchEmployees.toLowerCase()) ||
                            employee.employee_last_name.toLowerCase().match(this.searchEmployees.toLowerCase()) ||
-                           employee.employee_phone.toLowerCase().match(this.searchEmployees.toLowerCase()) ||
-                           employee.employee_email.toLowerCase().match(this.searchEmployees.toLowerCase()) 
-                    
+                           employee.employee_title_description.toLowerCase().match(this.searchEmployees.toLowerCase()) ||
+                           employee.employee_status_type.toLowerCase().match(this.searchEmployees.toLowerCase())
                 })
             }    
         },
@@ -156,8 +156,8 @@ font-size:20px;
 color: White; 
 background-color: #267bfa;
 font-weight:bold; 
-margin-left:980px; 
-margin-top: -40px;
+margin-left:1132px; 
+margin-top: -45px;
 }
 
 .btn{
@@ -196,7 +196,7 @@ margin-top: -40px;
    margin-top: -35px;
    margin-left:-20px; 
    color:white; 
-   background-color:gray; 
+   background-color:rgb(0, 195, 255); 
    padding: 1px 8px;
    font-size:16px
    

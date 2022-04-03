@@ -2,31 +2,31 @@
     <div class="row">
         <div class="col-lg-12">
              <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Subcontractors:</strong>
-            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchSubcontractors" placeholder="ex: last name or first name" /> 
+            <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchSubcontractors" placeholder="Filter by Name, Type, or Status" /> 
         <p><router-link class="btn createSub"  to="/createSubcontractor">Add Subcontractor</router-link></p>
-          
+           <br>
             <table class="styled-table">
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:10%"> 
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
                 <col   style="width:0%"> 
-                <col   style="width:10%">
-                <col   style="width:5%">
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%">
+                <col   style="width:0%">
                
                 <thead class="thead-dark">
                     <tr>
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Business Name</th>
-                        <th>Rate/Time</th>
-                        <th>Phone</th>
+                        <th>Rate/hr</th>
                         <th>Email</th>
-                        <th>Status</th>
+                        <th>Phone</th>
                         <th>Type</th>
+                        <th>Status</th>
                         <th>Actions</th>
                         <th>Reports</th>
                     </tr>
@@ -35,12 +35,13 @@
                     <tr v-for="subcontractor in filteredSubcontractors" :key="subcontractor.subcontractor_id">
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_fname }}</td>
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_lname }}</td>
+                        
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_business_name }}</td>
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_rate }}</td>
-                        <td style="vertical-align:top">{{ subcontractor.subcontractor_phone}}</td>
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_email }}</td>
-                        <td style="vertical-align:top">{{ subcontractor.subcontractor_status }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_phone}}</td>
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_type }}</td>
+                        <td style="vertical-align:top">{{ subcontractor.subcontractor_status }}</td>
                         <td>
                             
                             <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" class="btn one"> View / Edit
@@ -95,9 +96,10 @@
 
                     return subcontractor.subcontractor_fname.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
                            subcontractor.subcontractor_lname.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
-                           subcontractor.subcontractor_phone.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
-                           subcontractor.subcontractor_email.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
-                           subcontractor.subid.match(this.searchSubcontractors)
+                           subcontractor.subcontractor_type.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
+                           subcontractor.subcontractor_business_name.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
+                           subcontractor.subcontractor_email.toLowerCase().match(this.searchSubcontractors.toLowerCase()) 
+                           
                     
                 })
             }    
@@ -165,17 +167,17 @@ font-size:20px;
 color: White; 
 background-color: #267bfa;
 font-weight:bold; 
-margin-left:980px; 
-margin-top: -40px;
+margin-left:1090px; 
+margin-top: -45px;
 }
 
 .one {
    border: 2px solid black;
-   margin-top: -75px;
-   margin-left:-15px; 
+   margin-top: -50px;
+   margin-left:-10px; 
    color:white; 
    background-color:green; 
-   padding: 1px 14px;
+   padding: 1px 3px;
    font-size:16px
     
     
@@ -183,11 +185,11 @@ margin-top: -40px;
 
 .two {
    border: 2px solid black;
-   margin-top: -35px;
-   margin-left:-15px; 
+   margin-top: -10px;
+   margin-left:-10px; 
    color:white; 
    background-color:red; 
-   padding: 1px 29px;
+   padding: 1px 18px;
    font-size:16px
    
     
@@ -207,11 +209,11 @@ margin-top: -40px;
 
 .four{
    border: 2px solid black;
-   margin-top: -75px;
-   margin-left:-15px; 
+   margin-top: -50px;
+   margin-left:-5px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 42px 9px;
+   padding: 9px 9px;
    font-size:16px
    
 }

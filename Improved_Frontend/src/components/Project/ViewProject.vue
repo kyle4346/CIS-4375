@@ -6,7 +6,7 @@
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchProjects" placeholder="Filter by Num. or Name" />  
 
             <p><router-link class="btn addProject"  to="/createProject">Add Project</router-link></p>
-            
+            <br>
             <table class="table styled-table">
                 <col   style="width:0%"> 
                 <col   style="width:1%"> 
@@ -151,7 +151,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 115%;
+  height: 150%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -187,46 +187,46 @@ position: -webkit-absolute;
     color: White; 
     background-color: #267bfa;
     font-weight:bold; 
-    margin-left:900px; 
-    margin-top: -40px;
+    margin-left:1157px; 
+    margin-top: -45px;
 }
 
 .one{
    border: 2px solid black;
-   margin-top: -10px;
+   margin-top: -2px;
    margin-left:-15px; 
    color:white; 
    background-color:green; 
-   padding: 0px 6px;
+   padding: 0px 5px;
    font-size:16px
 
 }
 
 .two{
    border: 2px solid black;
-   margin-top: 25px;
+   margin-top: 45px;
    margin-left:-15px; 
    color:white; 
    background-color:red; 
-   padding: 0px 22px;
+   padding: 0px 20px;
    font-size:16px
     
 }
 
 .three{
    border: 2px solid black;
-   margin-top: 65px;
+   margin-top: 91px;
    margin-left:-15px; 
    color:white; 
    background-color:rgb(0, 195, 255); 
-   padding: 0px 6px;
+   padding: 0px 4px;
    font-size:16px
     
 }
 
 .four{
    border: 2px solid black;
-   margin-top: 105px;
+   margin-top: 137px;
    margin-left: -15px;
    margin-right:-20px;  
    color:white; 
@@ -239,7 +239,7 @@ position: -webkit-absolute;
 
 .five{
    border: 2px solid black;
-   margin-top: -10px;
+   margin-top: -2px;
    margin-left: -5px; 
    color:black; 
    background-color:#FFD700; 
@@ -249,7 +249,7 @@ position: -webkit-absolute;
 
 .six{
    border: 2px solid black;
-   margin-top: -1px;
+   margin-top: 10px;
    margin-left:-5px; 
    color:black; 
    background-color:#FFD700; 
@@ -259,7 +259,7 @@ position: -webkit-absolute;
 
 .seven{
    border: 2px solid black;
-   margin-top: 10px;
+   margin-top: 20px;
    margin-left:-5px; 
    color:black; 
    background-color:#FFD700; 

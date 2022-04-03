@@ -3,10 +3,11 @@
         <div class="col-lg-12">
 
         <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Assigned Investors:</strong>
-        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Last Name " />
-        <p><router-link class="btn createInvestorAssign"  to="/createInvestorAssigned">Create Investor Assignment</router-link></p>
+        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Name " />
+        <p><router-link class="btn createInvestorAssign"  to="/createInvestorAssigned">Add Investor Assignment</router-link></p>
           
-          
+          <br>
+         
             <table class="styled-table">
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -82,7 +83,8 @@
                 return this.investor_assigneds.filter((investor_assigned) =>{
 
                     return investor_assigned.project_number.match(this.search) ||
-                           investor_assigned.investor_lastname.toLowerCase().match(this.search.toLowerCase())
+                           investor_assigned.investor_lastname.toLowerCase().match(this.search.toLowerCase())||
+                           investor_assigned.investor_firstname.toLowerCase().match(this.search.toLowerCase())
                     
                 })
             }    
@@ -152,8 +154,8 @@ font-size:20px;
     color: White; 
     background-color: #267bfa;
     font-weight:bold; 
-    margin-left:1006px; 
-    margin-top: -40px;
+    margin-left:1030px; 
+    margin-top: -45px;
 
 }
 .one{

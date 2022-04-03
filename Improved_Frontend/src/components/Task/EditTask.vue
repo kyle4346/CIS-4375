@@ -1,7 +1,9 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-            <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top: -35px">Update Task Intake Form</h1>
+
+            <u class="text" style="font-size:200%; font-weight:bold; margin-left:450px">Update Task Intake Form</u>
+          <br>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
@@ -121,7 +123,7 @@
                 
 
                 <div class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Material(s) Aquired</label>
+                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Material Aquired</label>
                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                 <br>
                 <div style="margin-left: 20px;" class="form-check-inline col-lg-auto">

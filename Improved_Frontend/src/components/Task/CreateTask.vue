@@ -125,7 +125,7 @@
                 
 
                 <div class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Material(s) Aquired</label>
+                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Material Aquired</label>
                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                 <br>
                 <div style="margin-left: 20px;" class="form-check-inline col-lg-auto">
