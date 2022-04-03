@@ -19,7 +19,6 @@ let StepSchema = new Schema({
     phase_number: {
       type: String,
       minLength:1,
-      maxLength:2,
       not: null,
       required: true,
       unique: false
@@ -28,20 +27,12 @@ let StepSchema = new Schema({
     step_number: {
       type: String,
       minLength:1,
-      maxLength:9,
       not: null,
       required: true,
       unique: false
        
     },
      
-    step_name: {
-        type: String,
-        minLength: 0,
-        maxLength: 35,
-        
-        
-    },
     
     step_description: {
         type: String,

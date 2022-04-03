@@ -6,7 +6,7 @@
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                 
-               <div class="form-group row">
+             <div class="form-group row">
                 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskProjectNum">Project Number</label>
@@ -15,8 +15,8 @@
                     
                 </div>
 
-                <div style="margin-left:20px;" class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Phase Number</label>
+                <div style="margin-left:10px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">Phase</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
                     <select  v-model="task.phase_number" required> 
@@ -24,8 +24,8 @@
                     </select>
                 </div>
 
-                <div style="margin-left:-50px;" class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Step Number</label>
+                <div style="margin-left:90px;" class="form-group col-lg-2">
+                    <label style ="font-size:14pt">Step</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
                     <select  v-model="task.step_number" required> 
@@ -33,19 +33,12 @@
                     </select>
                 </div>
 
-                 <div style="margin-left:-60px;" class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Task Number</label>
-                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                     <br>
-                    <select  v-model="task.task_number" required> 
-                     <option v-for="task_number in task_numbers" v-bind:key="task_number">{{task_number}}</option>
-                    </select>
-                </div>
+                
 
-                <div style="margin-left:-60px;" class="form-group col-lg-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Name</label>
+                <div style="margin-left:260px;" class="form-group col-lg-3">
+                    <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Task</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input placeholder="Secure foundation permit" type="text" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
+                    <input placeholder="1. Secure foundation permit" type="text" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
                     <br>
                 </div> 
 
@@ -125,14 +118,10 @@
                      <br>
                 </div>
 
-                <div class="form-group col-lg-3">
-                    <label style ="font-size:14pt; text-align:left;" for="inputTaskMaterial">Material(s)</label>
-                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input placeholder="cement, wood planks, bricks" type="text" class="form-control" id="inputTaskMaterial" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{0,75}" v-model="task.task_material" required>
-                </div> 
+                
 
                 <div class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Material(s) Aquired?</label>
+                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Material(s) Aquired</label>
                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                 <br>
                 <div style="margin-left: 20px;" class="form-check-inline col-lg-auto">
@@ -185,10 +174,12 @@ export default {
 
 
             },//drop down lists found from createcomponent, unchanged of course
-              //static data for dropdown lists
+               //static data for dropdown lists
                 task_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
-                phase_numbers:['1','2','3','4','5','6','7','8'],
-                step_numbers:['1','2','3','4','5','6','7','8','9','10'],
+                phase_numbers:['1. Plans and Permitting','2. Site Work and Foundation','3. Framing and External Finishes','4. Utility Rough-Ins','5. Insulation, Drywall & Paint',
+                '6. Interior Finishes and Flooring','7. Landscaping and Grounds Work','8. Final Inspection and Walkthrough'],
+                step_numbers:['1. General Conditions','2. Apply for Permits','3. Site Work','4. Foundation','5. Framing','6. Roofing','7. Exterior Finishes','8. Rough-in plumbing','9. Rough-in electrical','10. Rough-in HVAC','11. Rough-in communication - phone, cable, computer, alarm',
+                '12. Insulation','13. Drywall','14. Paint and Wallpaper','15. Cabinets','16. Finish Plumbing','17. Finish Electrical','18. Finish HVAC','19. Carpet, Tile and Appliances','20. Grounds Work','21. Landscaping ','22. Inspection','23. Walkthrough'],
                 task_numbers:['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15'],
                 task_percent_completes:['0%','25%','50%','75%','100%']
                 

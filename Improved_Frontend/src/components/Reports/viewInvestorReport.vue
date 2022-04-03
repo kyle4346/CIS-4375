@@ -3,6 +3,23 @@
          
          
         <div class="col-lg-12">
+ <u class="projectReport" >Invested Projects' Report</u>
+          <br>
+          <br>
+          <h2 class="investorReport">
+          Investor Status: {{investors.investor_status}}
+          <br/>
+         Investor Type: {{investors.investor_type}}
+         <br/>
+          Investor Business Name: {{investors.investor_detail}}
+         <br/> 
+         First Name: {{investors.investor_fname}} 
+         <br/>  
+         Last Name: {{investors.investor_lname}} 
+         <br/>
+          Investor Email: {{investors.investor_email}}
+         </h2>
+
           <router-link class="btn viewInvestor"  to="/viewInvestor">View Investors</router-link>
             <table class="styled-table">
                 
@@ -10,9 +27,6 @@
                     <tr>
                         
                         <th>Project Number</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Email</th>
                         <th>Investor Assigned Date</th>
                         <th>Investment Amount</th>
                         <th>Investor Paid</th>
@@ -26,9 +40,6 @@
                     <tr v-for="investor_assigned in investor_assigneds" :key="investor_assigned.investor_email">
                         
                         <td>{{ investor_assigned.project_number }}</td>
-                        <td>{{ investors.investor_fname}}</td>
-                        <td>{{ investors.investor_lname}}</td>
-                        <td>{{ investors.investor_email}}</td>
                         <td>{{ investor_assigned.investor_assigned_date }}</td>
                         <td>{{ investor_assigned.investor_assigned_cost }}</td>
                         <td>{{ investor_assigned.investor_assigned_paid}}</td>
@@ -107,7 +118,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -134,6 +145,30 @@
         margin-right: 10px;
 }
 
+
+.projectReport{
+margin-left:450px;
+  margin-top:-40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  
+  font-size: 35px;
+
+
+}
+
+.investorReport{
+  margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: left;
+  font-size: 25px;
+
+}
+
+ 
+
 .viewInvestor{
   font-size:20px; 
     border: 2px solid black;
@@ -141,7 +176,7 @@
     background-color: #267bfa;
     font-weight:bold; 
     margin-left:1129px; 
-    margin-top: -50px;
+    margin-top: -110px;
 }
 
 

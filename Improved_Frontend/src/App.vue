@@ -118,10 +118,11 @@
      <li class="dropdown-item">
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createInvestorAssigned">Create Investor Assignment</router-link>
     </li>
+   <!-- 
      <li class="dropdown-item">
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createSubcontractorAssigned">Create Subcontractor Assignment</router-link>
     </li>
-
+-->
      <li class="dropdown-item">
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/createEmployeeAssigned">Create Employee Assignment</router-link>
     </li>
@@ -132,11 +133,11 @@
     <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewInvestorAssigned">View Assigned Investors</router-link>
     </li>
-
+<!--
     <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewSubcontractorAssigned">View Assigned Subcontractors</router-link>
     </li>
-
+-->
      <li class="dropdown-item" >
       <router-link class="nav-link" style="font-size:20px; color: black; font-weight:bold;" to="/viewEmployeeAssigned">View Assigned Employees</router-link>
     </li>

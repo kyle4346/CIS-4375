@@ -1,32 +1,48 @@
 <template>
     <div class="row">
-         <h2 style="margin-left:400px">
-          Tasks for Step Number: {{steps.step_number}} 
-          <br>  
-          Step Name: {{steps.step_name}}</h2>
+         
         
           
         <div class="col-lg-12">
+          <u class="taskReport" >Assignment of Tasks Report</u>
+          <br>
+          <br>
+          <h2 class="stepReport">
+         Project #{{steps.project_number}}
+         <br/>
+          Phase Name: #{{steps.phase_number}}
+         <br/> Step Name: #{{steps.step_number}} 
+         <br/>  
+         Step Duration: {{steps.step_duration}} day(s)
+         <br/>
+         Step Cost: {{steps.step_cost}}
+         </h2>
            <router-link class="btn viewSteps" to="/viewStep">View Steps</router-link>
             <br>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>  
-                        <th>Project Number:</th>
-                        <th>Task Name:</th>
-                        <th>task Num:</th>
-                        <th>Task Completed:</th>
+                        <th>Task</th>
+                        <th>Completed</th>
+                        <th>% Finished</th>
+                        <th>Task Duration</th>
+                        <th>Task Start Date</th>
+                        <th>Task End Date</th>
+                        <th>Task Material Aquired</th>
                         
                         
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="task in Tasks" :key="task.task_id">
-                        <td>{{ task.project_number}} </td>
-                        <td>{{ task.task_name}} </td>
-                        <td>{{ task.task_number }}</td>
-                        <td>{{ task.task_completed }}</td>
+                        <td style="position: relative; " >{{ task.task_name}} </td>
+                        <td style="position: relative; " >{{ task.task_completed}} </td>
+                        <td style="position: relative; " >{{ task.task_percent_complete }}</td>
+                        <td style="position: relative; " >{{ task.task_duration}} hour(s)</td>
+                        <td style="position: relative; " >{{ task.task_start_date}}</td>
+                        <td style="position: relative; " >{{ task.task_end_date}}</td>
+                        <td style="position: relative; " >{{ task.task_material_aquired}}</td>
                         
                     </tr>
                 </tbody>
@@ -49,9 +65,7 @@
                 Tasks: [], 
                 steps: {},
                 task: {
-                   task_name: '',
-                   task_number: '',
-                   task_completed: '',
+                   
                    step_number: this.$route.params.id 
                    
                 },
@@ -97,7 +111,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -124,6 +138,27 @@
         margin-right: 10px;
 }
 
+
+.taskReport{
+ margin-left:450px;
+  margin-top:-40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  
+  font-size: 35px;
+
+
+}
+
+.stepReport{
+  margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: left;
+  font-size: 25px;
+}
+
 .viewSteps{
 font-size:20px; 
     border: 2px solid black;
@@ -131,7 +166,7 @@ font-size:20px;
     background-color: #267bfa;
     font-weight:bold; 
     margin-left:1186px; 
-    margin-top: -70px;
+    margin-top: -110px;
     padding: 9px 1px;
 
 }

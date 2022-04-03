@@ -47,7 +47,7 @@ let SubcontractorSchema = new Schema({
     },
    subcontractor_rate: {
         type: String,
-        minLength: 5,
+        minLength: 2,
         max: 25,
         required: true,
         not: null

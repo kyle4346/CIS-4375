@@ -18,7 +18,7 @@
                 </div>
 
                 <div style="margin-left:20px;" class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Phase Number</label>
+                    <label style ="font-size:14pt">Phase</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
                     <select  v-model="step.phase_number" required> 
@@ -26,8 +26,8 @@
                     </select>
                 </div>
 
-                <div style="margin-left:-50px;" class="form-group col-lg-2">
-                     <label style ="font-size:14pt">Step Number</label>
+                <div style="margin-left:100px;" class="form-group col-lg-2">
+                     <label style ="font-size:14pt">Step</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
                     <select  v-model="step.step_number" required> 
@@ -38,17 +38,6 @@
                     
                 </div>
 
-                <div style="margin-left:-70px" class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Name</label>
-                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                     <br>
-                    <select  v-model="step.step_name" required> 
-                     <option v-for="step_name in step_names" v-bind:key="step_name" >{{step_name}}</option>
-                    </select>
-                    <br>
-                    <br>
-                   
-                </div>
 
                 
 
@@ -201,6 +190,7 @@
 
 
 
+
                     <br>
                     <p v-if="errors.length">
                     <b>Please correct the following error(s):</b>
@@ -237,12 +227,12 @@ export default {
 
 
             },//drop down lists found from createcomponent, unchanged of course
-              //static data for dropdown lists
+               //static data for dropdown lists
                 step_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
-                phase_numbers:['1','2','3','4','5','6','7','8'],
-                step_numbers:['1','2','3','4','5','6','7','8','9','10'],
-                step_names:['General Conditions','Apply for Permits','Site Work','Foundation','Framing','Roofing','Exterior Finishes','Rough-in plumbing',' Rough-in electrical','Rough-in HVAC','   Rough-in communication - phone, cable, computer, alarm',
-                'Insulation','Drywall','Paint and Wallpaper','Cabinets','Finish Plumbing','Finish Electrical','Finish HVAC','Carpet, Tile and Appliances',' Grounds Work','Landscaping ','Inspection','Walkthrough'],
+                phase_numbers:['1. Plans and Permitting','2. Site Work and Foundation','3. Framing and External Finishes','4. Utility Rough-Ins','5. Insulation, Drywall & Paint',
+                '6. Interior Finishes and Flooring','7. Landscaping and Grounds Work','8. Final Inspection and Walkthrough'],
+                step_numbers:['1. General Conditions','2. Apply for Permits','3. Site Work','4. Foundation','5. Framing','6. Roofing','7. Exterior Finishes','8. Rough-in plumbing','9. Rough-in electrical','10. Rough-in HVAC','11. Rough-in communication - phone, cable, computer, alarm',
+                '12. Insulation','13. Drywall','14. Paint and Wallpaper','15. Cabinets','16. Finish Plumbing','17. Finish Electrical','18. Finish HVAC','19. Carpet, Tile and Appliances','20. Grounds Work','21. Landscaping ','22. Inspection','23. Walkthrough'],
                 step_percent_completes:['0%','25%','50%','75%','100%']
                 
         }

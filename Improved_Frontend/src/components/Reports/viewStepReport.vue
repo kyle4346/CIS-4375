@@ -1,25 +1,43 @@
 <template>
     <div class="row">
-         <h2 class="reportSteps">Steps for Phase Number: {{phases.phase_number}}, <br/> Phase Name: {{phases.phase_name}}</h2>
-       
+      
         <div class="col-lg-12">
+         <u class="phaseReport">Assignment of Steps Report</u>
+        <br>
+        <br>
+      
+      <h2 class="reportSteps" >Project: #{{phases.project_number}} <br/> Phase: #{{phases.phase_number}} <br/> Phase Duration: {{phases.phase_estimated_duration}} week(s) 
+      <br/> Phase Cost: {{phases.phase_cost}}
+      </h2>
          <router-link class="btn viewPhases" to="/viewPhase">View Phases</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>Step Name:</th>
-                        <th>Step Cost:</th>
-                        <th>Step Completed:</th>
+
+                        <th>Step Name</th>
+                        <th>Step Completed</th>
+                         <th>% Finished</th>
+                        <th>Step Cost</th>
+                        <th>Step Duration</th>
+                        <th>Step Start Date</th>
+                        <th>Step End Date</th>
+                      
                         
                         
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="step in Steps" :key="step.step_id">
-                        <td>{{ step.step_name}} </td>
-                        <td>{{ step.step_cost }}</td>
-                        <td>{{ step.step_completed }}</td>
+                        <td style="position: relative;" >{{ step.step_number}} </td>
+                        <td style="position: relative;" >{{ step.step_completed }}</td>
+                        <td style="position: relative;" >{{ step.step_percent_complete}}</td>               
+                        <td style="position: relative; text-align: left" >{{ step.step_cost }}</td>
+                        <td style="position: relative; " >{{ step.step_duration }} day(s)</td>
+                        <td style="position: relative; " >{{ step.step_start_date }}</td>
+                        <td style="position: relative; " >{{ step.step_end_date }}</td>
+                        
+                        
                         
                     </tr>
                 </tbody>
@@ -47,9 +65,7 @@
                 Steps: [], 
                 phases: {},
                 step: {
-                   step_name: '',
-                   step_cost: '',
-                   step_completed: '',
+                   
                    phase_number: this.$route.params.id 
                    
                 },
@@ -95,9 +111,9 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  text-align: left;
+  
 }
 .styled-table th {
   position: -webkit-sticky;
@@ -122,12 +138,23 @@
         margin-right: 10px;
 }
 
+.phaseReport{
+ margin-left:450px;
+  margin-top:-40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  
+  font-size: 35px;
+
+}
+
 .reportSteps{
-margin-left:0px;
+  margin-left:0px;
   margin-top:0px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding:1px 1px;
-  text-align: center;
+  text-align: left;
+  font-size: 25px;
 
 }
 .viewPhases{
@@ -137,7 +164,7 @@ margin-left:0px;
     background-color: #267bfa;
     font-weight:bold; 
     margin-left:1174px; 
-    margin-top: -70px;
+    margin-top: -110px;
     padding: 9px 1px;
    
 

@@ -273,8 +273,8 @@ export default {
 
             },//drop down lists found from createcomponent, unchanged of course
              //static data for dropdown lists
-                project_estimated_durations:['0-3','4-6','7-9','10-12','13-15','16-18 ','19-21','22-24 ','25 >'],
-                project_actual_durations:['0-3','4-6','7-9','10-12','13-15','16-18 ','19-21','22-24 ','25 >'],
+              project_estimated_durations:['0-3','4-6','7-12','13-24', '25 >'],
+                project_actual_durations:['0-3','4-6','7-12','13-24', '25 >'],
                 project_location_states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 project_location_countries:['United States'],

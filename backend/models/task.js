@@ -34,15 +34,7 @@ let TaskSchema = new Schema({
       unique: false
        
     },
-    task_number: {
-      type: String,
-      minLength:1,
-      maxLength:9,
-      not: null,
-      required: true,
-      unique: true
-        
-    },
+   
     task_name: {
         type: String,
         minLength: 5,
@@ -94,15 +86,7 @@ let TaskSchema = new Schema({
        
 
     },
-    task_material: {
-        type: String,
-        minLength: 0,
-        maxLength: 75,
-        not:null,
-        required: true
-       
 
-    },
     task_material_aquired: {
         type: String,
         minLength:2,

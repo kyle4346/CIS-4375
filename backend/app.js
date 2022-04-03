@@ -295,6 +295,22 @@ app.get('/employee/:id', (req, res, next) => {
   });
 });
 
+// endpoint for retrieving client form information by clientID - Read Operation 2
+app.get('/employee_project/:id', (req, res, next) => {
+  //find data based on the client id for the collection client form information
+  EmployeeModel.findOne({ employee_email: req.params.id}, (error, data) => {
+      if (error) {
+          return next(error)
+      } else if (data === null) {
+          // Sending 404 when not found something is a good practice
+        res.status(404).send('employee Form Information not found');
+      }
+      else {
+        res.json(data)
+      }
+  });
+});
+
 // Updating - editing Subcontractor form information - using PUT by clientID  - Update Operation
 app.put('/employee/:id', (req, res, next) => {
 //Update data in the client form information table based on client id 
@@ -1095,7 +1111,7 @@ app.get('/project_step_report/:id', (req, res, next) => {
 
   StepModel.aggregate([
     { $match : { phase_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,phase_number: 1, step_name: 1, step_cost:1 , step_completed:1} },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,phase_number: 1, step_number: 1, step_cost:1 ,step_percent_complete:1, step_completed:1, step_duration: 1, step_start_date:1 , step_end_date: 1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'phase',
         localField : 'phase_number',
@@ -1119,7 +1135,7 @@ app.get('/project_task_report/:id', (req, res, next) => {
 
   TaskModel.aggregate([
     { $match : { step_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,project_number: 1, step_number: 1, task_name: 1, task_number:1 , task_completed:1} },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,project_number: 1, task_duration:1 , task_start_date:1, task_end_date:1, task_material_aquired:1,  step_number: 1,task_percent_complete: 1, task_name:1 , task_completed:1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'step',
         localField : 'step_number',
@@ -1171,7 +1187,7 @@ app.get('/project_investor_report/:id', (req, res, next) => {
 
   InvestorAssignedModel.aggregate([
     { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 , project_number: 1,investor_assign_firstname:1, investor_assign_lastname:1, investor_assigned_date:1 ,investor_assigned_cost: 1, investor_assigned_paid:1,  } },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 , project_number: 1,investor_assign_firstname:1, investor_assign_lastname:1, investor_assigned_date:1 ,investor_assigned_cost: 1, investor_assigned_paid:1, investor_email:1   } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'project',
         localField : 'project_number',
@@ -1195,9 +1211,9 @@ app.get('/project_investor_report/:id', (req, res, next) => {
 app.get('/subcontractor_step_report/:id', (req, res, next) => {
 
 
-  SubcontractorAssignedModel.aggregate([
+  StepModel.aggregate([
     { $match : { subcontractor_email: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,subcontractor_email:1, project_number: 1, subcontractor_assigned_date:1 ,subcontractor_assigned_cost: 1, subcontractor_assigned_paid:1 } },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,subcontractor_email:1, phase_number:1 ,step_status_type:1, step_number:1, project_number: 1, subcontractor_assigned_date:1 ,subcontractor_fee: 1, subcontractor_paid:1 } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'subcontractor',
         localField : 'subcontractor_email',
@@ -1220,13 +1236,13 @@ app.get('/subcontractor_step_report/:id', (req, res, next) => {
 app.get('/step_subcontractor_report/:id', (req, res, next) => {
 
 
-  SubcontractorAssignedModel.aggregate([
-    { $match : { stepid: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,subid:1,stepid: 1, subcontractor_firstname:1, subcontractor_lastname:1, project_number: 1, subcontractor_assigned_date:1 ,subcontractor_assigned_cost: 1, subcontractor_assigned_paid:1,  } },  //retrieve these fieldnames from the genral information schema
+  SubcontractorModel.aggregate([
+    { $match : { subcontractor_email: (req.params.id) } },  //match client id if so retrieve that data
+    { $project : {_id:0 ,subcontractor_email:1,   subcontractor_type:1 , project_number:1 , subcontractor_fname: 1 ,  subcontractor_lname: 1, subcontractor_email: 1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'step',
-        localField : 'stepid',
-        foreignField : 'stepid',
+        localField : 'subcontractor_email',
+        foreignField : 'subcontractor_email',
         as : 'step',
        
     } },
@@ -1248,7 +1264,7 @@ app.get('/employee_project_report/:id', (req, res, next) => {
 
   EmployeeAssignedModel.aggregate([
     { $match : { employee_email: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 , project_number: 1, employee_assigned_date:1  } },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 , project_number: 1,  employee_email:1, employee_assigned_date:1  } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'employee',
         localField : 'employee_email',

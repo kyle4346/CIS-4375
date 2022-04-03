@@ -1,8 +1,14 @@
 <template>
     <div class="row">
-          <h2  class="reportEmployee" > Project #{{projects.project_number}}:  {{projects.project_name}} <br/>  Project Duration: {{projects.project_estimated_duration}} Months  <br/> Budget: {{projects.project_budget}} </h2>
+
+      
          
         <div class="col-lg-12">
+           <u class="projectReport">Assignment of Employees Report</u>
+      <br>
+      <br>
+          <h2  class="reportEmployee" > Project #{{projects.project_number}}:  {{projects.project_name}} <br/>  Project Duration: {{projects.project_estimated_duration}} Months  <br/> Budget: {{projects.project_budget}} </h2>
+
           <router-link class="btn viewProjects"  to="/viewProject">View Projects</router-link>
             <table class="styled-table">
                 
@@ -10,8 +16,9 @@
                     <tr>
                         <th>Employee First Name</th>
                         <th>Employee Last Name</th>
+                         <th>Employee Email</th>
                         <th>Assigned Date</th>
-                        <th>Project Status</th>
+                        
                         
                         
                        
@@ -21,8 +28,9 @@
                     <tr v-for="employee_assigned in employee_assigneds" :key="employee_assigned.employee_assigned_id">
                         <td>{{ employee_assigned.employee_firstname}}</td>
                         <td>{{ employee_assigned.employee_lastname}}</td>
+                         <td>{{ employee_assigned.employee_email}}</td>
                         <td>{{ employee_assigned.employee_assigned_date}}</td>
-                         <td>{{ projects.project_status_type}}</td>
+                         
                         
                     </tr>
                 </tbody>
@@ -94,7 +102,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -121,12 +129,24 @@
         margin-right: 10px;
 }
 
+.projectReport{
+ margin-left:450px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: center;
+  font-size: 35px;
+
+}
+
+
 .reportEmployee{
  margin-left:0px;
   margin-top:0px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding:1px 1px;
-  text-align: center;
+  text-align:left;
+  font-size: 25px;
 
 }
 
@@ -137,7 +157,7 @@
     background-color: #267bfa;
     font-weight:bold; 
     margin-left:1140px; 
-    margin-top: -50px;
+    margin-top: -110px;
 
 }
 

@@ -133,7 +133,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 190%;
+  height: 115%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -201,7 +201,7 @@
    margin-top: 0px;
    margin-left:-15px; 
    color:white; 
-   background-color:gray; 
+   background-color:rgb(0, 195, 255); 
    padding: 1px 8px;
    font-size:16px
 }

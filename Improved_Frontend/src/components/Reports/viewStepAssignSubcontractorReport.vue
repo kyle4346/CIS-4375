@@ -1,41 +1,45 @@
 <template>
     <div class="row">
-         
-         
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1165px; margin-top: -50px;" to="/viewStep">View Steps</router-link>
+          <u class="subcontractorReport" >Assignment of Subcontractors Report</u>
+          <br>
+          <br>
+          <h2 class="stepReport">
+         Project #{{steps.project_number}}
+         <br/>
+          Phase Name: #{{steps.phase_number}}
+         <br/> Step Name: #{{steps.step_number}} 
+         <br/>  
+         Step Duration: {{steps.step_duration}} day(s)
+         <br/>
+         Step Cost: {{steps.step_cost}}
+         </h2>
+          <router-link class="btn viewSteps"  to="/viewStep">View Steps</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>SUBID</th>
-                        <th>STEPID</th>
-                        <th>Project Number</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
-                        <th>Assigned Date</th>
-                        <th>Step Cost</th>
+                        <th>Subcontractor Type</th>
+                        <th>Subcontractor First Name</th>
+                        <th>Subcontractor Last Name</th>
+                        <th>Subcontractor Email</th>
+                        <th>Subcontractor Fee</th>
+                        <th>Subcontractor Assigned Date</th>
                         <th>Subcontractor Paid</th>
-                        <th>Step Num</th>
-                        <th>Step Name</th>
-                        <th>Step Status</th>
                         
                        
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="subcontractor_assigned in subcontractor_assigneds" :key="subcontractor_assigned.subcontractor_assigned_id">
-                        <td>{{ subcontractor_assigned.subid}}</td>
-                        <td>{{ subcontractor_assigned.stepid}}</td>
-                        <td>{{ subcontractor_assigned.project_number}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_firstname}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_lastname}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_date}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_cost}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
-                        <td>{{ steps.step_number}}</td>
-                        <td>{{ steps.step_name}}</td>
-                        <td>{{ steps.step_status_type}}</td>
+                    <tr v-for="subcontractor in subcontractors" :key="subcontractor.subcontractor_email">
+                        <td>{{ subcontractor.subcontractor_type}}</td>
+                        <td>{{ subcontractor.subcontractor_fname}}</td>
+                        <td>{{ subcontractor.subcontractor_lname}}</td>
+                        <td>{{ subcontractor.subcontractor_email}}</td>
+                        <td>{{ steps.subcontractor_fee}}</td>
+                        <td>{{ steps.subcontractor_assigned_date}}</td>
+                        <td>{{ steps.subcontractor_paid}}</td>
+                        
                         
                     </tr>
                 </tbody>
@@ -59,11 +63,11 @@
         data() {
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
-                subcontractor_assigneds: [], 
+                subcontractors: [], 
                 steps:{},
-                subcontractor_assigned: {
+                subcontractor: {
     
-                   subcontractor_email: this.$route.params.id,
+                   subcontractor_email: this.$route.params.id
                 },
                 
                 
@@ -74,7 +78,7 @@
         created() {
             let apiURL = `http://localhost:27017/step_subcontractor_report/${this.$route.params.id}`;
             axios.get(apiURL).then(res => {
-                this.subcontractor_assigneds = res.data;
+                this.subcontractors = res.data;
             }).catch(error => {
                 console.log(error)
             });
@@ -107,18 +111,66 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
+
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
+}
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
 .btn-success {
         margin-right: 10px;
 }
+.viewSteps{
+font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:1186px; 
+    margin-top: -110px;
+    padding: 9px 1px;
 
+}
+
+
+.subcontractorReport{
+
+margin-left:450px;
+  margin-top:-40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  
+  font-size: 35px;
+
+}
+
+.stepReport{
+ margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: left;
+  font-size: 25px;
+
+}
 
 .styled-table th,
 .styled-table td {

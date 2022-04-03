@@ -17,18 +17,16 @@
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:0%"> 
                 <col   style="width:10%">
                 <thead class="thead-dark">
                     <tr>
-                        <th>Project Num</th>
-                        <th>Phase Num</th>
-                        <th>Step Num</th>
+                        <th>Project Num.</th>
+                        <th>Phase Name</th>
                         <th>Step Name</th>
-                        <th>Step Completed</th>
-                        <th>Step Status</th>
-                        <th>Step Cost</th>
-                        <th>Step Start Date</th>
+                        <th>Completed</th>
+                        <th>Status</th>
+                        <th>Cost</th>
+                        <th>Start Date</th>
                         <th>Actions</th>
                         <th>Reports</th>
                     </tr>
@@ -38,7 +36,6 @@
                         <td style="vertical-align:top">{{ step.project_number }}</td>
                         <td style="vertical-align:top">{{ step.phase_number }}</td>
                         <td style="vertical-align:top">{{ step.step_number }}</td>
-                        <td style="vertical-align:top">{{ step.step_name }}</td>
                         <td style="vertical-align:top">{{ step.step_completed }}</td>
                         <td style="vertical-align:top">{{ step.step_status_type}}</td>
                         <td style="vertical-align:top">{{ step.step_cost }}</td>
@@ -62,7 +59,7 @@
                             <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"   class="btn five">Assigned<br/> Tasks
                             </router-link>
 
-                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.step_number}}"   class="btn six">Assigned<br/> Subcontractors
+                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.subcontractor_email}}"   class="btn six">Assigned<br/> Subcontractors
                             </router-link> 
 
                         </td>
@@ -136,7 +133,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 190%;
+  height: 115%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -203,7 +200,7 @@ border: 2px solid black;
    margin-top: -5px;
    margin-left:-20px; 
    color:white; 
-   background-color:gray; 
+   background-color:rgb(0, 195, 255); 
    padding: 1px 9px;
    font-size:16px
 }

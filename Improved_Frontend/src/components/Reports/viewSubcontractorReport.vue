@@ -3,31 +3,48 @@
          
          
         <div class="col-lg-12">
-          <router-link class="btn viewSubcontractor"  to="/viewSubcontractor">View Subcontractors</router-link>
+
+          <div class="reportName" > <u>Project Jobs Report</u> </div>
           
+          <br>
+
+          <h2 class="stepReport">
+          Subcontractor Status: {{subcontractors.subcontractor_status}}
+         <br/>
+          Subcontractor Title: {{subcontractors.subcontractor_type}}
+         <br/> 
+          Business Name: {{subcontractors.subcontractor_business_name}} 
+         <br/>  
+         First Name: {{subcontractors.subcontractor_fname}} 
+         <br/>
+         Last Name: {{subcontractors.subcontractor_lname}}
+         <br/>
+         Email: {{subcontractors.subcontractor_email}}
+         </h2>
+          <router-link class="btn viewSubcontractor"  to="/viewSubcontractor">View Subcontractors</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
                         <th>Project Number</th>
+                        <th>Phase</th>
+                        <th>Step</th>
                         <th>Assigned Date</th>
                         <th>Step Cost</th>
                         <th>Subcontractor Paid</th>
-                       
+                        <th>Step Status</th>
                         
-                       
                     </tr>
                 </thead>
                 <tbody>
-                    <tr v-for="subcontractor_assigned in subcontractor_assigneds" :key="subcontractor_assigned.subcontractor_assigned_id">
-                        <td>{{ subcontractors.subcontractor_fname}}</td>
-                        <td>{{ subcontractors.subcontractor_lname}}</td>
-                        <td>{{ subcontractor_assigned.project_number}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_date}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_cost}}</td>
-                        <td>{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
+                    <tr v-for="step in steps" :key="step.step_id">
+                        <td>{{ step.project_number}}</td>
+                        <td>{{ step.phase_number}}</td>
+                        <td>{{ step.step_number}}</td>
+                        <td>{{ step.subcontractor_assigned_date}}</td>
+                        <td>{{ step.subcontractor_fee}}</td>
+                        <td>{{ step.subcontractor_paid}}</td>
+                        <td>{{ step.step_status_type}}</td>
                        
                         
                   
@@ -53,9 +70,9 @@
         data() {
             return {
             //retrieving data from the Cfcworker_client_activities schema getting the data 
-                subcontractor_assigneds: [], 
+                steps: [], 
                 subcontractors:{},
-                subcontractor_assigned: {
+                step: {
     
                    subcontractor_email: this.$route.params.id,
                 },
@@ -68,7 +85,7 @@
         created() {
             let apiURL = `http://localhost:27017/subcontractor_step_report/${this.$route.params.id}`;
             axios.get(apiURL).then(res => {
-                this.subcontractor_assigneds = res.data;
+                this.steps = res.data;
             }).catch(error => {
                 console.log(error)
             });
@@ -101,7 +118,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -128,6 +145,27 @@
         margin-right: 10px;
 }
 
+
+
+
+.stepReport{
+  margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: left;
+  font-size: 25px;
+}
+
+.reportName{
+ margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: center;
+  font-size: 35px;
+  ;
+}
 .viewSubcontractor{
     font-size:20px; 
     border: 2px solid black;
@@ -135,7 +173,7 @@
     background-color: #267bfa;
     font-weight:bold; 
     margin-left:1073px; 
-    margin-top: -50px;
+    margin-top: -110px;
 
 }
 

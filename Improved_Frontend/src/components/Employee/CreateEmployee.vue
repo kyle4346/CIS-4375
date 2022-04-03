@@ -10,11 +10,7 @@
                 
                 <div class="form-group row">
                 <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
-                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
-                    <input style="text-align:right;" type="text" class="form-control" id="inputProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="employee.project_number" required>
-                    
-                </div>
+                 
 
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
@@ -64,7 +60,7 @@
                 </div>
 
                 <div style="margin-left:-70px;" class="form-group col-lg-2">
-                    <label style ="font-size:14pt">Status</label>
+                    <label style ="font-size:14pt">Type</label>
                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                    <br>
                     <select  v-model="employee.employee_status_type" required> 
@@ -72,7 +68,7 @@
                     </select> 
                 </div>
 
-                <div style="margin-left:-90px;" class="form-group col-lg-2">
+                <div style="margin-left:-80px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Salary</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input style="text-align: right" type="text" class="form-control" placeholder="$65,000.50"  pattern="[^$\0-9\,\.]{1,15}" v-model="employee.employee_salary" required>  
@@ -196,14 +192,14 @@
                    employee_country: 'United States',
                    employee_status_type: '',
                    employee_title_description: '',
-                   project_number:''
+                  
                    
                 },
                 //static data for dropdown lists
                 employee_states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 employee_countries:['United States'],
-                employee_status_types: ['Active', 'Inactive', 'Unknown'],
+                employee_status_types: ['Employee', 'Contractor', 'In-Active'],
                 employee_title_descriptions:['Owner','Supervisor','Manager','Coordinator','Other'],
             }
         },
@@ -237,7 +233,7 @@
                    employee_country: '',
                    employee_status_type: '',
                    employee_title_description: '',
-                   project_number:''
+                 
                  
 
                   }

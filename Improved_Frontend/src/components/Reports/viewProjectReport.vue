@@ -1,10 +1,22 @@
 <template>
     <div class="row">
-          <h2  class="reportInvestor" > Project #{{projects.project_number}}:  {{projects.project_name}} <br/>  Project Duration: {{projects.project_estimated_duration}} Months  <br/> Budget: {{projects.project_budget}} </h2>
+      
          
         <div class="col-lg-12">
+           <u class="projectReport">Assignment of Investors Report</u>
+      <br>
+      <br>
+          <h2  class="reportInvestor" > Project #{{projects.project_number}}:  {{projects.project_name}} <br/>  Project Duration: {{projects.project_estimated_duration}} Months  <br/> Budget: {{projects.project_budget}} </h2>
           <router-link class="btn viewProjects" to="/viewProject">View Projects</router-link>
             <table class="styled-table">
+
+                <col    style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col    style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+               
                 
                 <thead class="thead-dark">
                     <tr>
@@ -12,9 +24,10 @@
                         
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Investor Assigned Date</th>
+                        <th>Email</th>
                         <th>Investment Amount</th>
                         <th>Investor Paid</th>
+                        <th>Investor Assigned Date</th>
                        
                        
                        
@@ -23,11 +36,12 @@
                 <tbody>
                     <tr v-for="investor_assigned in investor_assigneds" :key="investor_assigned.investor_assigned_id">
                       
-                        <td style="position: relative;" >{{ investor_assigned.investor_assign_firstname }}</td>
-                        <td style="position: relative;" >{{ investor_assigned.investor_assign_lastname }}</td>
-                        <td style="position: relative;" >{{ investor_assigned.investor_assigned_date }}</td>
-                        <td style="position: relative;" >{{ investor_assigned.investor_assigned_cost }}</td>
-                        <td style="position: relative;" >{{ investor_assigned.investor_assigned_paid}}</td>
+                        <td style="position: relative; text-align:left" >{{ investor_assigned.investor_assign_firstname }}</td>
+                        <td style="position: relative; text-align:left" >{{ investor_assigned.investor_assign_lastname }}</td>
+                        <td style="position: relative; text-align:left" >{{ investor_assigned.investor_email }}</td>
+                        <td style="position: relative; text-align:left" >{{ investor_assigned.investor_assigned_cost }}</td>
+                        <td style="position: relative; text-align:left " >{{ investor_assigned.investor_assigned_paid}}</td>
+                        <td style="position: relative; text-align:left" >{{ investor_assigned.investor_assigned_date }}</td>
                   
                     </tr>
                 </tbody>
@@ -99,9 +113,8 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-  text-align: left;
 }
 .styled-table th {
   position: -webkit-sticky;
@@ -126,13 +139,23 @@
         margin-right: 10px;
 }
 
+.projectReport{
+ margin-left:450px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: center;
+  font-size: 35px;
+
+}
+
 .reportInvestor{
   margin-left:0px;
   margin-top:0px;
   font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
   padding:1px 1px;
-  text-align: center;
-
+  text-align: left;
+  font-size: 25px;
 }
 
 .viewProjects{
@@ -142,7 +165,7 @@
     background-color: #267bfa;
     font-weight:bold; 
     margin-left:1140px; 
-    margin-top: -50px;
+    margin-top: -110px;
 
 }
 

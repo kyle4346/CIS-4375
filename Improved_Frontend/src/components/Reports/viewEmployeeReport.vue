@@ -3,14 +3,27 @@
          
          
         <div class="col-lg-12">
+          <u class="employeeTitle" >Administered  Projects' Report</u>
+          <br>
+          <br>
+          <h2 class="employeeReport">
+          Employee Status: {{employees.employee_status_type}}
+         <br/>
+          Employee Title: {{employees.employee_title_description}}
+         <br/> 
+         First Name: {{employees.employee_first_name}} 
+         <br/>  
+         Last Name: {{employees.employee_last_name}} 
+         <br/>
+          Employee Email: {{employees.employee_email}}
+         </h2>
           <router-link class="btn viewEmployee"  to="/viewEmployee">View Employees</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Number</th>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                       
                         <th>Assigned Date</th>
                         
                         
@@ -20,8 +33,7 @@
                 <tbody>
                     <tr v-for="employee_assigned in employee_assigneds" :key="employee_assigned.employee_assigned_id">
                         <td>{{ employee_assigned.project_number}}</td>
-                        <td>{{ employees.employee_firstname}}</td>
-                        <td>{{ employees.employee_lastname}}</td>
+                        
                         <td>{{ employee_assigned.employee_assigned_date}}</td>
                         
                         
@@ -68,7 +80,7 @@
             });
     
         // this is using created hook 
-           let apiURL1 = `http://localhost:27017/employee_num/${this.$route.params.id}`;
+           let apiURL1 = `http://localhost:27017/employee_project/${this.$route.params.id}`;
             axios.get(apiURL1).then(res => {
                 this.employees = res.data;
             }).catch(error => {
@@ -95,7 +107,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 10%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -122,6 +134,25 @@
         margin-right: 10px;
 }
 
+.employeeTitle{
+  margin-left:450px;
+  margin-top:-40px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  font-size: 35px;
+
+}
+
+.employeeReport{
+  margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: left;
+  font-size: 25px;
+
+}
+
 .viewEmployee{
     font-size:20px; 
     border: 2px solid black;
@@ -129,7 +160,7 @@
     background-color: #267bfa;
     font-weight:bold; 
     margin-left:1115px; 
-    margin-top: -50px;
+    margin-top: -110px;
 
 }
 

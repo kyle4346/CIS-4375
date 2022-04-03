@@ -50,8 +50,7 @@
                             <button  @click.prevent="deleteSubcontractor(subcontractor.subcontractor_id)"  class="btn two">Delete</button>
                         
 
-                            <router-link :to="{name: 'createSubcontractorAssigned', params: { id: subcontractor.subcontractor_email}}"   class="btn three">Subcontractor<br /> Assigned
-                            </router-link>
+                            
                         
                         </td>
 

@@ -8,7 +8,7 @@
              <strong style ="font-size:150%">General Information</strong>
             <form @submit.prevent="handleUpdateForm">
                 
-              <div class="form-group row">
+               <div class="form-group row">
             
                 <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
 
@@ -77,9 +77,9 @@
 
                  <!--Work on this below -->
                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt; text-align:left;" for="inputSRate">Pay Rate</label>
+                    <label style ="font-size:14pt; text-align:left;" for="inputSRate">Pay Rate (/hr)</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  style="text-align:left" type="text" class="form-control" id="inputSRate" placeholder="$100/hour" pattern="[$\0-9\hr]{5,25}" v-model="subcontractor.subcontractor_rate" required>
+                    <input  style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100" pattern="[^$\0-9\]{2,25}" v-model="subcontractor.subcontractor_rate" required>
                     
                 </div>
 
@@ -150,7 +150,6 @@
 
                 </div>
 
-               
 
                     <br>
                     <p v-if="errors.length">

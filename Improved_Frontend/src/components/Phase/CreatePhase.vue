@@ -18,7 +18,7 @@
 
                 <div style="margin-left:10px" class="form-group col-lg-2">
 
-                    <label style ="font-size:14pt">Phase Number</label>
+                    <label style ="font-size:14pt">Phase</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
                     <select  style="font-size:20px"  v-model="phase.phase_number" required> 
@@ -28,18 +28,9 @@
                 </div>
 
 
-                 <div style="margin-left:-60px" class="form-group col-lg-auto">
+                
 
-                    <label style ="font-size:14pt">Name (In-Order)</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <br>
-                    <select style="font-size:20px"  v-model="phase.phase_name" required> 
-                     <option  v-for="phase_name in phase_names" v-bind:key="phase_name">{{phase_name}}</option>
-                    </select>
-                    
-                </div>
-
-                <div style="margin-left:0px" class="form-group col-lg-2">
+                <div style="margin-left:170px" class="form-group col-lg-2">
                     <label style ="font-size:14pt" for="inputPhaseNotes">Comments</label>
                     <textarea type="text" class="form-control" placeholder="Additional Texts" id="inputPhaseNotes" minlength="0" maxlength="35"   rows="1" v-model="phase.phase_description" ></textarea>
                     <br>
@@ -197,11 +188,11 @@
                 },
                 
                 //static data for dropdown lists
-                phase_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
-                phase_numbers:['1','2','3','4','5','6','7','8'],
+                phase_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started','Skipped'],
+                phase_numbers:['1. Plans and Permitting','2. Site Work and Foundation','3. Framing and External Finishes','4. Utility Rough-Ins','5. Insulation, Drywall & Paint',
+                '6. Interior Finishes and Flooring','7. Landscaping and Grounds Work','8. Final Inspection and Walkthrough'],
                 phase_percent_completes:['0%','25%','50%','75%','100%'],
-                phase_names:['Plans and Permitting','Site Work and Foundation','Framing and External Finishes','Utility Rough-Ins',
-                'Insulation, Drywall & Paint','Interior Finishes and Flooring','Landscaping and Grounds Work','Final Inspection and Walkthrough',]
+               
             }
         },
         methods: {

@@ -20,20 +20,13 @@ let PhaseSchema = new Schema({
     phase_number: {
       type: String,
       minLength:1,
+      minLength:50,
       not: null,
       required: true,
       unique: false
         
     },
      
-    phase_name: {
-        type: String,
-        minLength: 5,
-        maxLength: 75,
-        not: null,
-        required: true
-        
-    },
     
     phase_description: {
         type: String,

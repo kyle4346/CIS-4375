@@ -24,8 +24,8 @@
                 </div>
 
                  <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputShortNotes">Comments</label>
-                    <textarea type="text" class="form-control" placeholder="Additional Notes" id="inputShortNotes" minlength="0" maxlength="35"   rows="1" v-model="investor.investor_detail" ></textarea>
+                    <label style ="font-size:14pt" for="inputShortNotes">Business Name</label>
+                    <textarea type="text" class="form-control" placeholder="Business Information" id="inputShortNotes" minlength="0" maxlength="35"   rows="1" v-model="investor.investor_detail" ></textarea>
                     <br>
                 </div>
 
@@ -186,8 +186,8 @@
                 investor_states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 countries:['United States'],
-                investor_statuses: ['Pending', 'Processing', 'Complete'],
-                investor_types:['Bank','Entrepreneur','Worker','Family/Friend','Other'],
+                investor_statuses: ['Active', 'In-Active'],
+                investor_types:['Bank','Organization','Individual','Other'],
             }
         },
         methods: {
