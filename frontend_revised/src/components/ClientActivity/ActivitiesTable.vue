@@ -8,8 +8,6 @@
         <tr>
           <th>ID</th>
           <th>Category</th>
-          <th>Contractor</th>
-          <th>Phase</th>
           <th>Actions</th>
         </tr>
       </thead>
@@ -17,9 +15,8 @@
         
         <tr v-for="user_alias in User" v-bind:key="user_alias._id">
           <td> {{user_alias.id}}</td>
-          <td> {{user_alias.Category}}</td>
-          <td>{{user_alias.Contractor}}</td>
-          <td>{{user_alias.Phase}}</td>
+          <td> {{user_alias.ECG}}</td>
+
 
           <td><img alt="trash" class="ic" src="../../assets/trash.jpg">
           <img alt="Add" class="ic2" src="../../assets/Add.png">
@@ -45,7 +42,7 @@ export default {
     }
   },
   created() {
-    axios.get('http://localhost:3000/activity')
+    axios.get('https://data.mongodb-api.com/app/data-nhwaq/endpoint/getstuff')
     .then((resp) => {
       console.log(resp.data);
       this.User = resp.data;

@@ -48,6 +48,10 @@
 
   <div class="container">
     
+  <div id = "image">
+    <img src="./assets/Add.png" width="50" height="50">
+  </div>
+
 
 <a class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold;" href="/" role="button">Dashboard</a>
 
