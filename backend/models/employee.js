@@ -106,6 +106,12 @@ let EmployeeSchema = new Schema({
         not:null
 
       },
+      project_number: {
+        type: String,
+        minLength:1,
+        maxLength:5,
+        
+      },
      
 
    

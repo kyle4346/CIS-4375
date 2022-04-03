@@ -14,8 +14,8 @@
                 <col   style="width:1%"> 
                 <col   style="width:1%"> 
                 <col   style="width:0%"> 
-                <col   style="width:1%">
-                <col   style="width:2%">
+                <col   style="width:10%">
+                <col   style="width:5%">
                
                 <thead class="thead-dark">
                     <tr>
@@ -43,7 +43,7 @@
                         <td style="vertical-align:top">{{ subcontractor.subcontractor_type }}</td>
                         <td>
                             
-                            <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" class="btn one">Edit
+                            <router-link :to="{name: 'editSubcontractor', params: { id: subcontractor.subcontractor_id}}" class="btn one"> View / Edit
                             </router-link>
 
                                 
@@ -57,7 +57,7 @@
 
                         <td>
                             
-                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subid}}"  class="btn four">Assigned<br /> Steps
+                         <router-link :to="{name: 'subcontractor_step_report', params: { id:subcontractor.subcontractor_email}}"  class="btn four">Assigned<br /> Steps
                             </router-link>
                         </td>
 
@@ -130,7 +130,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 110%;
+  height: 150%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -172,11 +172,11 @@ margin-top: -40px;
 
 .one {
    border: 2px solid black;
-   margin-top: -50px;
-   margin-left:-30px; 
+   margin-top: -75px;
+   margin-left:-15px; 
    color:white; 
    background-color:green; 
-   padding: 1px 3px;
+   padding: 1px 14px;
    font-size:16px
     
     
@@ -184,11 +184,11 @@ margin-top: -40px;
 
 .two {
    border: 2px solid black;
-   margin-top: -50px;
-   margin-left:10px; 
+   margin-top: -35px;
+   margin-left:-15px; 
    color:white; 
    background-color:red; 
-   padding: 1px 8px;
+   padding: 1px 29px;
    font-size:16px
    
     
@@ -196,8 +196,8 @@ margin-top: -40px;
 
 .three{
    border: 2px solid black;
-   margin-top: -15px;
-   margin-left:-30px; 
+   margin-top: 5px;
+   margin-left:-15px; 
    color:white; 
    background-color:gray; 
    padding: 1px 2px;
@@ -208,11 +208,11 @@ margin-top: -40px;
 
 .four{
    border: 2px solid black;
-   margin-top: -50px;
-   margin-left:-5px; 
+   margin-top: -75px;
+   margin-left:-15px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 19px 3px;
+   padding: 42px 9px;
    font-size:16px
    
 }

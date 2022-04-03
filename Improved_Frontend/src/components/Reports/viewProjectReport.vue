@@ -1,38 +1,33 @@
 <template>
     <div class="row">
-         
+          <h2  class="reportInvestor" > Project #{{projects.project_number}}:  {{projects.project_name}} <br/>  Project Duration: {{projects.project_estimated_duration}} Months  <br/> Budget: {{projects.project_budget}} </h2>
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1130px; margin-top: -50px;" to="/viewProject">View Projects</router-link>
+          <router-link class="btn viewProjects" to="/viewProject">View Projects</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>ISID</th>
-                        <th>PSID</th>
+                      
+                        
                         <th>First Name</th>
                         <th>Last Name</th>
-                        <th>Project Number</th>
                         <th>Investor Assigned Date</th>
                         <th>Investment Amount</th>
                         <th>Investor Paid</th>
-                        <th>Project Name</th>
-                        <th>Project Information</th>
+                       
+                       
                        
                     </tr>
                 </thead>
                 <tbody>
                     <tr v-for="investor_assigned in investor_assigneds" :key="investor_assigned.investor_assigned_id">
-                        <td>{{ investor_assigned.isid }}</td>
-                        <td>{{ investor_assigned.psid }}</td>
-                        <td>{{ investor_assigned.investor_firstname }}</td>
-                        <td>{{ investor_assigned.investor_lastname }}</td>
-                        <td>{{ investor_assigned.project_number }}</td>
-                        <td>{{ investor_assigned.investor_assigned_date }}</td>
-                        <td>{{ investor_assigned.investor_assigned_cost }}</td>
-                        <td>{{ investor_assigned.investor_assigned_paid}}</td>
-                        <td>{{ projects.project_name}}</td>
-                        <td>{{ projects.project_information}}</td>
+                      
+                        <td style="position: relative;" >{{ investor_assigned.investor_assign_firstname }}</td>
+                        <td style="position: relative;" >{{ investor_assigned.investor_assign_lastname }}</td>
+                        <td style="position: relative;" >{{ investor_assigned.investor_assigned_date }}</td>
+                        <td style="position: relative;" >{{ investor_assigned.investor_assigned_cost }}</td>
+                        <td style="position: relative;" >{{ investor_assigned.investor_assigned_paid}}</td>
                   
                     </tr>
                 </tbody>
@@ -60,7 +55,7 @@
                 projects:{},
                 investor_assigned: {
     
-                   psid: this.$route.params.id,
+                   project_number: this.$route.params.id,
                 },
                 
                 
@@ -108,12 +103,47 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
 }
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
+}
 .btn-success {
         margin-right: 10px;
+}
+
+.reportInvestor{
+  margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: center;
+
+}
+
+.viewProjects{
+    font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:1140px; 
+    margin-top: -50px;
+
 }
 
 

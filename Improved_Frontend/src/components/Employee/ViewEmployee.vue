@@ -38,7 +38,7 @@
                         <td style="vertical-align:top">{{ employee.employee_title_description}}</td>
                         <td style="vertical-align:top">{{ employee.employee_status_type}}</td>
                         <td style="position:sticky">
-                            <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}"  class="btn one">Edit
+                            <router-link :to="{name: 'editEmployee', params: { id: employee.employee_id}}"  class="btn one">View / Edit
 
                             </router-link>
 
@@ -127,7 +127,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 115%;
+  height: 150%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -169,11 +169,11 @@ margin-top: -40px;
 
 .one {
    border: 2px solid black;
-   margin-top: -19px;
+   margin-top: -40px;
    margin-left:-20px; 
    color:white; 
    background-color:green; 
-   padding: 1px 3px;
+   padding: 1px 5px;
    font-size:16px
     
     
@@ -181,11 +181,11 @@ margin-top: -40px;
 
 .two {
    border: 2px solid black;
-   margin-top: -43px;
-   margin-left:20px; 
+   margin-top: -25px;
+   margin-left:-20px; 
    color:white; 
    background-color:red; 
-   padding: 1px 7px;
+   padding: 1px 20px;
    font-size:16px
    
     
@@ -193,11 +193,11 @@ margin-top: -40px;
 
 .three{
    border: 2px solid black;
-   margin-top: -55px;
+   margin-top: -35px;
    margin-left:-20px; 
    color:white; 
    background-color:gray; 
-   padding: 1px 15px;
+   padding: 1px 8px;
    font-size:16px
    
     
@@ -205,11 +205,11 @@ margin-top: -40px;
 
 .four{
    border: 2px solid black;
-   margin-top: -55px;
-   margin-left:-2px; 
+   margin-top: -75px;
+   margin-left:-9px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 20px 3px;
+   padding: 39px 7px;
    font-size:16px
    
 }

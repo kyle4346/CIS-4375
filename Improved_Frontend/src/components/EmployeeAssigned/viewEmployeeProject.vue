@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-12">
 
-        <strong style="margin-left:230px; font-size: 20pt; color:Black; "  >Search Assigned Employee:</strong>
+        <strong style="margin-left:350px; font-size: 20pt; color:Black; "  >Search Assigned Employee:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Last Name" />
         <p><router-link class="btn createEmployeeAssign"  to="/createEmployeeAssigned">Create Employee Assignment</router-link></p>
          

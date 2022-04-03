@@ -1,19 +1,17 @@
 <template>
     <div class="row">
-         
+          <h2  class="reportEmployee" > Project #{{projects.project_number}}:  {{projects.project_name}} <br/>  Project Duration: {{projects.project_estimated_duration}} Months  <br/> Budget: {{projects.project_budget}} </h2>
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1140px; margin-top: -50px;" to="/viewProject">View Projects</router-link>
+          <router-link class="btn viewProjects"  to="/viewProject">View Projects</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>EMPID</th>
-                        <th>PSID</th>
-                        <th>Project Number</th>
-                        <th>Project Name</th>
-                        <th>Project Status</th>
+                        <th>Employee First Name</th>
+                        <th>Employee Last Name</th>
                         <th>Assigned Date</th>
+                        <th>Project Status</th>
                         
                         
                        
@@ -21,13 +19,10 @@
                 </thead>
                 <tbody>
                     <tr v-for="employee_assigned in employee_assigneds" :key="employee_assigned.employee_assigned_id">
-                        <td>{{ employee_assigned.empid}}</td>
-                        <td>{{ employee_assigned.psid}}</td>
-                        <td>{{ employee_assigned.project_number}}</td>
-                        <td>{{ projects.project_name}}</td>
-                        <td>{{ projects.project_status_type}}</td>
+                        <td>{{ employee_assigned.employee_firstname}}</td>
+                        <td>{{ employee_assigned.employee_lastname}}</td>
                         <td>{{ employee_assigned.employee_assigned_date}}</td>
-                        
+                         <td>{{ projects.project_status_type}}</td>
                         
                     </tr>
                 </tbody>
@@ -55,7 +50,7 @@
                 projects:{},
                 employee_assigned: {
     
-                   psid: this.$route.params.id,
+                   project_number: this.$route.params.id,
                 },
                 
                 
@@ -64,7 +59,7 @@
 
         // this is using created hook 
         created() {
-            let apiURL = `http://localhost:27017/employee_project_report/${this.$route.params.id}`;
+            let apiURL = `http://localhost:27017/project_employee_report/${this.$route.params.id}`;
             axios.get(apiURL).then(res => {
                 this.employee_assigneds = res.data;
             }).catch(error => {
@@ -103,14 +98,48 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
+}
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
 .btn-success {
         margin-right: 10px;
 }
 
+.reportEmployee{
+ margin-left:0px;
+  margin-top:0px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  padding:1px 1px;
+  text-align: center;
+
+}
+
+.viewProjects{
+    font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:1140px; 
+    margin-top: -50px;
+
+}
 
 .styled-table th,
 .styled-table td {

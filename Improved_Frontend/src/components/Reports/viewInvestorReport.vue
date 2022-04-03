@@ -3,7 +3,7 @@
          
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1130px; margin-top: -50px;" to="/viewInvestor">View Investors</router-link>
+          <router-link class="btn viewInvestor"  to="/viewInvestor">View Investors</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
@@ -111,12 +111,37 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
 }
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
+}
 .btn-success {
         margin-right: 10px;
+}
+
+.viewInvestor{
+  font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:1129px; 
+    margin-top: -50px;
 }
 
 

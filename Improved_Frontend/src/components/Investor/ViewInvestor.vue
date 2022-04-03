@@ -44,7 +44,7 @@
                         <td style="vertical-align:top">{{ investor.investor_status}}</td>
                         <td style="vertical-align:top">{{ investor.investor_type }}</td>
                         <td>
-                            <router-link :to="{name: 'editInvestor', params: { id: investor.investor_iD}}" class="btn one">Edit
+                            <router-link :to="{name: 'editInvestor', params: { id: investor.investor_iD}}" class="btn one">View / Edit
                             </router-link>
 
 
@@ -131,7 +131,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 130%;
+  height: 190%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -172,8 +172,8 @@ margin-top: -40px;
 
 .one {
    border: 2px solid black;
-   margin-top: -50px;
-   margin-left:-20px; 
+   margin-top: -70px;
+   margin-left:-15px; 
    color:white; 
    background-color:green; 
    padding: 1px 3px;
@@ -184,11 +184,11 @@ margin-top: -40px;
 
 .two {
    border: 2px solid black;
-   margin-top: -50px;
-   margin-left:20px; 
+   margin-top: -30px;
+   margin-left:-15px; 
    color:white; 
    background-color:red; 
-   padding: 1px 3px;
+   padding: 1px 18px;
    font-size:16px
    
     
@@ -196,11 +196,11 @@ margin-top: -40px;
 
 .three{
    border: 2px solid black;
-   margin-top: -15px;
-   margin-left:-20px; 
+   margin-top: 10px;
+   margin-left:-15px; 
    color:white; 
    background-color:rgb(255, 6, 255); 
-   padding: 1px 18px;
+   padding: 1px 12px;
    font-size:16px
    
     
@@ -208,11 +208,11 @@ margin-top: -40px;
 
 .four{
    border: 2px solid black;
-   margin-top: -50px;
-   margin-left:0px; 
+   margin-top: -70px;
+   margin-left:-5px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 7px 2px;
+   padding: 41px 5px;
    font-size:16px
    
     

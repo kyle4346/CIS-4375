@@ -116,9 +116,24 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
+}
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
 .btn-success {
         margin-right: 10px;

@@ -40,7 +40,7 @@ let TaskSchema = new Schema({
       maxLength:9,
       not: null,
       required: true,
-      unique: false
+      unique: true
         
     },
     task_name: {

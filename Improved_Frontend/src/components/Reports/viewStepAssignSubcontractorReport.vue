@@ -63,7 +63,7 @@
                 steps:{},
                 subcontractor_assigned: {
     
-                   stepid: this.$route.params.id,
+                   subcontractor_email: this.$route.params.id,
                 },
                 
                 

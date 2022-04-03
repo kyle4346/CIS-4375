@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-lg-12">
 
-        <strong style="margin-left:320px; font-size: 20pt; color:Black; "  >Search Subcontractors Assigned:</strong>
+        <strong style="margin-left:240px; font-size: 20pt; color:Black; "  >Search Subcontractors Assigned:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: SUBID or STEPID or Subcontractor Paid " />
          <p><router-link class="btn createSubcontractorAssign"  to="/createSubcontractorAssigned">Create Subcontractor Assignment</router-link></p>
           
@@ -10,8 +10,6 @@
                 <col   style="width:1%"> 
                 <col   style="width:1%"> 
                 <col   style="width:12%"> 
-                <col   style="width:16%"> 
-                <col   style="width:14%"> 
                 <col   style="width:0%"> 
                 <col   style="width:5%"> 
                  
@@ -19,8 +17,6 @@
                    
         
                     <tr>
-                        <th>SUBID</th>
-                        <th>STEPID</th>
                         <th>Project Number</th>
                         <th>Subcontractor Assigned Date</th>
                         <th>Subcontractor Cost</th>
@@ -30,18 +26,16 @@
                 </thead>
                 <tbody>
                     <tr v-for="subcontractor_assigned in filteredSubcontractorsAssigned" :key="subcontractor_assigned.subcontractor_assigned_id">
-                        <td style="vertical-align:top">{{ subcontractor_assigned.subid }}</td>
-                        <td style="vertical-align:top">{{ subcontractor_assigned.stepid }}</td>
                         <td style="vertical-align:top">{{ subcontractor_assigned.project_number }}</td>
                         <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_date }}</td>
                         <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_cost }}</td>
                         <td style="vertical-align:top">{{ subcontractor_assigned.subcontractor_assigned_paid}}</td>
                         <td>
-                            <router-link :to="{name: 'editSubcontractorAssigned', params: { id: subcontractor_assigned.subcontractor_assigned_id}}" style="text-align: center; margin-top:0px; padding: 2px 12px; font-size:16px" class="btn one">Edit
+                            <router-link :to="{name: 'editSubcontractorAssigned', params: { id: subcontractor_assigned.subcontractor_assigned_id}}"  class="btn one">View / Edit
                             </router-link>
                             <br>
                             <br>
-                            <button @click.prevent="deleteSubcontractorAssigned(subcontractor_assigned.subcontractor_assigned_id)" style="text-align: center; margin-top:-30px; padding: 2px 3px; font-size:16px" class="btn two">Delete</button>
+                            <button @click.prevent="deleteSubcontractorAssigned(subcontractor_assigned.subcontractor_assigned_id)"  class="btn two">Delete</button>
 
                             
                             
@@ -79,9 +73,7 @@
 
                 return this.subcontractor_assigneds.filter((subcontractor_assigned) =>{
 
-                    return subcontractor_assigned.subid.match(this.search) ||
-                           subcontractor_assigned.stepid.match(this.search) ||
-                           subcontractor_assigned.project_number.match(this.search) ||
+                    return subcontractor_assigned.project_number.match(this.search) ||
                            subcontractor_assigned.subcontractor_assigned_paid.toLowerCase().match(this.search.toLowerCase()) 
                     
                 })
@@ -114,7 +106,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 1%;
+  height: 90%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
@@ -150,11 +142,31 @@ font-size:20px;
     color: White; 
     background-color: #267bfa;
     font-weight:bold; 
-    margin-left:1020px; 
+    margin-left:950px; 
     margin-top: -40px;
 
 }
 
+.one{
+border: 2px solid black;
+   margin-top: -20px;
+   margin-left:-18px; 
+   color:white; 
+   background-color:green; 
+   padding: 1px 3px;
+   font-size:16px
+}
+
+.two{
+border: 2px solid black;
+   margin-top: -30px;
+   margin-left:-18px; 
+   color:white; 
+   background-color:red; 
+   padding: 1px 18px;
+   font-size:16px
+
+}
 
 
 .styled-table th,

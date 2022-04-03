@@ -44,7 +44,7 @@
                         <td style="vertical-align:top">{{ step.step_cost }}</td>
                         <td style="vertical-align:top">{{ step.step_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editStep', params: { id: step.step_id}}"  class="btn one">Edit
+                            <router-link :to="{name: 'editStep', params: { id: step.step_id}}"  class="btn one">View / Edit
                             </router-link>
 
                         <button @click.prevent="deleteStep(step.step_id)" class="btn two">Delete</button>
@@ -62,7 +62,7 @@
                             <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"   class="btn five">Assigned<br/> Tasks
                             </router-link>
 
-                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.stepid}}"   class="btn six">Assigned<br/> Subcontractors
+                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.step_number}}"   class="btn six">Assigned<br/> Subcontractors
                             </router-link> 
 
                         </td>
@@ -136,13 +136,28 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 97%;
+  height: 190%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
+}
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
 
 .btn{
@@ -165,59 +180,59 @@ font-size:20px;
 
 .one{
 border: 2px solid black;
-   margin-top: -55px;
+   margin-top: -75px;
    margin-left:-20px; 
    color:white; 
    background-color:green; 
-   padding: 1px 3px;
+   padding: 1px 4px;
    font-size:16px
 }
 
 .two{
 border: 2px solid black;
-   margin-top: -55px;
-   margin-left:25px; 
+   margin-top: -40px;
+   margin-left:-20px; 
    color:white; 
    background-color:red; 
-   padding: 1px 2px;
+   padding: 1px 19px;
    font-size:16px
 }
 
 .three{
  border: 2px solid black;
-   margin-top: -15px;
+   margin-top: -5px;
    margin-left:-20px; 
    color:white; 
    background-color:gray; 
-   padding: 1px 14px;
+   padding: 1px 9px;
    font-size:16px
 }
 .four{
 border: 2px solid black;
-   margin-top: 21px;
+   margin-top: 30px;
    margin-left:-20px; 
    color:white; 
    background-color:rgb(255, 6, 255); 
-   padding: 1px 7px;
+   padding: 1px 2px;
    font-size:16px
 }
 .five{
    border: 2px solid black;
-   margin-top: -55px;
+   margin-top: -75px;
    margin-left:-6px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 0px 23px;
+   padding: 7px 25px;
    font-size:16px
 
 }
 .six{
      border: 2px solid black;
-   margin-top: 0px;
+   margin-top: -5px;
    margin-left:-6px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 0px 2px;
+   padding: 7px 4px;
    font-size:16px
 }
 

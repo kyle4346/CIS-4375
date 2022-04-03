@@ -6,8 +6,14 @@
         </div>
            
             <form @submit.prevent="handleUpdateForm">
-                 <div class="form-group row">
+                  <div class="form-group row">
                 <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
+                 <div class="form-group col-lg-2">
+                    <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Project Number</label>
+                    <input style="text-align:right;" type="text" class="form-control" id="inputProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="employee.project_number" required>
+                    
+                </div>
+
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>

@@ -41,7 +41,7 @@
                         <td style="vertical-align:top">{{ phase.phase_cost }}</td>
                         <td style="vertical-align:top">{{ phase.phase_start_date }}</td>
                         <td>
-                            <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}"  class="btn one">Edit
+                            <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}"  class="btn one">View / Edit
                             </router-link>
                            
 
@@ -133,13 +133,28 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 150%;
+  height: 190%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
+}
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
 .btn{
     position: -webkit-absolute;
@@ -161,8 +176,8 @@
 
 .one{
    border: 2px solid black;
-   margin-top: -50px;
-   margin-left:-20px; 
+   margin-top: -70px;
+   margin-left:-15px; 
    color:white; 
    background-color:green; 
    padding: 1px 3px;
@@ -172,32 +187,32 @@
 
 .two{
    border: 2px solid black;
-   margin-top: -50px;
-   margin-left:25px; 
+   margin-top: -35px;
+   margin-left:-15px; 
    color:white; 
    background-color:red; 
-   padding: 1px 2px;
+   padding: 1px 18px;
    font-size:16px
 
 }
 
 .three{
    border: 2px solid black;
-   margin-top: -15px;
-   margin-left:-20px; 
+   margin-top: 0px;
+   margin-left:-15px; 
    color:white; 
    background-color:gray; 
-   padding: 1px 14px;
+   padding: 1px 8px;
    font-size:16px
 }
 
 .four{
    border: 2px solid black;
-   margin-top: 20px;
-   margin-left:-20px; 
+   margin-top: 35px;
+   margin-left:-15px; 
    color:white; 
    background-color:rgb(255, 6, 255); 
-   padding: 1px 7px;
+   padding: 1px 1px;
    font-size:16px
 
 
@@ -205,11 +220,11 @@
 
 .five{
     border: 2px solid black;
-   margin-top: -50px;
-   margin-left:-6px; 
+   margin-top: -70px;
+   margin-left:-20px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 25px 2px;
+   padding: 42px 9px;
    font-size:16px
 }
 

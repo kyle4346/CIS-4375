@@ -3,13 +3,11 @@
          
          
         <div class="col-lg-12">
-          <router-link class="btn btn-primary" style="font-size:20px; color: white; font-weight:bold; margin-left:1115px; margin-top: -50px;" to="/viewEmployee">View Employees</router-link>
+          <router-link class="btn viewEmployee"  to="/viewEmployee">View Employees</router-link>
             <table class="styled-table">
                 
                 <thead class="thead-dark">
                     <tr>
-                        <th>EMPID</th>
-                        <th>PSID</th>
                         <th>Project Number</th>
                         <th>First Name</th>
                         <th>Last Name</th>
@@ -21,8 +19,6 @@
                 </thead>
                 <tbody>
                     <tr v-for="employee_assigned in employee_assigneds" :key="employee_assigned.employee_assigned_id">
-                        <td>{{ employee_assigned.empid}}</td>
-                        <td>{{ employee_assigned.psid}}</td>
                         <td>{{ employee_assigned.project_number}}</td>
                         <td>{{ employees.employee_firstname}}</td>
                         <td>{{ employees.employee_lastname}}</td>
@@ -55,7 +51,7 @@
                 employees:{},
                 employee_assigned: {
     
-                   empid: this.$route.params.id,
+                   employee_email: this.$route.params.id,
                 },
                 
                 
@@ -103,14 +99,39 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
-.styled-table thead tr {
+.styled-table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
+}
+
+.styled-table th::after{
+    content: '';
+    width:100%;
+    height:2px;
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    background: black;
+
 }
 .btn-success {
         margin-right: 10px;
 }
 
+.viewEmployee{
+    font-size:20px; 
+    border: 2px solid black;
+    color: White; 
+    background-color: #267bfa;
+    font-weight:bold; 
+    margin-left:1115px; 
+    margin-top: -50px;
+
+}
 
 .styled-table th,
 .styled-table td {
