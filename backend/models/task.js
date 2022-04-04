@@ -11,7 +11,7 @@ let TaskSchema = new Schema({
     project_number: {
       type: String,
       minLength:1,
-      maxLength:2,
+      maxLength:5,
       not: null,
       required: true,
       unique: false
@@ -19,7 +19,7 @@ let TaskSchema = new Schema({
     phase_number: {
       type: String,
       minLength:1,
-      maxLength:9,
+      maxLength:55,
       not: null,
       required: true,
       unique: false
@@ -28,7 +28,7 @@ let TaskSchema = new Schema({
     step_number: {
       type: String,
       minLength:1,
-      maxLength:9,
+      maxLength:55,
       not: null,
       required: true,
       unique: false
@@ -63,7 +63,7 @@ let TaskSchema = new Schema({
     task_duration: {
         type: String,
         minLength: 0,
-        maxLength: 25,
+        maxLength: 3,
         
     },
       

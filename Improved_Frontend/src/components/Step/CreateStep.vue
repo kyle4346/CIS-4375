@@ -13,7 +13,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepProjectNum">Project Number</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right"  type="text" class="form-control" id="inputStepProjectNum" placeholder="1-99999" pattern="[0-9]{1,2}" v-model="step.project_number" required>
+                    <input style="text-align:right"  type="text" class="form-control" id="inputStepProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="step.project_number" required>
                     
                 </div>
 
@@ -85,13 +85,13 @@
                 <div style="margin-left:-180px" class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" pattern="[$\0-9\,\.]{1,15}" v-model="step.step_cost" required>
+                    <input style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="step.step_cost" required>
                     
                 </div>
 
                  <div style=" margin-right:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepDuration">Duration (days)</label>
-                    <input style="text-align:right" type="text" placeholder="3" class="form-control" size="10" id="inputStepDuration" pattern="[^0-9]+{0,2}" v-model="step.step_duration" >
+                    <input style="text-align:right" type="text" placeholder="3" class="form-control" size="10" id="inputStepDuration" pattern="[0-9]{0,2}" v-model="step.step_duration" >
                     
                 </div>
 
@@ -132,13 +132,13 @@
                     <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     
-                    <input  type="text" class="form-control" id="inputFName" placeholder="Charles" pattern="[A-Za-z\s]{0,40}" v-model="step.subcontractor_fname" >
+                    <input  type="text" class="form-control" id="inputFName" placeholder="Charles" pattern="[A-Za-z\s]{0,35}" v-model="step.subcontractor_fname" >
 
                 </div>
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     
-                    <input  type="text" class="form-control" id="inputLName" placeholder="Vaughn" pattern="[A-Za-z\s]{0,40}" v-model="step.subcontractor_lname" >
+                    <input  type="text" class="form-control" id="inputLName" placeholder="Vaughn" pattern="[A-Za-z\s]{0,35}" v-model="step.subcontractor_lname" >
                     
                 </div>
                     <div class="form-group col-lg-3">
@@ -162,7 +162,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorRate">Subcontractor Fee</label>
                    
-                    <input style="text-align:right" type="text" class="form-control" id="inputSubcontractorRate" placeholder="$2,500.50"   pattern="[^$\0-9\,\.]{0,15}" v-model="step.subcontractor_fee" >
+                    <input style="text-align:right" type="text" class="form-control" id="inputSubcontractorRate" placeholder="$2,500.50"    pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="step.subcontractor_fee" >
                     
                 </div>
 

@@ -12,13 +12,13 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputFName" placeholder="Mark" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_fname" required>
+                    <input  type="text" class="form-control" id="inputFName" placeholder="Mark" pattern="[A-Za-z\s]{2,35}" v-model="investor.investor_fname" required>
 
                 </div>
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputLName"  placeholder="Richards" pattern="[A-Za-z\s]{0,40}" v-model="investor.investor_lname" required>
+                    <input  type="text" class="form-control" id="inputLName"  placeholder="Richards" pattern="[A-Za-z\s]{2,35}" v-model="investor.investor_lname" required>
                     
                 </div>
 
@@ -76,7 +76,7 @@
                  <div class="form-group col-lg-4">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="investor.investor_address" required>
+                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="investor.investor_address" required>
                     <br>
                 </div>
 

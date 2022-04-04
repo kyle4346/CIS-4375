@@ -15,14 +15,14 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  placeholder="Joey" type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{1,30}" v-model="employee.employee_first_name" required>
+                    <input  placeholder="Joey" type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{1,35}" v-model="employee.employee_first_name" required>
                     
                 </div>
 
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input placeholder="Reynolds"  type="text" class="form-control" id="inputLName"  pattern="[A-Za-z\s]{1,30}" v-model="employee.employee_last_name" required>
+                    <input placeholder="Reynolds"  type="text" class="form-control" id="inputLName"  pattern="[A-Za-z\s]{1,35}" v-model="employee.employee_last_name" required>
                     
                 </div>
 
@@ -71,7 +71,7 @@
                 <div style="margin-left:-80px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Salary</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align: right" type="text" class="form-control" placeholder="$65,000.50"  pattern="[^$\0-9\,\.]{1,15}" v-model="employee.employee_salary" required>  
+                    <input style="text-align: right" type="text" class="form-control" placeholder="$65,000.50"   pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="employee.employee_salary" required>  
                 </div>
 
                 </div>
@@ -95,7 +95,7 @@
                 <div class="form-group col-lg-4">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="employee.employee_street" required>
+                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="employee.employee_street" required>
                     
                 </div>
 

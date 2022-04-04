@@ -10,15 +10,15 @@ let EmployeeSchema = new Schema({
     
     employee_first_name: {
         type: String,
-        minLength: 1,
-        maxLength: 30,
+        minLength: 2,
+        maxLength: 35,
         not: null,
         required: true
     },
     employee_last_name: {
         type: String,
-        minLength: 1,
-        maxLength: 30,
+        minLength: 2,
+        maxLength: 35,
         not: null,
         required: true
        
@@ -31,8 +31,8 @@ let EmployeeSchema = new Schema({
     },
     employee_salary: {
         type: String,
-        minLength: 0,
-        maxLength: 9999999,
+        minLength: 1,
+        maxLength: 10,
         not: null,
         required: true
 
@@ -47,7 +47,7 @@ let EmployeeSchema = new Schema({
       },
     employee_email: {
         type: String,
-        maxLength: 55,
+        maxLength: 40,
         unique:true,
         not: null,
         required: true
@@ -56,7 +56,7 @@ let EmployeeSchema = new Schema({
     employee_street: {
         type: String,
         minLength: 5,
-        maxLength: 50,
+        maxLength: 55,
         required: true,
         not: null
 
@@ -71,6 +71,7 @@ let EmployeeSchema = new Schema({
       },
     employee_zipcode: {
         type: String,
+        maxLength:5,
         required: true,
         not: null
 
@@ -85,7 +86,7 @@ let EmployeeSchema = new Schema({
     employee_country: {
         type: String,
         minLength: 4,
-        maxLength: 30,
+        maxLength: 13,
         required: true,
         not:null
 
@@ -93,7 +94,7 @@ let EmployeeSchema = new Schema({
     employee_status_type: {
         type: String,
         minLength: 0,
-        maxLength: 35,
+        maxLength: 15,
         required: true,
         not:null
 
@@ -101,7 +102,7 @@ let EmployeeSchema = new Schema({
     employee_title_description: {
         type: String,
         minLength: 0,
-        maxLength: 35,
+        maxLength: 15,
         required: true,
         not:null
 

@@ -39,10 +39,10 @@
 
                 
 
-                <div style="margin-left:260px;" class="form-group col-lg-3">
+                <div style="margin-left:260px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Task</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input placeholder="1. Secure foundation permit" type="text" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
+                    <input placeholder="1. Secure foundation permit" type="text" size="37" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
                     <br>
                 </div> 
 

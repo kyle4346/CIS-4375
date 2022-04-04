@@ -8,7 +8,7 @@
              <strong style ="font-size:150%">General Information</strong>
             <form @submit.prevent="handleUpdateForm">
                 
-               <div class="form-group row">
+              <div class="form-group row">
             
                 <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
 
@@ -16,13 +16,13 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" id="inputFName" placeholder="Chase" pattern="[A-Za-z\s]{1,25}" v-model="subcontractor.subcontractor_fname" required>
+                    <input  type="text" class="form-control" id="inputFName" placeholder="Chase" pattern="[A-Za-z\s]{2,35}" v-model="subcontractor.subcontractor_fname" required>
                 </div>
 
                 <div style="margin-left:20px" class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="text" class="form-control" placeholder="Williams" id="inputLName" pattern="[A-Za-z\s]{5,25}" v-model="subcontractor.subcontractor_lname" required>
+                    <input  type="text" class="form-control" placeholder="Williams" id="inputLName" pattern="[A-Za-z\s]{2,35}" v-model="subcontractor.subcontractor_lname" required>
                     
                 </div>
 
@@ -79,7 +79,7 @@
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputSRate">Pay Rate (/hr)</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100" pattern="[^$\0-9\]{2,25}" v-model="subcontractor.subcontractor_rate" required>
+                    <input  style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100.00" pattern="[$][0-9]{3}[.][0-9]{2}" v-model="subcontractor.subcontractor_rate" required>
                     
                 </div>
 
@@ -104,7 +104,7 @@
                 <div class="form-group col-lg-4">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="subcontractor.subcontractor_address" required>
+                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="subcontractor.subcontractor_address" required>
                     
                 </div>
                 
@@ -187,8 +187,8 @@ export default {
 
 
             },//drop down lists found from createcomponent, unchanged of course
-             //static data for dropdown lists
-            states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
+            //static data for dropdown lists
+                states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 countries:['United States'],
                 subcontractor_statuses: ['Available', 'Unavailable', 'Working','Unknown'],

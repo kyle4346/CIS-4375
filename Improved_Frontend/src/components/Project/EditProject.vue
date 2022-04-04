@@ -8,7 +8,7 @@
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                 
-           <div class="form-group row">
+          <div class="form-group row">
                 <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -54,7 +54,7 @@
                 <div style="margin-left:-60px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectBudget">Budget</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right;" type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[^$\0-9\,\.]{1,15}" v-model="project.project_budget" required>
+                    <input style="text-align:right;" type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="12"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_budget" required>
                     
                 </div>
 
@@ -66,14 +66,14 @@
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectEstimate">Estimated Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" size="12"  pattern="[^$\0-9\,\.]{1,15}" v-model="project.project_estimated_cost" required>
+                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" size="12"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_estimated_cost" required>
                     
                     
                 </div>
 
                 <div style="margin-left:10px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectActual">Actual Cost</label>
-                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" size="12"  pattern="[^$\0-9\,\.]{1,15}" v-model="project.project_actual_cost" >
+                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" size="12"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_actual_cost" >
                     
                 </div>
 
@@ -172,22 +172,22 @@
                     <strong style ="font-size:150%">Project Location General Information</strong>
                     <br>
                     <br>
-                 <div class="form-group col-lg-4">
+                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,50}"   v-model="project.project_location_street" required>
+                    <input type="text" size="59" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="project.project_location_street" required>
                    
                 </div>
 
-                <div style="margin-left: 10px;" class="form-group col-lg-2">
+                <div style="margin-left: 0px;" class="form-group col-lg-auto">
                     
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="Fresno" pattern="[A-Za-z\s]{3,40}" v-model="project.project_location_city" required>
+                    <input type="text" size="23" class="form-control" placeholder="Fresno" pattern="[A-Za-z\s]{3,35}" v-model="project.project_location_city" required>
                     
                 </div>
 
-                <div style="margin-left: 10px;" class="form-group col-lg-1">
+                <div style="margin-left: 0px;" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -196,7 +196,7 @@
                       <br>
                 </div>
 
-                 <div  style="margin-left: 10px;" class="form-group col-lg-1">
+                 <div  style="margin-left: 0px;" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">State</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -208,7 +208,7 @@
                     
                 </div>
 
-                <div style="margin-left: -30px;" class="form-group col-lg-1">
+                <div style="margin-left: -35px;" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -221,7 +221,7 @@
                     
                 </div>
 
-                <div style="margin-left:40px;" class="form-group col-lg-2">
+                <div style="margin-left:30px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Location Status</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     
@@ -273,7 +273,7 @@ export default {
 
             },//drop down lists found from createcomponent, unchanged of course
              //static data for dropdown lists
-              project_estimated_durations:['0-3','4-6','7-12','13-24', '25 >'],
+                project_estimated_durations:['0-3','4-6','7-12','13-24', '25 >'],
                 project_actual_durations:['0-3','4-6','7-12','13-24', '25 >'],
                 project_location_states:['AL','AK','AZ','AR','CA','CO','CT','DE','FL','GA','HI','ID','IL','IN','IA','KS','KY','LA','ME','MD',
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],

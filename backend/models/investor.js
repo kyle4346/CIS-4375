@@ -11,14 +11,14 @@ let InvestorSchema = new Schema({
     investor_fname: {
         type: String,
         minLength: 2,
-        maxLength: 30,
+        maxLength: 35,
         not: null,
         required: true
     },
     investor_lname: {
       type: String,
       minLength: 2,
-      maxLength: 30,
+      maxLength: 35,
       not: null,
       required: true
   },
@@ -41,7 +41,7 @@ let InvestorSchema = new Schema({
     
     investor_email: {
         type: String,
-        maxLength: 55,
+        maxLength: 40,
         required: true,
         not: null
       
@@ -51,7 +51,7 @@ let InvestorSchema = new Schema({
     investor_address: {
         type: String,
         minLength: 5,
-        maxLength: 50,
+        maxLength: 55,
         required: true,
         not: null
         
@@ -68,6 +68,7 @@ let InvestorSchema = new Schema({
       
      investor_zipcode: {
         type: String,
+        maxLength:5 ,
         required: true,
         not: null
       },

@@ -37,10 +37,10 @@
 
                 
 
-                <div style="margin-left:260px;" class="form-group col-lg-3">
+                <div style="margin-left:260px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Task</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input placeholder="1. Secure foundation permit" type="text" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
+                    <input placeholder="1. Secure foundation permit" type="text" size="37" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
                     <br>
                 </div> 
 
@@ -176,7 +176,7 @@ export default {
 
 
             },//drop down lists found from createcomponent, unchanged of course
-               //static data for dropdown lists
+                //static data for dropdown lists
                 task_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
                 phase_numbers:['1. Plans and Permitting','2. Site Work and Foundation','3. Framing and External Finishes','4. Utility Rough-Ins','5. Insulation, Drywall & Paint',
                 '6. Interior Finishes and Flooring','7. Landscaping and Grounds Work','8. Final Inspection and Walkthrough'],

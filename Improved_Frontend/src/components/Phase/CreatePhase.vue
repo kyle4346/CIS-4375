@@ -76,20 +76,20 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseBudget">Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00" pattern="[^$\0-9\,\.]{1,15}" v-model="phase.phase_cost" required>
+                    <input style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="phase.phase_cost" required>
                     
                 </div>
 
                  <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Estimated Duration (weeks)</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="6" id="inputPhaseActualDuration" pattern="[0-9]+{0,2}" v-model="phase.phase_estimated_duration" required>
+                    <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="6" id="inputPhaseActualDuration" pattern="[0-9]{1,2}" v-model="phase.phase_estimated_duration" required>
                     
                 </div>
 
                 <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Actual Duration (weeks)</label>
-                    <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="12" id="inputPhaseActualDuration" pattern="[0-9]+{0,2}" v-model="phase.phase_actual_duration" >
+                    <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="12" id="inputPhaseActualDuration" pattern="[0-9]{0,2}" v-model="phase.phase_actual_duration" >
                     
                 </div>
 
@@ -121,7 +121,7 @@
                 <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Estimated End Date</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="date" class="form-control" v-model="phase.phase_estimated_end_date" >
+                    <input type="date" class="form-control" v-model="phase.phase_estimated_end_date" required>
                 </div>
 
                 <div style="margin-left:20px" class="form-group col-lg-auto">
