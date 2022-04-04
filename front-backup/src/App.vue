@@ -1,218 +1,205 @@
 <template >
   <!-- <fixed-header> -->
-  
-    <div>
-      <b-nav id ="navi">
-        <div class="container">
-          
-          
-            <img src="./assets/logo1.jpeg" id="image" >
-          
 
-          
-            <a
-              class="btn btn-primary"
-              style="
-                font-size: 20px;
-                color: white;
-                font-weight: bold;
-              "
-              href="/"
-              role="button"
-              id = "dashboard"
-              >Dashboard</a
-            >
-          
+  <div id = "Appinfo">
+    <b-nav id="navi">
+      <div class="container">
+        <img src="./assets/logo1.jpeg" id="image" />
 
-          
-            <!-- Example single danger button -->
-            <div class="btn-group col-md-2" id = "projectinfo">
-              <button
-                type="button"
-                class="btn btn-primary dropdown-toggle"
-                style="font-size: 20px; color: white; font-weight: bold;"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+        <a
+          class="btn btn-primary"
+          style="font-size: 20px; color: white; font-weight: bold"
+          href="/"
+          role="button"
+          id="dashboard"
+          >Dashboard</a
+        >
+
+        <!-- Example single danger button -->
+        <div class="btn-group col-md-2" id="projectinfo">
+          <button
+            type="button"
+            class="btn btn-primary dropdown-toggle"
+            style="font-size: 20px; color: white; font-weight: bold"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Project Information
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/createProject"
+                >Create Project</router-link
               >
-                Project Information
-              </button>
-              <ul class="dropdown-menu">
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/createProject"
-                    >Create Project</router-link
-                  >
-                </li>
+            </li>
 
-                <li><hr class="dropdown-divider" /></li>
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/viewProject"
-                    >View Projects</router-link
-                  >
-                </li>
-              </ul>
-            </div>
-          
-
-          
-            <div class="btn-group col-md-2" id = "personnel">
-              <button
-                type="button"
-                class="btn btn-primary dropdown-toggle"
-                style="font-size: 20px; color: white; font-weight: bold;"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+            <li><hr class="dropdown-divider" /></li>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/viewProject"
+                >View Projects</router-link
               >
-                Personnel Information
-              </button>
-              <ul class="dropdown-menu">
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="
-                      font-size: 20px;
-                      color: black;
-                      font-weight: bold;
-                      text-align: left;
-                    "
-                    to="/createInvestor"
-                    >Create Investor</router-link
-                  >
-                </li>
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/createSubcontractor"
-                    >Create Subcontractor</router-link
-                  >
-                </li>
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/createEmployee"
-                    >Create Employee</router-link
-                  >
-                </li>
+            </li>
+          </ul>
+        </div>
 
-                <li><hr class="dropdown-divider" /></li>
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/viewInvestor"
-                    >View Investors</router-link
-                  >
-                </li>
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/viewSubcontractor"
-                    >View Subcontractors</router-link
-                  >
-                </li>
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/viewEmployee"
-                    >View Employees</router-link
-                  >
-                </li>
-              </ul>
-            </div>
-          
-
-          
-            <!-- Example single danger button -->
-            <div class="btn-group col-md-2" id = "resource">
-              <button
-                type="button"
-                class="btn btn-primary dropdown-toggle"
-                style="font-size: 20px; color: white; font-weight: bold; "
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
+        <div class="btn-group col-md-2" id="personnel">
+          <button
+            type="button"
+            class="btn btn-primary dropdown-toggle"
+            style="font-size: 20px; color: white; font-weight: bold"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Personnel Information
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="
+                  font-size: 20px;
+                  color: black;
+                  font-weight: bold;
+                  text-align: left;
+                "
+                to="/createInvestor"
+                >Create Investor</router-link
               >
-                Resource Assignments
-              </button>
-              <ul class="dropdown-menu">
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/createInvestorAssigned"
-                    >Create Investor Assignment</router-link
-                  >
-                </li>
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/createSubcontractorAssigned"
-                    >Create Subcontractor Assignment</router-link
-                  >
-                </li>
+            </li>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/createSubcontractor"
+                >Create Subcontractor</router-link
+              >
+            </li>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/createEmployee"
+                >Create Employee</router-link
+              >
+            </li>
 
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/createEmployeeAssigned"
-                    >Create Employee Assignment</router-link
-                  >
-                </li>
+            <li><hr class="dropdown-divider" /></li>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/viewInvestor"
+                >View Investors</router-link
+              >
+            </li>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/viewSubcontractor"
+                >View Subcontractors</router-link
+              >
+            </li>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/viewEmployee"
+                >View Employees</router-link
+              >
+            </li>
+          </ul>
+        </div>
 
-                <li><hr class="dropdown-divider" /></li>
+        <!-- Example single danger button -->
+        <div class="btn-group col-md-2" id="resource">
+          <button
+            type="button"
+            class="btn btn-primary dropdown-toggle"
+            style="font-size: 20px; color: white; font-weight: bold"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Resource Assignments
+          </button>
+          <ul class="dropdown-menu">
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/createInvestorAssigned"
+                >Create Investor Assignment</router-link
+              >
+            </li>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/createSubcontractorAssigned"
+                >Create Subcontractor Assignment</router-link
+              >
+            </li>
 
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/viewInvestorAssigned"
-                    >View Assigned Investors</router-link
-                  >
-                </li>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/createEmployeeAssigned"
+                >Create Employee Assignment</router-link
+              >
+            </li>
 
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/viewSubcontractorAssigned"
-                    >View Assigned Subcontractors</router-link
-                  >
-                </li>
+            <li><hr class="dropdown-divider" /></li>
 
-                <li class="dropdown-item">
-                  <router-link
-                    class="nav-link"
-                    style="font-size: 20px; color: black; font-weight: bold"
-                    to="/viewEmployeeAssigned"
-                    >View Assigned Employees</router-link
-                  >
-                </li>
-              </ul>
-            </div>
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/viewInvestorAssigned"
+                >View Assigned Investors</router-link
+              >
+            </li>
+
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/viewSubcontractorAssigned"
+                >View Assigned Subcontractors</router-link
+              >
+            </li>
+
+            <li class="dropdown-item">
+              <router-link
+                class="nav-link"
+                style="font-size: 20px; color: black; font-weight: bold"
+                to="/viewEmployeeAssigned"
+                >View Assigned Employees</router-link
+              >
+            </li>
+          </ul>
+        </div>
+
+        <a
           
-
-            <a ><img src="./assets/info.png" id="image3" ></a>
-            
           
-
-
+          href="/manual"
           
-            <img src="./assets/logo2.png" id="image2" >
-          
-          
-          <!-- Example single danger button -->
+          ><img src="./assets/info.png"  id = "image3"></a
+        >
+        
 
-          <!-- <div class="btn-group col-md-2">
+        <img src="./assets/logo2.png" id="image2" />
+
+        <!-- Example single danger button -->
+
+        <!-- <div class="btn-group col-md-2">
   
   <button type="button" class="btn btn-primary dropdown-toggle" style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
     Reports
@@ -229,7 +216,7 @@
 </div>
 
 -->
-          <!-- <div class="btn-group col-md-2">
+        <!-- <div class="btn-group col-md-2">
   
   <button type="button" class="btn btn-primary dropdown-toggle"  style="font-size:20px; color: white; font-weight:bold;" data-bs-toggle="dropdown" aria-expanded="false">
     Charts
@@ -243,16 +230,15 @@
   </ul>
 </div>
  -->
-        </div>
-      </b-nav>
-
-      <!-- Router view -->
-      <div class="container mt-5">
-        <router-view></router-view>
       </div>
+    </b-nav>
+
+    <!-- Router view -->
+    <div class="container mt-5">
+      <router-view></router-view>
     </div>
-    <!-- </fixed-header> -->
-  
+  </div>
+  <!-- </fixed-header> -->
 </template>
 
 
@@ -273,19 +259,18 @@ export default {
   display: inline-block;
 } */
 
-
 #dashboard {
   margin-right: -10px;
 }
 
-#projectinfo{
-  margin-left:20px;
-  margin-right:27px;
+#projectinfo {
+  margin-left: 20px;
+  margin-right: 27px;
 }
-#personnel{
+#personnel {
   margin-right: 55px;
 }
-#resource{
+#resource {
   margin-right: 60px;
 }
 
@@ -302,7 +287,9 @@ export default {
   display: inline-block;
   margin-left: 10px;
 }
-
+#Appinfo {
+  max-height: 71.8px;
+}
 #image3 {
   max-height: 50px;
   max-width: 14.28%;
@@ -310,12 +297,7 @@ export default {
   margin-right: 10px;
 }
 
-
-
 #navi {
   background-color: black;
 }
-
-
-
 </style>

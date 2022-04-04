@@ -358,7 +358,13 @@ component: () => import('../components/InvestorProject/ViewInvestorProject')
   name: 'VueChartJS',
   component: VueChartJS
 },
-
+//*********User Manual********* */
+{
+  //User Manual
+  path: '/manual',
+  name: 'ManualView',
+  component: () => import('../components/UserManual/ManualView.vue')
+},
 
   
 ]

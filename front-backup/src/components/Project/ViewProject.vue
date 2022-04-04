@@ -27,21 +27,6 @@
         >
       </p>
 
-      <b-pagination
-        v-model="currentPage"
-        :total-rows="rows"
-        :per-page="perPage"
-        aria-controls="my-table"
-      ></b-pagination>
-
-      <b-table
-      id="my-table"
-      :items="projects"
-      :per-page="perPage"
-      :current-page="currentPage"
-      small
-    ></b-table>
-
       <table class="table styled-table">
         <col style="width: 0%" />
         <col style="width: 0%" />

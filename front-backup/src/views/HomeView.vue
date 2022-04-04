@@ -6,6 +6,7 @@ HelloWorld componenent to produce a view when clicking on CFC Mananagement APP--
     <!-- <img src="https://i.pinimg.com/originals/3e/6b/0b/3e6b0b4cd20e10744886b5653c3ee9b9.jpg"  class="center" > -->
 
     <img src="../assets/const.jpg" class = "image">
+    <!-- <Slider /> -->
 
   </div>
 </template>
@@ -36,6 +37,10 @@ export default {
   margin-right: auto;
   width: 70%;
 }
+.container {
+  max-width: 1320px;
+  max-height: 71.8px;
+}
 
 #home {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -43,10 +48,9 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  
 }
-body {
-  margin: 0px;
-}
+
 .image {
   max-width: 70%;
   max-height: 50%;

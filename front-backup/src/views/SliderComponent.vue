@@ -20,7 +20,8 @@ export default {
         "https://cdn.pixabay.com/photo/2015/12/12/15/24/amsterdam-1089646_1280.jpg",
         "https://cdn.pixabay.com/photo/2016/02/17/23/03/usa-1206240_1280.jpg",
         "https://cdn.pixabay.com/photo/2016/12/04/19/30/berlin-cathedral-1882397_1280.jpg",
-        "https://www.safetyandhealthmagazine.com/ext/resources/images/safety-tips/welder.jpg?1483464014"
+        "https://www.safetyandhealthmagazine.com/ext/resources/images/safety-tips/welder.jpg?1483464014",
+        
       ],
       timer: null,
       currentIndex: 0
@@ -65,7 +66,7 @@ export default {
 }
 
 .fade-enter{
-    transition: 2s ease;
+  transition: 2s ease;
   visibility: hidden;
   width:70%;
   opacity: 0;
