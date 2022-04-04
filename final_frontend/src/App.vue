@@ -4,7 +4,7 @@
   <div id="Appinfo">
     <b-nav id="navi">
       <div class="container">
-        <img src="./assets/logo1.jpeg" id="image" />
+      <a href="http://www.mypipingint.com/"><img src="./assets/logo2.png" id="image2" /></a>
 
         <a
           class="btn btn-primary"
@@ -174,7 +174,7 @@
 
         <a href="/manual"><img src="./assets/info.png" id="image3" /></a>
 
-        <img src="./assets/logo2.png" id="image2" />
+        <img src="./assets/logo1.jpeg" id="image" />
 
         <!-- Example single danger button -->
 
@@ -258,14 +258,14 @@ export default {
   max-width: 14.28%;
   display: inline-block;
   margin-right: 10px;
-  border-radius: 50%;
+  border-radius: 80%;
 }
 
 #image2 {
   max-height: 150px;
   max-width: 14.28%;
   display: inline-block;
-  margin-left: 10px;
+  margin-right: 10px;
 }
 #Appinfo {
   max-height: 71.8px;
@@ -275,7 +275,7 @@ export default {
   max-width: 14.28%;
   display: inline-block;
   margin-right: 10px;
-  border-radius: 50%;
+  border-radius: 80%;
 }
 
 #navi {
