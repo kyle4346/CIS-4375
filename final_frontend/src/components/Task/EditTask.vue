@@ -17,70 +17,58 @@
                     
                 </div>
 
-                <div style="margin-left:10px;" class="form-group col-lg-2">
+                <div style="margin-left:40px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Phase</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
-                    <select  v-model="task.phase_number" required> 
+                    <select style="width:290px"  v-model="task.phase_number" required> 
                      <option v-for="phase_number in phase_numbers" v-bind:key="phase_number">{{phase_number}}</option>
                     </select>
                 </div>
 
-                <div style="margin-left:90px;" class="form-group col-lg-2">
+                <div style="margin-left:130px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Step</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
-                    <select  v-model="task.step_number" required> 
+                    <select style="width:460px" v-model="task.step_number" required> 
                      <option v-for="step_number in step_numbers" v-bind:key="step_number">{{step_number}}</option>
                     </select>
+                    <br>
+                    <br>
                 </div>
 
-                
+            
+                </div>
 
-                <div style="margin-left:260px;" class="form-group col-lg-auto">
+                <div class="form-group row">
+
+                <div  class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Task</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input placeholder="1. Secure foundation permit" type="text" size="37" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,75}" v-model="task.task_name" required>
-                    <br>
+                    <input placeholder="1. Secure foundation permit" type="text" size="58" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}" v-model="task.task_name" required>
                 </div> 
+
+                <div style="margin-left:50px" class="form-group col-lg-auto">
+                    <label style ="font-size:14pt" for="inputTaskNotes">Comments</label> 
+                    <textarea cols="58" type="text" class="form-control" id="inputTaskNotes" minlength="0" placeholder="Additional Notes" maxlength="55"   rows="1" v-model="task.task_description" ></textarea>
+                <br>
+                </div>
+
+              
+                
+               
+
 
                 </div>
 
                 <div class="form-group row">
 
-                <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" for="inputTaskNotes">Comments</label> 
-                    <textarea type="text" class="form-control" id="inputTaskNotes" minlength="0" placeholder="Additional Notes" maxlength="35"   rows="1" v-model="task.task_description" ></textarea>
-                <br>
-                </div>
-
-                <div style="margin-left: 20px;" class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Completed?</label>
-                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                 <br>
-                 <div style="margin-left: 10px;" class="form-check-inline col-lg-auto">
-                     <label style ="font-size:14pt" class="form-check-label" for="taskComplete1">
-                     <input class="form-check-input" type="radio"  id="taskComplete1" value="Yes"  v-model="task.task_completed"   required>Yes    
-                     </label>
-                     
-                </div>
-                   
-                <div class="form-check-inline col-lg-auto">
-                    <label style ="font-size:14pt" class="form-check-label" for="taskComplete2">
-                    <input class="form-check-input" type="radio"  id="taskComplete2" value="No" v-model="task.task_completed" required>No
-                    </label>
-                
-        
-                </div>
-
-                 </div>
-                
-                <div style="margin-left:-30px;" class="form-group col-lg-2">
+                 <div  class="form-group col-lg-2">
                    
                     <label style ="font-size:14pt">Status</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="task.task_status_type" required> 
+                    <select style="width:120px" v-model="task.task_status_type" required> 
                      <option v-for="task_status_type in task_status_type" v-bind:key="task_status_type">{{task_status_type}}</option>
                     </select>
                 </div>
@@ -96,25 +84,19 @@
                     <label style ="font-size:14pt">% Finished</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                      <br>
-                    <select  v-model="task.task_percent_complete" required> 
-                     <option v-for="task_percent_complete in task_percent_completes" v-bind:key="task_percent_complete" :view="task_percent_complete">{{task_percent_complete}}</option>
+                    <select style="width:95px"  v-model="task.task_percent_complete" required> 
+                     <option style="text-align: right" v-for="task_percent_complete in task_percent_completes" v-bind:key="task_percent_complete" :view="task_percent_complete">{{task_percent_complete}}</option>
                     </select>
-                    <br>
-                    <br>
                 </div>
 
-
-                </div>
-
-                <div class="form-group row">
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:-80px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Start Date</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input type="date" class="form-control" v-model="task.task_start_date" required>
                     
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">End Date</label>
                     <input type="date" class="form-control" v-model="task.task_end_date" >
                      <br>
@@ -122,7 +104,7 @@
 
                 
 
-                <div class="form-group col-lg-2">
+                <div style="margin-left:0px" class="form-group col-lg-2">
                 <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Material Aquired</label>
                 <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                 <br>
@@ -133,7 +115,7 @@
                      
                 </div>
                    
-                <div style="margin-left: 40px;" class="form-check-inline col-lg-auto">
+                <div style="margin-left: 0px;" class="form-check-inline col-lg-auto">
                     <label style ="font-size:14pt" class="form-check-label" for="taskMaterial2">
                     <input class="form-check-input" type="radio"  id="taskMaterial2" value="No" v-model="task.task_material_aquired" required>No
                     </label>

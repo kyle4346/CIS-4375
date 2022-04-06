@@ -4,28 +4,26 @@
         <div style="margin-left:525px; margin-top: -50px">
           <u class="text-center" style="font-size:200%; font-weight:bold">Update Employee</u>
         </div>
-           
+           <strong style ="font-size:150%">General Information</strong>
+           <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                  
-                <div class="form-group row">
-                <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
-                 
-
-                <div class="form-group col-lg-2">
+               <div class="form-group row">
+                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  placeholder="Joey" type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{1,35}" v-model="employee.employee_first_name" required>
+                    <input size="24" placeholder="Joey" type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{1,25}" v-model="employee.employee_first_name" required>
                     
                 </div>
 
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input placeholder="Reynolds"  type="text" class="form-control" id="inputLName"  pattern="[A-Za-z\s]{1,35}" v-model="employee.employee_last_name" required>
+                    <input size="35" placeholder="Reynolds"  type="text" class="form-control" id="inputLName"  pattern="[A-Za-z\s]{1,35}" v-model="employee.employee_last_name" required>
                     
                 </div>
 
-                <div class="form-group col-lg-1">
+                <div style="margin-left:5px"  class="form-group col-lg-1">
                 <label style ="font-size:14pt" class="col-form-label pt-0">Gender</label>
                 
                 <br>
@@ -52,8 +50,8 @@
                     <label style ="font-size:14pt ">Title</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="employee.employee_title_description" required> 
-                     <option v-for="employee_title_description in employee_title_descriptions" v-bind:key="employee_title_description">{{employee_title_description}}</option>
+                    <select style="width:120px" v-model="employee.employee_title_description" required> 
+                     <option  v-for="employee_title_description in employee_title_descriptions" v-bind:key="employee_title_description">{{employee_title_description}}</option>
                     </select>
                     
                 </div>
@@ -62,58 +60,57 @@
                     <label style ="font-size:14pt">Type</label>
                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                    <br>
-                    <select  v-model="employee.employee_status_type" required> 
-                     <option v-for="employee_status_type in employee_status_types" v-bind:key="employee_status_type">{{employee_status_type}}</option>
+                    <select style="width:110px" v-model="employee.employee_status_type" required> 
+                     <option   v-for="employee_status_type in employee_status_types" v-bind:key="employee_status_type">{{employee_status_type}}</option>
                     </select> 
                 </div>
 
-                <div style="margin-left:-80px;" class="form-group col-lg-2">
+                <div style="margin-left:-80px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Salary</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align: right" type="text" class="form-control" placeholder="$65,000.50"   pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="employee.employee_salary" required>  
+                    <input size="8" style="text-align: right" type="text" class="form-control" placeholder="$65,000.50"   pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="employee.employee_salary" required>  
                 </div>
 
                 </div>
 
                 <div class="form-group row">
 
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phone</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="employee.employee_phone" required>
+                    <input size="11" type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="employee.employee_phone" required>
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div  class="form-group col-lg-auto">
                     
-                    <label style ="font-size:14pt">Email</label>
+                    <label  style ="font-size:14pt">Email</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="25" v-model="employee.employee_email" required>
+                    <input  type="email" class="form-control" placeholder="yourname123@mail.com" size="46" v-model="employee.employee_email" required>
                     
                 </div>
 
-                <div class="form-group col-lg-4">
+                <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="employee.employee_street" required>
+                    <input size="57" type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="employee.employee_street" required>
+                    <br>
                     
                 </div>
-
-                 <div class="form-group col-lg-2">
-                    <label style ="font-size:14pt" >City</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" class="form-control"  placeholder="Dallas" pattern="[A-Za-z\s]{5,35}" v-model="employee.employee_city" required>
-                    
-                     <br>
-                     
-                </div>
-
 
                 
                 </div>
 
                  <div class="form-group row"> 
 
-                <div class="form-group col-lg-1">
+                     <div class="form-group col-lg-auto">
+                    <label style ="font-size:14pt" >City</label>
+                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input  size="36" type="text" class="form-control"  placeholder="Dallas" pattern="[A-Za-z\s]{5,35}" v-model="employee.employee_city" required>
+                    
+                    
+                </div>
+
+                <div style="margin-left:20px" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">State</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -131,7 +128,7 @@
                      
                 </div>
 
-                 <div style="margin-left:20px" class="form-group col-lg-2">
+                 <div style="margin-left:25px" class="form-group col-lg-2">
                     
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>

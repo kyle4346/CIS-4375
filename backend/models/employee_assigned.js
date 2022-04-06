@@ -11,14 +11,14 @@ let EmployeeAssignedSchema = new Schema({
    employee_firstname: {
       type: String,
       minLength: 2,
-      maxLength: 30,
+      maxLength: 25,
       not: null,
       required: true
    },
    employee_lastname: {
     type: String,
     minLength: 2,
-    maxLength: 30,
+    maxLength: 35,
     not: null,
     required: true
    },
@@ -26,7 +26,7 @@ let EmployeeAssignedSchema = new Schema({
     project_number: {
       type: String,
       minLength:1,
-      maxLength:2,
+      maxLength:5,
       not: null,
       required: true,
       unique: false
@@ -40,7 +40,7 @@ let EmployeeAssignedSchema = new Schema({
      
   employee_email: {
     type: String,
-    maxLength: 55,
+    maxLength: 45,
     unique:true,
     not: null,
     required: true

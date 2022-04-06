@@ -37,25 +37,15 @@ let StepSchema = new Schema({
     step_description: {
         type: String,
         minLength: 0,
-        maxLength: 35,
+        maxLength: 55,
        
         
     },
     
-    step_completed: {
-        type: String,
-        minLength: 2,
-        maxLength: 3,
-        required: true,
-        not: null
-      
-      
-    }, 
-    
     step_cost: {
       type: String,
-      minLength: 1,
-      maxLength: 15,
+      minLength: 9,
+      maxLength: 11,
       not: null,
       required: true
         
@@ -101,7 +91,7 @@ let StepSchema = new Schema({
       },
       subcontractor_email:{
         type: String,
-        maxLength: 55,
+        maxLength: 45,
         unique:false,
       
 
@@ -114,7 +104,8 @@ let StepSchema = new Schema({
       subcontractor_fee:{
         type: String,
         minLength:0,
-        maxLength:15,
+        maxLength:11,
+        
         
       },
       subcontractor_paid:{
@@ -127,7 +118,7 @@ let StepSchema = new Schema({
       subcontractor_fname:{
         type: String,
         minLength: 0,
-        maxLength: 35,
+        maxLength: 25,
         
 
       },

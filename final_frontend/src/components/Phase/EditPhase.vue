@@ -7,11 +7,11 @@
             <strong style ="font-size:150%">General Information</strong>
              <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
-                <div class="form-group row">
-                <div class="form-group col-lg-2">
+               <div class="form-group row">
+                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right"  type="text" class="form-control" id="inputPhaseProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="phase.project_number" required>
+                    <input size="10" style="text-align:right"  type="text" class="form-control" id="inputPhaseProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="phase.project_number" required>
                     
                 </div>
 
@@ -20,7 +20,7 @@
                     <label style ="font-size:14pt">Phase</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  style="font-size:20px"  v-model="phase.phase_number" required> 
+                    <select  style="font-size:16px; width: 300px"  v-model="phase.phase_number" required> 
                      <option v-for="phase_number in phase_numbers" v-bind:key="phase_number">{{phase_number}}</option>
                     </select>
                    
@@ -29,33 +29,13 @@
 
                 
 
-                <div style="margin-left:170px" class="form-group col-lg-2">
+                <div style="margin-left:120px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" for="inputPhaseNotes">Comments</label>
-                    <textarea type="text" class="form-control" placeholder="Additional Texts" id="inputPhaseNotes" minlength="0" maxlength="35"   rows="1" v-model="phase.phase_description" ></textarea>
+                    <textarea cols="54" type="text" class="form-control" placeholder="Additional Texts" id="inputPhaseNotes" minlength="0" maxlength="55"   rows="1" v-model="phase.phase_description" ></textarea>
                     <br>
                 </div>
                 
-                <div style="margin-left:10px" class="form-group col-lg-3">
-                <label style ="font-size:14pt" class="col-form-label col-lg-auto pt-0">Completed?</label>
-                <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                <br>
-
-                <div class="form-check-inline col-lg-auto">
-                     <label style ="font-size:14pt" class="form-check-label" for="phaseComplete1">
-                     <input class="form-check-input" type="radio"  id="phaseComplete1" value="Yes"  v-model="phase.phase_completed"   required>Yes    
-                     </label>
-                     
-                </div>
-                   
-                <div class="form-check-inline col-lg-auto">
-                    <label style ="font-size:14pt" class="form-check-label" for="phaseComplete2">
-                    <input class="form-check-input" type="radio"  id="phaseComplete2" value="No" v-model="phase.phase_completed" required>No
-                    </label>
-                    
-                </div>
-
-
-                </div>
+                
 
                 </div>
                 
@@ -65,17 +45,17 @@
                     <label style ="font-size:14pt">Status</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="phase.phase_status_type" required> 
+                    <select style="width:120px"  v-model="phase.phase_status_type" required> 
                      <option v-for="phase_status_type in phase_status_type" v-bind:key="phase_status_type">{{phase_status_type}}</option>
                     </select>
                    
                     
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:-50px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseBudget">Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="phase.phase_cost" required>
+                    <input size="8" style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="phase.phase_cost" required>
                     
                 </div>
 
@@ -88,7 +68,7 @@
 
                 <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Actual Duration (weeks)</label>
-                    <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="12" id="inputPhaseActualDuration" pattern="[0-9]{0,2}" v-model="phase.phase_actual_duration" >
+                    <input  style="text-align:right" size="10" type="text" class="form-control"  placeholder="12" id="inputPhaseActualDuration" pattern="[0-9]{0,2}" v-model="phase.phase_actual_duration" >
                     
                 </div>
 
@@ -97,8 +77,8 @@
                     <label style ="font-size:14pt">% Finished</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select style="font-size:20px"  v-model="phase.phase_percent_complete" required> 
-                     <option  v-for="phase_percent_complete in phase_percent_completes" v-bind:key="phase_percent_complete" :view="phase_percent_complete" >{{phase_percent_complete}}</option>
+                    <select style="width:95px"  v-model="phase.phase_percent_complete" required> 
+                     <option  style="text-align:right" v-for="phase_percent_complete in phase_percent_completes" v-bind:key="phase_percent_complete" :view="phase_percent_complete" >{{phase_percent_complete}}</option>
                     </select>
                     <br>
                     <br>
@@ -126,7 +106,6 @@
                 <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Actual End Date</label>
                     <input type="date" class="form-control" v-model="phase.phase_actual_end_date" >
-                    <br>
                     
                 </div>
 

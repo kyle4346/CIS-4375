@@ -11,7 +11,7 @@ let SubcontractorSchema = new Schema({
     subcontractor_fname: {
         type: String,
         minLength: 2,
-        maxLength: 35,
+        maxLength: 25,
         not: null,
         required: true
     },
@@ -64,7 +64,7 @@ let SubcontractorSchema = new Schema({
     
     subcontractor_email: {
         type: String,
-        maxLength: 40,
+        maxLength: 45,
         required: true,
         unique:true,
         not: null

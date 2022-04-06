@@ -19,7 +19,7 @@ let TaskSchema = new Schema({
     phase_number: {
       type: String,
       minLength:1,
-      maxLength:55,
+      maxLength:35,
       not: null,
       required: true,
       unique: false
@@ -38,7 +38,7 @@ let TaskSchema = new Schema({
     task_name: {
         type: String,
         minLength: 5,
-        maxLength: 75,
+        maxLength: 55,
         not: null,
         required: true
         
@@ -46,20 +46,11 @@ let TaskSchema = new Schema({
     task_description: {
         type: String,
         minLength: 0,
-        maxLength: 35,
+        maxLength: 55,
         
     },
     
-    task_completed: {
-        type: String,
-        minLength: 2,
-        maxLength: 3,
-        required: true,
-        not: null
-      
-      
-    }, 
-  
+
     task_duration: {
         type: String,
         minLength: 0,

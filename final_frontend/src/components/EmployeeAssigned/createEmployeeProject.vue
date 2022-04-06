@@ -12,41 +12,43 @@
             <form @submit.prevent="handleSubmitForm">
                 
                 <div class="form-group row">
-               <div class="form-group col-lg-2">
+               <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputEmployeeProjectNum">Project Number</label>
                     
-                    <input style="text-align:right"  type="text" class="form-control" id="inputEmployeeProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="employee_assigned.project_number" required>
+                    <input size="10" style="text-align:right"  type="text" class="form-control" id="inputEmployeeProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="employee_assigned.project_number" required>
                     
                 </div>
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputEmployeeFName">First Name</label>
                     
-                    <input  type="text" class="form-control" id="inputEmployeeFName" placeholder="Marco" pattern="[A-Za-z\s]{2,30}" v-model="employee_assigned.employee_firstname" required>
+                    <input size="26" type="text" class="form-control" id="inputEmployeeFName" placeholder="Marco" pattern="[A-Za-z\s]{2,25}" v-model="employee_assigned.employee_firstname" required>
 
                 </div>
-                <div class="form-group col-lg-2">
+                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputEmployeeLName">Last Name</label>
                     
-                    <input  type="text" class="form-control" id="inputEmployeeLName" placeholder="Polo" pattern="[A-Za-z\s]{2,30}" v-model="employee_assigned.employee_lastname" required>
+                    <input  size="36" type="text" class="form-control" id="inputEmployeeLName" placeholder="Polo" pattern="[A-Za-z\s]{2,35}" v-model="employee_assigned.employee_lastname" required>
                     
                 </div>
 
                 <div class="form-group col-lg-auto">
-                    
                     <label style ="font-size:14pt">Employee Email</label>
-                 
-                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="25" v-model="employee_assigned.employee_email" required>
-                    
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="47" v-model="employee_assigned.employee_email" required>
+                    <br>
                 </div>
 
-                 <div class="form-group col-lg-auto">
+                </div>
+
+                <div class="form-group row">
+                  <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Employee Assigned Date</label>
                     
                     <input type="date" class="form-control" v-model="employee_assigned.employee_assigned_date" required>
                     
                 </div>
-
                 </div>
+
+
 
                 
 

@@ -20,7 +20,7 @@ let PhaseSchema = new Schema({
     phase_number: {
       type: String,
       minLength:1,
-      maxLength:60,
+      maxLength:35,
       not: null,
       required: true,
       unique: false
@@ -31,24 +31,15 @@ let PhaseSchema = new Schema({
     phase_description: {
         type: String,
         minLength: 0,
-        maxLength: 35,
+        maxLength: 55,
        
     },
     
-    phase_completed: {
-        type: String,
-        minLength: 2,
-        maxLength: 3,
-        required: true,
-        not: null
-      
-      
-    }, 
     
       phase_cost: {
         type: String,
-        minLength: 1,
-        maxLength: 15,
+        minLength: 9,
+        maxLength: 11,
         not: null,
         required: true
         
@@ -74,8 +65,8 @@ let PhaseSchema = new Schema({
         type: String,
         minLength:1,
         maxLength:4,
-        null:true,
-        required:true
+        required:true,
+        
         
 
       },
@@ -89,6 +80,7 @@ let PhaseSchema = new Schema({
     phase_estimated_end_date: {
         type: String,
         required: true,
+        not: null
 
       },
       phase_actual_end_date: {
@@ -100,6 +92,7 @@ let PhaseSchema = new Schema({
         type: String,
         minLength: 6,
         maxLength: 20,
+        required:true
 
       },
       

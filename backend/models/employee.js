@@ -11,7 +11,7 @@ let EmployeeSchema = new Schema({
     employee_first_name: {
         type: String,
         minLength: 2,
-        maxLength: 35,
+        maxLength: 25,
         not: null,
         required: true
     },
@@ -31,8 +31,7 @@ let EmployeeSchema = new Schema({
     },
     employee_salary: {
         type: String,
-        minLength: 1,
-        maxLength: 10,
+        maxLength: 11,
         not: null,
         required: true
 
@@ -47,7 +46,7 @@ let EmployeeSchema = new Schema({
       },
     employee_email: {
         type: String,
-        maxLength: 40,
+        maxLength: 45,
         unique:true,
         not: null,
         required: true
