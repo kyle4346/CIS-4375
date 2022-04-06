@@ -37,7 +37,7 @@
                     <label style ="font-size:14pt">Type</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="investor.investor_type" required> 
+                    <select style="width:130px"  v-model="investor.investor_type" required> 
                      <option v-for="investor_type in investor_types" v-bind:key="investor_type">{{investor_type}}</option>
                     </select>
                     
@@ -129,7 +129,7 @@
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="investor.investor_country" required> 
+                    <select style="width:130px"  v-model="investor.investor_country" required> 
                      <option v-for="country in countries" v-bind:key="country" :value="country" >{{country}}</option>
                     </select>
                 </div>

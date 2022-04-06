@@ -7,7 +7,7 @@
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
-       <div class="form-group row">
+      <div class="form-group row">
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -35,7 +35,7 @@
                     <label style ="font-size:14pt">Type</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="investor.investor_type" required> 
+                    <select style="width:130px"  v-model="investor.investor_type" required> 
                      <option v-for="investor_type in investor_types" v-bind:key="investor_type">{{investor_type}}</option>
                     </select>
                     
@@ -127,7 +127,7 @@
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="investor.investor_country" required> 
+                    <select style="width:130px"  v-model="investor.investor_country" required> 
                      <option v-for="country in countries" v-bind:key="country" :value="country" >{{country}}</option>
                     </select>
                 </div>

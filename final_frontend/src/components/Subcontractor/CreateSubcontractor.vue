@@ -34,30 +34,27 @@
                     <label style ="font-size:14pt">Type</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="subcontractor.subcontractor_type" required> 
+                    <select style="width:140px" v-model="subcontractor.subcontractor_type" required> 
                      <option v-for="subcontractor_type in subcontractor_types" v-bind:key="subcontractor_type">{{subcontractor_type}}</option>
                     </select>
                   
                    
                 </div>
 
-                <div style="margin-left:-65px;" class="form-group col-lg-2">
+                <div style="margin-left:-60px;" class="form-group col-lg-2">
                     
                     
                     <label style ="font-size:14pt; margin-left:0px;">Status</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold "> * </label>
                     <br>
                     
-                    <select style="margin-left:0px;" v-model="subcontractor.subcontractor_status" required> 
+                    <select style="width:110px" v-model="subcontractor.subcontractor_status" required> 
                      <option v-for="subcontractor_status in subcontractor_statuses" v-bind:key="subcontractor_status">{{subcontractor_status}}</option>
                     </select>
                     
 
                 </div>
 
-            
-            
-               
                  </div>
 
             
@@ -71,14 +68,14 @@
                  
 
                  <!--Work on this below -->
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:5px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputSRate">Pay Rate (/hr)</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input size="8" style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100.00" pattern="[$][0-9]{3}[.][0-9]{2}" v-model="subcontractor.subcontractor_rate" required>
                     
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:5px" class="form-group col-lg-auto">
                     
                     <label style ="font-size:14pt">Email</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -86,7 +83,7 @@
                     
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:5px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phone</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input size="11" type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="subcontractor.subcontractor_phone" required>
@@ -103,7 +100,7 @@
                     
                 </div>
                 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:5px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input size="35" type="text" class="form-control" placeholder="Houston" pattern="[A-Za-z\s]{2,35}" v-model="subcontractor.subcontractor_city" required>
@@ -111,7 +108,7 @@
                      
                 </div>
 
-                <div  style="margin-left:0px " class="form-group col-lg-1">
+                <div   style="margin-left:5px" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">State</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -122,20 +119,20 @@
                     
                 </div>
 
-                <div  style="margin-left:-35px " class="form-group col-lg-auto">
+                <div  style="margin-left:-30px " class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input size="3" style="text-align:right" type="zip" class="form-control" placeholder="XXXXX" pattern="[0-9]{5}" v-model="subcontractor.subcontractor_zipcode" required>
                      
                 </div>
 
-                <div class="form-group col-lg-2">
+                <div style="margin-left:5px" class="form-group col-lg-2">
                     
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
                     
-                    <select  v-model="subcontractor.subcontractor_country" required> 
+                    <select style="width:130px" v-model="subcontractor.subcontractor_country" required> 
                      <option v-for="country in countries" v-bind:key="country" :value="country">{{country}}</option>
                     </select>
                     

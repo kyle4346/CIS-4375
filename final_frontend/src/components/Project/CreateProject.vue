@@ -184,7 +184,7 @@
                     
                 </div>
 
-                <div style="margin-left: -30px;" class="form-group col-lg-1">
+                <div style="margin-left: -40px;" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -198,7 +198,7 @@
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     
-                    <select  v-model="project.project_location_country" required> 
+                    <select style="width:130px"  v-model="project.project_location_country" required> 
                      <option v-for="project_location_country in project_location_countries" v-bind:key="project_location_country" :value="project_location_country">{{project_location_country}}</option>
                     </select>
                     
@@ -206,7 +206,7 @@
                     
                 </div>
 
-                <div style="margin-left:30px;" class="form-group col-lg-2">
+                <div style="margin-left:35px;" class="form-group col-lg-2">
                     <label style ="font-size:14pt">Location Status</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     

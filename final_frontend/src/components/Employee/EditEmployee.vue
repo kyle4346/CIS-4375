@@ -8,7 +8,7 @@
            <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                  
-               <div class="form-group row">
+              <div class="form-group row">
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -23,7 +23,7 @@
                     
                 </div>
 
-                <div style="margin-left:5px"  class="form-group col-lg-1">
+                <div style="margin-left:20px"  class="form-group col-lg-1">
                 <label style ="font-size:14pt" class="col-form-label pt-0">Gender</label>
                 
                 <br>
@@ -75,19 +75,21 @@
 
                 <div class="form-group row">
 
-                <div class="form-group col-lg-auto">
-                    <label style ="font-size:14pt">Phone</label>
-                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="11" type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="employee.employee_phone" required>
-                </div>
-
-                <div  class="form-group col-lg-auto">
+                  <div  class="form-group col-lg-auto">
                     
                     <label  style ="font-size:14pt">Email</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input  type="email" class="form-control" placeholder="yourname123@mail.com" size="46" v-model="employee.employee_email" required>
                     
                 </div>
+
+                <div style="margin-left:10px" class="form-group col-lg-auto">
+                    <label style ="font-size:14pt">Phone</label>
+                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
+                    <input size="11" type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="employee.employee_phone" required>
+                </div>
+
+               
 
                 <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >Address</label>
@@ -110,7 +112,7 @@
                     
                 </div>
 
-                <div style="margin-left:20px" class="form-group col-lg-1">
+                <div style="margin-left:30px" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">State</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -121,19 +123,19 @@
                     
                 </div>
                     
-                <div style="margin-left:-10px" class="form-group col-lg-1">
+                <div style="margin-left:-5px" class="form-group col-lg-1">
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input style="text-align:right" type="zip" placeholder="XXXXX" class="form-control" pattern="[0-9]{5}" v-model="employee.employee_zipcode" required>
                      
                 </div>
 
-                 <div style="margin-left:25px" class="form-group col-lg-2">
+                 <div style="margin-left:20px" class="form-group col-lg-2">
                     
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <select  v-model="employee.employee_country" required> 
+                    <select style="width:130px" v-model="employee.employee_country" required> 
                      <option v-for="employee_country in employee_countries" v-bind:key="employee_country" :value="employee_country">{{employee_country}}</option>
                     </select>
                     
