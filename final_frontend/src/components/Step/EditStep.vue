@@ -221,7 +221,7 @@ export default {
 
             },//drop down lists found from createcomponent, unchanged of course
                 //static data for dropdown lists
-                step_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started'],
+                step_status_type: ['Complete', 'In-Progress', 'On-Hold', 'Not-Started', 'Skipped'],
                 phase_numbers:['1. Plans and Permitting','2. Site Work and Foundation','3. Framing and External Finishes','4. Utility Rough-Ins','5. Insulation, Drywall & Paint',
                 '6. Interior Finishes and Flooring','7. Landscaping and Grounds Work','8. Final Inspection and Walkthrough'],
                 step_numbers:['1. General Conditions','2. Apply for Permits','3. Site Work','4. Foundation','5. Framing','6. Roofing','7. Exterior Finishes','8. Rough-in plumbing','9. Rough-in electrical','10. Rough-in HVAC','11. Rough-in communication - phone, cable, computer, alarm',
