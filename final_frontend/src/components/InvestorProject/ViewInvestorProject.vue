@@ -9,13 +9,13 @@
           <br>
          
             <table class="styled-table">
+                <col   style="width:1%"> 
+                <col   style="width:20%"> 
+                <col   style="width:20%"> 
+                <col   style="width:30%"> 
+                <col   style="width:9%"> 
                 <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:1%"> 
                  
                 <thead class="thead-dark">
                    

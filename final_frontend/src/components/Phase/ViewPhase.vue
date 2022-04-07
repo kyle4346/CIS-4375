@@ -11,12 +11,12 @@
             <table class="styled-table">
                 <col   style="width:1%"> 
                 <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:9%"> 
+                <col   style="width:9%"> 
+                <col   style="width:9%"> 
                 <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:9%"> 
+                <col   style="width:9%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <thead class="thead-dark">
@@ -39,7 +39,7 @@
                         <td style="vertical-align:top">{{ phase.phase_number }}</td>
                         <td style="vertical-align:top; text-align: right">{{ phase.phase_cost }}</td>
                         <td style="vertical-align:top">{{ phase.phase_status_type}}</td>
-                         <td style="vertical-align:top; ">{{ phase.phase_estimated_duration}} weeks</td>
+                         <td style="vertical-align:top; ">{{ phase.phase_estimated_duration}} week(s)</td>
                         <td style="vertical-align:top; text-align: right">{{ phase.phase_percent_complete}}</td>
                         <td style="vertical-align:top">{{ phase.phase_start_date }}</td>
                         <td style="vertical-align:top">{{ phase.phase_estimated_end_date}}</td>

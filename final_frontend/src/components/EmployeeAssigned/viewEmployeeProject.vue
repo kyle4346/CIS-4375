@@ -8,11 +8,11 @@
          
           
             <table class="styled-table">
-                <col   style="width:10%"> 
-                <col   style="width:20%"> 
+                <col   style="width:1%"> 
                 <col   style="width:20%"> 
                 <col   style="width:30%"> 
-                <col   style="width:60%"> 
+                <col   style="width:40%"> 
+                <col   style="width:30%"> 
                 <thead class="thead-dark">
                    
         

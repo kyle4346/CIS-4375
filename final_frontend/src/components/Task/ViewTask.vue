@@ -10,13 +10,13 @@
                 <col   style="width:1%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:1%"> 
-                <col   style="width:0%"> 
                 <col   style="width:1%"> 
                 <col   style="width:1%"> 
-                <col   style="width:0%">
-                <col   style="width:0%">
+                <col   style="width:9%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
+                <col   style="width:8%">
+                <col   style="width:8%">
                 <col   style="width:0%">
                 <thead class="thead-dark">
                     <tr>
@@ -26,7 +26,7 @@
                         <th>Task</th>
                         <th>Material Acquired</th>
                         <th>Status</th>
-                        <th>Duration <br/>(hours)</th>
+                        <th>Duration</th>
                         <th>% Finished</th>
                         <th>Start Date</th>
                         <th>End Date</th>
@@ -41,7 +41,7 @@
                         <td style="vertical-align:top">{{ task.task_name }}</td>
                         <td style="vertical-align:top">{{ task. task_material_aquired}}</td>
                         <td style="vertical-align:top">{{ task.task_status_type }}</td>
-                        <td style="vertical-align:top; text-align: right">{{ task.task_duration}} </td>
+                        <td style="vertical-align:top; text-align: right">{{ task.task_duration}} hours</td>
                         <td style="vertical-align:top; text-align: right">{{ task.task_percent_complete }}</td>
                         <td style="vertical-align:top">{{ task.task_start_date }}</td>
                         <td style="vertical-align:top">{{ task.task_end_date }}</td>
