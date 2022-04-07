@@ -10,23 +10,23 @@ let InvestorAssignedSchema = new Schema({
 
    investor_assign_firstname: {
       type: String,
-      minLength: 2,
-      maxLength: 25,
+      minlength: 2,
+      maxlength: 25,
       not: null,
       required: true
    },
    investor_assign_lastname: {
     type: String,
-    minLength: 2,
-    maxLength: 35,
+    minlength: 2,
+    maxlength: 35,
     not: null,
     required: true
    },
     
     project_number: {
       type: String,
-      minLength:1,
-      maxLength:5,
+      minlength:1,
+      maxlength:5,
       not: null,
       required: true,
       unique: false
@@ -40,8 +40,8 @@ let InvestorAssignedSchema = new Schema({
      
   investor_assigned_cost: {
         type: String,
-        minLength: 9,
-        maxLength: 11,
+        minlength: 9,
+        maxlength: 11,
         required:true,
         not:null,
         
@@ -49,8 +49,8 @@ let InvestorAssignedSchema = new Schema({
 
     investor_assigned_paid: {
       type: String,
-      minLength:2,
-      maxLength:3,
+      minlength:2,
+      maxlength:3,
       required:true,
       not:null
       
@@ -58,7 +58,7 @@ let InvestorAssignedSchema = new Schema({
     
   investor_email: {
     type: String,
-    maxLength: 45,
+    maxlength: 45,
     required: true,
     not: null
   

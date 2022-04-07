@@ -11,14 +11,22 @@
       </h2>
          <router-link class="btn viewPhases" to="/viewPhase">View Phases</router-link>
             <table class="styled-table">
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:9%"> 
+                <col   style="width:9%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+              
                 
                 <thead class="thead-dark">
                     <tr>
 
                         <th>Step Name</th>
-                        <th>Step Completed</th>
-                         <th>% Finished</th>
-                        <th>Step Cost</th>
+                        <th>Step Status</th>
+                        <th>% Finished</th>
+                        <th style="text-align: left">Step Cost</th>
                         <th>Step Duration</th>
                         <th>Step Start Date</th>
                         <th>Step End Date</th>
@@ -30,9 +38,9 @@
                 <tbody>
                     <tr v-for="step in Steps" :key="step.step_id">
                         <td style="position: relative;" >{{ step.step_number}} </td>
-                        <td style="position: relative;" >{{ step.step_completed }}</td>
-                        <td style="position: relative;" >{{ step.step_percent_complete}}</td>               
-                        <td style="position: relative; text-align: left" >{{ step.step_cost }}</td>
+                        <td style="position: relative;" >{{ step.step_status_type }}</td>
+                        <td style="position: relative; text-align: right" >{{ step.step_percent_complete}}</td>               
+                        <td style="position: relative; text-align: right" >{{ step.step_cost }}</td>
                         <td style="position: relative; " >{{ step.step_duration }} day(s)</td>
                         <td style="position: relative; " >{{ step.step_start_date }}</td>
                         <td style="position: relative; " >{{ step.step_end_date }}</td>

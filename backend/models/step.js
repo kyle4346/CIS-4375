@@ -10,15 +10,15 @@ let StepSchema = new Schema({
     
     project_number: {
       type: String,
-      minLength:1,
-      maxLength:5,
+      minlength:1,
+      maxlength:5,
       not: null,
       required: true,
       unique: false
     },
     phase_number: {
       type: String,
-      minLength:1,
+      minlength:1,
       not: null,
       required: true,
       unique: false
@@ -26,7 +26,7 @@ let StepSchema = new Schema({
     },
     step_number: {
       type: String,
-      minLength:1,
+      minlength:1,
       not: null,
       required: true,
       unique: false
@@ -36,16 +36,16 @@ let StepSchema = new Schema({
     
     step_description: {
         type: String,
-        minLength: 0,
-        maxLength: 55,
+        minlength: 0,
+        maxlength: 55,
        
         
     },
     
     step_cost: {
       type: String,
-      minLength: 9,
-      maxLength: 11,
+      minlength: 9,
+      maxlength: 11,
       not: null,
       required: true
         
@@ -54,16 +54,16 @@ let StepSchema = new Schema({
       
       step_duration: {
         type: String,
-        minLength: 0,
-        maxLength: 2,
+        minlength: 0,
+        maxlength: 2,
         
       },
       
       
       step_percent_complete:{
         type: String,
-        minLength:2,
-        maxLength:4,
+        minlength:2,
+        maxlength:4,
         require:true
         
 
@@ -83,15 +83,15 @@ let StepSchema = new Schema({
      
       step_status_type: {
         type: String,
-        minLength: 6,
-        maxLength: 25,
+        minlength: 6,
+        maxlength: 25,
         required: true,
         not: null
 
       },
       subcontractor_email:{
         type: String,
-        maxLength: 45,
+        maxlength: 45,
         unique:false,
       
 
@@ -103,32 +103,39 @@ let StepSchema = new Schema({
       },
       subcontractor_fee:{
         type: String,
-        minLength:0,
-        maxLength:11,
+        minlength:0,
+        maxlength:11,
         
         
       },
       subcontractor_paid:{
       type: String,
-      minLength:0,
-      maxLength:3,
+      minlength:0,
+      maxlength:3,
       
 
       },
       subcontractor_fname:{
         type: String,
-        minLength: 0,
-        maxLength: 25,
+        minlength: 0,
+        maxlength: 25,
         
 
       },
       subcontractor_lname:{
         type: String,
-        minLength: 0,
-        maxLength: 35,
+        minlength: 0,
+        maxlength: 35,
        
 
-      }
+      },
+      subcontractor_assign:{
+        type: String,
+        minlength:2,
+        maxlength:3,
+        
+  
+        },
     
   }, {
     collection: 'step'

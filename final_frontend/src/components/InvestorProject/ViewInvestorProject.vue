@@ -26,7 +26,7 @@
                         <th>Last Name</th>
                         <th>Investor Email</th>
                         <th>Investor Assigned Date</th>
-                        <th>Investment Amount</th>
+                        <th style="text-align: right">Investment Amount</th>
                         <th>Investor Paid</th>
                         <th>Actions</th>
                     </tr>
@@ -38,7 +38,7 @@
                         <td style="vertical-align:top">{{ investor_assigned.investor_assign_lastname}}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_email}}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_assigned_date }}</td>
-                        <td style="vertical-align:top">{{ investor_assigned.investor_assigned_cost }}</td>
+                        <td style="vertical-align:top; text-align: right" >{{ investor_assigned.investor_assigned_cost }}</td>
                         <td style="vertical-align:top">{{ investor_assigned.investor_assigned_paid}}</td>
                         <td>
                             <router-link :to="{name: 'editInvestorAssigned', params: { id: investor_assigned.investor_assigned_id}}"  class="btn one">View / Edit

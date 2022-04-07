@@ -15,7 +15,7 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right" size="10" type="text" class="form-control" id="inputTaskProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="task.project_number" required>
+                    <input style="text-align:right" size="10" type="text" class="form-control" id="inputTaskProjectNum" placeholder="1-99999" minlength="1" maxlength="5" pattern="[0-9]{1,5}" v-model="task.project_number" required>
                     
                 </div>
 
@@ -47,7 +47,7 @@
                 <div  class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskName">Task</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input placeholder="1. Secure foundation permit" type="text" size="58" class="form-control" id="inputTaskName" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}" v-model="task.task_name" required>
+                    <input placeholder="1. Secure foundation permit" type="text" size="58" class="form-control" id="inputTaskName" minlength="5"  maxlength="55" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}" v-model="task.task_name" required>
                 </div> 
 
                 <div style="margin-left:50px" class="form-group col-lg-auto">
@@ -79,7 +79,7 @@
 
                 <div style="margin-left:-60px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskDuration">Duration (hours)</label>
-                    <input style="text-align: right" type="text" placeholder="4" size="2" class="form-control" id="inputTaskDuration" pattern="[0-9]+{0,3}" v-model="task.task_duration" >
+                    <input style="text-align: right" type="text" placeholder="4" size="2" class="form-control" id="inputTaskDuration" minlength="0" maxlength="3" pattern="[0-9]+{0,3}" v-model="task.task_duration" >
                 </div>
 
                 <div style="margin-left:20px;" class="form-group col-lg-2">
@@ -162,7 +162,6 @@
                    step_number: '',
                    task_name: '',
                    task_description: '',
-                   task_completed: 'No',
                    task_duration: '',
                    task_percent_complete: '0%',
                    task_start_date: '',
@@ -205,7 +204,6 @@
                    step_number: '',
                    task_name: '',
                    task_description: '',
-                   task_completed: '',
                    task_duration: '',
                    task_percent_complete: '',
                    task_start_date: '',

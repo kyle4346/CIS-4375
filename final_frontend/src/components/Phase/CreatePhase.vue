@@ -12,7 +12,7 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="10" style="text-align:right"  type="text" class="form-control" id="inputPhaseProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="phase.project_number" required>
+                    <input size="10" style="text-align:right"  type="text" class="form-control" id="inputPhaseProjectNum" placeholder="1-99999" minlength="1" maxlength="5" pattern="[0-9]{1,5}" v-model="phase.project_number" required>
                     
                 </div>
 
@@ -56,20 +56,20 @@
                 <div style="margin-left:-50px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseBudget">Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="8" style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="phase.phase_cost" required>
+                    <input size="8" style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00" minlength="9"  maxlength="11" pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="phase.phase_cost" required>
                     
                 </div>
 
                  <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Estimated Duration (weeks)</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="6" id="inputPhaseActualDuration" pattern="[0-9]{1,2}" v-model="phase.phase_estimated_duration" required>
+                    <input  style="text-align:right" size="2" type="text" class="form-control"  placeholder="6" id="inputPhaseActualDuration" minlength="1" maxlength="2" pattern="[0-9]{1,2}" v-model="phase.phase_estimated_duration" required>
                     
                 </div>
 
                 <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseActualDuration">Actual Duration (weeks)</label>
-                    <input  style="text-align:right" size="10" type="text" class="form-control"  placeholder="12" id="inputPhaseActualDuration" pattern="[0-9]{0,2}" v-model="phase.phase_actual_duration" >
+                    <input  style="text-align:right" size="10" type="text" class="form-control"  placeholder="12" id="inputPhaseActualDuration" minlength="0" maxlength="2" pattern="[0-9]{0,2}" v-model="phase.phase_actual_duration" >
                     
                 </div>
 
@@ -149,7 +149,6 @@
                    phase_number: 'A',
                    phase_name: '',
                    phase_description: '',
-                   phase_completed: 'No',
                    phase_cost: '',
                    phase_estimated_duration: '',   //deleted ask professor 
                    phase_actual_duration: '',
@@ -193,7 +192,6 @@
                    phase_number: '',
                    phase_name: '',
                    phase_description: '',
-                   phase_completed: '',
                    phase_cost: '',
                    phase_estimated_duration: '',
                    phase_actual_duration: '',

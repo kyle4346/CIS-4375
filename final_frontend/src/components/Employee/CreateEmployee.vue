@@ -12,14 +12,14 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="24" placeholder="Joey" type="text" class="form-control" id="inputFName" pattern="[A-Za-z\s]{1,25}" v-model="employee.employee_first_name" required>
-                    
+                    <input size="24" placeholder="Joey" type="text" class="form-control" id="inputFName" minlength="2" maxlength="25" pattern="[A-Za-z\s]{2,25}" v-model="employee.employee_first_name" required>
+                
                 </div>
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="35" placeholder="Reynolds"  type="text" class="form-control" id="inputLName"  pattern="[A-Za-z\s]{1,35}" v-model="employee.employee_last_name" required>
+                    <input size="35" placeholder="Reynolds"  type="text" class="form-control" id="inputLName" minlength="2"  maxlength="35" pattern="[A-Za-z\s]{2,35}" v-model="employee.employee_last_name" required>
                     
                 </div>
 
@@ -68,7 +68,7 @@
                 <div style="margin-left:-80px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Salary</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="8" style="text-align: right" type="text" class="form-control" placeholder="$65,000.50"   pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="employee.employee_salary" required>  
+                    <input size="8" style="text-align: right" type="text" class="form-control" placeholder="$65,000.50" minlength="9"  maxlength="11" pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="employee.employee_salary" required>  
                 </div>
 
                 </div>
@@ -79,14 +79,14 @@
                     
                     <label  style ="font-size:14pt">Email</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  type="email" class="form-control" placeholder="yourname123@mail.com" size="46" v-model="employee.employee_email" required>
+                    <input  type="email" class="form-control" placeholder="yourname123@mail.com" size="46" maxlength="45" v-model="employee.employee_email" required>
                     
                 </div>
 
                 <div style="margin-left:10px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phone</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="11" type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="employee.employee_phone" required>
+                    <input size="11" type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" maxlength="12" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="employee.employee_phone" required>
                 </div>
 
                
@@ -94,7 +94,7 @@
                 <div style="margin-left:20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="57" type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="employee.employee_street" required>
+                    <input size="57" type="text" class="form-control" placeholder="Street Address, Apt # 123" minlength="5" maxlength="55" pattern="[a-zA-Z\d\s\-\,\#\.\+]{5,55}"   v-model="employee.employee_street" required>
                     <br>
                     
                 </div>
@@ -107,7 +107,7 @@
                      <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  size="36" type="text" class="form-control"  placeholder="Dallas" pattern="[A-Za-z\s]{5,35}" v-model="employee.employee_city" required>
+                    <input  size="36" type="text" class="form-control"  placeholder="Dallas" minlength="5" maxlength="35" pattern="[A-Za-z\s]{5,35}" v-model="employee.employee_city" required>
                     
                     
                 </div>
@@ -126,7 +126,7 @@
                 <div style="margin-left:-5px" class="form-group col-lg-1">
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right" type="zip" placeholder="XXXXX" class="form-control" pattern="[0-9]{5}" v-model="employee.employee_zipcode" required>
+                    <input style="text-align:right" type="zip" placeholder="XXXXX" class="form-control" minlength="5" maxlength="5"  pattern="[0-9]{5}" v-model="employee.employee_zipcode" required>
                      
                 </div>
 

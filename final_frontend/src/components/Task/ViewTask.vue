@@ -12,11 +12,11 @@
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:1%"> 
+                <col   style="width:0%"> 
                 <col   style="width:1%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:1%">
-                <col   style="width:10%">
+                <col   style="width:1%"> 
+                <col   style="width:0%">
+                <col   style="width:0%">
                 <col   style="width:0%">
                 <thead class="thead-dark">
                     <tr>
@@ -24,12 +24,12 @@
                         <th>Phase</th>
                         <th>Step</th>
                         <th>Task</th>
-                        <th>Completed</th>
                         <th>Material Acquired</th>
                         <th>Status</th>
-                        <th>Duration</th>
+                        <th>Duration <br/>(hours)</th>
                         <th>% Finished</th>
                         <th>Start Date</th>
+                        <th>End Date</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -39,12 +39,12 @@
                         <td style="vertical-align:top">{{ task.phase_number }}</td>
                         <td style="vertical-align:top">{{ task.step_number }}</td>
                         <td style="vertical-align:top">{{ task.task_name }}</td>
-                        <td style="vertical-align:top">{{ task.task_completed}}</td>
                         <td style="vertical-align:top">{{ task. task_material_aquired}}</td>
                         <td style="vertical-align:top">{{ task.task_status_type }}</td>
-                        <td style="vertical-align:top">{{ task.task_duration}} hours</td>
-                        <td style="vertical-align:top">{{ task.task_percent_complete }}</td>
+                        <td style="vertical-align:top; text-align: right">{{ task.task_duration}} </td>
+                        <td style="vertical-align:top; text-align: right">{{ task.task_percent_complete }}</td>
                         <td style="vertical-align:top">{{ task.task_start_date }}</td>
+                        <td style="vertical-align:top">{{ task.task_end_date }}</td>
                         <td>
                             <router-link :to="{name: 'editTask', params: { id: task.task_id}}" class="btn one">View / Edit
                             </router-link>

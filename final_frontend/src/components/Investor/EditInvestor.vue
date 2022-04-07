@@ -7,11 +7,11 @@
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
-      <div class="form-group row">
+   <div class="form-group row">
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="24"  type="text" class="form-control" id="inputFName" placeholder="Mark" pattern="[A-Za-z\s]{2,35}" v-model="investor.investor_fname" required>
+                    <input size="24"  type="text" class="form-control" id="inputFName" placeholder="Mark" minlength="2" maxlength="25"  pattern="[A-Za-z\s]{2,25}" v-model="investor.investor_fname" required>
 
                 </div>
                 <div class="form-group col-lg-auto">
@@ -23,7 +23,7 @@
 
                  <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" for="inputShortNotes">Business Name</label>
-                    <textarea cols="44" type="text" class="form-control" placeholder="Business Information" id="inputShortNotes" minlength="0" maxlength="55"   rows="1" v-model="investor.investor_detail" ></textarea>
+                    <textarea cols="44" type="text" class="form-control" placeholder="Garcia's Construction Co." id="inputShortNotes" minlength="0" maxlength="55"   rows="1" v-model="investor.investor_detail" ></textarea>
                     <br>
                 </div>
 
@@ -61,21 +61,21 @@
                     
                     <label style ="font-size:14pt">Email</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="46" v-model="investor.investor_email" required>
+                    <input type="email" class="form-control" placeholder="yourname123@mail.com" size="46" maxlength="45" v-model="investor.investor_email" required>
                     
                 </div>
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phone</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="11" type="tel" class="form-control" placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="investor.investor_phone" required>
+                    <input size="11" type="tel" class="form-control" placeholder="XXX-XXX-XXXX" maxlength="12" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="investor.investor_phone" required>
                     
                 </div>
 
                  <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" size="58" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="investor.investor_address" required>
+                    <input type="text" size="58" class="form-control" placeholder="Street Address, Apt # 123" minlength="5" maxlength="55" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="investor.investor_address" required>
                     <br>
                 </div>
 
@@ -86,7 +86,7 @@
                      <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="36" type="text" class="form-control" placeholder="Dallas" pattern="[A-Za-z\s]{5,35}" v-model="investor.investor_city" required>
+                    <input size="36" type="text" class="form-control" placeholder="Dallas" minlength="5" maxlength="35" pattern="[A-Za-z\s]{5,35}" v-model="investor.investor_city" required>
                     
                 </div> 
 
@@ -114,7 +114,7 @@
                     
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right" type="zip" placeholder="XXXXX" class="form-control" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
+                    <input style="text-align:right" type="zip" placeholder="XXXXX" class="form-control" minlength="5" maxlength="5" pattern="[0-9]{5}" v-model="investor.investor_zipcode" required>
                       
                 </div>
  

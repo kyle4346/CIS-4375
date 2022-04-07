@@ -1087,7 +1087,7 @@ app.get('/project_phase_report/:id', (req, res, next) => {
 
   PhaseModel.aggregate([
     { $match : { project_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,project_number: 1, phase_number: 1, phase_name: 1, phase_cost:1 , phase_estimated_duration:1, phase_completed:1, project_number: 1, phase_start_date:1, phase_estimated_end_date:1} },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,project_number: 1, phase_number: 1, phase_name: 1, phase_cost:1 , phase_estimated_duration:1, phase_status_type:1, project_number: 1, phase_start_date:1, phase_estimated_end_date:1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'project',
         localField : 'project_number',
@@ -1111,7 +1111,7 @@ app.get('/project_step_report/:id', (req, res, next) => {
 
   StepModel.aggregate([
     { $match : { phase_number: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,phase_number: 1, step_number: 1, step_cost:1 ,step_percent_complete:1, step_completed:1, step_duration: 1, step_start_date:1 , step_end_date: 1} },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,phase_number: 1, step_number: 1, step_cost:1 ,step_percent_complete:1, step_status_type:1, step_duration: 1, step_start_date:1 , step_end_date: 1} },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'phase',
         localField : 'phase_number',

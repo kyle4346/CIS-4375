@@ -10,43 +10,43 @@ let EmployeeSchema = new Schema({
     
     employee_first_name: {
         type: String,
-        minLength: 2,
-        maxLength: 25,
+        minlength: 2,
+        maxlength: 25,
         not: null,
         required: true
     },
     employee_last_name: {
         type: String,
-        minLength: 2,
-        maxLength: 35,
+        minlength: 2,
+        maxlength: 35,
         not: null,
         required: true
        
     },
     employee_gender: {
         type: String,
-        maxLength: 6,
+        maxlength: 6,
         
        
     },
     employee_salary: {
         type: String,
-        maxLength: 11,
+        maxlength: 11,
         not: null,
         required: true
 
     },
     employee_phone: {
         type: String,
-        minLength: 0,
-        maxLength: 12,
+        minlength: 0,
+        maxlength: 12,
         not: null,
         required: true
 
       },
     employee_email: {
         type: String,
-        maxLength: 45,
+        maxlength: 45,
         unique:true,
         not: null,
         required: true
@@ -54,54 +54,54 @@ let EmployeeSchema = new Schema({
       },
     employee_street: {
         type: String,
-        minLength: 5,
-        maxLength: 55,
+        minlength: 5,
+        maxlength: 55,
         required: true,
         not: null
 
       },
     employee_city: {
         type: String,
-        minLength: 5, 
-        maxLength: 35,
+        minlength: 5, 
+        maxlength: 35,
         required: true,
         not: null
 
       },
     employee_zipcode: {
         type: String,
-        maxLength:5,
+        maxlength:5,
         required: true,
         not: null
 
       },
     employee_state: {
         type: String,
-        maxLength: 2,
+        maxlength: 2,
         required: true,
         not: null
 
       },
     employee_country: {
         type: String,
-        minLength: 4,
-        maxLength: 13,
+        minlength: 4,
+        maxlength: 13,
         required: true,
         not:null
 
       },
     employee_status_type: {
         type: String,
-        minLength: 0,
-        maxLength: 15,
+        minlength: 0,
+        maxlength: 15,
         required: true,
         not:null
 
       },
     employee_title_description: {
         type: String,
-        minLength: 0,
-        maxLength: 15,
+        minlength: 0,
+        maxlength: 15,
         required: true,
         not:null
 

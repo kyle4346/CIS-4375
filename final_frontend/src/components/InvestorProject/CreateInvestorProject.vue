@@ -12,19 +12,19 @@
                <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputInvestorProjectNum">Project Num.</label>
                     
-                    <input size="5" style="text-align:right"  type="text" class="form-control" id="inputInvestorProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="investor_assigned.project_number" required>
+                    <input size="5" style="text-align:right"  type="text" class="form-control" id="inputInvestorProjectNum" minlength="1" maxlength="5" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="investor_assigned.project_number" required>
                     
                 </div>
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     
-                    <input size="25" type="text" class="form-control" placeholder="James" id="inputFName" pattern="[A-Za-z\s]{2,25}" v-model="investor_assigned.investor_assign_firstname" required>
+                    <input size="25" type="text" class="form-control" placeholder="James" id="inputFName" minlength="2" maxlength="25" pattern="[A-Za-z\s]{2,25}" v-model="investor_assigned.investor_assign_firstname" required>
 
                 </div>
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                    
-                    <input size="36" type="text" class="form-control"  placeholder="Ford" id="inputLName" pattern="[A-Za-z\s]{2,35}" v-model="investor_assigned.investor_assign_lastname" required>
+                    <input size="36" type="text" class="form-control"  placeholder="Ford" id="inputLName" minlength="2" maxlength="35" pattern="[A-Za-z\s]{2,35}" v-model="investor_assigned.investor_assign_lastname" required>
                     
                 </div>
 
@@ -32,7 +32,7 @@
                     
                     <label style ="font-size:14pt">Investor Email</label>
                    
-                    <input  type="email" class="form-control" placeholder="yourname123@mail.com" size="47" v-model="investor_assigned.investor_email" required>
+                    <input  type="email" class="form-control" placeholder="yourname123@mail.com"  maxlength="45" size="47" v-model="investor_assigned.investor_email" required>
                     <br>
                 </div>
 
@@ -50,7 +50,7 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputInvestmentRate">Investment Amount</label>
                   
-                    <input size="10" style="text-align:right" type="text" class="form-control" id="inputInvestmentRate" placeholder="$20,000.50"   pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="investor_assigned.investor_assigned_cost" required>
+                    <input size="10" style="text-align:right" type="text" class="form-control" id="inputInvestmentRate" placeholder="$20,000.50"  minlength="9" maxlength="11" pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="investor_assigned.investor_assigned_cost" required>
                                    
                 </div>
 

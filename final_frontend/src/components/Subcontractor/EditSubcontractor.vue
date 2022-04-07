@@ -13,13 +13,13 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="24"  type="text" class="form-control" id="inputFName" placeholder="Chase" pattern="[A-Za-z\s]{2,25}" v-model="subcontractor.subcontractor_fname" required>
+                    <input size="24"  type="text" class="form-control" id="inputFName" placeholder="Chase" minlength="2" maxlength="25" pattern="[A-Za-z\s]{2,25}" v-model="subcontractor.subcontractor_fname" required>
                 </div>
 
                 <div style="margin-left:0px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="33"  type="text" class="form-control" placeholder="Williams" id="inputLName" pattern="[A-Za-z\s]{2,35}" v-model="subcontractor.subcontractor_lname" required>
+                    <input size="33"  type="text" class="form-control" placeholder="Williams" id="inputLName" minlength="2" maxlength="35" pattern="[A-Za-z\s]{2,35}" v-model="subcontractor.subcontractor_lname" required>
                     
                 </div>
 
@@ -63,7 +63,7 @@
                 <div style=" margin-left:0px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTrade">Business Name</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  size="58" type="text" class="form-control" id="inputTrade" placeholder="ABC Plumbing" pattern="[A-Za-z\s]{5,55}" v-model="subcontractor.subcontractor_business_name" required>
+                    <input  size="58" type="text" class="form-control" id="inputTrade" placeholder="ABC Plumbing" minlength="5" maxlength="55" pattern="[A-Za-z\s]{5,55}" v-model="subcontractor.subcontractor_business_name" required>
                     
                 </div>
                  
@@ -72,7 +72,7 @@
                 <div style="margin-left:5px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputSRate">Pay Rate (/hr)</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100.00" pattern="[$][0-9]{3}[.][0-9]{2}" v-model="subcontractor.subcontractor_rate" required>
+                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100.00" maxlength="7" pattern="[$][0-9]{3}[.][0-9]{2}" v-model="subcontractor.subcontractor_rate" required>
                     
                 </div>
 
@@ -80,14 +80,14 @@
                     
                     <label style ="font-size:14pt">Email</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="46" type="email" class="form-control" placeholder="yourname123@mail.com" v-model="subcontractor.subcontractor_email" required>
+                    <input size="46" type="email" class="form-control" placeholder="yourname123@mail.com" maxlength="45" v-model="subcontractor.subcontractor_email" required>
                     
                 </div>
 
                 <div style="margin-left:5px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Phone</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="11" type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="subcontractor.subcontractor_phone" required>
+                    <input size="11" type="tel" class="form-control"  placeholder="XXX-XXX-XXXX" maxlength="12" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" v-model="subcontractor.subcontractor_phone" required>
                      <br>
                 </div>
 
@@ -97,14 +97,14 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="58" type="text" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="subcontractor.subcontractor_address" required>
+                    <input size="58" type="text" class="form-control" placeholder="Street Address, Apt # 123" minlength="5" maxlength="55" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="subcontractor.subcontractor_address" required>
                     
                 </div>
                 
                 <div style="margin-left:5px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="35" type="text" class="form-control" placeholder="Houston" pattern="[A-Za-z\s]{2,35}" v-model="subcontractor.subcontractor_city" required>
+                    <input size="35" type="text" class="form-control" placeholder="Houston" minlength="2" maxlength="35" pattern="[A-Za-z\s]{2,35}" v-model="subcontractor.subcontractor_city" required>
                     
                      
                 </div>
@@ -123,7 +123,7 @@
                 <div  style="margin-left:-30px " class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="3" style="text-align:right" type="zip" class="form-control" placeholder="XXXXX" pattern="[0-9]{5}" v-model="subcontractor.subcontractor_zipcode" required>
+                    <input size="3" style="text-align:right" type="zip" class="form-control" placeholder="XXXXX" minlength="5" maxlength="5" pattern="[0-9]{5}" v-model="subcontractor.subcontractor_zipcode" required>
                      
                 </div>
 

@@ -10,16 +10,16 @@ let TaskSchema = new Schema({
     
     project_number: {
       type: String,
-      minLength:1,
-      maxLength:5,
+      minlength:1,
+      maxlength:5,
       not: null,
       required: true,
       unique: false
     },
     phase_number: {
       type: String,
-      minLength:1,
-      maxLength:35,
+      minlength:1,
+      maxlength:35,
       not: null,
       required: true,
       unique: false
@@ -27,8 +27,8 @@ let TaskSchema = new Schema({
     },
     step_number: {
       type: String,
-      minLength:1,
-      maxLength:55,
+      minlength:1,
+      maxlength:55,
       not: null,
       required: true,
       unique: false
@@ -37,31 +37,31 @@ let TaskSchema = new Schema({
    
     task_name: {
         type: String,
-        minLength: 5,
-        maxLength: 55,
+        minlength: 5,
+        maxlength: 55,
         not: null,
         required: true
         
     },
     task_description: {
         type: String,
-        minLength: 0,
-        maxLength: 55,
+        minlength: 0,
+        maxlength: 55,
         
     },
     
 
     task_duration: {
         type: String,
-        minLength: 0,
-        maxLength: 3,
+        minlength: 0,
+        maxlength: 3,
         
     },
       
     task_percent_complete:{
         type: String,
-        minLength:2,
-        maxLength:4,
+        minlength:2,
+        maxlength:4,
         require:true
         
     },
@@ -80,15 +80,15 @@ let TaskSchema = new Schema({
 
     task_material_aquired: {
         type: String,
-        minLength:2,
-        maxLength:3,
+        minlength:2,
+        maxlength:3,
         require:true
 
     },
     task_status_type: {
         type: String,
-        minLength: 6,
-        maxLength: 25,
+        minlength: 6,
+        maxlength: 25,
         required: true,
         not: null
 

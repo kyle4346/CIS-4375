@@ -11,6 +11,10 @@
 
           <router-link class="btn viewProjects"  to="/viewProject">View Projects</router-link>
             <table class="styled-table">
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:12%">
                 
                 <thead class="thead-dark">
                     <tr>
@@ -26,10 +30,10 @@
                 </thead>
                 <tbody>
                     <tr v-for="employee_assigned in employee_assigneds" :key="employee_assigned.employee_assigned_id">
-                        <td>{{ employee_assigned.employee_firstname}}</td>
-                        <td>{{ employee_assigned.employee_lastname}}</td>
-                         <td>{{ employee_assigned.employee_email}}</td>
-                        <td>{{ employee_assigned.employee_assigned_date}}</td>
+                        <td style="position: relative;">{{ employee_assigned.employee_firstname}}</td>
+                        <td style="position: relative;" >{{ employee_assigned.employee_lastname}}</td>
+                        <td style="position: relative;" >{{ employee_assigned.employee_email}}</td>
+                        <td style="position: relative;" >{{ employee_assigned.employee_assigned_date}}</td>
                          
                         
                     </tr>

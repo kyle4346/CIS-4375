@@ -16,16 +16,24 @@
          </h2>
           <router-link class="btn viewSteps"  to="/viewStep">View Steps</router-link>
             <table class="styled-table">
-                
+
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
+
                 <thead class="thead-dark">
                     <tr>
-                        <th>Subcontractor Type</th>
-                        <th>Subcontractor First Name</th>
-                        <th>Subcontractor Last Name</th>
-                        <th>Subcontractor Email</th>
-                        <th>Subcontractor Fee</th>
-                        <th>Subcontractor Assigned Date</th>
-                        <th>Subcontractor Paid</th>
+                        <th>Subcontractor <br/> Type</th>
+                        <th>Subcontractor <br/> First Name</th>
+                        <th>Subcontractor <br/>Last Name</th>
+                        <th>Subcontractor <br/> Email</th>
+                        <th style="text-align: right" >Subcontractor<br/> Fee</th>
+                        <th>Subcontractor <br/>  Assigned Date</th>
+                        <th>Subcontractor <br/>Paid</th>
                         
                        
                     </tr>
@@ -36,7 +44,7 @@
                         <td>{{ subcontractor.subcontractor_fname}}</td>
                         <td>{{ subcontractor.subcontractor_lname}}</td>
                         <td>{{ subcontractor.subcontractor_email}}</td>
-                        <td>{{ steps.subcontractor_fee}}</td>
+                        <td style="text-align: right" >{{ steps.subcontractor_fee}}</td>
                         <td>{{ steps.subcontractor_assigned_date}}</td>
                         <td>{{ steps.subcontractor_paid}}</td>
                         

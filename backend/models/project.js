@@ -10,8 +10,8 @@ let ProjectSchema = new Schema({
     
     project_number: {
       type: String,
-      minLength:1,
-      maxLength:5,
+      minlength:1,
+      maxlength:5,
       not: null,
       required: true,
       unique: true
@@ -19,8 +19,8 @@ let ProjectSchema = new Schema({
      
     project_name: {
         type: String,
-        minLength: 5,
-        maxLength: 55,
+        minlength: 5,
+        maxlength: 30,
         not: null,
         required: true
         
@@ -28,16 +28,16 @@ let ProjectSchema = new Schema({
     
     project_information: {
         type: String,
-        minLength: 0,
-        maxLength: 55,
+        minlength: 0,
+        maxlength: 55,
        
     },
     
     
     project_budget: {
        type: String,
-       minLength: 9,
-       maxLength: 11,
+       minlength: 9,
+       maxlength: 11,
        not: null,
        required: true
         
@@ -45,8 +45,8 @@ let ProjectSchema = new Schema({
       
       project_estimated_cost: {
       type: String,
-       minLength: 1,
-       maxLength: 12,
+       minlength: 9,
+       maxlength: 11,
        not: null,
        required:true
        
@@ -54,8 +54,8 @@ let ProjectSchema = new Schema({
       },
       project_actual_cost: {
       type: String,
-       minLength: 0,
-       maxLength: 12,
+       minlength: 0,
+       maxlength: 11,
        not: null,
     
         
@@ -63,24 +63,24 @@ let ProjectSchema = new Schema({
       
       project_estimated_duration: {
         type: String,
-        minLength: 0,
-        maxLength: 7,
+        minlength: 0,
+        maxlength: 7,
         required:true
         
       },
       
       project_actual_duration: {
         type: String,
-        minLength: 0,
-        maxLength: 7,
+        minlength: 0,
+        maxlength: 7,
         
   
       },
       
       project_percent_complete:{
         type: String,
-        minLength:2,
-        maxLength:4,
+        minlength:2,
+        maxlength:4,
         require:true
 
       },
@@ -104,16 +104,16 @@ let ProjectSchema = new Schema({
       },
       project_status_type: {
         type: String,
-        minLength: 6,
-        maxLength: 25,
+        minlength: 6,
+        maxlength: 25,
         required:true,
         not:null
 
       },
       project_type_description: {
         type: String,
-        minLength: 5,
-        maxLength: 35,
+        minlength: 5,
+        maxlength: 35,
         required:true,
         not:null
 
@@ -121,43 +121,44 @@ let ProjectSchema = new Schema({
 
       project_location_street: {
         type: String,
-        minLength: 5,
-        maxLength: 55,
+        minlength: 5,
+        maxlength: 55,
         required: true,
         not: null
       },
       project_location_city: {
         type: String,
-        minLength: 3,
-        maxLength: 25,
+        minlength: 3,
+        maxlength: 35,
         required: true,
         not: null
       },
       project_location_zipcode: {
         type: String,
-        maxLength: 5,
+        minlength: 5,
+        maxlength:5,
         required: true,
         not: null
 
       },
       project_location_state: {
         type: String,
-        maxLength: 2,
+        maxlength: 2,
         required: true,
         not: null
 
       },
       project_location_country: {
         type: String,
-        maxLength: 13,
+        maxlength: 13,
         required: true,
         not: null
 
       },
       project_location_status_type: {
         type: String,
-        minLength: 5,
-        maxLength: 15,
+        minlength: 5,
+        maxlength: 15,
         required: true,
         not: null
       },

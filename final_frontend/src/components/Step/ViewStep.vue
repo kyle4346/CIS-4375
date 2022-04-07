@@ -10,14 +10,13 @@
             
             <table class="styled-table">
                 <col   style="width:1%"> 
+                <col   style="width:12%"> 
+                <col   style="width:20%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:1%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:1%"> 
-                <col   style="width:1%"> 
-                <col   style="width:0%">
+                <col   style="width:0%"> 
                 <col   style="width:0%">
                 <col   style="width:0%">
                 <thead class="thead-dark">
@@ -25,11 +24,10 @@
                         <th>Project Num.</th>
                         <th>Phase</th>
                         <th>Step</th>
-                        <th>Completed</th>
+                        <th>Subcontractor<br/> Assigned</th>
                         <th>Cost</th>
                         <th>Status</th>
-                        <th>Duration</th>
-                        <th>% Finished</th>
+                        <th>% <br/>Finished</th>
                         <th>Start Date</th>
                         <th>Actions</th>
                         <th>Reports</th>
@@ -40,11 +38,11 @@
                         <td style="vertical-align:top">{{ step.project_number }}</td>
                         <td style="vertical-align:top">{{ step.phase_number }}</td>
                         <td style="vertical-align:top">{{ step.step_number }}</td>
-                        <td style="vertical-align:top">{{ step.step_completed }}</td>
+                        <td style="vertical-align:top">{{ step.subcontractor_assign }}</td>
                         <td style="vertical-align:top">{{ step.step_cost }}</td>
                         <td style="vertical-align:top">{{ step.step_status_type}}</td>
-                        <td style="vertical-align:top">{{ step.step_duration}} days</td>
-                        <td style="vertical-align:top">{{ step.step_percent_complete}}</td>
+                       
+                        <td style="vertical-align:top; text-align: right">{{ step.step_percent_complete}}</td>
                         <td style="vertical-align:top">{{ step.step_start_date }}</td>
                         <td>
                             <router-link :to="{name: 'editStep', params: { id: step.step_id}}"  class="btn one">View / Edit

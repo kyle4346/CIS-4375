@@ -10,23 +10,23 @@ let SubcontractorAssignedSchema = new Schema({
 
    subcontractor_firstname: {
       type: String,
-      minLength: 2,
-      maxLength: 30,
+      minlength: 2,
+      maxlength: 30,
       not: null,
       required: true
    },
    subcontractor_lastname: {
     type: String,
-    minLength: 2,
-    maxLength: 30,
+    minlength: 2,
+    maxlength: 30,
     not: null,
     required: true
    },
     
     project_number: {
       type: String,
-      minLength:1,
-      maxLength:9,
+      minlength:1,
+      maxlength:9,
       not: null,
       required: true,
       unique: false
@@ -40,8 +40,8 @@ let SubcontractorAssignedSchema = new Schema({
      
   subcontractor_assigned_cost: {
     type: String,
-    minLength:1 ,
-    maxLength: 15,
+    minlength:1 ,
+    maxlength: 15,
     required:true,
     not:null
           
@@ -50,15 +50,15 @@ let SubcontractorAssignedSchema = new Schema({
 
     subcontractor_assigned_paid: {
       type: String,
-      minLength:2,
-      maxLength:3,
+      minlength:2,
+      maxlength:3,
       required:true
       
   },
     
   subcontractor_email: {
     type: String,
-    maxLength: 55,
+    maxlength: 55,
     required: true,
     unique:true,
     not: null

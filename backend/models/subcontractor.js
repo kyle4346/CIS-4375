@@ -10,36 +10,36 @@ let SubcontractorSchema = new Schema({
     
     subcontractor_fname: {
         type: String,
-        minLength: 2,
-        maxLength: 25,
+        minlength: 2,
+        maxlength: 25,
         not: null,
         required: true
     },
     subcontractor_lname: {
       type: String,
-      minLength: 2,
-      maxLength: 35,
+      minlength: 2,
+      maxlength: 35,
       not: null,
       required: true
   },
   subcontractor_detail: {
     type: String,
-    minLength: 0,
-    maxLength: 55,
+    minlength: 0,
+    maxlength: 55,
     
 
   },
     subcontractor_gender: {
       type: String,
-      maxLength: 6,
+      maxlength: 6,
       not: null,
       required: true
    
   },
     subcontractor_business_name: {
         type: String,
-        minLength: 5,
-        maxLength: 55,
+        minlength: 5,
+        maxlength: 55,
         required:true,
         not:null
        
@@ -47,15 +47,15 @@ let SubcontractorSchema = new Schema({
     },
    subcontractor_rate: {
         type: String,
-        minLength: 2,
-        max: 12,
+        minlength: 3,
+        maxlength: 7,
         required: true,
         not: null
     },
     
     subcontractor_phone: {
         type: String,
-        maxLength: 12,
+        maxlength: 12,
         required: true,
         not: null
       
@@ -64,7 +64,7 @@ let SubcontractorSchema = new Schema({
     
     subcontractor_email: {
         type: String,
-        maxLength: 45,
+        maxlength: 45,
         required: true,
         unique:true,
         not: null
@@ -73,8 +73,8 @@ let SubcontractorSchema = new Schema({
       
       subcontractor_address: {
           type: String,
-          minLength: 5, 
-          maxLength: 55,
+          minlength: 5, 
+          maxlength: 55,
           required: true,
           not: null
         
@@ -82,14 +82,14 @@ let SubcontractorSchema = new Schema({
       
      subcontractor_city: {
         type: String,
-        minLength: 2,
-        maxLength: 35,
+        minlength: 2,
+        maxlength: 35,
         required: true,
         not: null
       },
       subcontractor_state: {
         type: String,
-        maxLength: 2,
+        maxlength: 2,
         required: true,
         not: null
       },
@@ -97,7 +97,7 @@ let SubcontractorSchema = new Schema({
       subcontractor_zipcode: {
         type: String,
         required: true,
-        maxLength: 5,
+        maxlength: 5,
         not: null
   
   
@@ -105,7 +105,7 @@ let SubcontractorSchema = new Schema({
       
       subcontractor_country: {
         type: String,
-        maxLength: 13,
+        maxlength: 13,
         required: true,
         not: null
 
@@ -113,8 +113,8 @@ let SubcontractorSchema = new Schema({
       
     subcontractor_status: {
         type: String,
-        minLength: 5,
-        maxLength: 16,
+        minlength: 5,
+        maxlength: 16,
         required: true,
         not: null
         
@@ -122,8 +122,8 @@ let SubcontractorSchema = new Schema({
     },
       subcontractor_type: {
         type: String,
-        minLength: 3,
-        maxLength: 16,
+        minlength: 3,
+        maxlength: 16,
         required: true,
         not: null
 

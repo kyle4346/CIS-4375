@@ -20,12 +20,20 @@
            <router-link class="btn viewSteps" to="/viewStep">View Steps</router-link>
             <br>
             <table class="styled-table">
+
+                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                <col   style="width:9%"> 
+                <col   style="width:11%">
+                <col   style="width:12%">
+                <col   style="width:11%">
+                <col   style="width:15%">
                 
                 <thead class="thead-dark">
                     <tr>  
                         <th>Task</th>
                         <th>Completed</th>
-                        <th>% Finished</th>
+                        <th style="text-align: right" >% Finished</th>
                         <th>Task Duration</th>
                         <th>Task Start Date</th>
                         <th>Task End Date</th>
@@ -38,7 +46,7 @@
                     <tr v-for="task in Tasks" :key="task.task_id">
                         <td style="position: relative; " >{{ task.task_name}} </td>
                         <td style="position: relative; " >{{ task.task_completed}} </td>
-                        <td style="position: relative; " >{{ task.task_percent_complete }}</td>
+                        <td style="position: relative; text-align:right " >{{ task.task_percent_complete }}</td>
                         <td style="position: relative; " >{{ task.task_duration}} hour(s)</td>
                         <td style="position: relative; " >{{ task.task_start_date}}</td>
                         <td style="position: relative; " >{{ task.task_end_date}}</td>

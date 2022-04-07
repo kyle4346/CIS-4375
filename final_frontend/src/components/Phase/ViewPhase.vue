@@ -9,12 +9,12 @@
             <p><router-link class="btn createProject"  to="/viewProject">View Projects</router-link></p>
             
             <table class="styled-table">
+                <col   style="width:1%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                <col   style="width:1%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -23,12 +23,12 @@
                     <tr>
                         <th>Project Num.</th>
                         <th>Phase</th>
-                        <th>Completed</th>
                         <th>Cost</th>
                         <th>Status</th>
                         <th>Estimated Duration</th>
                         <th>% Finished</th>
                         <th>Start Date</th>
+                        <th>Estimated End Date</th>
                         <th>Actions</th>
                         <th>Report</th>
                     </tr>
@@ -37,12 +37,12 @@
                     <tr v-for="phase in filteredPhases" :key="phase.phase_id">
                         <td style="vertical-align:top">{{ phase.project_number }}</td>
                         <td style="vertical-align:top">{{ phase.phase_number }}</td>
-                        <td style="vertical-align:top">{{ phase.phase_completed }}</td>
-                        <td style="vertical-align:top">{{ phase.phase_cost }}</td>
+                        <td style="vertical-align:top; text-align: right">{{ phase.phase_cost }}</td>
                         <td style="vertical-align:top">{{ phase.phase_status_type}}</td>
-                         <td style="vertical-align:top">{{ phase.phase_estimated_duration}} weeks</td>
-                        <td style="vertical-align:top">{{ phase.phase_percent_complete}}</td>
+                         <td style="vertical-align:top; ">{{ phase.phase_estimated_duration}} weeks</td>
+                        <td style="vertical-align:top; text-align: right">{{ phase.phase_percent_complete}}</td>
                         <td style="vertical-align:top">{{ phase.phase_start_date }}</td>
+                        <td style="vertical-align:top">{{ phase.phase_estimated_end_date}}</td>
                         <td>
                             <router-link :to="{name: 'editPhase', params: { id: phase.phase_id}}"  class="btn one">View / Edit
                             </router-link>

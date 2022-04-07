@@ -8,23 +8,23 @@
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                 
-           <div class="form-group row">
+             <div class="form-group row">
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="4" style="text-align:right;" type="text" class="form-control" id="inputProjectNum" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="project.project_number" required>
+                    <input size="4" style="text-align:right;" type="text" class="form-control" id="inputProjectNum" minlength="1" maxlength="5" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="project.project_number" required>
                     
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:40px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectName">Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="58" type="text" class="form-control" id="inputProjectName" placeholder="Mario Custom Home" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}" v-model="project.project_name" required>
+                     <input size="31"  type="text"  class="form-control" id="inputProjectNotes" minlength="5" maxlength="30"  placeholder="Two-Story House"  rows="1" v-model="project.project_name" required>
                     
                 </div>
         
 
-                 <div class="form-group col-lg-auto">
+                 <div style="margin-left:40px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" for="inputProjectNotes">Comments</label>
                     
                     <textarea  type="text" cols="56" class="form-control" id="inputProjectNotes" minlength="0" maxlength="55"  placeholder="Two-Story House"  rows="1" v-model="project.project_information" ></textarea>
@@ -34,10 +34,10 @@
 
                
 
-                <div style="margin-left:0px;" class="form-group col-lg-auto">
+                <div style="margin-left:50px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectBudget">Budget</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right;" type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" size="10"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_budget" required>
+                    <input style="text-align:right;" type="text" class="form-control" id="inputProjectBudget" placeholder="$25,000.50" minlength="9" maxlength="11"  size="10"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_budget" required>
                     
                 </div>
 
@@ -49,14 +49,14 @@
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectEstimate">Estimated Cost</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
-                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" size="8"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_estimated_cost" required>
+                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectEstimate" placeholder="$45,000.50" minlength="9" maxlength="11" size="8"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_estimated_cost" required>
                     
                     
                 </div>
 
                 <div style="margin-left:30px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectActual">Actual Cost</label>
-                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" size="10"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_actual_cost" >
+                    <input  style="text-align:right;" type="text" class="form-control" id="inputProjectActual" placeholder="$35,000.50" minlength="0" maxlength="11"  size="10"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="project.project_actual_cost" >
                     
                 </div>
 
@@ -118,7 +118,7 @@
                 <div style="margin-left:30px;" class="form-group col-lg-auto">
                     <label style ="font-size:14pt">Actual End Date</label>
                     <input type="date" class="form-control" v-model="project.project_actual_end_date" >
-                    <br>
+                    
                     
                 </div>
 
@@ -130,9 +130,7 @@
                     <select style="width:170px"  v-model="project.project_type_description" required> 
                      <option v-for="project_type_description in project_type_descriptions" v-bind:key="project_type_description">{{project_type_description}}</option>
                     </select>
-                    <br>
-                    <br>
-                    <br>
+                    
                     
                 </div>
 
@@ -144,11 +142,10 @@
                     <select style="width:120px"  v-model="project.project_status_type" required> 
                      <option v-for="project_status_type in project_status_types" v-bind:key="project_status_type">{{project_status_type}}</option>
                     </select>
-                    
+                    <br>
+                    <br>
                 </div>
 
-               
-               
                 </div>
 
                 <div class="form-group row">
@@ -158,19 +155,19 @@
                  <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >Address</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" size="59" class="form-control" placeholder="Street Address, Apt # 123" pattern="[a-zA-Z\d\s\-\,\#\.\+]+{5,55}"   v-model="project.project_location_street" required>
+                    <input type="text" size="59" class="form-control" placeholder="Street Address, Apt # 123" minlength="5" maxlength="55" pattern="[a-zA-Z\d\s\-\,\#\.\+]{5,55}"   v-model="project.project_location_street" required>
                    
                 </div>
 
-                <div style="margin-left: 0px;" class="form-group col-lg-auto">
+                <div style="margin-left: 10px;" class="form-group col-lg-auto">
                     
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input type="text" size="23" class="form-control" placeholder="Fresno" pattern="[A-Za-z\s]{3,35}" v-model="project.project_location_city" required>
+                    <input type="text" size="36" class="form-control" placeholder="Fresno" minlength="3" maxlength="35"  pattern="[A-Za-z\s]{3,35}" v-model="project.project_location_city" required>
                     
                 </div>
 
-                 <div  style="margin-left: 0px;" class="form-group col-lg-1">
+                 <div  style="margin-left: 15px;" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">State</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -182,16 +179,16 @@
                     
                 </div>
 
-                <div style="margin-left: -40px;" class="form-group col-lg-1">
+                <div style="margin-left: -20px;" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">Zip Code</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right;" type="zip" class="form-control" placeholder="XXXXX" pattern="[0-9]{5}" v-model="project.project_location_zipcode" required>
+                    <input style="text-align:right;" type="zip" class="form-control" placeholder="XXXXX" minlength="5" maxlength="5" pattern="[0-9]{5}" v-model="project.project_location_zipcode" required>
                       
                      
                 </div>
 
-                <div style="margin-left: 0px;" class="form-group col-lg-1">
+                <div style="margin-left: 10px;" class="form-group col-lg-1">
                     
                     <label style ="font-size:14pt">Country</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -200,11 +197,15 @@
                      <option v-for="project_location_country in project_location_countries" v-bind:key="project_location_country" :value="project_location_country">{{project_location_country}}</option>
                     </select>
                     
-                    
+                    <br>
+                    <br>
                     
                 </div>
 
-                <div style="margin-left:35px;" class="form-group col-lg-2">
+                </div>
+
+                 <div class="form-group row">
+                     <div  class="form-group col-lg-2">
                     <label style ="font-size:14pt">Location Status</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     
@@ -213,10 +214,11 @@
                     </select>
                    <br>
                    <br>
-                   <br>
                 </div>
 
-                </div>
+                 </div>
+
+
 
                   <div >
                          <button class="btn btn-danger mt-3" style ="font-size:14pt">Update</button>
@@ -254,7 +256,7 @@ export default {
             errors: [],
             project: { 
 
-
+            project_number: this.$route.params.id
 
             },//drop down lists found from createcomponent, unchanged of course
              //static data for dropdown lists

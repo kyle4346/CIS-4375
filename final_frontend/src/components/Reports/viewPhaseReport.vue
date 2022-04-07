@@ -24,7 +24,7 @@
                     <tr>
                        
                         <th>Phase Name</th>
-                        <th>Phase Completed</th>
+                        <th>Phase Status</th>
                         <th>Phase Cost</th>
                         <th>Phase Estimated Duration</th>
                         <th>Phase Estimated Start  Date</th>
@@ -37,9 +37,8 @@
                     <tr v-for="phase in phases" :key="phase.phase_id">
                         
                         <td style="position: relative; text-align:left" >{{phase.phase_number }}</td>
-                       
-                        <td style="position: relative; text-align:left" >{{phase.phase_completed}} </td>
-                        <td style="position: relative; text-align:left" >{{phase.phase_cost}}</td>
+                        <td style="position: relative; text-align:left" >{{phase.phase_status_type}} </td>
+                        <td style="position: relative; text-align:right" >{{phase.phase_cost}}</td>
                         <td style="position: relative; text-align:left" >{{phase.phase_estimated_duration}} week(s) </td>
                         <td style="position: relative; text-align:left" >{{phase.phase_start_date}}</td>
                         <td style="position: relative; text-align:left" >{{phase.phase_estimated_end_date}}</td>

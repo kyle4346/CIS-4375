@@ -9,28 +9,27 @@
             <br>
             <table class="table styled-table">
                 <col   style="width:0%"> 
+                <col   style="width:0%"> 
+                <col   style="width:9%"> 
+                <col   style="width:6%"> 
+                <col   style="width:10%"> 
+                <col   style="width:9%"> 
                 <col   style="width:1%"> 
-                <col   style="width:auto%"> 
-                <col   style="width:auto%"> 
-                <col   style="width:auto%"> 
-                <col   style="width:auto%"> 
-                <col   style="width:auto%"> 
-                <col   style="width:auto%">
-                <col   style="width:auto%">
-                <col   style="width:auto%">
-                <col   style="width:auto%">
+                <col   style="width:9%">
+                <col   style="width:9%">
+                <col   style="width:0%">
+                <col   style="width:0%">
                 <thead class="thead-dark">
                     <tr>
                         <th>Num.</th>
                         <th>Name</th>
-                        <th>Completed</th>
-                        <th> Budget</th>
-                        <th >Status</th>
-                        <th >Type</th>
-                        <th >City</th>
-                        <th >% Finished</th>
+                        <th>Budget</th>
+                        <th>Status</th>
+                        <th>Type</th>
+                        <th>City</th>
+                        <th>% Finished</th>
+                        <th>Start Date</th>
                         <th >Estimated End Date</th>
-                       
                         <th >Actions</th>
                         <th >Reports</th>
                     </tr>
@@ -39,12 +38,12 @@
                     <tr v-for="project in filteredProjects" :key="project.project_id">
                         <td style="position: relative;">{{ project.project_number }}</td>
                         <td style="position: relative;" >{{ project.project_name }}</td>
-                        <td style="position: relative;">{{ project.project_completed }}</td>
                         <td style="position: relative;">{{ project.project_budget }}</td>
                         <td style="position: relative;">{{ project.project_status_type }}</td>
                         <td style="position: relative;">{{ project.project_type_description}}</td>
                         <td style="position: relative;">{{ project.project_location_city }}</td>
-                        <td style="position: relative;">{{ project.project_percent_complete }}</td>
+                        <td style="position: relative; text-align: right">{{ project.project_percent_complete }}</td>
+                        <td style="position: relative;">{{ project.project_start_date }}</td>
                         <td style="position: relative;">{{ project. project_estimated_end_date}}</td>
                        
                         <td style="position: relative;">
@@ -194,7 +193,7 @@ position: -webkit-absolute;
 .one{
    border: 2px solid black;
    margin-top: -2px;
-   margin-left:-15px; 
+   margin-left:-20px; 
    color:white; 
    background-color:green; 
    padding: 0px 5px;
@@ -205,7 +204,7 @@ position: -webkit-absolute;
 .two{
    border: 2px solid black;
    margin-top: 45px;
-   margin-left:-15px; 
+   margin-left:-20px; 
    color:white; 
    background-color:red; 
    padding: 0px 20px;
@@ -216,7 +215,7 @@ position: -webkit-absolute;
 .three{
    border: 2px solid black;
    margin-top: 91px;
-   margin-left:-15px; 
+   margin-left:-20px; 
    color:white; 
    background-color:rgb(0, 195, 255); 
    padding: 0px 4px;
@@ -227,7 +226,7 @@ position: -webkit-absolute;
 .four{
    border: 2px solid black;
    margin-top: 137px;
-   margin-left: -15px;
+   margin-left: -23px;
    margin-right:-20px;  
    color:white; 
    background-color:rgb(255, 6, 255); 
@@ -240,30 +239,30 @@ position: -webkit-absolute;
 .five{
    border: 2px solid black;
    margin-top: -2px;
-   margin-left: -5px; 
+   margin-left: -4px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 0px 8px;
+   padding: 0px 5px;
    font-size:16px
 }
 
 .six{
    border: 2px solid black;
    margin-top: 10px;
-   margin-left:-5px; 
+   margin-left:-4px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 0px 8px;
+   padding: 0px 5px;
    font-size:16px
 }
 
 .seven{
    border: 2px solid black;
    margin-top: 20px;
-   margin-left:-5px; 
+   margin-left:-8px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 0px 2px;
+   padding: 0px 0px;
    font-size:16px
     
 }

@@ -10,12 +10,12 @@
           <router-link class="btn viewProjects" to="/viewProject">View Projects</router-link>
             <table class="styled-table">
 
+                <col    style="width:20%"> 
+                <col   style="width:22%"> 
+                <col   style="width:0%"> 
                 <col    style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
-                <col    style="width:0%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                <col   style="width:9%"> 
                
                 
                 <thead class="thead-dark">
@@ -25,7 +25,7 @@
                         <th>First Name</th>
                         <th>Last Name</th>
                         <th>Email</th>
-                        <th>Investment Amount</th>
+                        <th style="text-align:right" >Investment Amount</th>
                         <th>Investor Paid</th>
                         <th>Investor Assigned Date</th>
                        
@@ -39,7 +39,7 @@
                         <td style="position: relative; text-align:left" >{{ investor_assigned.investor_assign_firstname }}</td>
                         <td style="position: relative; text-align:left" >{{ investor_assigned.investor_assign_lastname }}</td>
                         <td style="position: relative; text-align:left" >{{ investor_assigned.investor_email }}</td>
-                        <td style="position: relative; text-align:left" >{{ investor_assigned.investor_assigned_cost }}</td>
+                        <td style="position: relative; text-align:right" >{{ investor_assigned.investor_assigned_cost }}</td>
                         <td style="position: relative; text-align:left " >{{ investor_assigned.investor_assigned_paid}}</td>
                         <td style="position: relative; text-align:left" >{{ investor_assigned.investor_assigned_date }}</td>
                   
