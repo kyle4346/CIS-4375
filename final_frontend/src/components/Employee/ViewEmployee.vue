@@ -50,7 +50,7 @@
                         
                         <br>
                         <br>
-                         <router-link :to="{name: 'createEmployeeAssigned', params: { id: employee.employee_email}}"  class="btn three">Employee<br/> Assigned
+                         <router-link :to="{name: 'createEmployeeAssigned', params: { id: employee.employee_email}}"  class="btn three">Assign<br/>Employee
                             </router-link>
 
                         </td>
