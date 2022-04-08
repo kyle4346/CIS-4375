@@ -305,4 +305,9 @@ export default {
 #navi {
   background-color: black;
 }
+#app {
+  max-height: 71.8px;
+  max-width: 1536px;
+
+}
 </style>

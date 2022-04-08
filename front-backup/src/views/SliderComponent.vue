@@ -3,11 +3,11 @@
   <div class = "Slider">
     <transition-group name="fade" tag="div">
       <div v-for="i in [currentIndex]" :key="i">
-        <img :src="currentImg" />
+        <img :src="currentImg" >
       </div>
     </transition-group>
-    <a class="prev" @click="prev" href="#">&#10094; Previous</a>
-    <a class="next" @click="next" href="#">&#10095; Next</a>
+    <!-- <a class="prev" @click="prev" href="#">&#10094; Previous</a>
+    <a class="next" @click="next" href="#">&#10095; Next</a> -->
   </div>
 
 </template>
@@ -54,30 +54,39 @@ export default {
 </script>
 
 <style>
-.fade-enter-active,
+/* .fade-enter-active,
 .fade-leave-active {
-  /* transition: all 10s ease; */
+  transition: all 10s ease;
   
   overflow: hidden;
   visibility: visible;
   position: absolute;
   width:70%;
   opacity: 1;
+} */
+
+.fade-enter-active,.fade-leave-active {
+  transition: all 5s ease;
 }
 
-.fade-enter{
+.fade-enter-from,.fade-leave-to {
+/* transition-delay: 2s; */
+opacity: 0;
+}
+
+/* .fade-enter{
   transition: 2s ease;
   visibility: hidden;
   width:70%;
   opacity: 0;
-}
+} */
 
 img {
   height:600px;
   width:70%
 }
 
-.prev, .next {
+/* .prev, .next {
   cursor: pointer;
   position: absolute;
   top: 40%;
@@ -102,5 +111,5 @@ img {
 
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.9);
-}
+} */
 </style>
