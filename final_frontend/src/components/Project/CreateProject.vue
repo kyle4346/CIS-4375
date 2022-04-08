@@ -64,7 +64,7 @@
 
                  <div  style="margin-left: 30px;" class="form-group col-lg-3">
                     
-                    <label style ="font-size:14pt">Estimated Duration (Months)</label>
+                    <label style ="font-size:14pt">Estimated Duration (months)</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <br>
                     <select style="width:240px" v-model="project.project_estimated_duration" required> 
@@ -75,7 +75,7 @@
 
                 <div  style="margin-left:-40px;" class="form-group col-lg-3">
                     
-                    <label style ="font-size:14pt">Actual Duration (Months)</label>
+                    <label style ="font-size:14pt">Actual Duration (months)</label>
                     <br>
                     <select style="width:205px"  v-model="project.project_actual_duration" > 
                      <option style="text-align:right" v-for="project_actual_duration in project_actual_durations" v-bind:key="project_actual_duration"  >{{project_actual_duration}}</option>
@@ -265,7 +265,7 @@
                    project_start_date: '',
                    project_estimated_end_date: '',
                    project_actual_end_date: '',
-                   project_status_type: '',
+                   project_status_type: 'Not-Started',
                    project_type_description: '',
                    project_location_street: '',
                    project_location_city: '',

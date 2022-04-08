@@ -97,8 +97,7 @@
                     return subcontractor.subcontractor_fname.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
                            subcontractor.subcontractor_lname.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
                            subcontractor.subcontractor_type.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
-                           subcontractor.subcontractor_business_name.toLowerCase().match(this.searchSubcontractors.toLowerCase()) ||
-                           subcontractor.subcontractor_email.toLowerCase().match(this.searchSubcontractors.toLowerCase()) 
+                           subcontractor.subcontractor_status.toLowerCase().match(this.searchSubcontractors.toLowerCase()) 
                            
                     
                 })

@@ -8,7 +8,7 @@
             <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
             <form @submit.prevent="handleUpdateForm">
                  
-        <div class="form-group row">
+         <div class="form-group row">
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepProjectNum">Project Number</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
@@ -62,8 +62,7 @@
 
                 <div style="margin-left:-180px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Cost</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" minlength="9"  maxlength="11"  pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="step.step_cost" required>
+                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" minlength="5"  maxlength="11"   v-model="step.step_cost" >
                     
                 </div>
 
@@ -126,7 +125,7 @@
                 
 
                 <div  class="form-group row">
-                    <strong style ="font-size:150%"> Subcontractor Assignment Information</strong>
+                    <strong style ="font-size:150%"> Subcontractor Assignment General Information</strong>
                     
                     
                     <div class="form-group col-lg-auto">
@@ -189,8 +188,6 @@
                 </div>
 
                  </div>
-
-                    <br>
 
              <button class="btn btn-danger mt-3" style ="font-size:14pt">Update</button>
 

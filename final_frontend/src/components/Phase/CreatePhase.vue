@@ -55,8 +55,8 @@
 
                 <div style="margin-left:-50px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseBudget">Cost</label>
-                    <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="8" style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00" minlength="9"  maxlength="11" pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="phase.phase_cost" required>
+                  
+                    <input size="8" style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00" minlength="7"  maxlength="11"  v-model="phase.phase_cost" >
                     
                 </div>
 
@@ -156,7 +156,7 @@
                    phase_start_date:'',
                    phase_estimated_end_date: '',
                    phase_actual_end_date: '',
-                   phase_status_type: '',
+                   phase_status_type: 'Not-Started',
 
                  
                  

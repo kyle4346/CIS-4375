@@ -12,7 +12,7 @@
           href="/"
           role="button"
           id="dashboard"
-          >Dashboard</a
+          >Home</a
         >
 
         <!-- Example single danger button -->
