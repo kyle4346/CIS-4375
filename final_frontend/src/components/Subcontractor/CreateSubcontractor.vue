@@ -41,7 +41,7 @@
                    
                 </div>
 
-                <div style="margin-left:-60px;" class="form-group col-lg-2">
+                <div style="margin-left:-65px;" class="form-group col-lg-2">
                     
                     
                     <label style ="font-size:14pt; margin-left:0px;">Status</label>
