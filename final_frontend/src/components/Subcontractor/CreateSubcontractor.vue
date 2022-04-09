@@ -175,7 +175,6 @@
                 subcontractor: {
                    subcontractor_fname: '',
                    subcontractor_lname: '',
-                   subcontractor_gender:'',
                    subcontractor_business_name: '',
                    subcontractor_rate: '',
                    subcontractor_phone: '',
@@ -222,7 +221,6 @@
                   this.investor = {
                    subcontractor_fname: '',
                    subcontractor_lname: '',
-                   subcontractor_gender:'',
                    subcontractor_business_name: '',
                    subcontractor_rate: '',
                    subcontractor_phone: '',
