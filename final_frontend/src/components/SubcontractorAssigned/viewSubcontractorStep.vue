@@ -1,7 +1,8 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-
+            <br>
+            <br>
         <strong style="margin-left:240px; font-size: 20pt; color:Black; "  >Search Subcontractors Assigned:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="ex: SUBID or STEPID or Subcontractor Paid " />
          <p><router-link class="btn createSubcontractorAssign"  to="/createSubcontractorAssigned">Create Subcontractor Assignment</router-link></p>

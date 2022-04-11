@@ -1,5 +1,8 @@
 <template>
     <div class="row">
+
+      <br>
+      <br>
       
         <div class="col-lg-12">
          <u class="phaseReport">Assignment of Steps Report</u>

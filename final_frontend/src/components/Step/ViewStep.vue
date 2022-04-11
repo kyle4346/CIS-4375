@@ -1,7 +1,8 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
-             
+            <br>
+            <br>
              <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Steps:</strong>
             <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchSteps" placeholder="Filter by Project Num." /> 
            <br>

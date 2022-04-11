@@ -172,7 +172,6 @@
           </ul>
         </div>
 
-        
 
         <img src="./assets/logo1.jpeg" id="image" />
 

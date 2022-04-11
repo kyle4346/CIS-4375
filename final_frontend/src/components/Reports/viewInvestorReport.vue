@@ -1,6 +1,7 @@
 <template>
     <div class="row">
-         
+         <br>
+         <br>
          
         <div class="col-lg-12">
  <u class="projectReport" >Invested Projects' Report</u>

@@ -1,6 +1,8 @@
 <template>
     <div class="row">
         <div class="col-lg-12">
+            <br>
+            <br>
             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Phases:</strong>
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchPhases" placeholder="Filter by Project Num." /> 
             <br>

@@ -1,5 +1,7 @@
 <template>
     <div class="row">
+        <br>
+        <br>
         <div class="col-lg-12">
 
         <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Assigned Investors:</strong>
