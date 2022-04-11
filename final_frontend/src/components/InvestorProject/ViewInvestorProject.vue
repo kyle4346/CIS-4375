@@ -5,7 +5,7 @@
         <br>
         <br>
         <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Assigned Investors:</strong>
-        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Name " />
+        <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchInvestor" placeholder="Filter by Project Num. or Name " />
         <p><router-link class="btn createInvestorAssign"  to="/createInvestorAssigned">Add Investor Assignment</router-link></p>
           
           <br>
@@ -67,7 +67,7 @@
         data() {
             return {
                 investor_assigneds: [] ,
-                search: ''
+                searchInvestor: ''
             }
         },
         // this is using created hook 
@@ -83,11 +83,11 @@
             filteredInvestorsAssigned: function(){
 
 
-                return this.investor_assigneds.filter((investor_assigned) =>{
+               return this.investor_assigneds.filter((investor_assigned) =>{
 
-                    return investor_assigned.project_number.match(this.search) ||
-                           investor_assigned.investor_lastname.toLowerCase().match(this.search.toLowerCase())||
-                           investor_assigned.investor_firstname.toLowerCase().match(this.search.toLowerCase())
+                    return investor_assigned.project_number.match(this.searchInvestor) ||
+                           investor_assigned.investor_assign_firstname.toLowerCase().match(this.searchInvestor.toLowerCase()) ||
+                           investor_assigned.investor_assign_lastname.toLowerCase().match(this.searchInvestor.toLowerCase()) 
                     
                 })
             }    
