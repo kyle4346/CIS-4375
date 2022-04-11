@@ -1,7 +1,8 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
-
+            <br>
+            <br>
             <u class="text" style="font-size:200%; font-weight:bold; margin-left:450px">Update Task Intake Form</u>
           <br>
             <strong style ="font-size:150%">General Information</strong>

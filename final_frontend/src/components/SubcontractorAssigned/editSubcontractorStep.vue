@@ -1,6 +1,8 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
+            <br>
+            <br>
             <h1 class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Update Subcontractor Assigned</h1>
             <strong style ="font-size:150%">General Information</strong>
             <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>

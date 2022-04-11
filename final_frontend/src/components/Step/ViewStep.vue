@@ -140,7 +140,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 200%;
+  height: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }

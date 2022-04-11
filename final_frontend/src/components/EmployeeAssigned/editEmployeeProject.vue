@@ -1,6 +1,8 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12">
+            <br>
+            <br>
             <div style="margin-left:500px; margin-top: -40px">
             <u class="text-center" style="font-size:200%; font-weight:bold">Update Assigned Employee</u>
             </div> 

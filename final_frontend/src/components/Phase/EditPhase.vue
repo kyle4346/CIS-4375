@@ -1,6 +1,8 @@
 <template>
     <div class="row justify-content-center"> 
         <div class="col-lg-12"> 
+            <br>
+            <br>
         <div style="margin-left:525px; margin-top: -50px">
             <u class="text-center" style="font-size:200%; font-weight:bold; margin-top:-35px">Update Phase </u>
          </div> 
