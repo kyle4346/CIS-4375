@@ -82,6 +82,8 @@
 
                             <router-link :to="{name: 'project_employee_report', params: { id:project.project_number}}"  class="btn seven">Assigned <br/> Employees<br/> 
                             </router-link>
+
+                            <button id = "toTop" @click="moveUp()"> </button>
                         </td>
                     </tr>
                 </tbody>
@@ -138,7 +140,12 @@
                         console.log(error)
                     });
                 }
-            }
+            },
+           
+    moveUp(){
+           window.scrollTo(0,0);
+      }
+  
         }
     }
 </script>
@@ -295,5 +302,16 @@ position: -webkit-absolute;
 .ic3 {
   width: 64px;
   height: 64px;
+}
+
+#toTop {
+  position: fixed;
+  border: 1px solid blue;
+  background-color: rgba(255,200,200,0.5);  
+  width: 30px;
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 </style>

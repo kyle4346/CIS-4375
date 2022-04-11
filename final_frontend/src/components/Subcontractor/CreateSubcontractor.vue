@@ -198,7 +198,7 @@
                 'MA','MI','MN','MS','MO','MT','NE','NV','NH','NJ','NM','NY','NC','ND','OH','OK','OR','PA','RI','SC','SD','TN','TX','UT','VT','VA','WA','WV','WI','WY'],
                 countries:['United States'],
                 subcontractor_statuses: ['Available', 'Unavailable', 'Working','Unknown'],
-                subcontractor_types:['General','Site Excavation', 'Concrete','Framing', 'Insulation','Drywall','Painting','Carpentry','Electric',
+                subcontractor_types:['General','Site Excavation', 'Concrete','Framing', 'Insulation','Drywall','Painting','Carpentry',
                 'Plumbing','Electrical','Masonry','Heating and AC','Flooring','Appliance','Fencing','Landscape','Maid Service','Roofing','Other'],
             }
         },
