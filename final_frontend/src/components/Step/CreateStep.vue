@@ -62,7 +62,7 @@
 
                 <div style="margin-left:-180px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Cost</label>
-                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" minlength="2"  maxlength="11"   v-model="step.step_cost" >
+                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00"  maxlength="11"   v-model="step.step_cost" >
                     
                 </div>
 
@@ -102,19 +102,21 @@
                 </div>
 
                 <div  style="margin-left:20px" class="form-group col-lg-2">
-                <label style ="font-size:14pt" class="col-form-label pt-0">Assign Subcontractor</label> 
+                <label style ="font-size:14pt" class="col-form-label pt-0">Subcontractor Assign</label>
+                <label style ="font-size:14pt; color:red; font-weight:bold">* </label>
+                
                 
                
           
-                <div class="form-check-inline col-lg-0">
+                <div style="margin-left: 10px;" class="form-check-inline col-lg-auto">
                      <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorAssign1">
-                     <input style="margin-left:15px" class="form-check-input" type="radio" id="SubcontractorAssign1" value="Yes"  v-model="step.subcontractor_assign"   >Yes    
+                     <input style="margin-left:15px" class="form-check-input" type="radio" id="SubcontractorAssign1" value="Yes"  v-model="step.subcontractor_assign"   required>Yes    
                      </label>
                 </div>
              
-                <div  class="form-check-inline col-lg-0">
+                <div  style="margin-left: 10px;" class="form-check-inline col-lg-auto">
                     <label  style ="font-size:14pt" class="form-check-label" for="SubcontractorAssign2">
-                    <input class="form-check-input" type="radio"  id="SubcontractorAssign2" value="No"  v-model="step.subcontractor_assign" >No
+                    <input class="form-check-input" type="radio"  id="SubcontractorAssign2" value="No"  v-model="step.subcontractor_assign" required>No
                     </label>
                     
                 </div>
@@ -223,7 +225,6 @@
                    project_number: '',
                    phase_number: '',
                    step_number: '',
-                   step_name: '',
                    step_description: '',
                    step_cost: '',
                    step_duration: '',
@@ -272,7 +273,6 @@
                    project_number: '',
                    phase_number: '',
                    step_number: '',
-                   step_name: '',
                    step_description: '',
                    step_cost: '',
                    step_duration: '',

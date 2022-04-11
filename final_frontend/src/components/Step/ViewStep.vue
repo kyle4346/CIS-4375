@@ -3,7 +3,7 @@
         <div class="col-lg-12">
             <br>
             <br>
-             <strong style="margin-left:400px; font-size: 20pt; color:Black; "  >Search Steps:</strong>
+             <strong style="margin-left:400px; font-size: 20pt; color:Black; ">Search Steps:</strong>
             <input style="margin-left:5px;  font-size: 12pt;"  size="30" type="text" v-model="searchSteps" placeholder="Filter by Project Num." /> 
            <br>
            <br>
@@ -19,7 +19,9 @@
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%">
-                <col   style="width:0%">
+                <col   style="width:0%">  
+              
+                
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num.</th>
@@ -28,7 +30,7 @@
                         <th>Subcontractor<br/> Assigned</th>
                         <th>Cost</th>
                         <th>Status</th>
-                        <th>% <br/>Finished</th>
+                        <th>% Finished</th>
                         <th>Start Date</th>
                         <th>Actions</th>
                         <th>Reports</th>
@@ -42,7 +44,6 @@
                         <td style="vertical-align:top">{{ step.subcontractor_assign }}</td>
                         <td style="vertical-align:top">{{ step.step_cost }}</td>
                         <td style="vertical-align:top">{{ step.step_status_type}}</td>
-                       
                         <td style="vertical-align:top; text-align: right">{{ step.step_percent_complete}}</td>
                         <td style="vertical-align:top">{{ step.step_start_date }}</td>
                         <td>
@@ -55,12 +56,10 @@
                             </router-link>
 
                              <router-link :to="{name: 'viewTask', params: { id: step.step_number}}"   class="btn four">View Tasks
-                            </router-link>
-
-                            
-                                 
+                            </router-link>      
                         </td>
-                        <td>
+
+                         <td>
                             <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"   class="btn five">Assigned<br/> Tasks
                             </router-link>
 
@@ -68,6 +67,9 @@
                             </router-link> 
 
                         </td>
+
+                       
+                       
                     </tr>
                 </tbody>
             </table>
@@ -139,7 +141,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 175%;
+  height: 110%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }

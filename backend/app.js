@@ -629,7 +629,7 @@ app.get('/step_report/:id', (req, res, next) => {
 // endpoint for retrieving client form information by clientID - Read Operation 2
 app.get('/step_num/:id', (req, res, next) => {
   //find data based on the client id for the collection client form information
-  StepModel.findOne({ stepid: req.params.id}, (error, data) => {
+  StepModel.findOne({ subcontractor_email: req.params.id}, (error, data) => {
       if (error) {
           return next(error)
       } else if (data === null) {
