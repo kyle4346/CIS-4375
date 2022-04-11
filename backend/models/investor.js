@@ -26,7 +26,7 @@ let InvestorSchema = new Schema({
     investor_detail: {
         type: String,
         minlength: 0,
-        maxlength: 55,
+        maxlength: 255,
       
         
     },

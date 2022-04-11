@@ -56,7 +56,7 @@
                 <div style="margin-left:-50px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputPhaseBudget">Cost</label>
                   
-                    <input size="8" style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00" minlength="7"  maxlength="11"  v-model="phase.phase_cost" >
+                    <input size="8" style="text-align:right"  type="text" class="form-control" id="inputPhaseBudget" placeholder="$6,000.00"   maxlength="11"  v-model="phase.phase_cost" >
                     
                 </div>
 

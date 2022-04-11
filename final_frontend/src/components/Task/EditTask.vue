@@ -50,7 +50,7 @@
 
                 <div style="margin-left:50px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" for="inputTaskNotes">Comments</label> 
-                    <textarea cols="58" type="text" class="form-control" id="inputTaskNotes" minlength="0" placeholder="Additional Notes" maxlength="55"   rows="1" v-model="task.task_description" ></textarea>
+                    <textarea cols="58" type="text" class="form-control" id="inputTaskNotes" minlength="0" placeholder="Additional Notes" maxlength="255"   rows="1" v-model="task.task_description" ></textarea>
                 <br>
                 </div>
 

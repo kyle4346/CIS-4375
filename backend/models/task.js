@@ -46,7 +46,7 @@ let TaskSchema = new Schema({
     task_description: {
         type: String,
         minlength: 0,
-        maxlength: 55,
+        maxlength: 255,
         
     },
     

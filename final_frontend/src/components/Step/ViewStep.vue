@@ -62,7 +62,7 @@
                          <td>
                             <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"   class="btn five">Assigned<br/> Tasks
                             </router-link>
-
+                            
                             <router-link :to="{name: 'step_subcontractor_report', params: { id: step.subcontractor_email}}"   class="btn six">Assigned<br/> Subcontractors
                             </router-link> 
 
@@ -141,7 +141,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 110%;
+  height: 200%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }

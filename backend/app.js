@@ -1238,7 +1238,7 @@ app.get('/step_subcontractor_report/:id', (req, res, next) => {
 
   SubcontractorModel.aggregate([
     { $match : { subcontractor_email: (req.params.id) } },  //match client id if so retrieve that data
-    { $project : {_id:0 ,subcontractor_email:1,   subcontractor_type:1 , project_number:1 , subcontractor_fname: 1 ,  subcontractor_lname: 1, subcontractor_email: 1} },  //retrieve these fieldnames from the genral information schema
+    { $project : {_id:0 ,subcontractor_email:1,subcontractor_type: 1 , subcontractor_fname: 1,  subcontractor_lname: 1 } },  //retrieve these fieldnames from the genral information schema
     { $lookup : {         //aggregate or lookup on the collection cfcworker_client_activity
         from : 'step',
         localField : 'subcontractor_email',
