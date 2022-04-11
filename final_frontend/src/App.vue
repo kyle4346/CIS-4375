@@ -264,7 +264,8 @@ export default {
   max-height: 150px;
   max-width: 14.28%;
   display: inline-block;
-  margin-right: 10px;
+  margin-left: 120px;
+  margin-right: 15px;
 }
 #Appinfo {
   max-height: 71.8px;
