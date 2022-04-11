@@ -63,8 +63,7 @@
                             <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"   class="btn five">Assigned<br/> Tasks
                             </router-link>
                             
-                            <router-link :to="{name: 'step_subcontractor_report', params: { id: step.subcontractor_email}}"   class="btn six">Assigned<br/> Subcontractors
-                            </router-link> 
+                           
 
                         </td>
 
@@ -227,19 +226,11 @@ border: 2px solid black;
    margin-left:-29px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 7px 21px;
+   padding: 42px 21px;
    font-size:16px
 
 }
-.six{
-     border: 2px solid black;
-   margin-top: -5px;
-   margin-left:-29px; 
-   color:black; 
-   background-color:#FFD700; 
-   padding: 7px 0px;
-   font-size:16px
-}
+
 
 .styled-table th,
 .styled-table td {

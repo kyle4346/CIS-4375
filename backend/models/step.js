@@ -87,12 +87,11 @@ let StepSchema = new Schema({
         maxlength: 25,
         required: true,
         not: null
-
       },
       subcontractor_email:{
         type: String,
         maxlength: 45,
-        unique:false,
+        
       
 
       },
