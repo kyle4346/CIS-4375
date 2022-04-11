@@ -65,6 +65,7 @@ export default {
   width:70%;
   opacity: 1;
 } */
+ 
 
 .fade-enter-active,.fade-leave-active {
   transition: all 5s ease;
