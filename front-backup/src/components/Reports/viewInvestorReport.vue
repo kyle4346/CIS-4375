@@ -117,6 +117,7 @@
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
+  top: 50px;
 }
 .styled-table tbody tr {
   border-bottom: 1px solid #dddddd;

@@ -1,12 +1,12 @@
-<template >
+<template id = "application">
   <!-- <fixed-header> -->
 
   <div id = "Appinfo">
     <b-nav id="navi">
       <div class="container">
-        
-        <img src="./assets/logo2.png" id="image2" />
-
+        <a href="http://www.mypipingint.com/" >
+        <img src="./assets/logo2.png" id="image2"  />
+        </a>
         <a
           class="btn btn-primary"
           style="font-size: 20px; color: white; font-weight: bold"
@@ -197,6 +197,7 @@
         
 
         <img src="./assets/logo1.jpeg" id="image" />
+        <img src="./assets/const.jpg" id="hide" >
 
         
 
@@ -304,10 +305,19 @@ export default {
 
 #navi {
   background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 5;
 }
 #app {
   max-height: 71.8px;
   max-width: 1536px;
 
 }
+
+#hide {
+  display: none;
+}
+
 </style>

@@ -271,7 +271,7 @@ export default {
 .styled-table th {
   position: -webkit-sticky;
   position: sticky;
-  top: 0;
+  top: 50px;
   z-index: 2;
   background-color: #267bfa;
   color: #ffffff;

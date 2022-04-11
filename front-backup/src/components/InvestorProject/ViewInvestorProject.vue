@@ -126,6 +126,7 @@
   z-index: 2;
   background-color: #267bfa;
   color: #ffffff;
+  top: 50px;
 }
 
 .styled-table th::after{
