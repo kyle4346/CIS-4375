@@ -59,7 +59,7 @@ let InvestorSchema = new Schema({
       
       investor_city: {
           type: String,
-          minlength: 5, 
+          minlength: 3, 
           maxlength: 35,
           required: true,
           not: null

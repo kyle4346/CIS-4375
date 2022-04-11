@@ -88,7 +88,7 @@
                      <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" >City</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="36" type="text" class="form-control" placeholder="Dallas" minlength="5" maxlength="35" pattern="[A-Za-z\s]{5,35}" v-model="investor.investor_city" required>
+                    <input size="36" type="text" class="form-control" placeholder="Dallas" minlength="5" maxlength="35" pattern="[A-Za-z\s]{3,35}" v-model="investor.investor_city" required>
                     
                 </div> 
 

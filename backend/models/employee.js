@@ -62,7 +62,7 @@ let EmployeeSchema = new Schema({
       },
     employee_city: {
         type: String,
-        minlength: 5, 
+        minlength: 3, 
         maxlength: 35,
         required: true,
         not: null
