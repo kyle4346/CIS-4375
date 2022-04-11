@@ -277,8 +277,11 @@ export default {
   margin-right: 10px;
   border-radius: 80%;
 }
-
 #navi {
   background-color: black;
+  position: fixed;
+  width: 100%;
+  top: 0px;
+  z-index: 5;
 }
 </style>
