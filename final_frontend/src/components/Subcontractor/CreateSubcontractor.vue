@@ -71,7 +71,7 @@
                 <div style="margin-left:5px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputSRate">Pay Rate (/hr)</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100.00" maxlength="7" pattern="[$][0-9]{3}[.][0-9]{2}" v-model="subcontractor.subcontractor_rate" required>
+                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputSRate" placeholder="$100.00" maxlength="7" pattern="[$][0-9]{2,3}[.][0-9]{2}" v-model="subcontractor.subcontractor_rate" required>
                     
                 </div>
 
