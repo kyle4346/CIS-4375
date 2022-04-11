@@ -28,7 +28,7 @@ let TaskSchema = new Schema({
     step_number: {
       type: String,
       minlength:1,
-      maxlength:55,
+      maxlength:80,
       not: null,
       required: true,
       unique: false
