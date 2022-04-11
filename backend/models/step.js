@@ -37,7 +37,7 @@ let StepSchema = new Schema({
     step_description: {
         type: String,
         minlength: 0,
-        maxlength: 55,
+        maxlength: 255,
        
         
     },

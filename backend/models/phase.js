@@ -31,14 +31,14 @@ let PhaseSchema = new Schema({
     phase_description: {
         type: String,
         minlength: 0,
-        maxlength: 55,
+        maxlength: 255,
        
     },
     
     
       phase_cost: {
         type: String,
-        minlength: 7,
+        minlength: 2,
         maxlength: 11,
         not: null,
         required: true

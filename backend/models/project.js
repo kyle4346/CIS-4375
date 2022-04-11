@@ -29,7 +29,7 @@ let ProjectSchema = new Schema({
     project_information: {
         type: String,
         minlength: 0,
-        maxlength: 55,
+        maxlength: 255,
        
     },
     
