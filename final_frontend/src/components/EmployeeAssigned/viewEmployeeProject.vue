@@ -1,14 +1,14 @@
 <template>
     <div class="row">
-        <br>
-        <br>
+        
         <div class="col-lg-12">
-
+        <br>
+        <br>
         <strong style="margin-left:350px; font-size: 20pt; color:Black; "  >Search Assigned Employee:</strong>
         <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="search" placeholder="Filter by Project Num. or Name" />
         <p><router-link class="btn createEmployeeAssign"  to="/createEmployeeAssigned">Create Employee Assignment</router-link></p>
          
-          
+           <button id = "toTop" @click="moveUp()">Scroll Up</button>
             <table class="styled-table">
                 <col   style="width:1%"> 
                 <col   style="width:20%"> 
@@ -95,8 +95,12 @@
                         console.log(error)
                     });
                 }
-            }
+            },
+             moveUp(){
+           window.scrollTo(0,0);
+      }
         }
+
     }
 </script>
 
@@ -200,5 +204,16 @@ font-size:20px;
 .ic3 {
   width: 64px;
   height: 64px;
+}
+#toTop {
+  position: fixed;
+  border-radius: 20%;
+  background-color: #267bfa;  
+  width: 5%;
+  height: 8%;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 18px;
 }
 </style>

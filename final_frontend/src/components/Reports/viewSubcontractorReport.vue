@@ -24,6 +24,7 @@
          <br/>
          Email: {{subcontractors.subcontractor_email}}
          </h2>
+          <button id = "toTop" @click="moveUp()">Scroll Up</button>
           <router-link class="btn viewSubcontractor"  to="/viewSubcontractor">View Subcontractors</router-link>
             <table class="styled-table">
                 
@@ -105,7 +106,9 @@
         },
         
         methods: {
-            
+             moveUp(){
+           window.scrollTo(0,0);
+      }
 
            
         }
@@ -207,5 +210,15 @@
   width: 64px;
   height: 64px;
 }
-
+#toTop {
+  position: fixed;
+  border-radius: 20%;
+  background-color: #267bfa;  
+  width: 5%;
+  height: 8%;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 18px;
+}
 </style>

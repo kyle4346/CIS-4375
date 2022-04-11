@@ -7,6 +7,7 @@
             <input style="margin-left:5px; align:center; font-size: 12pt;"  size="30" type="text" v-model="searchSubcontractors" placeholder="Filter by Name, Type, or Status" /> 
         <p><router-link class="btn createSub"  to="/createSubcontractor">Add Subcontractor</router-link></p>
            <br>
+            <button id = "toTop" @click="moveUp()">Scroll Up</button>
             <table class="styled-table">
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -118,7 +119,10 @@
                         console.log(error)
                     });
                 }
-            }
+            },
+             moveUp(){
+           window.scrollTo(0,0);
+      }
         }
     }
 </script>
@@ -245,6 +249,17 @@ margin-top: -45px;
 .ic3 {
   width: 64px;
   height: 64px;
+}
+#toTop {
+  position: fixed;
+  border-radius: 20%;
+  background-color: #267bfa;  
+  width: 5%;
+  height: 8%;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 18px;
 }
 </style>
 

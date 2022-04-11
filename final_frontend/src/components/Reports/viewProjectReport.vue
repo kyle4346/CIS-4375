@@ -10,6 +10,7 @@
       <br>
           <h2  class="reportInvestor" > Project #{{projects.project_number}}:  {{projects.project_name}} <br/>  Project Duration: {{projects.project_estimated_duration}} Months  <br/> Budget: {{projects.project_budget}} </h2>
           <router-link class="btn viewProjects" to="/viewProject">View Projects</router-link>
+           <button id = "toTop" @click="moveUp()">Scroll Up</button>
             <table class="styled-table">
 
                 <col    style="width:20%"> 
@@ -99,7 +100,9 @@
         },
         
         methods: {
-            
+             moveUp(){
+           window.scrollTo(0,0);
+      }
 
            
         }
@@ -199,5 +202,15 @@
   width: 64px;
   height: 64px;
 }
-
+#toTop {
+  position: fixed;
+  border-radius: 20%;
+  background-color: #267bfa;  
+  width: 5%;
+  height: 8%;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 18px;
+}
 </style>

@@ -9,6 +9,7 @@
 
             <p><router-link class="btn addProject"  to="/createProject">Add Project</router-link></p>
             <br>
+            <button id = "toTop" @click="moveUp()">Scroll Up</button>
             <table class="table styled-table">
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
@@ -83,8 +84,9 @@
                             <router-link :to="{name: 'project_employee_report', params: { id:project.project_number}}"  class="btn seven">Assigned <br/> Employees<br/> 
                             </router-link>
 
-                            <button id = "toTop" @click="moveUp()"> </button>
+                            
                         </td>
+                        
                     </tr>
                 </tbody>
             </table>
@@ -306,12 +308,13 @@ position: -webkit-absolute;
 
 #toTop {
   position: fixed;
-  border: 1px solid blue;
-  background-color: rgba(255,200,200,0.5);  
-  width: 30px;
-  height: 10px;
-  bottom: 0;
-  left: 0;
-  right: 0;
+  border-radius: 20%;
+  background-color: #267bfa;  
+  width: 5%;
+  height: 8%;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 18px;
 }
 </style>

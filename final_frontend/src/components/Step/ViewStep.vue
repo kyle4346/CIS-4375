@@ -8,7 +8,7 @@
            <br>
            <br>
             <p><router-link class="btn createPhases"  to="/viewPhase">View Phases</router-link></p>
-            
+             <button id = "toTop" @click="moveUp()">Scroll Up</button>
             <table class="styled-table">
                 <col   style="width:1%"> 
                 <col   style="width:12%"> 
@@ -122,7 +122,10 @@
                         console.log(error)
                     });
                 }
-            }
+            },
+             moveUp(){
+           window.scrollTo(0,0);
+      }
         }
     }
 </script>
@@ -262,5 +265,16 @@ border: 2px solid black;
 .ic3 {
   width: 64px;
   height: 64px;
+}
+#toTop {
+  position: fixed;
+  border-radius: 20%;
+  background-color: #267bfa;  
+  width: 5%;
+  height: 8%;
+  bottom: 10px;
+  right: 10px;
+  color: white;
+  font-size: 18px;
 }
 </style>
