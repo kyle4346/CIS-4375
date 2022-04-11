@@ -142,7 +142,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 170%;
+  height: 200%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
