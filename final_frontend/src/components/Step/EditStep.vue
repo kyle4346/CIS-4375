@@ -62,7 +62,7 @@
 
                 <div style="margin-left:-180px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputStepBudget">Cost</label>
-                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" minlength="5"  maxlength="11"   v-model="step.step_cost" >
+                    <input size="8" style="text-align:right" type="text" class="form-control" id="inputStepBudget" placeholder="$4,000.00" minlength="2"  maxlength="11"   v-model="step.step_cost" >
                     
                 </div>
 

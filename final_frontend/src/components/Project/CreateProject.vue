@@ -29,7 +29,7 @@
                  <div style="margin-left:40px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt" for="inputProjectNotes">Comments</label>
                     
-                    <textarea  type="text" cols="56" class="form-control" id="inputProjectNotes" minlength="0" maxlength="55"  placeholder="Two-Story House"  rows="1" v-model="project.project_information" ></textarea>
+                    <textarea  type="text" cols="56" class="form-control" id="inputProjectNotes" minlength="0" maxlength="255"  placeholder="Two-Story House"  rows="1" v-model="project.project_information" ></textarea>
                     <br>
                    
                 </div>

@@ -172,7 +172,7 @@
           </ul>
         </div>
 
-        <a href="/manual"><img src="./assets/info.png" id="image3" /></a>
+        
 
         <img src="./assets/logo1.jpeg" id="image" />
 

@@ -25,7 +25,7 @@
 
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt" for="inputShortNotes">Comments</label>
-                    <textarea  cols="41" type="text" class="form-control" placeholder="Additional Notes" id="inputShortNotes"  minlength="0" maxlength="55"   rows="1" v-model="subcontractor.subcontractor_detail" ></textarea>
+                    <textarea  cols="41" type="text" class="form-control" placeholder="Additional Notes" id="inputShortNotes"  minlength="0" maxlength="255"   rows="1" v-model="subcontractor.subcontractor_detail" ></textarea>
                     <br>
                 </div>
 
