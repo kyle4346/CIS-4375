@@ -40,7 +40,6 @@ let EmployeeAssignedSchema = new Schema({
   employee_email: {
     type: String,
     maxlength: 45,
-    unique:true,
     not: null,
     required: true
 
