@@ -8,7 +8,7 @@
           <br>
           <br>
           <h2 class="employeeReport">
-          Employee Status: {{employees.employee_status_type}}
+          Employee Type: {{employees.employee_status_type}}
          <br/>
           Employee Title: {{employees.employee_title_description}}
          <br/> 
