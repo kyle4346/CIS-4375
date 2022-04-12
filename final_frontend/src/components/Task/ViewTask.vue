@@ -93,11 +93,8 @@
 
                 return this.tasks.filter((task) =>{
 
-                    return task.project_number.toLowerCase().match(this.searchTasks.toLowerCase()) ||
-                           task.phase_number.toLowerCase().match(this.searchTasks.toLowerCase()) ||
-                           task.step_number.toLowerCase().match(this.searchTasks.toLowerCase()) ||
-                           task.task_number.toLowerCase().match(this.searchTasks.toLowerCase()) ||
-                           task.task_name.toLowerCase().match(this.searchTasks.toLowerCase())
+                  return   task.project_number.match(this.searchTasks) 
+                           
                     
                 })
             }    
