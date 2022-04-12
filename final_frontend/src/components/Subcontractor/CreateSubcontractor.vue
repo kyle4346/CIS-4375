@@ -64,7 +64,7 @@
                 <div style=" margin-left:0px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTrade">Business Name</label>
                      <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input  size="58" type="text" class="form-control" id="inputTrade" placeholder="ABC Plumbing" minlength="5" maxlength="55" pattern="[A-Za-z\s]{5,55}" v-model="subcontractor.subcontractor_business_name" required>
+                    <input  size="58" type="text" class="form-control" id="inputTrade" placeholder="ABC Plumbing" minlength="5" maxlength="55" pattern="[A-Za-z\s\']{5,55}" v-model="subcontractor.subcontractor_business_name" required>
                     
                 </div>
                  

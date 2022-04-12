@@ -38,10 +38,8 @@ let PhaseSchema = new Schema({
     
       phase_cost: {
         type: String,
-        
         maxlength: 11,
-        not: null,
-        required: true
+
         
       },
      
