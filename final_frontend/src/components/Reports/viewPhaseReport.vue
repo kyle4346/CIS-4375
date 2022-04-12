@@ -29,7 +29,7 @@
                         <th>Phase Status</th>
                         <th>Phase Cost</th>
                         <th>Phase Estimated Duration</th>
-                        <th>Phase Estimated Start  Date</th>
+                        <th>Phase Start  Date</th>
                         <th>Phase Estimated End  Date</th>
                         
                         

@@ -34,7 +34,7 @@
                         <th>Phase</th>
                         <th>Step</th>
                         <th>Assigned Date</th>
-                        <th>Step Cost</th>
+                        <th>Subcontractor <br/> Fee</th>
                         <th>Subcontractor Paid</th>
                         <th>Step Status</th>
                         
