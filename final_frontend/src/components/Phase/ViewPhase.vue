@@ -19,8 +19,8 @@
                 <col   style="width:1%"> 
                 <col   style="width:9%"> 
                 <col   style="width:9%"> 
-                <col   style="width:0%"> 
-                <col   style="width:0%"> 
+                <col   style="width:1%"> 
+                 
                 <thead class="thead-dark">
                     <tr>
                         <th>Project Num.</th>
@@ -32,7 +32,6 @@
                         <th>Start Date</th>
                         <th>Estimated End Date</th>
                         <th>Actions</th>
-                        <th>Report</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -65,10 +64,7 @@
 
                     
                         </td> 
-                        <td>
-                                <router-link :to="{name: 'project_step_report', params: { id: phase.phase_number}}" class="btn five">Assigned<br/>Steps
-                            </router-link>
-                        </td>
+                       
                     </tr>
                 </tbody>
             </table>
@@ -142,7 +138,7 @@
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 210%;
+  height: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }

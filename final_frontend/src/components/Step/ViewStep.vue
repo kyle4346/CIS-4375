@@ -18,8 +18,8 @@
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
                 <col   style="width:0%"> 
-                <col   style="width:0%">
-                <col   style="width:0%">  
+                <col   style="width:1%">
+                 
               
                 
                 <thead class="thead-dark">
@@ -33,7 +33,6 @@
                         <th>% Finished</th>
                         <th>Start Date</th>
                         <th>Actions</th>
-                        <th>Reports</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,18 +56,7 @@
 
                              <router-link :to="{name: 'viewTask', params: { id: step.step_number}}"   class="btn four">View Tasks
                             </router-link>      
-                        </td>
-
-                         <td>
-                            <router-link :to="{name: 'project_task_report', params: { id: step.step_number}}"   class="btn five">Assigned<br/> Tasks
-                            </router-link>
-                            
-                           
-
-                        </td>
-
-                       
-                       
+                        </td>      
                     </tr>
                 </tbody>
             </table>
@@ -140,7 +128,7 @@
   font-size: 0.9em;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 120%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }
