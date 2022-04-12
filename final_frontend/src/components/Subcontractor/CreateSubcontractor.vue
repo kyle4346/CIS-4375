@@ -30,7 +30,7 @@
                     <br>
                 </div>
 
-                <div   style="margin-left:0px;" class="form-group col-lg-2">
+                <div   style="margin-left:-10px;" class="form-group col-lg-2">
                     
                     
                     <label style ="font-size:14pt">Type</label>
