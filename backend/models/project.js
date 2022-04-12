@@ -10,8 +10,7 @@ let ProjectSchema = new Schema({
     
     project_number: {
       type: String,
-      minlength:1,
-      maxlength:5,
+      minlength:5,
       not: null,
       required: true,
       unique: true

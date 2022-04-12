@@ -14,7 +14,7 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputTaskProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input style="text-align:right" size="10" type="text" class="form-control" id="inputTaskProjectNum" placeholder="1-99999" minlength="1" maxlength="5" pattern="[0-9]{1,5}" v-model="task.project_number" required>
+                    <input style="text-align:right" size="10" type="text" class="form-control" id="inputTaskProjectNum" placeholder="99999" minlength="5" pattern="[0-9]{5}" v-model="task.project_number" required>
                     
                 </div>
 

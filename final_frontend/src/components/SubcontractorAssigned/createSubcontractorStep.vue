@@ -35,7 +35,7 @@
                  <div class="form-group col-lg-2">
                     <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorProjectNum">Project Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input   type="text" class="form-control" id="inputSubcontractorProjectNum" placeholder="1-99" pattern="[0-9]{1,9}" v-model="subcontractor_assigned.project_number" required>
+                    <input   type="text" class="form-control" id="inputSubcontractorProjectNum" placeholder="99999" minlength="5" pattern="[0-9]{5}" v-model="subcontractor_assigned.project_number" required>
                     
                 </div>
 

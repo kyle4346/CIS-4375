@@ -16,7 +16,7 @@
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputProjectNum">Number</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
-                    <input size="4" style="text-align:right;" type="text" class="form-control" id="inputProjectNum" minlength="1" maxlength="5" placeholder="1-99999" pattern="[0-9]{1,5}" v-model="project.project_number" required>
+                    <input size="4" style="text-align:right;" type="text" class="form-control" id="inputProjectNum" minlength="5"  placeholder="99999" pattern="[0-9]{5}" v-model="project.project_number" required>
                     
                 </div>
 
