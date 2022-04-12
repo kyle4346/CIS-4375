@@ -134,11 +134,11 @@
 <style scoped>
 /* Styles taken from Educba.com at https://www.educba.com/vue-js-table/*/
 .styled-table {
-  border-collapse: collapse;
+  border-collapse: collapse;;
   font-size: 12pt;
   font-family: sans-serif;
   width: 100%;
-  height: 100%;
+  height: 270%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
   text-align: left;
 }

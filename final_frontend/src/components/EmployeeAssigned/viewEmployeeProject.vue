@@ -158,10 +158,10 @@ font-size:20px;
 .one{
    border: 2px solid black;
    margin-top: -10px;
-   margin-left:-15px; 
+   margin-left:0px; 
    color:white; 
    background-color:green; 
-   padding: 0px 6px;
+   padding: 0px 7px;
    font-size:16px
 
 }
@@ -169,7 +169,7 @@ font-size:20px;
 .two{
    border: 2px solid black;
    margin-top: 10px;
-   margin-left:-15px; 
+   margin-left:0px; 
    color:white; 
    background-color:red; 
    padding: 0px 22px;

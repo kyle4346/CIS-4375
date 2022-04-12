@@ -218,7 +218,7 @@ margin-top: -45px;
    margin-left:-5px; 
    color:black; 
    background-color:#FFD700; 
-   padding: 9px 9px;
+   padding: 9px 5px;
    font-size:16px
    
 }
