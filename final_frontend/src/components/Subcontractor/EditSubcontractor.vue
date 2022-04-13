@@ -11,27 +11,27 @@
             <form @submit.prevent="handleUpdateForm">
                  <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
                 
-              <div class="form-group row">
+                 <div class="form-group row">
                 <div class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputFName">First Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input size="24"  type="text" class="form-control" id="inputFName" placeholder="Chase" minlength="2" maxlength="25" pattern="[A-Za-z\s]{2,25}" v-model="subcontractor.subcontractor_fname" required>
                 </div>
 
-                <div style="margin-left:0px" class="form-group col-lg-auto">
+                <div style="margin-left:-10px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputLName">Last Name</label>
                     <label style ="font-size:14pt; color:red; font-weight:bold"> * </label>
                     <input size="33"  type="text" class="form-control" placeholder="Williams" id="inputLName" minlength="2" maxlength="35" pattern="[A-Za-z\s]{2,35}" v-model="subcontractor.subcontractor_lname" required>
                     
                 </div>
 
-                <div class="form-group col-lg-auto">
+                <div style="margin-left:-10px"  class="form-group col-lg-auto">
                     <label style ="font-size:14pt" for="inputShortNotes">Comments</label>
                     <textarea  cols="41" type="text" class="form-control" placeholder="Additional Notes" id="inputShortNotes"  minlength="0" maxlength="255"   rows="1" v-model="subcontractor.subcontractor_detail" ></textarea>
                     <br>
                 </div>
 
-                <div   style="margin-left:-10px;" class="form-group col-lg-2">
+                <div   style="margin-left:-10px;" class="form-group col-lg-1">
                     
                     
                     <label style ="font-size:14pt">Type</label>
@@ -44,7 +44,7 @@
                    
                 </div>
 
-                <div style="margin-left:-65px;" class="form-group col-lg-2">
+                <div style="margin-left:40px;" class="form-group col-lg-1">
                     
                     
                     <label style ="font-size:14pt; margin-left:0px;">Status</label>
