@@ -9,7 +9,7 @@
 
              <strong style ="font-size:150%">General Information</strong>
             <form @submit.prevent="handleUpdateForm">
-                 <p style="color:red; font-size:125%; font-weight:bold">All Fields with * are Required</p>
+                 <p style="color:red; font-size:125%; font-weight:bold">Fields with * are Required</p>
                 
                  <div class="form-group row">
                 <div class="form-group col-lg-auto">

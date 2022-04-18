@@ -167,7 +167,7 @@
                 <div style="margin-left: 20px" class="form-group col-lg-auto">
                     <label style ="font-size:14pt; text-align:left;" for="inputSubcontractorRate">Subcontractor Fee</label>
                    
-                    <input size="10" style="text-align:right" type="text" class="form-control" id="inputSubcontractorRate" placeholder="$2,500.50"  minlength="7"  maxlength="11"   pattern="[$][0-9]{1,3}[,][0-9]{3}[.][0-9]{2}" v-model="step.subcontractor_fee" >
+                     <input size="10" style="text-align:right" type="text" class="form-control" id="inputSubcontractorRate" placeholder="$2,500.50"  maxlength="11"    v-model="step.subcontractor_fee" >
                     
                 </div>
 
